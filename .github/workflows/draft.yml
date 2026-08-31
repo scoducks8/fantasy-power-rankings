@@ -1,0 +1,41 @@
+name: Draft data
+
+# Run by hand after the draft. There's no schedule - a draft happens once.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch draft results, ADP and projections
+        env:
+          LEAGUE_ID: ${{ vars.LEAGUE_ID }}
+          SEASON: ${{ vars.SEASON }}
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+        run: python scripts/fetch_draft.py
+
+      - name: Commit the draft data
+        run: |
+          git config user.name "power-rankings-bot"
+          git config user.email "actions@github.com"
+          git add data/draft.json
+          if git diff --staged --quiet; then
+            echo "No change."
+          else
+            git commit -m "Draft data: $(date -u +%Y-%m-%d)"
+            git push
+          fi
