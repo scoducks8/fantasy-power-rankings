@@ -45,6 +45,19 @@ def discover_weeks() -> list[dict]:
     return sorted(weeks, key=lambda w: w["number"], reverse=True)
 
 
+def draft_recap() -> dict | None:
+    """The draft recap is a one-off page, not a week — surface it separately."""
+    path = ROOT / "docs" / "draft-recap.html"
+    if not path.exists():
+        return None
+    source = path.read_text(errors="ignore")
+    title = TITLE_RE.search(source)
+    return {
+        "href": "draft-recap.html",
+        "title": html.unescape(title.group(1).strip()) if title else "Draft Recap",
+    }
+
+
 def load_latest() -> dict | None:
     path = DATA_DIR / "latest.json"
     if not path.exists():
@@ -55,7 +68,7 @@ def load_latest() -> dict | None:
         return None
 
 
-def render(weeks: list[dict], latest: dict | None) -> str:
+def render(weeks: list[dict], latest: dict | None, recap: dict | None = None) -> str:
     league = (latest or {}).get("league_name", "Fantasy Football")
     esc = html.escape
 
@@ -72,6 +85,16 @@ def render(weeks: list[dict], latest: dict | None) -> str:
             '      <p class="empty">No week pages yet. The first one lands '
             "after Week 1 wraps.</p>"
         )
+
+    feature = ""
+    if recap:
+        feature = f"""    <section class="feature">
+      <a class="feature-card" href="{esc(recap['href'])}">
+        <span class="feature-kicker">Season preview</span>
+        <span class="feature-title">2026 Draft Recap</span>
+        <span class="feature-sub">Power rankings, biggest reaches, best values</span>
+      </a>
+    </section>"""
 
     podium = ""
     if latest and latest.get("teams"):
@@ -104,6 +127,7 @@ def render(weeks: list[dict], latest: dict | None) -> str:
     <p class="tagline">Weekly power rankings. New theme every week.</p>
   </header>
   <main>
+{feature}
 {podium}
     <section class="archive">
       <h2>The archive</h2>
@@ -124,7 +148,7 @@ def render(weeks: list[dict], latest: dict | None) -> str:
 def main() -> None:
     WEEKS_DIR.mkdir(parents=True, exist_ok=True)
     weeks = discover_weeks()
-    INDEX.write_text(render(weeks, load_latest()))
+    INDEX.write_text(render(weeks, load_latest(), draft_recap()))
     print(f"Wrote docs/index.html with {len(weeks)} week(s).")
 
 

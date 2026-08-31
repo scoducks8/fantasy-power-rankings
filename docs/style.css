@@ -150,3 +150,42 @@ footer {
 }
 
 footer p { margin: 0; }
+
+/* Featured one-off page (draft recap) ---------------------------------- */
+
+.feature { margin-top: 32px; }
+
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 22px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(135deg, #182030, #12161f);
+  
+  border-color: #2b3446;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.feature-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.feature-kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.feature-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.feature-sub { color: var(--muted); font-size: 14px; }

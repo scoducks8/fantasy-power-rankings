@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-name" content="2026 Draft Recap" />
+<title>Chach Champions League — 2026 Draft Recap</title>
+<style>
+:root{
+  --bg:#0b0d12; --card:#121520; --card2:#0e1119; --ink:#e9edf3; --muted:#9aa6b2;
+  --dim:#6b7683; --line:#1c2330; --accent:#9fb0ff;
+  /* diverging pair — validated against the dark surface for CVD separation */
+  --value:#3987e5; --reach:#d03b3b; --mid:#383835;
+  --gold:#fbbf24;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:500 16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%}
+
+/* ---------- chrome ---------- */
+.topbar{position:sticky;top:0;z-index:20;background:rgba(11,13,18,.94);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:900px;margin:0 auto;padding:11px 16px;
+  display:flex;align-items:center;gap:14px;justify-content:space-between}
+.brand{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.navlinks{display:flex;gap:14px;overflow-x:auto;scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap}
+.navlinks a:hover{color:var(--ink)}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 16px 72px}
+
+/* ---------- hero ---------- */
+.hero{padding:40px 0 26px;border-bottom:1px solid var(--line)}
+.eyebrow{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--reach)}
+h1{margin:0;font-size:clamp(30px,7.5vw,52px);line-height:1.04;letter-spacing:-.025em;font-weight:800}
+.standfirst{margin:14px 0 0;color:#c6cbd7;font-size:17px;max-width:64ch}
+.byline{margin:16px 0 0;color:var(--dim);font-size:13px}
+
+.statstrip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:12px;
+  overflow:hidden;margin:26px 0 0}
+.stat{background:var(--card);padding:14px 12px;text-align:center}
+.stat b{display:block;font-size:22px;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat span{display:block;margin-top:3px;font-size:11px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+
+/* ---------- sections ---------- */
+section{padding:44px 0 0}
+.kicker{margin:0 0 6px;font-size:12px;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent)}
+h2{margin:0;font-size:clamp(23px,5vw,32px);letter-spacing:-.02em;font-weight:800}
+.lede{margin:10px 0 22px;color:var(--muted);max-width:66ch}
+
+/* ---------- power ranking cards ---------- */
+.rank-list{display:flex;flex-direction:column;gap:10px}
+.team{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.team.top{border-color:rgba(159,176,255,.45)}
+.team-head{display:grid;grid-template-columns:38px 1fr auto;gap:12px;align-items:start}
+.pos{font-size:26px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums;line-height:1}
+.tname{margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.towner{margin-top:2px;color:var(--muted);font-size:13px}
+.metric{text-align:right}
+.metric b{display:block;font-size:19px;font-variant-numeric:tabular-nums}
+.metric span{display:block;font-size:10.5px;color:var(--dim);text-transform:uppercase;
+  letter-spacing:.07em;font-weight:700;margin-top:2px}
+.lineup{display:flex;flex-wrap:wrap;gap:6px;margin:13px 0 0}
+.pl{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;
+  background:var(--card2);border:1px solid var(--line);font-size:12.5px}
+.pl i{font-style:normal;font-weight:800;font-size:10px;color:var(--dim);letter-spacing:.05em}
+.verdict{margin:13px 0 0;color:#c6cbd7;font-size:14.5px;line-height:1.6}
+.tag{display:inline-block;margin-top:10px;padding:3px 9px;border-radius:999px;
+  font-size:11px;font-weight:800;letter-spacing:.04em;color:#111827;background:var(--gold)}
+.super{margin:12px 0 0;padding:10px 12px;border-radius:10px;background:var(--card2);
+  border:1px solid var(--line);border-left:3px solid var(--accent);font-size:13.5px;color:#c6cbd7}
+.super b{display:block;color:var(--accent);font-size:11.5px;font-weight:800;
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.flag{margin:12px 0 0;padding:10px 12px;border-radius:10px;
+  background:rgba(208,59,59,.09);border:1px solid rgba(208,59,59,.4);
+  font-size:13.5px;color:#f0d3d3}
+.flag b{color:var(--reach);font-weight:800}
+.pl.out{opacity:.5;text-decoration:line-through}
+
+/* ---------- pick tables ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.panel-h{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;
+  align-items:center;gap:9px}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.panel-h h3{margin:0;font-size:14px;font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+.pick{display:grid;grid-template-columns:1fr auto;gap:10px;padding:11px 16px;
+  border-bottom:1px solid var(--line);align-items:center}
+.pick:last-child{border-bottom:0}
+.pick .who{min-width:0}
+.pick .nm{font-size:14.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pick .sub{font-size:12px;color:var(--muted);margin-top:2px}
+.delta{font-variant-numeric:tabular-nums;font-weight:800;font-size:14px;white-space:nowrap}
+.delta.v{color:var(--value)} .delta.r{color:var(--reach)}
+
+/* ---------- diverging chart ---------- */
+.chart{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px}
+.row{display:grid;grid-template-columns:104px 1fr;gap:10px;align-items:center;
+  padding:5px 0;cursor:default}
+.row .lbl{font-size:12.5px;color:var(--muted);text-align:right;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.track{position:relative;height:22px}
+.zero{position:absolute;top:-4px;bottom:-4px;width:1px;background:var(--mid)}
+.bar{position:absolute;top:3px;height:16px;border-radius:3px}
+.bar.v{background:var(--value)} .bar.r{background:var(--reach)}
+.bar.v{border-radius:0 4px 4px 0} .bar.r{border-radius:4px 0 0 4px}
+.val{position:absolute;top:3px;height:16px;display:flex;align-items:center;
+  font-size:11.5px;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:700}
+.row:hover .bar{filter:brightness(1.18)}
+.axis{display:flex;justify-content:space-between;margin-top:12px;padding-top:9px;
+  border-top:1px solid var(--line);font-size:11px;color:var(--dim)}
+.legend{display:flex;gap:16px;margin:0 0 14px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:11px;height:11px;border-radius:3px;flex:none}
+
+details.table{margin-top:12px}
+details.table summary{cursor:pointer;font-size:12.5px;color:var(--muted);
+  padding:7px 0;list-style:none}
+details.table summary::-webkit-details-marker{display:none}
+details.table summary:before{content:"▸ ";color:var(--dim)}
+details.table[open] summary:before{content:"▾ "}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line)}
+th{color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+
+/* ---------- notes ---------- */
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.note{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.note h4{margin:0 0 7px;font-size:14.5px;font-weight:700}
+.note p{margin:0;color:#c6cbd7;font-size:14px;line-height:1.6}
+.note .big{font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1;
+  margin-bottom:8px;color:var(--accent);font-variant-numeric:tabular-nums}
+
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);
+  color:var(--dim);font-size:13px}
+footer a{color:var(--muted)}
+
+@media (max-width:640px){
+  .two{grid-template-columns:1fr}
+  .notes{grid-template-columns:1fr}
+  .statstrip{grid-template-columns:repeat(2,1fr)}
+  .team-head{grid-template-columns:30px 1fr auto;gap:10px}
+  .pos{font-size:22px}
+  .row{grid-template-columns:78px 1fr}
+  .row .lbl{font-size:11.5px}
+  .hero{padding:30px 0 22px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">Chach Champions</div>
+    <nav class="navlinks">
+      <a href="#rankings">Rankings</a>
+      <a href="#values">Values</a>
+      <a href="#reaches">Reaches</a>
+      <a href="#discipline">Discipline</a>
+      <a href="#notes">Notes</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">2026 Draft Recap</p>
+    <h1>The first round was chalk. The next fifteen were personal.</h1>
+    <p class="standfirst">Twelve picks went almost exactly to ADP, and then everybody started
+      drafting their guys. Four quarterbacks to one manager. Four Chargers to another. A team
+      named after a tight end that reached forty-five slots to get him. This is what the board
+      looked like once the consensus ran out.</p>
+    <p class="byline">12 teams · 16 rounds · snake · PPR · benchmarked against 12-team PPR ADP</p>
+
+    <div class="statstrip">
+      <div class="stat"><b>192</b><span>Picks</span></div>
+      <div class="stat"><b>1.8</b><span>Avg R1 miss</span></div>
+      <div class="stat"><b>48.6</b><span>Avg R12 miss</span></div>
+      <div class="stat"><b>103</b><span>Biggest reach</span></div>
+    </div>
+  </header>
+
+  <!-- ============ POWER RANKINGS ============ -->
+  <section id="rankings">
+    <p class="kicker">Way too early</p>
+    <h2>Post-draft power rankings</h2>
+    <p class="lede">Ranked by a composite of four measures, because any single one is easy
+      to game: average ADP of the starting seven, median starter ADP (does one stud carry the
+      lineup?), average ADP across the ten best skill players (depth), and positional value
+      over replacement. A team has to be good on all four to finish high. Nobody has played a
+      snap, and half of this will look foolish by October.</p>
+
+    <div class="rank-list">
+
+      <article class="team top">
+        <div class="team-head">
+          <div class="pos">1</div>
+          <div><h3 class="tname">Saquon My Dak</h3><div class="towner">Lyudmil Zdravkov</div></div>
+          <div class="metric"><b>2.0</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>De'Von Achane</span><span class="pl"><i>RB</i>Kyren Williams</span><span class="pl"><i>WR</i>Justin Jefferson</span><span class="pl"><i>WR</i>Tetairoa McMillan</span><span class="pl"><i>TE</i>George Kittle</span><span class="pl"><i>FLEX</i>Davante Adams</span><span class="pl"><i>QB</i>Matthew Stafford</span></div>
+        <div class="tag">🏆 Best roster on paper</div>
+        <p class="verdict">Wins the composite because it is the only roster without a soft spot. Justin Jefferson falling to 14 was luck; everything after it was not. Stafford at 155 and Davante Adams at 59 are the two picks that separate this team — both arrived 30-plus slots late, both start. The median starter here has an ADP of 33, the best mark in the league, meaning there is no week where this lineup is carried by one player. De'Von Achane and Kyren Williams is a volatile backfield, and George Kittle at 83 is an age-and-availability bet. Neither is enough to knock it off the top.</p>
+        <div class="super"><b>Last in Line, First in Value</b>Waited until pick 134 to take a quarterback — the latest in the league by 20 picks — and still walked out with Matthew Stafford 78 slots below market. Net +141 slots of value captured, nearly double anyone else.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">2</div>
+          <div><h3 class="tname">Team evil</h3><div class="towner">kelly brown</div></div>
+          <div class="metric"><b>3.5</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Christian McCaffrey</span><span class="pl"><i>RB</i>Omarion Hampton</span><span class="pl"><i>WR</i>Garrett Wilson</span><span class="pl"><i>WR</i>Tee Higgins</span><span class="pl"><i>TE</i>Dallas Goedert</span><span class="pl"><i>FLEX</i>Rome Odunze</span><span class="pl"><i>QB</i>Joe Burrow</span></div>
+        <p class="verdict">The deepest roster in the field — best average ADP across ten skill players, which is the metric that actually survives a season. Christian McCaffrey at 10 is the highest-variance first-rounder in the draft and the only one whose owner bothered to buy the hedge. Omarion Hampton at 15 means the backfield does not collapse if that bet fails. Garrett Wilson, Tee Higgins and Rome Odunze is a receiver room with three real starters, and Joe Burrow at 63 was fair price. Nothing here is spectacular. Everything here is sturdy, and in a 14-week regular season that usually wins.</p>
+        <div class="super"><b>The Insurance Policy</b>Took Christian McCaffrey at 10, then spent pick 154 on Kaelon Black to cover him. The only manager in the league who handcuffed his own first-rounder, and he waited 144 picks to do it.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">3</div>
+          <div><h3 class="tname">Purdy Seconds to Mars</h3><div class="towner">Ben T</div></div>
+          <div class="metric"><b>4.0</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Bijan Robinson</span><span class="pl"><i>RB</i>Cam Skattebo</span><span class="pl"><i>WR</i>Rashee Rice</span><span class="pl"><i>WR</i>Terry McLaurin</span><span class="pl"><i>TE</i>Trey McBride</span><span class="pl"><i>FLEX</i>Courtland Sutton</span><span class="pl"><i>QB</i>Brock Purdy</span></div>
+        <p class="verdict">Has the best top-end in the league and the composite knows it — first by average starter ADP, and only fifth once depth and positional value get a vote. Bijan Robinson at two and Trey McBride at 23 are two of the five best assets drafted. The trouble starts at the back of the lineup. Brock Purdy at 95 is the weakest quarterback among the top four teams, Tyler Shough is not a real contingency, and the Josh Jacobs stash at 98 was always a lottery ticket rather than a roster piece. This is a team that wins on the strength of three players and needs all three healthy.</p>
+        <div class="super"><b>The Faithful</b>Brock Purdy, Deebo Samuel and Eddy Piñeiro — a quarterback, a receiver and a kicker from the same franchise. Nobody else in the league drafted three positions off one NFL roster.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">4</div>
+          <div><h3 class="tname">Mason's Team</h3><div class="towner">Mason Morgan</div></div>
+          <div class="metric"><b>4.25</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Derrick Henry</span><span class="pl"><i>RB</i>Jaylen Warren</span><span class="pl"><i>WR</i>Ja'Marr Chase</span><span class="pl"><i>WR</i>George Pickens</span><span class="pl"><i>TE</i>Kyle Pitts Sr.</span><span class="pl"><i>FLEX</i>Luther Burden III</span><span class="pl"><i>QB</i>Dak Prescott</span></div>
+        <p class="verdict">Second by positional value over replacement, tenth by median starter — the most top-heavy profile in the league after Ben's. Ja'Marr Chase at three is the best receiver drafted, and George Pickens at 22 gives the room a second real piece. Then it thins fast: Jaylen Warren as RB2 and Kyle Pitts as the starting tight end are both projections rather than producers. The quarterback handling was the smartest part of this draft — Dak Prescott at 94 and Jared Goff at 166, a combined 88 slots of value at a position everyone else overpaid for.</p>
+        <div class="super"><b>Never Paid for a Quarterback</b>Dak Prescott at 94 and Jared Goff at 166: two starting-caliber quarterbacks acquired a combined 88 slots past their ADP, while the rest of the league spent picks 25 through 100 on the position.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">5</div>
+          <div><h3 class="tname">LaPorta-pottys</h3><div class="towner">Jackson Helling</div></div>
+          <div class="metric"><b>5.5</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Jeremiyah Love</span><span class="pl"><i>RB</i>Breece Hall</span><span class="pl"><i>WR</i>Amon-Ra St. Brown</span><span class="pl"><i>WR</i>Drake London</span><span class="pl"><i>TE</i>Sam LaPorta</span><span class="pl"><i>FLEX</i>Marvin Harrison Jr.</span><span class="pl"><i>QB</i>Drake Maye</span></div>
+        <p class="verdict">Second-best median starter in the league, tenth on depth — a roster of good players with almost nothing behind them. Amon-Ra St. Brown at six and Drake London falling to 19 is the strongest receiver start anyone managed. Drake Maye at 54 was fair, and Breece Hall paired with Braelon Allen is a smart handcuff nobody else in the top half bothered with. The cost of the LaPorta bit was 45 slots at a position that had already thinned, and seven receivers means the bench is full of players who cannot help the backfield.</p>
+        <div class="super"><b>Committed to the Bit</b>Named the team after Sam LaPorta, then reached 45 slots at pick 78 to actually get him — the largest reach at any position inside the top 100. Also took four straight receivers to close the middle rounds.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">6</div>
+          <div><h3 class="tname">michael's Monstrous Team</h3><div class="towner">michael prince</div></div>
+          <div class="metric"><b>5.75</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Jahmyr Gibbs</span><span class="pl"><i>RB</i>Bucky Irving</span><span class="pl"><i>WR</i>Chris Olave</span><span class="pl"><i>WR</i>Michael Wilson</span><span class="pl"><i>TE</i>Harold Fannin Jr.</span><span class="pl"><i>FLEX</i>Bhayshul Tuten</span><span class="pl"><i>QB</i>Josh Allen</span></div>
+        <p class="verdict">Third by starter ADP, ninth by value over replacement, and that gap is the whole story. Jahmyr Gibbs at 1.01 and Josh Allen at 25 are genuinely excellent. But the QB position only returns value once, and this roster spent three more picks there — Dart, Mahomes and Mayfield — while the receiver room got Michael Wilson and a 192nd-overall Keenan Allen. Mahomes at 145 and Mayfield at 169 were real bargains in isolation. In a league that starts one quarterback they are worth almost nothing until somebody trades for them, and nobody has to.</p>
+        <div class="super"><b>The QB Hoarder</b>Josh Allen, Jaxson Dart, Patrick Mahomes and Baker Mayfield. Four quarterbacks in a league that starts one. He also took the first quarterback and the first kicker off the board — nobody was earlier to a position all night.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">7</div>
+          <div><h3 class="tname">Ben's Brilliant Team</h3><div class="towner">Ben Elton</div></div>
+          <div class="metric"><b>6.5</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>D'Andre Swift</span><span class="pl"><i>RB</i>Tony Pollard</span><span class="pl"><i>WR</i>Jaxon Smith-Njigba</span><span class="pl"><i>WR</i>Zay Flowers</span><span class="pl"><i>TE</i>Brock Bowers</span><span class="pl"><i>FLEX</i>Parker Washington</span><span class="pl"><i>QB</i>Jayden Daniels</span></div>
+        <p class="verdict">Sixth on every single metric, which is its own kind of achievement — the most consistently average roster in the league. Brock Bowers at 20 was a 17-slot reach and the right kind, since tight end is the one position where a monopoly pays. Jaxon Smith-Njigba and Zay Flowers give the receiver room a firm floor. The backfield is the problem: D'Andre Swift and Tony Pollard are two committee backs pretending to be starters, and six drafted running backs is what it looks like when you know that. DK Metcalf at 101 was the best value of the middle rounds.</p>
+        <div class="super"><b>The Jacksonville Bureau</b>Three Jaguars and five AFC South players in total, a combined 83 slots ahead of market. Took the first tight end off the board at pick 20 and the very last defense at 188 — the widest spread between early and late in the league.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">8</div>
+          <div><h3 class="tname">Dake Bates</h3><div class="towner">Jake Danielson</div></div>
+          <div class="metric"><b>7.0</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Ashton Jeanty</span><span class="pl"><i>RB</i>Travis Etienne Jr.</span><span class="pl"><i>WR</i>Puka Nacua</span><span class="pl"><i>WR</i>DJ Moore</span><span class="pl"><i>TE</i>Tucker Kraft</span><span class="pl"><i>FLEX</i>Javonte Williams</span><span class="pl"><i>QB</i>Caleb Williams</span></div>
+        <p class="verdict">Third-best median starter, ninth on depth — the shape of a team that drafted well early and then stopped. Puka Nacua at four is a top-three asset and Ashton Jeanty at 21 was a full round of value. After that it is Javonte Williams and Travis Etienne competing to be trustworthy, Tucker Kraft at 69 as a mid-tier tight end, and Caleb Williams at 100 as the second-latest quarterback taken. Six running backs deep gives it the best chance in the league of one bench player forcing his way into the lineup.</p>
+        <div class="super"><b>The Backfield Run</b>Ashton Jeanty, Javonte Williams and Travis Etienne on three consecutive picks in rounds two through four — the earliest run on running backs anyone made — before circling back for three more. Six in total, tied for most in the league.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">9</div>
+          <div><h3 class="tname">Malik My Ballz</h3><div class="towner">skyler cortez</div></div>
+          <div class="metric"><b>8.75</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Chase Brown</span><span class="pl"><i>RB</i>Jonathon Brooks</span><span class="pl"><i>WR</i>CeeDee Lamb</span><span class="pl"><i>WR</i>DeVonta Smith</span><span class="pl"><i>TE</i>Tyler Warren</span><span class="pl"><i>FLEX</i>Christian Watson</span><span class="pl"><i>QB</i>Lamar Jackson</span></div>
+        <p class="verdict">Dead last by median starter, which is the metric that exposes it: CeeDee Lamb at nine and Chase Brown at 16 are excellent, and then the lineup falls off a cliff. Lamar Jackson at 40 was seventeen slots of value and the right way to handle the position. The RB2 is the issue — Jonathon Brooks at 81 is a projection with a real chance of returning nothing, and Jacory Croskey-Merritt and Tyler Allgeier are behind him. The most obedient draft in the league by ADP, which is a compliment to the process and not to the result.</p>
+        <div class="super"><b>Zero Maliks</b>Three Maliks came off the board — Nabers, Washington, Willis — and this roster took none of them. Also the most disciplined draft in the league at 14.8 average slots from ADP, and it ended perfectly: Tyler Loop at pick 184, ADP 184.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">10</div>
+          <div><h3 class="tname">Bingo Night</h3><div class="towner">Thomas Fowler</div></div>
+          <div class="metric"><b>9.25</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Saquon Barkley</span><span class="pl"><i>RB</i>Rhamondre Stevenson</span><span class="pl"><i>WR</i>A.J. Brown</span><span class="pl"><i>WR</i>Ladd McConkey</span><span class="pl"><i>TE</i>Travis Kelce</span><span class="pl"><i>FLEX</i>Jameson Williams</span><span class="pl"><i>QB</i>Jalen Hurts</span></div>
+        <p class="verdict">The 12-13 turn produced Saquon Barkley and A.J. Brown, and then the strategy took over: eight receivers, four backs, and a starting RB2 in Rhamondre Stevenson. In full PPR the receiver depth is genuinely valuable and the weekly floor will be high. The ceiling is the problem — this lineup has no path to a 160-point week unless Barkley scores three times. Travis Kelce at 132 was 24 slots of value and a 37-year-old tight end, which is the entire roster in one pick.</p>
+        <div class="super"><b>The Air Raid</b>Eight receivers, four running backs, in a field where half the league drafted five or more backs. Also the last manager to take a tight end, at pick 132, by which point the position had been picked over for eleven rounds.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">11</div>
+          <div><h3 class="tname">roadrunners</h3><div class="towner">Ricky Verastegui</div></div>
+          <div class="metric"><b>10.5</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>James Cook III</span><span class="pl"><i>RB</i>David Montgomery</span><span class="pl"><i>WR</i>Nico Collins</span><span class="pl"><i>WR</i>Malik Nabers</span><span class="pl"><i>TE</i>Colston Loveland</span><span class="pl"><i>FLEX</i>TreVeyon Henderson</span><span class="pl"><i>QB</i>Trevor Lawrence</span></div>
+        <p class="verdict">Last by depth, eleventh by median, and the most interesting draft in the league to argue about. Nico Collins at 18 and Malik Nabers at 31 are unambiguous values. Then there is everything else: Travis Hunter 103 slots early, MarShawn Lloyd 88 slots early, the Trevor Lawrence–Hunter stack, four Jaguars in total. A net −238 in captured value is what it costs to draft a thesis instead of a board. If the Jacksonville offense is real and Lloyd wins the Green Bay backfield, this finishes top three. If not, it finishes last.</p>
+        <div class="super"><b>Never Met a Board He Liked</b>Three of the ten biggest reaches in the draft belong here — Travis Hunter at +103, MarShawn Lloyd at +88, and a defense taken 23 slots early at pick 138, the first off the board. Net −238 in value captured.</div>
+      </article>
+      <article class="team">
+        <div class="team-head">
+          <div class="pos">12</div>
+          <div><h3 class="tname">Team Galakrond</h3><div class="towner">Neil Gibeaut</div></div>
+          <div class="metric"><b>11.0</b><span>Composite</span></div>
+        </div>
+        <div class="lineup"><span class="pl"><i>RB</i>Jonathan Taylor</span><span class="pl"><i>RB</i>Kenneth Walker III</span><span class="pl"><i>WR</i>Emeka Egbuka</span><span class="pl"><i>WR</i>Mike Evans</span><span class="pl"><i>TE</i>Mark Andrews</span><span class="pl"><i>FLEX</i>Quinshon Judkins</span><span class="pl"><i>QB</i>Justin Herbert</span></div>
+        <p class="verdict">Twelfth by starter ADP, twelfth by value over replacement, and worst in the league at −316 net slots. The backfield is legitimately good — Jonathan Taylor at eight, Kenneth Walker at 17, Quinshon Judkins at 41 is three startable backs and a trade asset. Everything else paid retail or worse. Justin Herbert at 80 was 31 slots early, Mark Andrews at 128 another six, and no receiver on the roster carries an ADP inside the top 35. Four Chargers is a lot of Chargers. Fix this with a trade, not the waiver wire.</p>
+        <div class="super"><b>Bolt Up</b>Four Chargers — Herbert, Quentin Johnston, Kimani Vidal, Cameron Dicker — 141 slots ahead of market between them, and seven AFC West players in total. The most concentrated, most expensive fandom in the draft.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ VALUES / REACHES ============ -->
+  <section id="values">
+    <p class="kicker">The board</p>
+    <h2>Steals and stretches</h2>
+    <p class="lede">Every pick measured against 12-team PPR ADP. A player taken later than the
+      market expected is a value; a player taken earlier is a reach. Kickers and defenses are
+      excluded — everybody waits on them, so the numbers there mean nothing.</p>
+
+    <div class="two">
+      <div class="panel">
+        <div class="panel-h"><span class="dot" style="background:var(--value)"></span>
+          <h3>Best values</h3></div>
+        <div class="pick"><div class="who"><div class="nm">Matthew Stafford</div>
+          <div class="sub">QB · pick 155 · ADP 77 · Lyudmil</div></div>
+          <div class="delta v">+78</div></div>
+        <div class="pick"><div class="who"><div class="nm">Dak Prescott</div>
+          <div class="sub">QB · pick 94 · ADP 69 · Mason</div></div>
+          <div class="delta v">+25</div></div>
+        <div class="pick"><div class="who"><div class="nm">Jared Goff</div>
+          <div class="sub">QB · pick 166 · ADP 103 · Mason</div></div>
+          <div class="delta v">+63</div></div>
+        <div class="pick"><div class="who"><div class="nm">Jerry Jeudy</div>
+          <div class="sub">WR · pick 179 · ADP 129 · Lyudmil</div></div>
+          <div class="delta v">+50</div></div>
+        <div class="pick"><div class="who"><div class="nm">Keenan Allen</div>
+          <div class="sub">WR · pick 192 · ADP 142 · michael</div></div>
+          <div class="delta v">+50</div></div>
+        <div class="pick"><div class="who"><div class="nm">Patrick Mahomes</div>
+          <div class="sub">QB · pick 145 · ADP 106 · michael</div></div>
+          <div class="delta v">+39</div></div>
+        <div class="pick"><div class="who"><div class="nm">DK Metcalf</div>
+          <div class="sub">WR · pick 101 · ADP 67 · Ben Elton</div></div>
+          <div class="delta v">+34</div></div>
+        <div class="pick"><div class="who"><div class="nm">Deebo Samuel Sr.</div>
+          <div class="sub">WR · pick 146 · ADP 113 · Ben T</div></div>
+          <div class="delta v">+33</div></div>
+      </div>
+
+      <div class="panel" id="reaches">
+        <div class="panel-h"><span class="dot" style="background:var(--reach)"></span>
+          <h3>Biggest reaches</h3></div>
+        <div class="pick"><div class="who"><div class="nm">Travis Hunter</div>
+          <div class="sub">WR · pick 127 · ADP 230 · Ricky</div></div>
+          <div class="delta r">−103</div></div>
+        <div class="pick"><div class="who"><div class="nm">Terrance Ferguson</div>
+          <div class="sub">TE · pick 135 · ADP 225 · kelly</div></div>
+          <div class="delta r">−90</div></div>
+        <div class="pick"><div class="who"><div class="nm">MarShawn Lloyd</div>
+          <div class="sub">RB · pick 79 · ADP 167 · Ricky</div></div>
+          <div class="delta r">−88</div></div>
+        <div class="pick"><div class="who"><div class="nm">Dontayvion Wicks</div>
+          <div class="sub">WR · pick 164 · ADP 237 · Ben Elton</div></div>
+          <div class="delta r">−73</div></div>
+        <div class="pick"><div class="who"><div class="nm">Kimani Vidal</div>
+          <div class="sub">RB · pick 137 · ADP 209 · Neil</div></div>
+          <div class="delta r">−72</div></div>
+        <div class="pick"><div class="who"><div class="nm">Chris Rodriguez Jr.</div>
+          <div class="sub">RB · pick 125 · ADP 191 · Ben Elton</div></div>
+          <div class="delta r">−66</div></div>
+        <div class="pick"><div class="who"><div class="nm">Tank Dell</div>
+          <div class="sub">WR · pick 133 · ADP 198 · Thomas</div></div>
+          <div class="delta r">−65</div></div>
+        <div class="pick"><div class="who"><div class="nm">Isiah Pacheco</div>
+          <div class="sub">RB · pick 113 · ADP 173 · Neil</div></div>
+          <div class="delta r">−60</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DISCIPLINE CHART ============ -->
+  <section id="discipline">
+    <p class="kicker">Process</p>
+    <h2>Who drafted the board, and who drafted their guys</h2>
+    <p class="lede">Net slots of value captured across every skill-position pick. Positive
+      means a manager consistently let players come to them; negative means they went and
+      got them. Neither is automatically right — but it is the clearest fingerprint of how
+      each person drafts.</p>
+
+    <div class="chart">
+      <div class="legend">
+        <span><i class="sw" style="background:var(--value)"></i> Took value as it fell</span>
+        <span><i class="sw" style="background:var(--reach)"></i> Drafted ahead of market</span>
+      </div>
+      <div id="bars"></div>
+      <div class="axis"><span>−320</span><span>0</span><span>+160</span></div>
+
+      <details class="table">
+        <summary>View as table</summary>
+        <table>
+          <thead><tr><th>Manager</th><th>Team</th><th class="num">Net slots</th><th class="num">Avg per pick</th></tr></thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ NOTES ============ -->
+  <section id="notes">
+    <p class="kicker">By the numbers</p>
+    <h2>Six numbers that explain the draft</h2>
+    <div class="notes" style="margin-top:20px">
+      <div class="note">
+        <div class="big">1.8</div>
+        <h4>The first round was chalk</h4>
+        <p>Twelve picks, an average miss of under two slots against ADP. The largest deviation
+          was Saquon Barkley going seven picks early at the turn. By round twelve the average
+          miss was 48.6 — the board stopped existing somewhere around the seventh.</p>
+      </div>
+      <div class="note">
+        <div class="big">4</div>
+        <h4>Quarterbacks, one starting slot</h4>
+        <p>michael prince drafted Josh Allen, Jaxson Dart, Patrick Mahomes and Baker Mayfield.
+          Mahomes at 145 and Mayfield at 169 were both real value, which is the defense. The
+          cost is three roster spots that cannot score points in a league that starts one QB.</p>
+      </div>
+      <div class="note">
+        <div class="big">8–4</div>
+        <h4>Bingo Night went all in on receivers</h4>
+        <p>Eight receivers to four running backs, the most lopsided build in the league, in a
+          field where six teams drafted five or more backs. In full PPR that is a coherent
+          strategy. It also means one running back injury away from starting a waiver add.</p>
+      </div>
+      <div class="note">
+        <div class="big">12</div>
+        <h4>The turn was worth having</h4>
+        <p>Thomas Fowler drew the twelfth pick, which in a snake means back-to-back selections
+          in every round. He opened with Saquon Barkley and A.J. Brown on consecutive picks and
+          closed by pairing a defense with a kicker. Eight pairs of decisions, no waiting.</p>
+      </div>
+      <div class="note">
+        <div class="big">20</div>
+        <h4>Bowers set the tight end market</h4>
+        <p>Brock Bowers came off the board at pick 20, seventeen slots early and first at the
+          position. Trey McBride followed three picks later. After those two the position
+          collapsed — Travis Kelce was still available at 132, and Mark Andrews at 128.</p>
+      </div>
+      <div class="note">
+        <div class="big">25</div>
+        <h4>Allen went first, and early</h4>
+        <p>Josh Allen at 25 was ten picks ahead of ADP and the first quarterback selected.
+          Nine more went in the next 75 picks. The managers who waited — Mason on Prescott at
+          94, Lyudmil on Stafford at 155 — paid a fraction for comparable production.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Draft data pulled from ESPN. Values benchmarked against 12-team PPR average draft
+      position. Rankings are a composite of four measures — starting-seven ADP, median starter ADP,
+      ten-player depth, and positional value over replacement — and are, by construction, a
+      measure of draft-day capital rather than of anything that has happened on a football
+      field. Josh Jacobs is excluded from roster calculations while he is on the commissioner's
+      exempt list. <a href="index.html">← Back to the league page</a></p>
+  </footer>
+
+</div>
+
+<script>
+const TEAMS = [
+  {owner:"Lyudmil Zdravkov", label:"Lyudmil", team:"Saquon My Dak",            net:141,  avg:-10.1},
+  {owner:"michael prince", label:"michael",   team:"michael's Monstrous Team", net:80,   avg:-5.7},
+  {owner:"Ben T", label:"Ben T.",            team:"Purdy Seconds to Mars",    net:68,   avg:-4.9},
+  {owner:"Mason Morgan", label:"Mason",     team:"Mason's Team",             net:-19,  avg:1.4},
+  {owner:"kelly brown", label:"kelly",      team:"Team evil",                net:-87,  avg:6.2},
+  {owner:"Thomas Fowler", label:"Thomas",    team:"Bingo Night",              net:-111, avg:8.5},
+  {owner:"skyler cortez", label:"skyler",    team:"Malik My Ballz",           net:-121, avg:8.6},
+  {owner:"Jake Danielson", label:"Jake",   team:"Dake Bates",               net:-172, avg:12.3},
+  {owner:"Ben Elton", label:"Ben E.",        team:"Ben's Brilliant Team",     net:-218, avg:15.6},
+  {owner:"Jackson Helling", label:"Jackson",  team:"LaPorta-pottys",           net:-226, avg:16.1},
+  {owner:"Ricky Verastegui", label:"Ricky", team:"roadrunners",              net:-238, avg:18.3},
+  {owner:"Neil Gibeaut", label:"Neil",     team:"Team Galakrond",           net:-316, avg:22.6},
+];
+
+// Zero sits where 0 falls on a −320…+160 domain.
+const MIN = -320, MAX = 160, SPAN = MAX - MIN;
+const zeroPct = ((0 - MIN) / SPAN) * 100;
+
+const bars = document.getElementById("bars");
+TEAMS.forEach(t => {
+  const pos = t.net >= 0;
+  const w = (Math.abs(t.net) / SPAN) * 100;
+  // Long bars carry their label inside; short ones outside, so the value can
+  // never collide with the name column at the left edge.
+  const inside = w > 14;
+  const row = document.createElement("div");
+  row.className = "row";
+  row.title = `${t.team} — ${t.owner}: ${t.net > 0 ? "+" : "−"}${Math.abs(t.net)} slots (${t.avg > 0 ? "+" : "−"}${Math.abs(t.avg)} per pick)`;
+  const txt = `${pos ? "+" : "−"}${Math.abs(t.net)}`;
+  let style;
+  if (inside) {
+    style = pos
+      ? `left:${zeroPct}%;width:${w}%;justify-content:flex-end;padding-right:8px;color:#fff`
+      : `left:${zeroPct - w}%;width:${w}%;justify-content:flex-start;padding-left:8px;color:#fff`;
+  } else {
+    style = pos
+      ? `left:calc(${zeroPct + w}% + 7px)`
+      : `right:calc(${100 - (zeroPct - w)}% + 7px)`;
+  }
+  row.innerHTML =
+    `<div class="lbl">${t.label}</div>
+     <div class="track">
+       <div class="zero" style="left:${zeroPct}%"></div>
+       <div class="bar ${pos ? "v" : "r"}" style="left:${pos ? zeroPct : zeroPct - w}%;width:${w}%"></div>
+       <div class="val" style="${style}">${txt}</div>
+     </div>`;
+  bars.appendChild(row);
+});
+
+const tbody = document.getElementById("tbody");
+TEAMS.forEach(t => {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td>${t.owner}</td><td>${t.team}</td>
+    <td class="num">${t.net > 0 ? "+" : ""}${t.net}</td>
+    <td class="num">${t.avg > 0 ? "+" : ""}${t.avg}</td>`;
+  tbody.appendChild(tr);
+});
+</script>
+</body>
+</html>
