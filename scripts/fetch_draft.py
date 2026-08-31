@@ -40,53 +40,70 @@ PRO_TEAMS = {
 }
 
 
-def fetch_players(season: int, player_ids: list[int]) -> dict[int, dict]:
-    """Look up drafted players in batches.
+def fetch_player_info(league_id: str, season: int, player_ids: list[int]) -> dict[int, dict]:
+    """Look up drafted players with ownership (ADP) and projected stats.
 
-    The players endpoint needs an x-fantasy-filter header; asking for all
-    players at once returns a very large payload, so we filter to just the
-    ids we drafted and page through them.
+    The bare /players endpoint returns names but no ADP or projections. Those
+    live behind the league endpoint's kona_player_info view, which needs an
+    x-fantasy-filter header naming the player ids we want.
     """
     out: dict[int, dict] = {}
-    url = f"{BASE}/seasons/{season}/players"
+    url = f"{BASE}/seasons/{season}/segments/0/leagues/{league_id}"
     cookies = _cookies()
 
-    for i in range(0, len(player_ids), 150):
-        chunk = player_ids[i : i + 150]
+    for i in range(0, len(player_ids), 100):
+        chunk = player_ids[i : i + 100]
         headers = dict(HEADERS)
         headers["x-fantasy-filter"] = json.dumps(
-            {"players": {"filterIds": {"value": chunk}, "limit": len(chunk)}}
+            {
+                "players": {
+                    "filterIds": {"value": chunk},
+                    "limit": len(chunk),
+                    "filterStatsForTopScoringPeriodIds": {
+                        "value": 0,
+                        "additionalValue": [f"00{season}", f"10{season}"],
+                    },
+                }
+            }
         )
         resp = requests.get(
             url,
-            params={"scoringPeriodId": 0, "view": "players_wl"},
+            params={"scoringPeriodId": 0, "view": "kona_player_info"},
             headers=headers,
             cookies=cookies,
             timeout=45,
         )
         if resp.status_code in (401, 403):
-            raise EspnAuthError(f"players endpoint returned {resp.status_code}")
+            raise EspnAuthError(f"kona_player_info returned {resp.status_code}")
         resp.raise_for_status()
 
-        for p in resp.json():
-            out[p["id"]] = p
-        print(f"  players {i + len(chunk)}/{len(player_ids)}")
+        payload = resp.json()
+        if isinstance(payload, list):
+            payload = payload[0]
+
+        for entry in payload.get("players", []):
+            player = entry.get("player") or {}
+            pid = player.get("id") or entry.get("id")
+            if pid:
+                out[pid] = player
+
+        print(f"  players {min(i + len(chunk), len(player_ids))}/{len(player_ids)}")
 
     return out
 
 
 def projected_total(player: dict, season: int) -> float | None:
     """Season-long projection: statSourceId 1 = projected, split 0 = full season."""
+    best = None
     for s in player.get("stats") or []:
-        if (
-            s.get("statSourceId") == 1
-            and s.get("statSplitTypeId") == 0
-            and s.get("seasonId") == season
-        ):
-            total = s.get("appliedTotal")
-            if total is not None:
-                return round(total, 1)
-    return None
+        if s.get("statSourceId") != 1 or s.get("statSplitTypeId") != 0:
+            continue
+        if s.get("seasonId") not in (season, str(season)):
+            continue
+        total = s.get("appliedTotal")
+        if total is not None:
+            best = max(best, total) if best is not None else total
+    return round(best, 1) if best is not None else None
 
 
 def main() -> int:
@@ -99,7 +116,7 @@ def main() -> int:
     print(f"Fetching draft for league {league_id}, season {season} ...")
     try:
         blob = fetch_league(
-            league_id, season, views=["mDraftDetail", "mTeam", "mSettings", "mRoster"]
+            league_id, season, views=["mDraftDetail", "mTeam", "mSettings"]
         )
     except EspnAuthError as exc:
         print(f"AUTH FAILED: {exc}", file=sys.stderr)
@@ -107,10 +124,10 @@ def main() -> int:
 
     draft = blob.get("draftDetail") or {}
     picks = draft.get("picks") or []
+    DATA_DIR.mkdir(exist_ok=True)
 
     if not picks:
         print("No draft picks found — has the league drafted yet?")
-        DATA_DIR.mkdir(exist_ok=True)
         (DATA_DIR / "draft.json").write_text(
             json.dumps(
                 {
@@ -130,17 +147,33 @@ def main() -> int:
     print(f"  {len(picks)} picks across {len(teams)} teams")
 
     player_ids = [p["playerId"] for p in picks if p.get("playerId")]
-    players = fetch_players(season, player_ids)
+    players = fetch_player_info(league_id, season, player_ids)
+
+    # Diagnostic: confirm the fields we depend on actually arrived.
+    sample = next(iter(players.values()), {})
+    print(
+        "  sample player keys:",
+        sorted(k for k in sample.keys() if k in ("ownership", "stats", "fullName")),
+    )
+    if sample.get("stats"):
+        print(
+            "  sample stat rows:",
+            [
+                (s.get("statSourceId"), s.get("statSplitTypeId"), s.get("seasonId"))
+                for s in sample["stats"][:6]
+            ],
+        )
 
     rows = []
     by_team = defaultdict(list)
 
     for pick in picks:
         pid = pick.get("playerId")
-        info = players.get(pid, {})
-        player = info.get("player", info) or {}
+        player = players.get(pid, {})
 
-        adp = ((player.get("ownership") or {}).get("averageDraftPosition"))
+        adp = (player.get("ownership") or {}).get("averageDraftPosition")
+        if adp is not None and adp <= 0:
+            adp = None
         overall = pick.get("overallPickNumber")
         # Positive delta = taken later than the market (value).
         # Negative delta = taken earlier than the market (reach).
@@ -159,6 +192,10 @@ def main() -> int:
             "pro_team": PRO_TEAMS.get(player.get("proTeamId"), "?"),
             "adp": round(adp, 1) if adp else None,
             "adp_delta": delta,
+            "percent_owned": round(
+                (player.get("ownership") or {}).get("percentOwned") or 0, 1
+            )
+            or None,
             "projected": projected_total(player, season),
             "keeper": bool(pick.get("keeper")),
             "bid": pick.get("bidAmount") or None,
@@ -172,6 +209,11 @@ def main() -> int:
         team_picks = by_team.get(tid, [])
         projected = [r["projected"] for r in team_picks if r["projected"]]
         deltas = [r["adp_delta"] for r in team_picks if r["adp_delta"] is not None]
+        starters = sorted(
+            (r for r in team_picks if r["projected"]),
+            key=lambda r: r["projected"],
+            reverse=True,
+        )[:9]
         team_summary.append(
             {
                 "team_id": tid,
@@ -180,6 +222,9 @@ def main() -> int:
                 "logo": team["logo"],
                 "picks": len(team_picks),
                 "projected_total": round(sum(projected), 1) if projected else None,
+                "projected_starters": round(sum(r["projected"] for r in starters), 1)
+                if starters
+                else None,
                 "avg_adp_delta": round(sum(deltas) / len(deltas), 2) if deltas else None,
                 "positions": {
                     pos: sum(1 for r in team_picks if r["position"] == pos)
@@ -188,35 +233,38 @@ def main() -> int:
             }
         )
 
-    team_summary.sort(
-        key=lambda t: t["projected_total"] or 0, reverse=True
-    )
+    team_summary.sort(key=lambda t: t["projected_starters"] or 0, reverse=True)
 
     out = {
         "season": season,
         "drafted": True,
         "league_name": (blob.get("settings") or {}).get("name", "Fantasy League"),
-        "draft_type": (
-            (blob.get("settings") or {}).get("draftSettings", {}).get("type")
-        ),
+        "draft_type": (blob.get("settings") or {}).get("draftSettings", {}).get("type"),
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "teams": team_summary,
         "picks": sorted(rows, key=lambda r: r["overall"] or 0),
     }
 
-    DATA_DIR.mkdir(exist_ok=True)
     (DATA_DIR / "draft.json").write_text(json.dumps(out, indent=2))
-    print(f"Wrote data/draft.json — {len(rows)} picks")
 
-    reaches = sorted(
-        [r for r in rows if r["adp_delta"] is not None], key=lambda r: r["adp_delta"]
+    have_adp = sum(1 for r in rows if r["adp"] is not None)
+    have_proj = sum(1 for r in rows if r["projected"] is not None)
+    print(
+        f"Wrote data/draft.json — {len(rows)} picks, "
+        f"{have_adp} with ADP, {have_proj} with projections"
     )
-    print("\nBiggest reaches:")
-    for r in reaches[:5]:
-        print(f"  {r['player']:<24} pick {r['overall']:>3}  ADP {r['adp']:>5}  {r['adp_delta']:+.1f}")
-    print("\nBest values:")
-    for r in reaches[-5:][::-1]:
-        print(f"  {r['player']:<24} pick {r['overall']:>3}  ADP {r['adp']:>5}  {r['adp_delta']:+.1f}")
+
+    if have_adp:
+        ranked = sorted(
+            (r for r in rows if r["adp_delta"] is not None),
+            key=lambda r: r["adp_delta"],
+        )
+        print("\nBiggest reaches:")
+        for r in ranked[:5]:
+            print(f"  {r['player']:<24} pick {r['overall']:>3}  ADP {r['adp']:>5}  {r['adp_delta']:+.1f}")
+        print("\nBest values:")
+        for r in ranked[-5:][::-1]:
+            print(f"  {r['player']:<24} pick {r['overall']:>3}  ADP {r['adp']:>5}  {r['adp_delta']:+.1f}")
 
     return 0
 
