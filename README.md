@@ -28,8 +28,8 @@ readable — that's normal for a rankings site, but worth knowing.
 Open your league on ESPN. The URL contains it:
 
 ```
-https://fantasy.espn.com/football/league?leagueId=123456
-                                                  ^^^^^^
+https://fantasy.espn.com/football/league?leagueId=1454969422
+                                                  ^^^^^^^^^^
 ```
 
 ### 3. Pull your ESPN cookies (private leagues only)
