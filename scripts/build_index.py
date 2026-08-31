@@ -19,6 +19,9 @@ WEEKS_DIR = ROOT / "docs" / "weeks"
 DATA_DIR = ROOT / "data"
 INDEX = ROOT / "docs" / "index.html"
 
+# Absolute base URL — link previews require absolute og:image URLs.
+SITE = "https://scoducks8.github.io/fantasy-power-rankings"
+
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.I | re.S)
 THEME_RE = re.compile(
     r'<meta\s+name=["\']theme-name["\']\s+content=["\'](.*?)["\']', re.I
@@ -119,6 +122,17 @@ def render(weeks: list[dict], latest: dict | None, recap: dict | None = None) ->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(league)} — Power Rankings</title>
+<meta name="description" content="Weekly fantasy football power rankings for {esc(league)}." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{esc(league)}" />
+<meta property="og:url" content="{SITE}/" />
+<meta property="og:title" content="{esc(league)} — Power Rankings" />
+<meta property="og:description" content="Weekly power rankings. New theme every week." />
+<meta property="og:image" content="{SITE}/og-league.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{SITE}/og-league.png" />
 <link rel="stylesheet" href="style.css">
 </head>
 <body>

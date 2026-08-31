@@ -19,6 +19,9 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 WEEKS_DIR = ROOT / "docs" / "weeks"
 
+# Absolute base URL — link previews require absolute og:image URLs.
+SITE = "https://scoducks8.github.io/fantasy-power-rankings"
+
 # Swap these four values and the whole page changes character.
 DEFAULT_PALETTE = {
     "bg": "#0e1116",
@@ -86,6 +89,17 @@ def render(data: dict, theme: str, palette: dict) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-name" content="{esc(theme)}">
 <title>Week {data['week']}: {esc(theme)}</title>
+<meta name="description" content="Week {data['week']} power rankings for {esc(data['league_name'])}." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="{esc(data['league_name'])}" />
+<meta property="og:url" content="{SITE}/weeks/week-{data['week']}.html" />
+<meta property="og:title" content="Week {data['week']}: {esc(theme)}" />
+<meta property="og:description" content="Power rankings for week {data['week']} of {esc(data['league_name'])}." />
+<meta property="og:image" content="{SITE}/og-league.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{SITE}/og-league.png" />
 <style>
   :root {{
     --bg: {palette['bg']};
