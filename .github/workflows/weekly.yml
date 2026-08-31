@@ -1,0 +1,47 @@
+name: Weekly power rankings
+
+on:
+  schedule:
+    # Tuesdays at 17:00 UTC = 10am Pacific during the season.
+    # Monday Night Football is final and ESPN has settled stats by then.
+    - cron: "0 17 * * 2"
+  workflow_dispatch: {}   # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write         # needed to commit the new week's data back
+
+jobs:
+  rankings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch ESPN data and build rankings
+        env:
+          LEAGUE_ID: ${{ vars.LEAGUE_ID }}
+          SEASON: ${{ vars.SEASON }}
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+        run: python scripts/update_week.py
+
+      - name: Rebuild the archive index
+        run: python scripts/build_index.py
+
+      - name: Commit the new week
+        run: |
+          git config user.name "power-rankings-bot"
+          git config user.email "actions@github.com"
+          git add data docs
+          if git diff --staged --quiet; then
+            echo "Nothing changed this run."
+          else
+            git commit -m "Week data: $(date -u +%Y-%m-%d)"
+            git push
+          fi
