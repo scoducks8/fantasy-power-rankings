@@ -227,6 +227,30 @@ def build_rankings(blob: dict, season: int, prev_path: Path | None = None,
     weeks = parse_weekly_results(blob, include_live=include_live)
     completed_week = max(weeks.keys()) if weeks else 0
     team_list = list(teams.values())
+
+    # ESPN's record.overall does not include a week until it settles it,
+    # which can be a day late. The weekly results are authoritative, so
+    # rebuild each team's record and points from them.
+    for team in team_list:
+        tid = team["team_id"]
+        w = l = d = 0
+        pf = pa = 0.0
+        for res in weeks.values():
+            r = res.get(tid)
+            if not r:
+                continue
+            pf += r["score"]
+            pa += r["opponent_score"]
+            if r["result"] == "W":
+                w += 1
+            elif r["result"] == "L":
+                l += 1
+            else:
+                d += 1
+        if w or l or d:
+            team.update(wins=w, losses=l, ties=d,
+                        points_for=round(pf, 2), points_against=round(pa, 2))
+
     W = weights_for(completed_week)
 
     for team in team_list:

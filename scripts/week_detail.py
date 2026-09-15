@@ -145,3 +145,39 @@ def update_history(history: list[dict], rankings: dict) -> list[dict]:
     history.append(entry)
     history.sort(key=lambda h: h["week"])
     return history
+
+
+def team_week_scores(detail: dict[int, dict]) -> dict[int, float]:
+    """Each team's score for the week, summed from its starting lineup.
+
+    ESPN's matchup totals sit at zero until it settles the scoring period,
+    but the per-player numbers are correct as soon as games end. Summing the
+    starters is therefore the reliable source for a same-night build.
+    """
+    return {
+        tid: round(sum(s.get("points") or 0.0 for s in d.get("starters", [])), 2)
+        for tid, d in detail.items()
+    }
+
+
+def apply_week_scores(blob: dict, week: int, scores: dict[int, float]) -> int:
+    """Write roster-derived totals back into the schedule.
+
+    Everything downstream — records, all-play, the power score — reads the
+    schedule, so patching it once keeps one source of truth.
+    """
+    patched = 0
+    for m in blob.get("schedule", []):
+        if m.get("matchupPeriodId") != week:
+            continue
+        home, away = m.get("home"), m.get("away")
+        if not home or not away:
+            continue
+        hs, as_ = scores.get(home.get("teamId")), scores.get(away.get("teamId"))
+        if hs is None or as_ is None:
+            continue
+        home["totalPoints"], away["totalPoints"] = hs, as_
+        if m.get("winner", "UNDECIDED") == "UNDECIDED":
+            m["winner"] = "HOME" if hs > as_ else "AWAY" if as_ > hs else "TIE"
+        patched += 1
+    return patched

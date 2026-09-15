@@ -21,7 +21,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from espn_client import fetch_league, EspnAuthError, HEADERS  # noqa: E402
 from power_rank import build_rankings, parse_teams  # noqa: E402
-from week_detail import parse_week, parse_matchups, update_history  # noqa: E402
+from week_detail import (parse_week, parse_matchups, update_history,  # noqa: E402
+                         team_week_scores, apply_week_scores)
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
@@ -61,6 +62,28 @@ def cache_image(url: str, subdir: str, name: str) -> str:
         return ""
 
 
+def fallback_avatar(label: str, subdir: str, name: str) -> str:
+    """Generate a lettered tile when a manager's logo cannot be fetched.
+
+    Some custom uploads sit behind an endpoint that refuses server-side
+    requests; a generated tile beats a broken image on the card.
+    """
+    initials = "".join(w[0] for w in label.split()[:2]).upper() or "?"
+    hue = sum(ord(c) for c in label) % 360
+    svg = (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96">'
+        f'<rect width="96" height="96" rx="18" fill="hsl({hue},32%,27%)"/>'
+        f'<text x="48" y="61" font-size="34" font-weight="700" '
+        f'fill="hsl({hue},48%,80%)" text-anchor="middle" '
+        f'font-family="Helvetica,Arial,sans-serif">{initials}</text></svg>'
+    )
+    target = IMG_DIR / subdir / f"{name}.svg"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(svg)
+    print(f"    generated tile for {label}")
+    return f"assets/{subdir}/{name}.svg"
+
+
 def main() -> int:
     league_id = os.environ.get("LEAGUE_ID")
     season = int(os.environ.get("SEASON", "2026"))
@@ -78,47 +101,37 @@ def main() -> int:
     DATA_DIR.mkdir(exist_ok=True)
     live = os.environ.get("INCLUDE_LIVE", "").lower() in ("1", "true", "yes")
 
-    if live:
-        # A week in progress needs mScoreboard for the running totals, and
-        # ESPN only fills them in when asked for that specific period.
-        current = (base.get("status") or {}).get("currentMatchupPeriod")
-        if current:
-            print(f"  live mode: refetching matchup period {current} ...")
-            base = fetch_league(
-                league_id, season,
-                views=["mTeam", "mMatchupScore", "mSettings", "mScoreboard"],
-                scoring_period=current,
-            )
-
-    preview = build_rankings(base, season, include_live=live)
-    week = preview["week"]
-    if week == 0:
-        print("No matchups with points on the board yet - nothing to rank.")
-        # Dump what ESPN actually sent so the next run does not have to guess.
-        sched = base.get("schedule") or []
-        print(f"  DIAG: schedule entries = {len(sched)}")
-        print(f"  DIAG: status = {base.get('status')}")
-        for m in sched[:3]:
-            print(f"  DIAG: period={m.get('matchupPeriodId')} winner={m.get('winner')}")
-            for side in ("home", "away"):
-                sd = m.get(side) or {}
-                pts = {k: v for k, v in sd.items() if "oint" in k.lower()}
-                print(f"         {side}: teamId={sd.get('teamId')} pointish={pts}")
+    week = (base.get("status") or {}).get("currentMatchupPeriod") or 0
+    if not week:
+        print("ESPN reports no current matchup period.", file=sys.stderr)
         return 0
-    if preview.get("provisional"):
-        print(f"  NOTE: week {week} still has unfinished games — "
-              "these numbers are provisional.")
 
-    prev = DATA_DIR / f"week-{week - 1}.json"
-    rankings = build_rankings(base, season, prev_path=prev, include_live=live)
-
-    # Second call: rosters for this scoring period carry the player-level data.
+    # Rosters first: the per-player numbers are correct as soon as games end,
+    # while ESPN's matchup totals can stay at zero for hours afterwards.
     print(f"Fetching week {week} rosters ...")
     detail_blob = fetch_league(
         league_id, season, views=["mRoster", "mTeam", "mMatchupScore"],
         scoring_period=week,
     )
     detail = parse_week(detail_blob, week)
+    scores = team_week_scores(detail)
+    scored = sum(1 for v in scores.values() if v > 0)
+    print(f"  {scored}/{len(scores)} teams have points on the board")
+
+    if scored == 0:
+        print("No player scoring yet for this week - nothing to rank.")
+        return 0
+
+    patched = apply_week_scores(base, week, scores)
+    print(f"  patched {patched} matchups with roster-derived totals")
+
+    prev = DATA_DIR / f"week-{week - 1}.json"
+    rankings = build_rankings(base, season, prev_path=prev, include_live=True)
+    if rankings["week"] != week:
+        print(f"  NOTE: ranking built through week {rankings['week']}")
+    if live:
+        rankings["provisional"] = True
+
     teams_map = parse_teams(base)
     matchups = parse_matchups(base, week, teams_map)
 
@@ -132,9 +145,9 @@ def main() -> int:
         t["bench_points"] = d.get("bench_points")
         t["projected_total"] = d.get("projected_total")
 
-        t["logo_local"] = cache_image(
-            t.get("logo", ""), "logos", f'{t["team_id"]}-{slugify(t["name"])}'
-        )
+        slug = f'{t["team_id"]}-{slugify(t["name"])}'
+        t["logo_local"] = (cache_image(t.get("logo", ""), "logos", slug)
+                           or fallback_avatar(t["owner"] or t["name"], "logos", slug))
         top = t.get("top_scorer")
         if top and top.get("headshot"):
             top["headshot_local"] = cache_image(
