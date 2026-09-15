@@ -44,7 +44,8 @@ def _cookies() -> dict[str, str]:
     return {"espn_s2": s2, "SWID": swid}
 
 
-def fetch_league(league_id: str, season: int, views: list[str] | None = None) -> dict:
+def fetch_league(league_id: str, season: int, views: list[str] | None = None,
+                 scoring_period: int | None = None) -> dict:
     """Fetch the league blob for a season.
 
     views control how much ESPN sends back. We ask for teams, per-matchup
@@ -53,6 +54,9 @@ def fetch_league(league_id: str, season: int, views: list[str] | None = None) ->
     views = views or ["mTeam", "mMatchupScore", "mSettings", "mStandings"]
     url = f"{BASE}/seasons/{season}/segments/0/leagues/{league_id}"
     params = [("view", v) for v in views]
+    if scoring_period is not None:
+        # mRoster returns the lineup and points for this specific week.
+        params.append(("scoringPeriodId", scoring_period))
 
     resp = requests.get(
         url, params=params, headers=HEADERS, cookies=_cookies(), timeout=30

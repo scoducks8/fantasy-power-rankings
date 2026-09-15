@@ -11,12 +11,28 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-WEIGHTS = {
-    "win_pct": 0.45,       # overall record - the primary signal
-    "momentum": 0.25,      # recency-weighted results over the last 3 weeks
-    "scoring": 0.20,       # points-for percentile vs the league
-    "luck": 0.10,          # all-play record minus actual record
-}
+# Weights ramp with sample size. In week 1 a record is one coin flip, so
+# points scored carries more of the signal; by week 6 record leads, which is
+# the priority order we want once it actually means something.
+#
+#            week 1                     week 6+
+#   record     0.25  ---------------->    0.45
+#   momentum   0.10  ---------------->    0.25
+#   scoring    0.55  ---------------->    0.20
+#   luck       0.10  (constant)           0.10
+WEIGHT_START = {"win_pct": 0.25, "momentum": 0.10, "scoring": 0.55, "luck": 0.10}
+WEIGHT_MATURE = {"win_pct": 0.45, "momentum": 0.25, "scoring": 0.20, "luck": 0.10}
+RAMP_WEEKS = 6
+
+
+def weights_for(week: int) -> dict[str, float]:
+    """Blend from the small-sample weighting to the mature one."""
+    r = min(1.0, max(0.0, (week - 1) / (RAMP_WEEKS - 1)))
+    return {k: round(WEIGHT_START[k] + (WEIGHT_MATURE[k] - WEIGHT_START[k]) * r, 4)
+            for k in WEIGHT_START}
+
+
+WEIGHTS = WEIGHT_MATURE  # kept for anything importing the old name
 
 MOMENTUM_DECAY = [0.5, 0.3, 0.2]  # most recent week first
 
@@ -61,18 +77,28 @@ def parse_teams(blob: dict) -> dict[int, dict]:
     return teams
 
 
-def parse_weekly_results(blob: dict) -> dict[int, dict[int, dict]]:
+def parse_weekly_results(blob: dict, include_live: bool = False) -> dict[int, dict[int, dict]]:
     """Map week -> team_id -> {score, opponent_id, result}.
 
-    Only completed matchups are included. Bye weeks (matchups with no away
-    side) are skipped rather than counted as a win.
+    Completed matchups always count. With include_live, a week still in
+    progress counts too — the result is derived from the scores on the board
+    rather than from ESPN's winner flag, so a page can be built on Monday
+    night and refreshed once the last game is final.
+
+    Bye weeks (matchups with no away side) are skipped rather than counted.
     """
     weeks: dict[int, dict[int, dict]] = {}
 
     for m in blob.get("schedule", []):
         winner = m.get("winner", "UNDECIDED")
         if winner == "UNDECIDED":
-            continue
+            if not include_live:
+                continue
+            h, a = m.get("home") or {}, m.get("away") or {}
+            hp, ap = h.get("totalPoints", 0.0), a.get("totalPoints", 0.0)
+            if hp <= 0 and ap <= 0:
+                continue  # not started — nothing to rank on
+            winner = "HOME" if hp > ap else "AWAY" if ap > hp else "TIE"
 
         home, away = m.get("home"), m.get("away")
         if not home or not away:
@@ -182,11 +208,13 @@ def all_play_pct(team_id: int, weeks: dict[int, dict[int, dict]]) -> float:
 # Assembly
 # --------------------------------------------------------------------------
 
-def build_rankings(blob: dict, season: int, prev_path: Path | None = None) -> dict:
+def build_rankings(blob: dict, season: int, prev_path: Path | None = None,
+                   include_live: bool = False) -> dict:
     teams = parse_teams(blob)
-    weeks = parse_weekly_results(blob)
+    weeks = parse_weekly_results(blob, include_live=include_live)
     completed_week = max(weeks.keys()) if weeks else 0
     team_list = list(teams.values())
+    W = weights_for(completed_week)
 
     for team in team_list:
         tid = team["team_id"]
@@ -206,10 +234,10 @@ def build_rankings(blob: dict, season: int, prev_path: Path | None = None) -> di
             "luck": round(luck, 4),
         }
         team["power_score"] = round(
-            WEIGHTS["win_pct"] * wp
-            + WEIGHTS["momentum"] * mo
-            + WEIGHTS["scoring"] * sc
-            + WEIGHTS["luck"] * luck,
+            W["win_pct"] * wp
+            + W["momentum"] * mo
+            + W["scoring"] * sc
+            + W["luck"] * luck,
             4,
         )
 
@@ -237,9 +265,10 @@ def build_rankings(blob: dict, season: int, prev_path: Path | None = None) -> di
     return {
         "season": season,
         "week": completed_week,
+        "provisional": bool(include_live and _has_open_games(blob, completed_week)),
         "league_name": (blob.get("settings") or {}).get("name", "Fantasy League"),
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "weights": WEIGHTS,
+        "weights": W,
         "teams": team_list,
     }
 
@@ -253,3 +282,9 @@ def _load_previous(path: Path | None) -> dict[int, int]:
     except json.JSONDecodeError:
         return {}
     return {t["team_id"]: t["rank"] for t in data.get("teams", []) if "rank" in t}
+
+
+def _has_open_games(blob: dict, week: int) -> bool:
+    """True while any matchup in the week is still unfinished."""
+    return any(m.get("matchupPeriodId") == week and m.get("winner") == "UNDECIDED"
+               for m in blob.get("schedule", []))

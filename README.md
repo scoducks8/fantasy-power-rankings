@@ -6,10 +6,17 @@ pulls the data every Tuesday; the weekly page gets a fresh theme by hand.
 ## How it fits together
 
 ```
-data/week-N.json      <- written automatically every Tuesday
-docs/weeks/week-N.html <- the themed page, written by hand from that data
+data/week-N.json       <- written automatically every Tuesday (scores, lineups,
+                          per-player points, matchups, positional splits)
+data/history.json      <- rank per team per week; feeds the season line chart
+docs/assets/logos/     <- cached manager avatars
+docs/assets/players/   <- cached player headshots
+docs/weeks/week-N.html <- the themed page, generated then hand-edited
 docs/index.html        <- the hub, regenerated automatically
 ```
+
+Images are cached into the repo rather than hotlinked, so an archived week keeps
+the pictures it shipped with even if somebody changes their logo in week 10.
 
 The data layer and the presentation layer are deliberately separate. The
 scripts never touch the themed pages, so a bad week of copy can't break the
@@ -68,11 +75,13 @@ Tuesday morning the workflow runs on its own and commits
 `data/week-N.json`. Then:
 
 ```bash
-python scripts/new_week.py --week 5 --theme "Lord of the Rings"
+python scripts/render_week.py --week 5 --theme "Lord of the Rings"
 ```
 
-That scaffolds `docs/weeks/week-5.html` with every team's real numbers in
-place and a commentary slot per team. Edit the palette at the top and write
+That builds `docs/weeks/week-5.html` with the results board, ranked team cards
+(manager avatars, top-scorer headshots, positional split bars), scoring by
+position, and the season rank line — all from that week's data. Then write the
+hero paragraph and the twelve takes. Edit the palette at the top and write
 the takes. Then:
 
 ```bash
@@ -95,7 +104,7 @@ python scripts/update_week.py
 
 ```bash
 python scripts/mock_league.py --weeks 5
-python scripts/new_week.py --week 5 --theme "Test Theme"
+python scripts/render_week.py --week 5 --theme "Test Theme"
 python scripts/build_index.py
 open docs/index.html
 ```

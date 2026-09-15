@@ -5,10 +5,15 @@ on:
     # Tuesdays at 17:00 UTC = 10am Pacific during the season.
     # Monday Night Football is final and ESPN has settled stats by then.
     - cron: "0 17 * * 2"
-  workflow_dispatch: {}   # lets you run it by hand from the Actions tab
+  workflow_dispatch:
+    inputs:
+      include_live:
+        description: "Include games still in progress (provisional numbers)"
+        type: boolean
+        default: false
 
 permissions:
-  contents: write         # needed to commit the new week's data back
+  contents: write
 
 jobs:
   rankings:
@@ -29,6 +34,7 @@ jobs:
           SEASON: ${{ vars.SEASON }}
           ESPN_S2: ${{ secrets.ESPN_S2 }}
           ESPN_SWID: ${{ secrets.ESPN_SWID }}
+          INCLUDE_LIVE: ${{ inputs.include_live }}
         run: python scripts/update_week.py
 
       - name: Rebuild the archive index
