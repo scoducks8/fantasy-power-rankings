@@ -183,6 +183,12 @@ def render(data, history, theme="Week One", copy=None):
 
     skin_css = load_skin(SKIN)
 
+    # A week uses its own preview card when one exists, else the league image.
+    card = ROOT_DATA.parent / "docs" / f"og-week-{data['week']}.png"
+    og_img = f"og-week-{data['week']}.png" if card.exists() else "og-league.png"
+    og_title = copy.get("og_title") or f"Week {data['week']}: {theme}"
+    og_desc = copy.get("og_description") or copy.get("standfirst", "")[:200]
+
     # Ticker copy: scores first, then the week's outliers. The default skin
     # hides it; a broadcast-style skin scrolls it along the bottom.
     hi = max(teams, key=lambda t: t["points_for"])
@@ -203,8 +209,19 @@ def render(data, history, theme="Week One", copy=None):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-name" content="{e(theme)}" />
 <title>Week {data['week']}: {e(theme)}</title>
-<meta property="og:image" content="{SITE}/og-league.png" />
+<meta name="description" content="{e(og_desc)}" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="{e(data['league_name'])}" />
+<meta property="og:url" content="{SITE}/weeks/week-{data['week']}.html" />
+<meta property="og:title" content="{e(og_title)}" />
+<meta property="og:description" content="{e(og_desc)}" />
+<meta property="og:image" content="{SITE}/{og_img}" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{e(og_title)}" />
+<meta name="twitter:description" content="{e(og_desc)}" />
+<meta name="twitter:image" content="{SITE}/{og_img}" />
 <style>{skin_css}</style>
 </head>
 <body>
@@ -251,15 +268,15 @@ def render(data, history, theme="Week One", copy=None):
 
   <section id="season">
     <p class="sk">The long view</p><h2>Power ranking by week</h2>
-    <p class="sl">Rank one at the top. One column today; by October this is the chart
+    <p class="sl">Rank one at the top. One column tonight; by October this is the chart
       that shows who is actually trending.</p>
     <div class="chart">
       <svg viewBox="0 0 {W} {H}" width="100%" role="img" aria-label="rank by week">{svg}</svg>
-      <p class="cnote">One week in — every Tuesday adds a column.</p>
+      <p class="cnote">One week in. Every Monday night adds a column.</p>
     </div>
   </section>
 
-  <footer><p>Data pulled from ESPN every Tuesday morning.
+  <footer><p>Data pulled from ESPN on Monday night, once the last game is final.
     <a href="../index.html" style="color:var(--muted)">← All weeks</a></p></footer>
 </div>
 
