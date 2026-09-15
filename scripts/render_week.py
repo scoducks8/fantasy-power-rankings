@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).parent
+ROOT_DATA = HERE.parent / "data"
 SITE = "https://scoducks8.github.io/fantasy-power-rankings"
 
 POS_COLOR = {"QB": "#3987e5", "RB": "#d95926", "WR": "#199e70",
@@ -25,6 +26,19 @@ POS_ORDER = ["QB", "RB", "WR", "TE", "K", "D/ST"]
 
 e = html.escape
 PLACEHOLDER = False
+SKIN = "default"
+
+
+def load_skin(name: str) -> str:
+    """A skin is just a stylesheet using the same class names.
+
+    The markup never changes between weeks; only the look does. That keeps a
+    themed week from forking the generator.
+    """
+    path = HERE / "skins" / f"{name}.css"
+    if not path.exists():
+        raise SystemExit(f"No skin at {path}")
+    return path.read_text()
 
 
 def _ph(seed, kind="av"):
@@ -51,6 +65,13 @@ def img(url, seed, kind="av"):
     return _ph(seed, kind) if PLACEHOLDER else url
 
 
+def asset(local: str, remote: str, seed: str, kind: str = "av") -> str:
+    """Prefer the copy cached in the repo; the page lives one level down."""
+    if PLACEHOLDER:
+        return _ph(seed, kind)
+    return f"../{local}" if local else (remote or "")
+
+
 def short_names(teams):
     """First names, with a last initial only where two managers collide."""
     first = {}
@@ -65,7 +86,19 @@ def short_names(teams):
     return out
 
 
-def render(data, history, theme="Week One"):
+def load_copy(week: int) -> dict:
+    """Hand-written copy for the week, kept beside the data.
+
+    The generator owns numbers and layout; this file owns the words. Keeping
+    them apart means re-running the generator never eats your writing.
+    """
+    path = ROOT_DATA / f"copy-week-{week}.json"
+    return json.loads(path.read_text()) if path.exists() else {}
+
+
+def render(data, history, theme="Week One", copy=None):
+    copy = copy or {}
+    takes = copy.get("takes", {})
     teams = data["teams"]
     mus = data["matchups"]
     SH = short_names(teams)
@@ -101,7 +134,7 @@ def render(data, history, theme="Week One"):
         cards += f'''      <article class="w{' lead' if t['rank']==1 else ''}">
         <header>
           <span class="wr">{t['rank']}</span>
-          <img class="wav" src="{e(img(t['logo'], t['owner']))}" alt="" loading="lazy">
+          <img class="wav" src="{e(asset(t.get("logo_local",""), t.get("logo",""), t["owner"]))}" alt="" loading="lazy">
           <div class="wt"><h3>{e(t['name'])}{chip}</h3><span>{e(t['owner'])}</span></div>
           <span class="wp">{t['points_for']:.1f}
             <i>{t['wins']}-{t['losses']} · {'+' if t['points_for']-t['projected_total']>=0 else ''}{t['points_for']-t['projected_total']:.1f} vs proj</i>
@@ -109,9 +142,9 @@ def render(data, history, theme="Week One"):
         </header>
         <div class="wbar">{seg}</div>
         <div class="wmain">
-          <figure><img src="{e(img(top['headshot'], top['name'], 'hs'))}" alt="" loading="lazy">
+          <figure><img src="{e(asset(top.get("headshot_local",""), top.get("headshot",""), top["name"], "hs"))}" alt="" loading="lazy">
             <figcaption><b>{top['points']:.1f}</b><span>{e(top['name'])}</span></figcaption></figure>
-          <p>Write this team's take here.</p>
+          <p>{e(takes.get(str(t["team_id"]), "Write this team's take here."))}</p>
         </div>
       </article>'''
 
@@ -148,6 +181,21 @@ def render(data, history, theme="Week One"):
     svg += "".join(f'<text x="{L-9}" y="{fy(r)+4:.1f}" fill="#6b7683" font-size="10" '
                    f'text-anchor="end">{r}</text>' for r in (1, 6, 12) if r <= n)
 
+    skin_css = load_skin(SKIN)
+
+    # Ticker copy: scores first, then the week's outliers. The default skin
+    # hides it; a broadcast-style skin scrolls it along the bottom.
+    hi = max(teams, key=lambda t: t["points_for"])
+    lo = min(teams, key=lambda t: t["points_for"])
+    ticker_items = [f'{e(SH[m["away_id"]])} {m["away_score"]:.1f} — '
+                    f'{e(SH[m["home_id"]])} {m["home_score"]:.1f}' for m in mus]
+    ticker_items += [
+        f'HIGH: {e(SH[hi["team_id"]])} {hi["points_for"]:.1f}',
+        f'LOW: {e(SH[lo["team_id"]])} {lo["points_for"]:.1f}',
+        f'CLOSEST: {mus[0]["margin"]:.1f} PTS',
+    ]
+    ticker = "".join(f'<span>{it}</span>' for it in ticker_items)
+
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -157,120 +205,7 @@ def render(data, history, theme="Week One"):
 <title>Week {data['week']}: {e(theme)}</title>
 <meta property="og:image" content="{SITE}/og-league.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<style>
-:root{{--bg:#080a0e;--card:#111420;--card2:#0c0f18;--ink:#f2f5f9;--muted:#98a2b1;
- --dim:#68717f;--line:#1b2231;--accent:#9fb0ff;--up:#13d18b;--down:#ff6b6b}}
-*{{box-sizing:border-box}}
-body{{margin:0;background:var(--bg);color:var(--ink);
- font:500 16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
- -webkit-font-smoothing:antialiased}}
-img{{max-width:100%}}
-.bar{{position:sticky;top:0;z-index:30;background:rgba(8,10,14,.93);
- backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}}
-.bar-in{{max-width:1040px;margin:0 auto;padding:11px 20px;display:flex;
- justify-content:space-between;align-items:center;gap:16px}}
-.bm{{font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}}
-.bn{{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none}}
-.bn::-webkit-scrollbar{{display:none}}
-.bn a{{color:var(--muted);text-decoration:none;font-size:13px;font-weight:600;white-space:nowrap}}
-
-/* hero */
-.hero{{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}}
-.hero-in{{max-width:1040px;margin:0 auto;padding:44px 20px 36px;
- display:grid;grid-template-columns:1fr 300px;gap:36px;align-items:center}}
-.hk{{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.18em;
- text-transform:uppercase;color:var(--accent)}}
-h1{{margin:0;font-size:clamp(32px,5.6vw,58px);line-height:1.02;letter-spacing:-.03em;font-weight:800}}
-.hs{{margin:16px 0 0;color:#c9cfdb;font-size:17.5px;max-width:56ch}}
-.hero figure{{margin:0;position:relative}}
-.hero figure img{{width:100%;border-radius:18px;border:1px solid var(--line);
- background:var(--card2);display:block}}
-.hcap{{position:absolute;left:0;right:0;bottom:0;padding:16px;border-radius:0 0 18px 18px;
- background:linear-gradient(transparent,rgba(8,10,14,.94))}}
-.hcap b{{display:block;font-size:30px;font-weight:800;letter-spacing:-.02em;
- font-variant-numeric:tabular-nums;line-height:1}}
-.hcap span{{display:block;margin-top:3px;font-size:13px;color:var(--muted)}}
-
-.wrap{{max-width:1040px;margin:0 auto;padding:0 20px 80px}}
-section{{padding:46px 0 0}}
-.sk{{margin:0 0 6px;font-size:12px;font-weight:800;letter-spacing:.16em;
- text-transform:uppercase;color:var(--accent)}}
-h2{{margin:0;font-size:clamp(23px,4.4vw,34px);letter-spacing:-.025em;font-weight:800}}
-.sl{{margin:9px 0 22px;color:var(--muted);max-width:66ch}}
-
-/* results strip */
-.strip{{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}}
-.res{{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:12px 14px}}
-.res.tight{{border-color:rgba(251,191,36,.4)}}
-.rr{{display:flex;justify-content:space-between;gap:10px;padding:4px 0;
- font-size:13.5px;color:var(--muted)}}
-.rr span{{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
-.rr b{{font-variant-numeric:tabular-nums;font-weight:700}}
-.rr.w{{color:var(--ink)}} .rr.w b{{color:var(--up)}}
-.rm{{margin-top:7px;padding-top:7px;border-top:1px solid var(--line);
- font-size:11.5px;color:var(--dim)}}
-
-/* write-ups */
-.ws{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}
-.w{{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:15px}}
-.w.lead{{grid-column:1/-1;border-color:rgba(159,176,255,.42)}}
-.w header{{display:grid;grid-template-columns:26px 40px 1fr auto;gap:10px;align-items:center}}
-.wr{{font-size:21px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}}
-.wav{{width:40px;height:40px;border-radius:11px;object-fit:cover;
- border:1px solid var(--line);background:var(--card2)}}
-.wt h3{{margin:0;font-size:15.5px;font-weight:700;letter-spacing:-.01em}}
-.wt span{{font-size:12px;color:var(--muted)}}
-.wp{{font-size:19px;font-weight:800;font-variant-numeric:tabular-nums;text-align:right}}
-.wp i{{display:block;font-style:normal;font-size:10.5px;font-weight:600;color:var(--dim);
- letter-spacing:.01em;margin-top:2px;white-space:nowrap}}
-.mv{{margin-left:7px;font-size:11px;font-weight:800}}
-.mv.up{{color:var(--up)}} .mv.dn{{color:var(--down)}}
-.wbar{{display:flex;gap:2px;height:6px;margin:11px 0 0;border-radius:3px;overflow:hidden}}
-.wbar span{{display:block}}
-.wmain{{display:grid;grid-template-columns:84px 1fr;gap:13px;margin-top:13px;align-items:start}}
-.wmain figure{{margin:0}}
-.wmain figure img{{width:84px;height:84px;border-radius:12px;object-fit:cover;
- object-position:top center;border:1px solid var(--line);background:var(--card2)}}
-.wmain figcaption{{margin-top:5px}}
-.wmain figcaption b{{display:block;font-size:15px;font-variant-numeric:tabular-nums}}
-.wmain figcaption span{{font-size:11px;color:var(--dim);line-height:1.3;display:block}}
-.wmain p{{margin:0;color:#c9cfdb;font-size:14.5px;line-height:1.6}}
-.w.lead .wmain{{grid-template-columns:120px 1fr}}
-.w.lead .wmain figure img{{width:120px;height:120px}}
-
-/* charts */
-.chart{{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:20px}}
-.lg{{display:flex;flex-wrap:wrap;gap:15px;margin-bottom:16px;font-size:12px;color:var(--muted)}}
-.lg span{{display:inline-flex;align-items:center;gap:6px}}
-.lg i{{width:11px;height:11px;border-radius:3px;display:block}}
-.prow{{display:grid;grid-template-columns:74px 1fr 52px;gap:11px;align-items:center;padding:5px 0}}
-.plbl{{font-size:12.5px;color:var(--muted);text-align:right;white-space:nowrap;
- overflow:hidden;text-overflow:ellipsis}}
-.ptrack{{display:flex;gap:2px;height:20px}}
-.ptrack span{{display:block;border-radius:2px}}
-.ptrack span:first-child{{border-radius:5px 2px 2px 5px}}
-.ptrack span:last-child{{border-radius:2px 5px 5px 2px}}
-.pval{{font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:700}}
-.cnote{{margin:14px 0 0;font-size:12.5px;color:var(--dim)}}
-
-footer{{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
- color:var(--dim);font-size:13px}}
-
-@media (max-width:900px){{
-  .hero-in{{grid-template-columns:1fr;gap:24px}}
-  .hero figure{{max-width:280px}}
-  .strip{{grid-template-columns:1fr 1fr}}
-  .ws{{grid-template-columns:1fr}}
-  .w.lead .wmain{{grid-template-columns:84px 1fr}}
-  .w.lead .wmain figure img{{width:84px;height:84px}}
-}}
-@media (max-width:560px){{
-  .strip{{grid-template-columns:1fr}}
-  .prow{{grid-template-columns:58px 1fr 46px}}
-  td.tm i{{display:none}}
-  th:nth-child(6),td:nth-child(6){{display:none}}
-}}
-</style>
+<style>{skin_css}</style>
 </head>
 <body>
 <div class="bar"><div class="bar-in">
@@ -281,12 +216,11 @@ footer{{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
 <header class="hero"><div class="hero-in">
   <div>
     <p class="hk">Week {data['week']} · {e(theme)}</p>
-    <h1>Opening weekend, and the board already looks nothing like the draft.</h1>
-    <p class="hs">Write the week's framing here — the theme, the storyline, the game
-      everyone is still arguing about on Tuesday morning.</p>
+    <h1>{e(copy.get("headline", "Opening weekend, and the board already looks nothing like the draft."))}</h1>
+    <p class="hs">{e(copy.get("standfirst", "Write the week's framing here."))}</p>
   </div>
   <figure>
-    <img src="{e(img(best['headshot'], best['name'], 'hs'))}" alt="{e(best['name'])}" />
+    <img src="{e(asset(best.get("headshot_local",""), best.get("headshot",""), best["name"], "hs"))}" alt="{e(best['name'])}" />
     <figcaption class="hcap"><b>{best['points']:.1f}</b>
       <span>{e(best['name'])} · {e(SH[best_team['team_id']])}'s best</span></figcaption>
   </figure>
@@ -295,7 +229,7 @@ footer{{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
 <div class="wrap">
   <section id="scores">
     <p class="sk">The slate</p><h2>Week {data['week']} results</h2>
-    <p class="sl">Closest game first. Gold border means it was decided by under ten.</p>
+    <p class="sl">{e(copy.get("lede_scores", "Closest game first. Gold border means it was decided by under ten."))}</p>
     <div class="strip">
 {strip}
     </div>
@@ -303,7 +237,7 @@ footer{{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
 
   <section id="teams">
     <p class="sk">Power rankings</p><h2>Every team, ranked</h2>
-    <p class="sl">The bar under each name splits that team's score by position.</p>
+    <p class="sl">{e(copy.get("lede_rankings", "The bar under each name splits that team's score by position."))}</p>
     <div class="ws">
 {cards}
     </div>
@@ -311,8 +245,7 @@ footer{{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
 
   <section id="positions">
     <p class="sk">Where the points came from</p><h2>Scoring by position</h2>
-    <p class="sl">Long orange means the backfield carried it. Long green means the
-      receivers did.</p>
+    <p class="sl">{e(copy.get("lede_positions", "Long orange means the backfield carried it."))}</p>
     <div class="chart"><div class="lg">{legend}</div>{prow}</div>
   </section>
 
@@ -329,6 +262,8 @@ footer{{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);
   <footer><p>Data pulled from ESPN every Tuesday morning.
     <a href="../index.html" style="color:var(--muted)">← All weeks</a></p></footer>
 </div>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-in">{ticker}{ticker}</div></div>
 </body>
 </html>
 '''
@@ -343,10 +278,13 @@ def main():
                     help="overwrite an existing page for this week")
     ap.add_argument("--placeholders", action="store_true",
                     help="local stand-in images, for previewing without CDN access")
+    ap.add_argument("--skin", default="default",
+                    help="stylesheet in scripts/skins/ — the week's look")
     ap.add_argument("--out", default="")
     a = ap.parse_args()
 
     globals()["PLACEHOLDER"] = a.placeholders
+    globals()["SKIN"] = a.skin
 
     root = HERE.parent
     data_path = root / "data" / f"week-{a.week}.json"
@@ -363,7 +301,7 @@ def main():
     if out.exists() and not a.force:
         sys.exit(f"{out} already exists. Pass --force to replace it.")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(render(data, history, a.theme or f"Week {a.week}"))
+    out.write_text(render(data, history, a.theme or f"Week {a.week}", load_copy(a.week)))
     print(f"Wrote {out} — now edit the hero copy and the twelve takes.")
 
 

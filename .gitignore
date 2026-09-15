@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 _to_delete/
 _to_delete_rosters.json
+_stage_bundle.tgz
