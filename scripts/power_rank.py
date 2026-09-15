@@ -77,6 +77,19 @@ def parse_teams(blob: dict) -> dict[int, dict]:
     return teams
 
 
+def side_points(side: dict) -> float:
+    """Points for one side of a matchup.
+
+    While a week is live ESPN leaves totalPoints at 0 and puts the running
+    score in totalPointsLive, so check both before giving up.
+    """
+    for key in ("totalPoints", "totalPointsLive", "totalProjectedPointsLive"):
+        v = side.get(key)
+        if v:
+            return float(v)
+    return 0.0
+
+
 def parse_weekly_results(blob: dict, include_live: bool = False) -> dict[int, dict[int, dict]]:
     """Map week -> team_id -> {score, opponent_id, result}.
 
@@ -95,7 +108,7 @@ def parse_weekly_results(blob: dict, include_live: bool = False) -> dict[int, di
             if not include_live:
                 continue
             h, a = m.get("home") or {}, m.get("away") or {}
-            hp, ap = h.get("totalPoints", 0.0), a.get("totalPoints", 0.0)
+            hp, ap = side_points(h), side_points(a)
             if hp <= 0 and ap <= 0:
                 continue  # not started — nothing to rank on
             winner = "HOME" if hp > ap else "AWAY" if ap > hp else "TIE"
@@ -107,8 +120,8 @@ def parse_weekly_results(blob: dict, include_live: bool = False) -> dict[int, di
         week = m.get("matchupPeriodId")
         bucket = weeks.setdefault(week, {})
 
-        h_pts = round(home.get("totalPoints", 0.0), 2)
-        a_pts = round(away.get("totalPoints", 0.0), 2)
+        h_pts = round(side_points(home), 2)
+        a_pts = round(side_points(away), 2)
 
         bucket[home["teamId"]] = {
             "score": h_pts,

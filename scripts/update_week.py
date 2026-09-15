@@ -78,10 +78,32 @@ def main() -> int:
     DATA_DIR.mkdir(exist_ok=True)
     live = os.environ.get("INCLUDE_LIVE", "").lower() in ("1", "true", "yes")
 
+    if live:
+        # A week in progress needs mScoreboard for the running totals, and
+        # ESPN only fills them in when asked for that specific period.
+        current = (base.get("status") or {}).get("currentMatchupPeriod")
+        if current:
+            print(f"  live mode: refetching matchup period {current} ...")
+            base = fetch_league(
+                league_id, season,
+                views=["mTeam", "mMatchupScore", "mSettings", "mScoreboard"],
+                scoring_period=current,
+            )
+
     preview = build_rankings(base, season, include_live=live)
     week = preview["week"]
     if week == 0:
         print("No matchups with points on the board yet - nothing to rank.")
+        # Dump what ESPN actually sent so the next run does not have to guess.
+        sched = base.get("schedule") or []
+        print(f"  DIAG: schedule entries = {len(sched)}")
+        print(f"  DIAG: status = {base.get('status')}")
+        for m in sched[:3]:
+            print(f"  DIAG: period={m.get('matchupPeriodId')} winner={m.get('winner')}")
+            for side in ("home", "away"):
+                sd = m.get(side) or {}
+                pts = {k: v for k, v in sd.items() if "oint" in k.lower()}
+                print(f"         {side}: teamId={sd.get('teamId')} pointish={pts}")
         return 0
     if preview.get("provisional"):
         print(f"  NOTE: week {week} still has unfinished games — "
