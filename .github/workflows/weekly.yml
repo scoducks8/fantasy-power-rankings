@@ -2,8 +2,13 @@ name: Weekly power rankings
 
 on:
   schedule:
-    # Tuesdays at 17:00 UTC = 10am Pacific during the season.
-    # Monday Night Football is final and ESPN has settled stats by then.
+    # Poll every half hour from Monday 7pm Pacific to Tuesday 2am Pacific.
+    # Each run asks ESPN whether every game on the slate is final and quits in
+    # seconds if Monday Night Football is still on. Offset off the hour because
+    # GitHub delays scheduled runs worst at :00.
+    - cron: "10,40 2-9 * * 2"
+    # Safety net. Tuesday 10am Pacific, runs no matter what the scoreboard says,
+    # so a missed poll or a stalled game never costs a week.
     - cron: "0 17 * * 2"
   workflow_dispatch:
     inputs:
@@ -16,7 +21,28 @@ permissions:
   contents: write
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      ready: ${{ steps.check.outputs.ready }}
+      week: ${{ steps.check.outputs.week }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Is the NFL week final?
+        id: check
+        env:
+          # Manual runs and the Tuesday safety net skip the scoreboard check.
+          FORCE: ${{ github.event_name != 'schedule' || github.event.schedule == '0 17 * * 2' }}
+        run: python scripts/nfl_status.py
+
   rankings:
+    needs: gate
+    if: needs.gate.outputs.ready == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
