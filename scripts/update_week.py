@@ -108,18 +108,26 @@ def main() -> int:
 
     # Rosters first: the per-player numbers are correct as soon as games end,
     # while ESPN's matchup totals can stay at zero for hours afterwards.
-    print(f"Fetching week {week} rosters ...")
-    detail_blob = fetch_league(
-        league_id, season, views=["mRoster", "mTeam", "mMatchupScore"],
-        scoring_period=week,
-    )
-    detail = parse_week(detail_blob, week)
-    scores = team_week_scores(detail)
-    scored = sum(1 for v in scores.values() if v > 0)
-    print(f"  {scored}/{len(scores)} teams have points on the board")
+    # ESPN rolls currentMatchupPeriod forward a day or so after MNF, so if the
+    # current week has no actual points yet, the week to build is the one before.
+    for attempt in (week, week - 1):
+        if attempt < 1:
+            break
+        print(f"Fetching week {attempt} rosters ...")
+        detail_blob = fetch_league(
+            league_id, season, views=["mRoster", "mTeam", "mMatchupScore"],
+            scoring_period=attempt,
+        )
+        detail = parse_week(detail_blob, attempt)
+        scores = team_week_scores(detail)
+        scored = sum(1 for v in scores.values() if v > 0)
+        print(f"  week {attempt}: {scored}/{len(scores)} teams have points on the board")
+        if scored:
+            week = attempt
+            break
 
     if scored == 0:
-        print("No player scoring yet for this week - nothing to rank.")
+        print("No player scoring yet - nothing to rank.")
         return 0
 
     patched = apply_week_scores(base, week, scores)

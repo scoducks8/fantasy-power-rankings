@@ -50,14 +50,17 @@ def parse_week(blob: dict, week: int) -> dict:
             pool = e.get("playerPoolEntry") or {}
             player = pool.get("player") or {}
 
-            # appliedStatTotal on the entry is that player's score for the week.
-            pts = e.get("playerPoolEntry", {}).get("appliedStatTotal")
-            if pts is None:
-                pts = pool.get("appliedStatTotal")
-
-            projected = None
+            # Score for THIS week only: the actual-stats line (statSourceId 0)
+            # for this scoring period. appliedStatTotal on the entry is not
+            # week-specific; once ESPN rolls to the next period it still
+            # carries last week's number, which produced a phantom week 2.
+            pts, projected = None, None
             for s in player.get("stats") or []:
-                if s.get("scoringPeriodId") == week and s.get("statSourceId") == 1:
+                if s.get("scoringPeriodId") != week:
+                    continue
+                if s.get("statSourceId") == 0:
+                    pts = s.get("appliedTotal")
+                elif s.get("statSourceId") == 1:
                     projected = s.get("appliedTotal")
 
             row = {
