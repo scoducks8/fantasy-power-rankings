@@ -224,13 +224,18 @@ def render(data, history, theme, copy, h) -> str:
             extra = ('<div class="kept"><p>Items kept on death</p><div>' +
                      "".join(f'<span><b>{s["points"]:.1f}</b>{e(s["name"])}</span>' for s in kept) +
                      "</div></div>")
+        mvj = ""
+        if show_move and t.get("movement"):
+            up = t["movement"] > 0
+            mvj = (f' <span class="mvj {"up" if up else "dn"}">{"▲" if up else "▼"}{abs(t["movement"])}'
+                   f'</span>')
         banner = ('<div class="qc">Quest complete!</div>' if first else
                   '<div class="died">Oh dear, you are dead!</div>' if last else "")
         logs += f'''<article class="log{' first' if first else ''}{' last' if last else ''}" id="t{t["team_id"]}">
   <header class="lg-h">
     <span class="lg-r">{t["rank"]}</span>
     <img class="lg-av" src="{av(t)}" alt="" loading="lazy">
-    <div class="lg-n"><h3>{e(t["name"])}</h3><span>{e(t["owner"])} &middot; Combat <b>{combat(t.get("power_score"))}</b></span></div>
+    <div class="lg-n"><h3>{e(t["name"])}{mvj}</h3><span>{e(t["owner"])} &middot; Combat <b>{combat(t.get("power_score"))}</b></span></div>
     <div class="lg-p"><b>{t["points_for"]:.1f}</b><span>{t["wins"]}-{t["losses"]} &middot; {"+" if diff >= 0 else ""}{diff:.1f} vs proj &middot; all-play {t.get("all_play", "")}</span></div>
   </header>
   {banner}
@@ -286,7 +291,8 @@ def render(data, history, theme, copy, h) -> str:
     chat = "".join(chat_line(x) for x in copy.get("chat", []))
     labels = copy.get("labels", {})
 
-    og_img = copy.get("og_image") or "og-league.png"
+    card = h["ROOT"] / "docs" / f"og-week-{wk}.png"
+    og_img = copy.get("og_image") or (f"og-week-{wk}.png" if card.exists() else "og-league.png")
     og_title = copy.get("og_title") or f"Week {wk}: {theme}"
     og_desc = copy.get("og_description") or copy.get("standfirst", "")[:200]
     out_name = copy.get("page_name") or f"week-{wk}.html"

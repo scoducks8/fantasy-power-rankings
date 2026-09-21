@@ -240,6 +240,7 @@ h2{margin:0;font-family:var(--head);font-weight:900;font-size:clamp(28px,5vw,44p
 .hstable td.nm i{display:block;font-style:normal;font-size:12px;color:var(--ink2)}
 .hstable td.cb,.hstable td.tl,.hstable td.rc{white-space:nowrap;font-variant-numeric:tabular-nums}
 .hstable td.tl{font-weight:700}
+.mvj{font-size:14px;margin-left:6px}.mvj.up{color:var(--yellow)}.mvj.dn{color:#ff7a3d}
 .mv{margin-left:4px;font-size:11px}.mv.up{color:#0b5d1e}.mv.dn{color:#8a1010}
 
 /* ---------- adventurer's log ---------- */

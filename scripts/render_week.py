@@ -364,7 +364,8 @@ def main():
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         helpers = {"asset": asset, "short_names": short_names, "POS_COLOR": POS_COLOR,
-                   "POS_ORDER": POS_ORDER, "load_skin": load_skin, "SITE": SITE}
+                   "POS_ORDER": POS_ORDER, "load_skin": load_skin, "SITE": SITE,
+                   "ROOT": HERE.parent}
         out.write_text(mod.render(data, history, theme, copy, helpers))
     else:
         out.write_text(render(data, history, theme, copy))
