@@ -86,19 +86,44 @@ def short_names(teams):
     return out
 
 
-def load_copy(week: int) -> dict:
+def load_copy(week: int, path: str = "") -> dict:
     """Hand-written copy for the week, kept beside the data.
 
     The generator owns numbers and layout; this file owns the words. Keeping
     them apart means re-running the generator never eats your writing.
     """
-    path = ROOT_DATA / f"copy-week-{week}.json"
+    path = Path(path) if path else ROOT_DATA / f"copy-week-{week}.json"
     return json.loads(path.read_text()) if path.exists() else {}
+
+
+LABELS = {
+    "nav_scores": "Scores", "nav_teams": "Rankings",
+    "nav_positions": "Positions", "nav_season": "Season",
+    "sk_scores": "The slate", "h2_scores": "Week {week} results",
+    "sk_teams": "Power rankings", "h2_teams": "Every team, ranked",
+    "sk_positions": "Where the points came from", "h2_positions": "Scoring by position",
+    "sk_season": "The long view", "h2_season": "Power ranking by week",
+    "lede_season": ("Rank one at the top. One column tonight; by October this is the "
+                    "chart that shows who is actually trending."),
+    "cnote": "One week in. Every Monday night adds a column.",
+    "margin": "by {margin}",
+    "power_label": "",     # e.g. "Combat" shows the power score on each card
+    "power_scale": "pct",  # "pct" = 0-100, "combat" = RuneScape 3-126
+}
+
+
+def power_display(ps: float, scale: str) -> str:
+    if scale == "combat":
+        return str(round(3 + ps * 123))
+    return str(round(ps * 100))
 
 
 def render(data, history, theme="Week One", copy=None):
     copy = copy or {}
     takes = copy.get("takes", {})
+    LB = {**LABELS, **copy.get("labels", {})}
+    wk = data["week"]
+    lab = lambda k, **kw: e(LB[k].format(week=wk, **kw))
     teams = data["teams"]
     mus = data["matchups"]
     SH = short_names(teams)
@@ -115,7 +140,7 @@ def render(data, history, theme="Week One", copy=None):
         strip += f'''        <div class="res{' tight' if m['margin']<10 else ''}">
           <div class="rr {'w' if not hw else ''}"><span>{e(m['away'])}</span><b>{m['away_score']:.1f}</b></div>
           <div class="rr {'w' if hw else ''}"><span>{e(m['home'])}</span><b>{m['home_score']:.1f}</b></div>
-          <div class="rm">by {m['margin']:.1f}</div>
+          <div class="rm">{lab("margin", margin=f"{m['margin']:.1f}")}</div>
         </div>'''
 
     # team write-ups
@@ -131,11 +156,14 @@ def render(data, history, theme="Week One", copy=None):
             up = t["movement"] > 0
             chip = (f'<span class="mv {"up" if up else "dn"}">'
                     f'{"▲" if up else "▼"}{abs(t["movement"])}</span>')
+        pw = (f'<span class="ps">{e(LB["power_label"])} '
+              f'<b>{power_display(t.get("power_score", 0), LB["power_scale"])}</b></span>'
+              if LB["power_label"] else "")
         cards += f'''      <article class="w{' lead' if t['rank']==1 else ''}">
         <header>
           <span class="wr">{t['rank']}</span>
           <img class="wav" src="{e(asset(t.get("logo_local",""), t.get("logo",""), t["owner"]))}" alt="" loading="lazy">
-          <div class="wt"><h3>{e(t['name'])}{chip}</h3><span>{e(t['owner'])}</span></div>
+          <div class="wt"><h3>{e(t['name'])}{chip}</h3><span>{e(t['owner'])}</span>{pw}</div>
           <span class="wp">{t['points_for']:.1f}
             <i>{t['wins']}-{t['losses']} · {'+' if t['points_for']-t['projected_total']>=0 else ''}{t['points_for']-t['projected_total']:.1f} vs proj</i>
           </span>
@@ -169,16 +197,17 @@ def render(data, history, theme="Week One", copy=None):
     fx = lambda w: L + (0 if len(weeks) == 1 else (w - weeks[0]) / span * (W - L - R))
     fy = lambda r: T + (r - 1) / (n - 1) * (H - T - B)
     svg = "".join(f'<line x1="{L}" y1="{fy(r):.1f}" x2="{W-R}" y2="{fy(r):.1f}" '
-                  f'stroke="#1c2330"/>' for r in range(1, n + 1))
+                  f'stroke="#1c2330" class="rg"/>' for r in range(1, n + 1))
     for t in teams:
         pts = [(fx(h["week"]), fy(h["ranks"][str(t["team_id"])])) for h in history]
         d = " ".join(f'{"M" if i==0 else "L"}{a:.1f},{b:.1f}' for i, (a, b) in enumerate(pts))
         col = "#9fb0ff" if t["rank"] == 1 else "#39425c"
-        svg += (f'<path d="{d}" fill="none" stroke="{col}" stroke-width="2.5" stroke-linecap="round"/>'
-                f'<circle cx="{pts[-1][0]:.1f}" cy="{pts[-1][1]:.1f}" r="4.5" fill="{col}"/>'
-                f'<text x="{pts[-1][0]+11:.1f}" y="{pts[-1][1]+4:.1f}" fill="#9aa6b2" '
+        lc = "rl lead" if t["rank"] == 1 else "rl"
+        svg += (f'<path d="{d}" fill="none" stroke="{col}" stroke-width="2.5" stroke-linecap="round" class="{lc}"/>'
+                f'<circle cx="{pts[-1][0]:.1f}" cy="{pts[-1][1]:.1f}" r="4.5" fill="{col}" class="{lc} dot"/>'
+                f'<text x="{pts[-1][0]+11:.1f}" y="{pts[-1][1]+4:.1f}" fill="#9aa6b2" class="rt" '
                 f'font-size="11.5">{e(SH[t["team_id"]])}</text>')
-    svg += "".join(f'<text x="{L-9}" y="{fy(r)+4:.1f}" fill="#6b7683" font-size="10" '
+    svg += "".join(f'<text x="{L-9}" y="{fy(r)+4:.1f}" fill="#6b7683" font-size="10" class="ra" '
                    f'text-anchor="end">{r}</text>' for r in (1, 6, 12) if r <= n)
 
     skin_css = load_skin(SKIN)
@@ -200,6 +229,12 @@ def render(data, history, theme="Week One", copy=None):
         f'LOW: {e(SH[lo["team_id"]])} {lo["points_for"]:.1f}',
         f'CLOSEST: {mus[0]["margin"]:.1f} PTS',
     ]
+    if copy.get("ticker"):
+        ticker_items = []
+        for line in copy["ticker"]:
+            who, sep, msg = line.partition(": ")
+            ticker_items.append(f'<b>{e(who)}:</b> <q>{e(msg)}</q>' if sep and len(who) < 28
+                                else f'<em>{e(line)}</em>')
     ticker = "".join(f'<span>{it}</span>' for it in ticker_items)
 
     return f'''<!doctype html>
@@ -227,7 +262,7 @@ def render(data, history, theme="Week One", copy=None):
 <body>
 <div class="bar"><div class="bar-in">
   <div class="bm">Chach Champions</div>
-  <nav class="bn"><a href="#scores">Scores</a><a href="#teams">Rankings</a><a href="#positions">Positions</a><a href="#season">Season</a></nav>
+  <nav class="bn"><a href="#scores">{lab("nav_scores")}</a><a href="#teams">{lab("nav_teams")}</a><a href="#positions">{lab("nav_positions")}</a><a href="#season">{lab("nav_season")}</a></nav>
 </div></div>
 
 <header class="hero"><div class="hero-in">
@@ -245,7 +280,7 @@ def render(data, history, theme="Week One", copy=None):
 
 <div class="wrap">
   <section id="scores">
-    <p class="sk">The slate</p><h2>Week {data['week']} results</h2>
+    <p class="sk">{lab("sk_scores")}</p><h2>{lab("h2_scores")}</h2>
     <p class="sl">{e(copy.get("lede_scores", "Closest game first. Gold border means it was decided by under ten."))}</p>
     <div class="strip">
 {strip}
@@ -253,7 +288,7 @@ def render(data, history, theme="Week One", copy=None):
   </section>
 
   <section id="teams">
-    <p class="sk">Power rankings</p><h2>Every team, ranked</h2>
+    <p class="sk">{lab("sk_teams")}</p><h2>{lab("h2_teams")}</h2>
     <p class="sl">{e(copy.get("lede_rankings", "The bar under each name splits that team's score by position."))}</p>
     <div class="ws">
 {cards}
@@ -261,18 +296,17 @@ def render(data, history, theme="Week One", copy=None):
   </section>
 
   <section id="positions">
-    <p class="sk">Where the points came from</p><h2>Scoring by position</h2>
+    <p class="sk">{lab("sk_positions")}</p><h2>{lab("h2_positions")}</h2>
     <p class="sl">{e(copy.get("lede_positions", "Long orange means the backfield carried it."))}</p>
     <div class="chart"><div class="lg">{legend}</div>{prow}</div>
   </section>
 
   <section id="season">
-    <p class="sk">The long view</p><h2>Power ranking by week</h2>
-    <p class="sl">Rank one at the top. One column tonight; by October this is the chart
-      that shows who is actually trending.</p>
+    <p class="sk">{lab("sk_season")}</p><h2>{lab("h2_season")}</h2>
+    <p class="sl">{lab("lede_season")}</p>
     <div class="chart">
       <svg viewBox="0 0 {W} {H}" width="100%" role="img" aria-label="rank by week">{svg}</svg>
-      <p class="cnote">One week in. Every Monday night adds a column.</p>
+      <p class="cnote">{lab("cnote")}</p>
     </div>
   </section>
 
@@ -298,6 +332,8 @@ def main():
     ap.add_argument("--skin", default="default",
                     help="stylesheet in scripts/skins/ — the week's look")
     ap.add_argument("--out", default="")
+    ap.add_argument("--copy", default="",
+                    help="copy file to use instead of data/copy-week-N.json (for practice runs)")
     a = ap.parse_args()
 
     globals()["PLACEHOLDER"] = a.placeholders
@@ -318,7 +354,20 @@ def main():
     if out.exists() and not a.force:
         sys.exit(f"{out} already exists. Pass --force to replace it.")
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(render(data, history, a.theme or f"Week {a.week}", load_copy(a.week)))
+    theme = a.theme or f"Week {a.week}"
+    copy = load_copy(a.week, a.copy)
+    layout = HERE / "layouts" / f"{a.skin}.py"
+    if layout.exists():
+        # A big theme week can bring its own page structure. Same data, same copy file.
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(f"layout_{a.skin}", layout)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        helpers = {"asset": asset, "short_names": short_names, "POS_COLOR": POS_COLOR,
+                   "POS_ORDER": POS_ORDER, "load_skin": load_skin, "SITE": SITE}
+        out.write_text(mod.render(data, history, theme, copy, helpers))
+    else:
+        out.write_text(render(data, history, theme, copy))
     print(f"Wrote {out} — now edit the hero copy and the twelve takes.")
 
 

@@ -1,0 +1,105 @@
+{
+ "_comment": "PRACTICE RUN v2. Week 1 in the RuneScape layout (scripts/layouts/runescape.py). Not the live week 1 copy.",
+ "page_name": "week-1-runescape.html",
+ "headline": "Dake Bates spawns in a blue partyhat and breaks the Hiscores",
+ "standfirst": "Twelve adventurers washed up on Tutorial Island with a bronze dagger, a wooden shield and a dream. By Monday night Dake Bates was standing on top of the Hiscores in a blue partyhat with 177.9 in the bank. Bingo Night survived a duel with one hitpoint left. The Battle of the Bens got settled from long range. Kyle Pitts got dragged into the Evil Chicken's lair and never came back. Grab your lobsters and your three items. This is ChachScape.",
+ "overhead": "177.9 gg ez",
+ "lede_scores": "Six duels, closest first. An orange glow means it came down to less than ten. Every duel ends one of two ways: Victorious! or Oh dear, you are dead! Nothing in between.",
+ "lede_rankings": "The Hiscores after one week. Combat level is the power score: record, momentum, scoring and luck rolled into one number, 126 max. Tap any name to jump to that account's quest journal.",
+ "lede_positions": "The skills tab for the whole server. Magic is the quarterback, Strength the backfield, Ranged the receivers, Defence the tight end, Agility the kicker, Prayer the defense. A gold star marks whoever topped each skill this week.",
+ "labels": {
+  "lede_season": "Rank one at the top. One column so far. A few more weeks and this is where you find out who is grinding and who is AFK at the Lumbridge fountain.",
+  "cnote": "One week logged. Every Monday night adds a column."
+ },
+ "duels": {
+  "6": "Both accounts out of food. Both at one hitpoint. Bingo Night swings last.",
+  "11": "The kicker outscores the quarterback, and it is not close.",
+  "9": "Four quarterbacks in the bank. He only needed one.",
+  "2": "The Battle of the Bens, settled from across the arena.",
+  "3": "The Mysterious Old Man drops Christian Watson in skyler's inventory.",
+  "8": "Ice Barrage from the opening tick. Team evil never stood a chance."
+ },
+ "random_events": [
+  {
+   "icon": "chicken",
+   "text": "Kyle Pitts was dragged into the Evil Chicken's lair. 0.0 points."
+  },
+  {
+   "icon": "skull",
+   "text": "Colston Loveland got a visit from the Drill Demon and never finished the reps. 0.0 points."
+  },
+  {
+   "icon": "skull",
+   "text": "The Texans defense cast Confuse on itself. Minus 4.0."
+  },
+  {
+   "icon": "star",
+   "text": "The Chargers defense fell asleep next to a Strange Plant. 0.0 points."
+  },
+  {
+   "icon": "star",
+   "text": "Harrison Mevis found a genie lamp and rubbed it exactly once. 1.0 point."
+  },
+  {
+   "icon": "chicken",
+   "text": "Matthew Stafford was handed a rubber chicken and told it was a rune scimitar. 4.1 points."
+  }
+ ],
+ "rewards": [
+  "177.9 Fantasy XP",
+  "1 Blue partyhat",
+  "11-0 in all-play",
+  "Top spot on the Hiscores",
+  "Bragging rights (untradeable)"
+ ],
+ "chat": [
+  "Welcome to ChachScape.",
+  "Dake Bates: 177.9 gg ez",
+  "From michael: wts qb, have 3 spare",
+  "Team evil: how am i getting hit 70s in lumby",
+  "Team Galakrond: 129.6 and i LOST??",
+  "roadrunners wishes to trade with you.",
+  "roadrunners: buying tight end. any tight end. plz",
+  "Bingo Night: won by 0.9 lol",
+  "Congratulations, you just advanced a Magic level.",
+  "Cortisol Spyke Weeks: selling pitts 1gp",
+  "Oh dear, you are dead!",
+  "Purdy Seconds to Mars: texans d -4 what",
+  "From Ben E.: gf other ben",
+  "Adams and Jefferson: stafford 4.1 plz no",
+  "LaPorta-pottys: my kicker outscored my qb lmao",
+  "CeeDeez Nutz: watson 32.7 who saw that coming",
+  "michael: told u noobs. 4 qbs.",
+  "Team evil: can someone come get my items from the wildy"
+ ],
+ "quests": {
+  "8": "Quest: The Dake of Lumbridge",
+  "9": "Quest: The Hoarder of Varrock Bank",
+  "2": "Quest: The Battle of the Bens, Part I",
+  "3": "Quest: The Mysterious Old Man",
+  "11": "Quest: A Kicker's Assistant",
+  "6": "Quest: One Hitpoint",
+  "1": "Quest: Items Kept on Death",
+  "7": "Quest: The Battle of the Bens, Part II",
+  "10": "Quest: Blue Splats",
+  "12": "Quest: Beyond the Wilderness Ditch",
+  "5": "Quest: The Rubber Chicken",
+  "4": "Quest: The Evil Chicken's Lair"
+ },
+ "takes": {
+  "8": "Legend says the cows of Lumbridge stopped chewing the moment Jake Danielson logged in. Twelve accounts crawled off Tutorial Island on Sunday holding a bronze dagger and a wooden shield. Dake Bates walked off in a blue partyhat. Caleb Williams opened with Ice Barrage and froze the entire server for 37.3. Then the backfield picked up Dharok's greataxe, dropped to one hitpoint on purpose, and swung for another 71.7. Team evil ate every lobster in the bank and still got sent to the Lumbridge graveyard, 177.9 to 102.0, a 75.9 point beating. Eleven duels against the field in all-play, eleven wins. 55.6 over projection. Highest opening score this league has ever seen. Somewhere in Falador the White Knights are updating the Hiscores by hand because the page broke.",
+  "9": "Every server has one. The guy parked in Varrock bank with four of the same item and no intention of ever selling. michael rostered four quarterbacks on draft night and the whole chat called him a noob. Sunday he opened the bank, pulled out Josh Allen, and Allen cast Fire Blast for 35.7. Jahmyr Gibbs and the backfield came charging out of Barbarian Village behind him for 63.7 more. 146.3, the second-best score on the server, and he needed every point of it, because Team Galakrond showed up with 129.6 and murder in its eyes. Won by 16.7. The Broncos defense added two points, roughly the XP you get for killing one chicken. Three more quarterbacks are still sitting in that bank. He is not selling. Do not ask him.",
+  "2": "Two accounts named Ben. One Duel Arena. Only one walks out. Ben E. strolled in dressed head to toe in green dragonhide with a magic shortbow and a quiver full of rune arrows, and the receivers rained 71.5 points on the other Ben from across the sand. Jaxon Smith-Njigba 26.2. Zay Flowers 26.0. Parker Washington 19.3 out of the flex. D'Andre Swift ran in and stabbed for 32.4 on top of it. Projection said 109.6. The Hiscores say 144.6. Harrison Mevis kicked exactly one point, the fantasy version of hitting a 1 on a Lumbridge cow, and nobody noticed because the duel was over before the late games kicked off. Final: 144.6 to 113.7. One Ben is in the bank counting loot. The other Ben is walking home through the desert.",
+  "3": "Every adventurer has met him. The Mysterious Old Man appears out of thin air, mumbles something, and hands you a box you never asked for. Sunday he shuffled up to skyler, dropped a random event in his inventory, and inside the box was Christian Watson for 32.7. Nobody saw it coming. The projections missed it. The chat missed it. The Wise Old Man, who robbed Draynor bank and sees everything, missed it. The receivers kept firing for 56.4 total, the kicker added 14 more like a dwarf with a crossbow, and CeeDeez Nutz dragged Cortisol Spyke Weeks around the Duel Arena until the stake screen read 138.7 to 92.0. A 46.7 point win. 24.4 over projection. Combat 100 in week one. The old man has already vanished. The loot stays.",
+  "11": "Every adventurer starts the same way, running errands for the Lumbridge cook: an egg, a bucket of milk, a pot of flour. Jackson's quest went a little different. Evan McPherson walked out of the castle kitchen and booted 19 points through the uprights. Drake Maye managed 9.8. Sam LaPorta managed 9.8. The kicker came within six tenths of the quarterback and the tight end combined, which is like your Cooking level carrying you through a boss fight. Amon-Ra St. Brown did the real damage with 28.7, and the LaPorta-pottys took down Adams and Jefferson 114.9 to 100.7, a 14.2 point win, finishing 1.4 off projection. Marvin Harrison Jr. at 4.3 is still wandering the castle looking for the flour. The cook is thrilled. Nobody else can explain it.",
+  "6": "The stake screen reads 111.3 to 110.4. Here is what that looks like inside the Duel Arena. Both accounts out of food. Both at one hitpoint. Prayer drained. Thomas swings and hits a 1. The roadrunners swing and hit a 0. The crowd in the stands at Al Kharid goes dead silent. Won by 0.9. Jalen Hurts carried the load with 24.7, a wizard who only knows Wind Strike and casts it perfectly. Jaylen Waddle put up 1.2, which in RuneScape terms is poking a chicken with a bronze dagger for an entire afternoon. 6.7 under projection. The lowest winning score of the week. Does not matter one bit. The stake pays the same whether you win by 0.9 or 75.9, and the loser still has to walk home through the desert.",
+  "1": "Oh dear, you are dead! Neil logged in and did everything right. Kenneth Walker went berserk for 34.1. The backfield swung for 66.2. 129.6 points, fifth best on the server, good enough to beat seven of the eleven other accounts in all-play. Then the matchmaker in the sky paired him with the one man in Varrock bank holding four quarterbacks. Lost by 16.7. Neil respawned at the Lumbridge graveyard clutching his three items kept on death, staring at the fountain like it owed him money. Combat 56 for now, because record still carries a vote in week one. The formula will come around. The Hiscores always do. Until then, Neil is back at the cow pen, grinding next to the level 3s like nothing happened.",
+  "7": "Part two of the Battle of the Bens, told from the losing side. Bijan Robinson showed up in full rune and hit for 31.3. Trey McBride held the gate at tight end with 24.5, healing on every swing like he had the full Guthan's set on. Then the receivers went AFK. Thirteen points. For the whole week. Somewhere in Lumbridge a level 3 named Ben's WR Room is standing at the fountain, logged out on his feet. Then the Texans defense cast Confuse on itself and finished at minus four, the only negative number in any starting lineup all weekend. 113.7, right on projection, and the other Ben put 144.6 on the board anyway. Ben T. respawns in Lumbridge. The calculator was right. It did not help.",
+  "10": "Ricky sent Colston Loveland into the Duel Arena and Loveland swung for four straight quarters. Blue splat. Blue splat. Blue splat. Zero catches. Zero yards. Zero points. In a duel the roadrunners lost by 0.9. Sit with that. One catch wins it. A two-yard dump-off wins it. A tight end hitting a 1 on a chicken wins it. David Montgomery did his part with 28.9, Trevor Lawrence added 26.1, and the 110.4 total beats three other accounts on the server. The roadrunners drafted with conviction back in August. Week one answered with the cruelest stake screen of the weekend, and Ricky walks home across the desert with nothing in his inventory but what ifs.",
+  "12": "Level 50 Wilderness. Deep past the ditch. No teleport, no food worth mentioning. That is where Team evil wandered on Sunday, wearing bronze and carrying a single lobster. And that is exactly where Dake Bates was waiting with a skull over his head and Ice Barrage queued up. 177.9 to 102.0. A 75.9 point loss, the biggest beating of the week by a country mile. Dallas Goedert put up 23.7, the lone bright spot, standing there with Protect from Melee on while the rest of the lineup ran in circles. The Chargers defense logged a zero. The whole account came in 19.6 under projection. Christian McCaffrey anchors this roster and put up 13.8. Kelly's loot is lying on the ground in the Wilderness right now. Somebody in green dragonhide is already picking it up.",
+  "5": "Draft night, Lyudmil walked into the Varrock marketplace and came out with what everybody agreed was the steal of the whole draft: Matthew Stafford, a genuine rune scimitar at bronze prices. Sunday he equipped it, stepped into the Duel Arena, and swung. Blue splat. Swung again. Blue splat. When the dust settled the scimitar had produced 4.1 points. That is the entire quarterback output for the week. Justin Jefferson did everything a man can do, hitting for 31.2 like someone trying to solo the King Black Dragon with no antifire. The account came in 20.8 under projection and dropped the duel to the LaPorta-pottys by 14.2. Good news: this roster is still stacked. Bad news: the scimitar turned out to be a rubber chicken.",
+  "4": "Mason's Sunday, in the order it happened. Logged in. Equipped Kyle Pitts at tight end. Kyle Pitts triggered a random event, got pulled through a portal into the Evil Chicken's lair, and was never seen again. Zero points from the tight end slot. Ja'Marr Chase managed 3.2 and George Pickens managed 5.8, a pair of level 3s punching goblins in the Lumbridge swamp. Derrick Henry spent the whole afternoon carrying this account on his back like a noob hauling 28 logs to Draynor bank, and put up 35.3 all by himself. It did not matter. 92.0 total, the lowest score on the server, 27.3 under projection, and a 46.7 point loss to CeeDeez Nutz. Combat level 9. Welcome to Lumbridge, Mason. The goblins are right over there. They are level 2. Start small."
+ },
+ "og_title": "Week 1 (practice): ChachScape",
+ "og_description": "Practice run of the RuneScape theme on week one data."
+}

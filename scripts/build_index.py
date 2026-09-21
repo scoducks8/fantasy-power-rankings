@@ -31,7 +31,7 @@ THEME_RE = re.compile(
 def discover_weeks() -> list[dict]:
     weeks = []
     for path in sorted(WEEKS_DIR.glob("week-*.html")):
-        match = re.search(r"week-(\d+)", path.stem)
+        match = re.fullmatch(r"week-(\d+)", path.stem)
         if not match:
             continue
         source = path.read_text(errors="ignore")
