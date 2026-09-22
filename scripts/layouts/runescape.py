@@ -17,7 +17,7 @@ import html
 e = html.escape
 
 SKILL = {"QB": "Magic", "RB": "Strength", "WR": "Ranged",
-         "TE": "Defence", "K": "Agility", "D/ST": "Prayer"}
+         "TE": "Prayer", "K": "Agility", "D/ST": "Defence"}
 
 # 10x10 pixel icons. '#' outline, 'b' the position colour, 'w' white,
 # 's' steel, 'g' gold, 'r' red. Anything else is transparent.
@@ -28,12 +28,12 @@ ICONS = {
            "#bb####bb#", "#bb#..#bb#", ".##....##.", "..........", ".........."],
     "WR": [".......###", "........b#", ".......#b#", "......#b#.", ".....#b#..",
            "..#.#b#...", "..##b#....", "..#b#.....", ".#b###....", "#b#......."],
-    "TE": ["..######..", ".#ssssss#.", ".#sbbbbs#.", ".#sbbbbs#.", ".#sbbbbs#.",
-           ".#ssbbss#.", "..#sbbs#..", "..#ssss#..", "...#ss#...", "....##...."],
+    "TE": ["...####...", "...#bb#...", ".###bb###.", ".#bbbbbb#.", ".###bb###.",
+             "...#bb#...", "...#bb#...", "...#bb#...", "...#bb#...", "...####..."],
     "K":  ["..####....", "..#bb#....", "..#bb#....", "..#bb#....", "..#bb#....",
            "..#bb###..", "..#bbbbb#.", ".#bbbbbbb#", ".#bbbbbbb#", ".#########"],
-    "D/ST": ["...####...", "...#bb#...", ".###bb###.", ".#bbbbbb#.", ".###bb###.",
-             "...#bb#...", "...#bb#...", "...#bb#...", "...#bb#...", "...####..."],
+    "D/ST": ["..######..", ".#ssssss#.", ".#sbbbbs#.", ".#sbbbbs#.", ".#sbbbbs#.",
+           ".#ssbbss#.", "..#sbbs#..", "..#ssss#..", "...#ss#...", "....##...."],
     "swords": ["ss......ss", "#ss....ss#", ".#ss..ss#.", "..#ssss#..", "...#ss#...",
                "..#ssss#..", ".g#s..s#g.", "gg#....#gg", ".g......g.", ".........."],
     "skull": ["..######..", ".#wwwwww#.", "#wwwwwwww#", "#w##ww##w#", "#w##ww##w#",
@@ -152,7 +152,7 @@ def render(data, history, theme, copy, h) -> str:
   </div>
   <aside class="side">
     <div class="mm-wrap"><div class="minimap">{dots}<i class="me"></i></div><span class="compass">N</span></div>
-    <div class="tabs"><span>{pix("swords", size=16)}</span><span class="on">{pix("star", size=16)}</span><span>{pix("TE", "#3987e5", 16)}</span><span>{pix("QB", "#9085e9", 16)}</span></div>
+    <div class="tabs"><span>{pix("swords", size=16)}</span><span class="on">{pix("star", size=16)}</span><span>{pix("D/ST", "#3987e5", 16)}</span><span>{pix("QB", "#9085e9", 16)}</span></div>
     <div class="stats">{stats}<div class="st tot">Total <b>{best_team["week_points"]:.1f}</b></div></div>
     <div class="acct"><b>{e(best_team["name"])}</b><span>Combat {combat(best_team.get("power_score"))}</span></div>
   </aside>

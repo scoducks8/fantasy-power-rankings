@@ -7,8 +7,11 @@
    Winners are marked by words and yellow, never red versus green.
    Fonts self-hosted in docs/assets/fonts (all OFL).
    ------------------------------------------------------------------ */
-@font-face{font-family:"Pixelify";font-weight:400;font-display:swap;src:url("../assets/fonts/pixelify-sans-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"Pixelify";font-weight:700;font-display:swap;src:url("../assets/fonts/pixelify-sans-latin-700-normal.woff2") format("woff2")}
+/* Pixelify for letters, Silkscreen for digits: Pixelify's 2 and 5 read as Z and S. */
+@font-face{font-family:"Pixelify";font-weight:400;font-display:swap;unicode-range:U+0000-002F,U+003A-FFFF;src:url("../assets/fonts/pixelify-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Pixelify";font-weight:700;font-display:swap;unicode-range:U+0000-002F,U+003A-FFFF;src:url("../assets/fonts/pixelify-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Pixelify";font-weight:400;font-display:swap;unicode-range:U+0030-0039;src:url("../assets/fonts/silkscreen-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Pixelify";font-weight:700;font-display:swap;unicode-range:U+0030-0039;src:url("../assets/fonts/silkscreen-latin-700-normal.woff2") format("woff2")}
 @font-face{font-family:"Silk";font-weight:400;font-display:swap;src:url("../assets/fonts/silkscreen-latin-400-normal.woff2") format("woff2")}
 @font-face{font-family:"Cinzel D";font-weight:700;font-display:swap;src:url("../assets/fonts/cinzel-decorative-latin-700-normal.woff2") format("woff2")}
 @font-face{font-family:"Cinzel D";font-weight:900;font-display:swap;src:url("../assets/fonts/cinzel-decorative-latin-900-normal.woff2") format("woff2")}
