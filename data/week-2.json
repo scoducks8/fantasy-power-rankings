@@ -144,7 +144,10 @@
    },
    "bench_points": 56.28,
    "projected_total": 128.39,
-   "logo_local": "assets/logos/9-michael-s-monstrous-team.svg"
+   "logo_local": "assets/logos/9-michael-s-monstrous-team.svg",
+   "week_points": 155.42,
+   "week_proj_diff": 27.03,
+   "all_play": "11-0"
   },
   {
    "team_id": 3,
@@ -279,7 +282,10 @@
    },
    "bench_points": 46.7,
    "projected_total": 118.84,
-   "logo_local": "assets/logos/3-ceedeez-nutz.svg"
+   "logo_local": "assets/logos/3-ceedeez-nutz.svg",
+   "week_points": 147.3,
+   "week_proj_diff": 28.46,
+   "all_play": "10-1"
   },
   {
    "team_id": 2,
@@ -414,7 +420,10 @@
    },
    "bench_points": 38.8,
    "projected_total": 110.94,
-   "logo_local": "assets/logos/2-ben-s-brilliant-team.svg"
+   "logo_local": "assets/logos/2-ben-s-brilliant-team.svg",
+   "week_points": 131.14,
+   "week_proj_diff": 20.2,
+   "all_play": "8-3"
   },
   {
    "team_id": 6,
@@ -549,7 +558,10 @@
    },
    "bench_points": 40.7,
    "projected_total": 112.04,
-   "logo_local": "assets/logos/6-bingo-night.svg"
+   "logo_local": "assets/logos/6-bingo-night.svg",
+   "week_points": 99.76,
+   "week_proj_diff": -12.28,
+   "all_play": "2-9"
   },
   {
    "team_id": 8,
@@ -684,7 +696,10 @@
    },
    "bench_points": 58.4,
    "projected_total": 111.06,
-   "logo_local": "assets/logos/8-dake-bates.png"
+   "logo_local": "assets/logos/8-dake-bates.png",
+   "week_points": 56.52,
+   "week_proj_diff": -54.54,
+   "all_play": "0-11"
   },
   {
    "team_id": 7,
@@ -819,7 +834,10 @@
    },
    "bench_points": 53.58,
    "projected_total": 125.99,
-   "logo_local": "assets/logos/7-purdy-seconds-to-mars.png"
+   "logo_local": "assets/logos/7-purdy-seconds-to-mars.png",
+   "week_points": 112.58,
+   "week_proj_diff": -13.41,
+   "all_play": "7-4"
   },
   {
    "team_id": 5,
@@ -954,7 +972,10 @@
    },
    "bench_points": 48.18,
    "projected_total": 123.72,
-   "logo_local": "assets/logos/5-adams-and-jefferson.svg"
+   "logo_local": "assets/logos/5-adams-and-jefferson.svg",
+   "week_points": 140.22,
+   "week_proj_diff": 16.5,
+   "all_play": "9-2"
   },
   {
    "team_id": 11,
@@ -1089,7 +1110,10 @@
    },
    "bench_points": 46.6,
    "projected_total": 115.86,
-   "logo_local": "assets/logos/11-laporta-pottys.svg"
+   "logo_local": "assets/logos/11-laporta-pottys.svg",
+   "week_points": 110.92,
+   "week_proj_diff": -4.94,
+   "all_play": "4-7"
   },
   {
    "team_id": 1,
@@ -1224,7 +1248,10 @@
    },
    "bench_points": 40.6,
    "projected_total": 121.53,
-   "logo_local": "assets/logos/1-team-galakrond.png"
+   "logo_local": "assets/logos/1-team-galakrond.png",
+   "week_points": 105.28,
+   "week_proj_diff": -16.25,
+   "all_play": "3-8"
   },
   {
    "team_id": 4,
@@ -1359,7 +1386,10 @@
    },
    "bench_points": 89.68,
    "projected_total": 122.79,
-   "logo_local": "assets/logos/4-cortisol-spyke-weeks.png"
+   "logo_local": "assets/logos/4-cortisol-spyke-weeks.png",
+   "week_points": 112.46,
+   "week_proj_diff": -10.33,
+   "all_play": "6-5"
   },
   {
    "team_id": 12,
@@ -1494,7 +1524,10 @@
    },
    "bench_points": 61.28,
    "projected_total": 119.25,
-   "logo_local": "assets/logos/12-team-evil.svg"
+   "logo_local": "assets/logos/12-team-evil.svg",
+   "week_points": 112.18,
+   "week_proj_diff": -7.07,
+   "all_play": "5-6"
   },
   {
    "team_id": 10,
@@ -1629,7 +1662,10 @@
    },
    "bench_points": 55.58,
    "projected_total": 116.0,
-   "logo_local": "assets/logos/10-roadrunners.svg"
+   "logo_local": "assets/logos/10-roadrunners.svg",
+   "week_points": 61.66,
+   "week_proj_diff": -54.34,
+   "all_play": "1-10"
   }
  ],
  "matchups": [

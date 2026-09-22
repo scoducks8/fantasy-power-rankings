@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from espn_client import fetch_league, EspnAuthError, HEADERS  # noqa: E402
 from power_rank import build_rankings, parse_teams  # noqa: E402
+from week_fields import add_week_fields  # noqa: E402
 from week_detail import (parse_week, parse_matchups, update_history,  # noqa: E402
                          team_week_scores, apply_week_scores)
 
@@ -167,6 +168,7 @@ def main() -> int:
         m["home_logo"] = by_id.get(m["home_id"], {}).get("logo_local", "")
         m["away_logo"] = by_id.get(m["away_id"], {}).get("logo_local", "")
     rankings["matchups"] = matchups
+    add_week_fields(rankings)  # week score, week all-play, week vs projection
 
     hist_path = DATA_DIR / "history.json"
     history = json.loads(hist_path.read_text()) if hist_path.exists() else []

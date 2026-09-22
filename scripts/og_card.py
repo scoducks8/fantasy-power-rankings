@@ -29,6 +29,10 @@ def build(week: int, copy_path: str) -> str:
     best = max((s for t in teams for s in t["starters"]), key=lambda s: s["points"])
     bt = next(t for t in teams if best in t["starters"])
     lead = min(teams, key=lambda t: t["rank"])
+    week_score = {}
+    for m in d["matchups"]:
+        week_score[m["home_id"]], week_score[m["away_id"]] = m["home_score"], m["away_score"]
+    best_score = c.get("card_number") or week_score.get(lead["team_id"], lead["points_for"])
     docs = (ROOT / "docs").as_uri()
     hs = f'{docs}/{best["headshot_local"]}' if best.get("headshot_local") else best.get("headshot", "")
     av = f'{docs}/{lead["logo_local"]}' if lead.get("logo_local") else ""
@@ -87,7 +91,7 @@ body{{width:1200px;height:630px;overflow:hidden;position:relative;font-family:P;
 <div class="left">
   <div class="logo">ChachScape</div>
   <div class="world">World {week} &middot; Week {week} Hiscores</div>
-  <div class="num">{lead["points_for"]:.1f}</div>
+  <div class="num">{best_score:.1f}</div>
   <div class="head">{e(headline)}</div>
 </div>
 <div class="client">

@@ -29,7 +29,10 @@ def main() -> None:
     teams = d["teams"]
     T = {t["team_id"]: t for t in teams}
     n = len(teams)
-    by_score = sorted(teams, key=lambda t: -t["points_for"])
+    for t in teams:
+        t.setdefault("week_points", t["points_for"])
+        t.setdefault("week_proj_diff", t["week_points"] - (t.get("projected_total") or 0))
+    by_score = sorted(teams, key=lambda t: -t["week_points"])
     score_rank = {t["team_id"]: i + 1 for i, t in enumerate(by_score)}
 
     wins, losses = [], []
@@ -47,8 +50,8 @@ def main() -> None:
 
     print("SCORES, high to low (score rank / power rank / all-play / vs proj)")
     for t in by_score:
-        diff = t["points_for"] - t["projected_total"]
-        print(f"  {score_rank[t['team_id']]:>2}. {t['name'][:26]:<27}{t['points_for']:>7.2f}  "
+        diff = t["week_proj_diff"]
+        print(f"  {score_rank[t['team_id']]:>2}. {t['name'][:26]:<27}{t['week_points']:>7.2f}  season {t['points_for']:>7.2f}  "
               f"power #{t['rank']:<2} all-play {t.get('all_play','?'):<6} {diff:+.2f} vs proj  "
               f"record {t['wins']}-{t['losses']}  streak {t.get('streak','')}")
 
@@ -71,7 +74,7 @@ def main() -> None:
         print(f"\n  #{t['rank']} {t['name']}  ({t['owner']})")
         if o:
             print(f"    {o[3]} vs {T[o[0]]['name']} {o[1]:.2f}-{o[2]:.2f}  "
-                  f"beats {sum(1 for x in teams if x['points_for'] < t['points_for'])} teams' scores")
+                  f"beats {sum(1 for x in teams if x['week_points'] < t['week_points'])} teams' scores")
         print(f"    move {t.get('movement', 0):+d} (was #{t.get('prev_rank')})  bench {t.get('bench_points')}")
         print("    by position: " + "  ".join(f"{p} {pos.get(p, 0):.1f}" for p in POS))
         starters = sorted(t["starters"], key=lambda s: -s["points"])

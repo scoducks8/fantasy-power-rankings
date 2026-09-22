@@ -1,0 +1,104 @@
+{
+ "_comment": "Week 2 copy, ChachScape theme. Numbers checked against scripts/fact_sheet.py --week 2.",
+ "headline": "Dake Bates gets scammed out of his partyhat and michael takes the Hiscores",
+ "card_headline": "The partyhat falls. michael takes the Hiscores.",
+ "standfirst": "Week two, and the server has been flipped upside down. Dake Bates logged in wearing last week's blue partyhat, accepted a free armor trim in Varrock square, and walked out with 56.5 points and nothing on his head. michael reached into the bank for the same Josh Allen and took over the top of the Hiscores. Bingo Night is 2-0 with the lowest winning score on the board for the second week running. Purdy Seconds to Mars won by four tenths of a point. And all across the server the namesakes woke up: CeeDee Lamb, Brock Purdy, Davante Adams and Sam LaPorta all showed up for the accounts named after them. Hide your partyhats. Week 2 is here.",
+ "overhead": "42.5 in one trip",
+ "lede_scores": "Six duels, closest first. Purdy Seconds to Mars and Team evil went down to four tenths of a point. Cortisol Spyke Weeks handed out the biggest beating of the week. An orange glow means it came down to less than ten.",
+ "lede_rankings": "The week two Hiscores. Combat level is the power score: record, momentum, scoring and luck rolled into one number, 126 max. Record carries a little more weight this week and scoring a little less. The arrows show the move from week one. Tap any name to open that account's quest journal.",
+ "lede_positions": "The skills tab for the whole server. Magic is the quarterback, Strength the backfield, Ranged the receivers, Defence the tight end, Agility the kicker, Prayer the defense. A gold star marks whoever topped each skill. CeeDeez Nutz put 77.1 into Ranged, the most of any account.",
+ "labels": {
+  "lede_season": "Two columns now. Dake Bates took the steepest dive on the chart, down four spots. Lyudmil made the biggest climb, up four, with an 0-2 record.",
+  "cnote": "Two weeks logged. Every Monday night adds a column."
+ },
+ "duels": {
+  "7": "Four tenths of a point. Brock Purdy saves the account named after him.",
+  "9": "The top score of the week beats the third-best. The hoarder rolls on.",
+  "2": "Jaxon Smith-Njigba fires 42.5 from the Ranging Guild.",
+  "3": "CeeDee Lamb shows up for CeeDeez Nutz. The prophecy holds.",
+  "6": "99.8 is enough. The luckiest account on the server strikes again.",
+  "4": "Combat level 9 no more. Mason wins his first duel by 50.8."
+ },
+ "random_events": [
+  {
+   "icon": "skull",
+   "text": "DJ Moore wandered into a Strange Plant and came out with minus 0.1."
+  },
+  {
+   "icon": "chicken",
+   "text": "Saquon Barkley got turned into a frog by the Frog Prince. 3.0 points."
+  },
+  {
+   "icon": "star",
+   "text": "Colston Loveland finished one rep for the Drill Demon. 1.3 points. Progress."
+  },
+  {
+   "icon": "skull",
+   "text": "Dallas Goedert went from 23.7 to 1.4. Suspected bot ban."
+  },
+  {
+   "icon": "chicken",
+   "text": "Caleb Williams drank a bad potion. 37.3 last week, 7.7 this week."
+  },
+  {
+   "icon": "star",
+   "text": "Harrison Mevis rubbed the genie lamp again. 3.0 points. That makes four for the season."
+  }
+ ],
+ "rewards": [
+  "155.4 Fantasy XP",
+  "1 Blue partyhat (previously owned)",
+  "11-0 in all-play",
+  "Top spot on the Hiscores",
+  "Three spare quarterbacks (still not for sale)"
+ ],
+ "chat": [
+  "Welcome to ChachScape.",
+  "michael's Monstrous Team: told u. 4 qbs.",
+  "From Dake Bates: can i have my partyhat back",
+  "Dake Bates: who trimmed my armor",
+  "Bingo Night: 2-0 lol dont look at the scores",
+  "Team evil: lost by 0.4. uninstalling",
+  "Purdy Seconds to Mars: purdy seconds. literally.",
+  "roadrunners wishes to trade with you.",
+  "roadrunners: selling entire team 1gp ea",
+  "Congratulations, you just advanced a Ranged level.",
+  "CeeDeez Nutz: cd lamb for cd nutz. as foretold",
+  "Adams and Jefferson: adams 39.5 jefferson 8.5 ??",
+  "Cortisol Spyke Weeks: FIRST WIN gz me",
+  "Oh dear, you are dead!",
+  "From Ben E.: 42.5 from jsn gg",
+  "Team Galakrond: 0-2 with 234 season points. rigged",
+  "LaPorta-pottys: laporta showed up at least"
+ ],
+ "quests": {
+  "9": "Quest: The Hoarder Takes the Throne",
+  "3": "Quest: The Prophecy of CeeDee",
+  "2": "Quest: The Ranging Guild",
+  "6": "Quest: The Ring of Wealth",
+  "8": "Quest: Free Armor Trimming",
+  "7": "Quest: Purdy Seconds",
+  "5": "Quest: Half a Namesake",
+  "11": "Quest: The Cook's Other Assistant",
+  "1": "Quest: Strength Without Magic",
+  "4": "Quest: Escape from Lumbridge",
+  "12": "Quest: Four Tenths",
+  "10": "Quest: Oh Dear, Again"
+ },
+ "takes": {
+  "9": "Hear ye, citizens of Varrock. For two weeks the town criers mocked the hoarder, the strange man who sat in the bank every single day guarding four quarterbacks like they were blue partyhats. Adventurers pointed. Level 3s threw cabbages. He said nothing. He simply waited. On Sunday he opened the bank, withdrew Josh Allen, and Allen cast Fire Blast for 40.8. By the time the smoke cleared over Varrock square, michael owned the top score in the land, a 15.2 point win, and an 11-0 run through all-play. He is 2-0. He sits on the throne of the Hiscores. The White Knights of Falador have been ordered to kneel. The other three quarterbacks remain in the bank, and the hoarder has let it be known that they are still not for sale.",
+  "3": "Long ago, the Wise Old Man carved a prophecy into the wall of the Draynor bank vault: when the account that bears the name meets the receiver who bears the name, the land will tremble. Scholars argued over it for years. Most called it nonsense. Then Sunday came. CeeDee Lamb stepped into the arena wearing the colors of CeeDeez Nutz and fired for 35.3, and the rest of the receiving corps followed him like a Ranging Guild volley. Team Galakrond never got close. 147.3 to 105.3, a 42 point rout, and skyler climbs two spots to number two at 2-0. The scholars have gone quiet. The Wise Old Man has been spotted in Draynor, smiling to himself. The prophecy is complete, and nobody in Lumbridge is laughing anymore.",
+  "2": "High on top of the Ranging Guild tower, a lone archer in green dragonhide keeps watch over the fields. His name is Ben E., and for two straight weeks nobody has gotten within arrow range. The guild masters have seen a lot of rangers come and go. They have never seen a volley this steady, landing on the same spot two Sundays in a row like it was scripted by Jagex. This week Jaxon Smith-Njigba led the barrage with 42.5, the biggest single hit on the server, and the LaPorta-pottys went down 131.1 to 110.9. Ben E. is 2-0 and holding at number three. Meanwhile his kicker has rubbed the genie lamp two weeks running and has almost nothing to show for it. Even legends need a weakness.",
+  "6": "There is an old tale told in the taverns of Port Sarim, about a fisherman who never caught a single lobster and still retired rich. Nobody believed it. Then came Bingo Night. Two duels. Two wins. Both times with the lowest winning score on the board, the kind of number that usually gets you a one-way trip to the Lumbridge graveyard. The all-play record says 6-16. The real record says 2-0. This week Travis Kelce carried the load with 25.1, and when the opponent turned out to be Dake Bates in the middle of the worst day of his life, 99.8 was plenty. Won by 43.2. Up two spots to number four. The tavern keepers swear Thomas wears a Ring of Wealth under his gloves. He has not denied it.",
+  "8": "Every adventurer has heard the warning. Never trust a stranger in Varrock square who offers to trim your armor for free. Last week Dake Bates was the richest man on the server, strolling through Falador in a blue partyhat after an opener that broke the Hiscores. This week a man in a wizard hat walked up and said he could make that partyhat even better. Jake handed it over. The man logged out. Left behind: 56.5 points, the lowest score in the land, 0-11 in all-play, and a Caleb Williams who went from casting Ice Barrage to fumbling Wind Strike for 7.7. The bench outscored the starters. Bingo Night took the duel by 43.2. Down four spots to number five. Somewhere in Varrock, a scammer is wearing a blue partyhat.",
+  "7": "The seers of Catherby have long said that a name carries power. Name your account after a man and, in the hour of need, that man will answer. Most adventurers dismiss it as an old wives' tale. Purdy Seconds to Mars bet the whole account on it. Brock Purdy answered with 28.5, and the duel with Team evil still came down to the final hitsplat. 112.6 to 112.2. Four tenths of a point, the closest duel the Arena has seen this season, closer even than Bingo Night's great escape in week one. Ben T. walks out 1-1 and climbs two spots to number six, with the crowd still arguing over whether that last hit actually landed. The seers of Catherby are taking a victory lap. Purdy seconds. Literally.",
+  "5": "An account named after two heroes is a risky thing. When both heroes show up, the bards write songs. When one shows up, you get this. Davante Adams answered the call with 39.5, swinging like a Barrows brother at full strength, while his partner in the title stayed back in the bank. The account put up the third-best score of the week, beat nine of the eleven other accounts in all-play, and still lost, because the matchmaker in the sky paired Lyudmil with the one warrior who scored 155. Lost by 15.2. 0-2. And yet the Hiscores have noticed: up four spots to number seven, the biggest climb in the land. The record says one thing. The combat level says another. The bards are holding the song until both heroes show up on the same Sunday.",
+  "11": "Back in Lumbridge castle, the cook is still telling anyone who will listen about last week's kicker. He has told the story so many times that the castle guards leave the room when he walks in. This week there was a new tale. Sam LaPorta, the man whose name hangs over the account's door, finally showed up and delivered 17.2, his best day of the young season. The cook wept into the stew. It was not enough. The LaPorta-pottys marched straight into the Ranging Guild and got picked apart from long range, 131.1 to 110.9. 1-1, down three spots to number eight. The cook insists the quarterback situation is a temporary curse. The castle guards have heard that one before too.",
+  "1": "Picture a warrior with 99 Strength and 1 Magic. He can split a boulder with his bare hands and cannot cast a single spell to save his life. That is Team Galakrond. Jonathan Taylor bulldozed through the arena for 29.2, and the backfield hit harder than any account on the server. Then it came time to throw the ball, and the spellbook was empty. CeeDeez Nutz walked in with a full Ranged setup, stayed out of melee distance, and picked Neil apart, 147.3 to 105.3. 0-2 now, with the fifth-most points in the land, and both losses came against the second-best score of the week. Down two spots to number nine. Neil, the formula still likes you. The matchmaker in the sky clearly does not.",
+  "4": "One week ago Mason was a combat level 9, standing outside Lumbridge castle with a bronze dagger, and the whole server told him to go fight goblins. So he went and fought goblins. He fought them all week. He cooked shrimp on the riverbank and ate every last one. He learned which way the swamp was. Then on Sunday he walked into the Duel Arena, Dak Prescott cast Fire Strike for 29.8, and the roadrunners went down 112.5 to 61.7. A 50.8 point win, the biggest of the week and the first of the season. 1-1. Up two spots to number ten. Kyle Pitts spent the day on the bench, safely out of reach of the Evil Chicken. Lumbridge is in the rear view, and the goblins are telling stories about him now.",
+  "12": "Some accounts are cursed. The fortune teller in Varrock took one look at Team evil's palm this week and refused to take the gold. Last week kelly got dragged through the deep Wilderness by a maxed PKer and lost by 75.9. This week the curse changed shape. The duel with Purdy Seconds to Mars went hitsplat for hitsplat down to the final tick, and the tight end who saved the account last week, Dallas Goedert, came back with 1.4. That was the whole difference. 112.6 to 112.2. Four tenths of a point. One more catch and the curse is broken. Instead it is 0-2, down one spot to number eleven, and the fortune teller has closed her tent for the season. Somewhere a Jagex moderator is watching the replay and shaking his head.",
+  "10": "Oh dear, you are dead. Again. The gravedigger in Lumbridge has started saving the roadrunners a plot. Last week they lost by nine tenths of a point and walked home from the desert with nothing. This week the desert won outright. Trevor Lawrence reached for his spellbook and fizzled at 6.2, and nearly every attack after that landed as a blue splat. 61.7 total, the second-lowest score on the server, and a 50.8 point loss to Cortisol Spyke Weeks, an account that was combat level 9 seven days ago. 0-2, down three spots to the bottom of the Hiscores. The worst part is who did it. The goblins of Lumbridge have heard the news and are now training specifically to fight Ricky. Mason has offered to show him around the swamp."
+ },
+ "og_title": "Week 2: The partyhat falls",
+ "og_description": "Dake Bates goes from 177.9 to 56.5, michael takes the Hiscores, and Purdy Seconds to Mars wins by four tenths of a point."
+}

@@ -89,6 +89,9 @@ def render(data, history, theme, copy, h) -> str:
     asset, POS_COLOR, POS_ORDER = h["asset"], h["POS_COLOR"], h["POS_ORDER"]
     SITE = h["SITE"]
     teams, mus, wk = data["teams"], data["matchups"], data["week"]
+    for t in teams:  # week-level numbers; points_for is the season total
+        t.setdefault("week_points", t["points_for"])
+        t.setdefault("week_proj_diff", t["week_points"] - (t.get("projected_total") or 0))
     n = len(teams)
     SH = h["short_names"](teams)
     by_id = {t["team_id"]: t for t in teams}
@@ -150,7 +153,7 @@ def render(data, history, theme, copy, h) -> str:
   <aside class="side">
     <div class="mm-wrap"><div class="minimap">{dots}<i class="me"></i></div><span class="compass">N</span></div>
     <div class="tabs"><span>{pix("swords", size=16)}</span><span class="on">{pix("star", size=16)}</span><span>{pix("TE", "#3987e5", 16)}</span><span>{pix("QB", "#9085e9", 16)}</span></div>
-    <div class="stats">{stats}<div class="st tot">Total <b>{best_team["points_for"]:.1f}</b></div></div>
+    <div class="stats">{stats}<div class="st tot">Total <b>{best_team["week_points"]:.1f}</b></div></div>
     <div class="acct"><b>{e(best_team["name"])}</b><span>Combat {combat(best_team.get("power_score"))}</span></div>
   </aside>
   <div class="lvlup">
@@ -198,11 +201,12 @@ def render(data, history, theme, copy, h) -> str:
                  f'<td class="nm"><a href="#t{t["team_id"]}"><img src="{av(t)}" alt="" loading="lazy">'
                  f'<span><b>{e(t["name"])}</b><i>{e(t["owner"])}</i></span></a></td>'
                  f'<td class="cb">{combat(t.get("power_score"))}</td>'
-                 f'<td class="tl">{t["points_for"]:.1f}</td>'
+                 f'<td class="tl">{t["week_points"]:.1f}</td>'
+                 f'<td class="ss">{t["points_for"]:.1f}</td>'
                  f'<td class="rc">{t["wins"]}-{t["losses"]}</td></tr>')
     table = f'''<div class="hstable">
   <div class="hs-top"><span>{pix("star", size=18)} Hiscores</span><em>Overall &middot; Week {wk}</em></div>
-  <table><thead><tr><th>Rank</th><th>Account</th><th>Combat</th><th>Total</th><th>W-L</th></tr></thead>
+  <table><thead><tr><th>Rank</th><th>Account</th><th>Combat</th><th>Week</th><th>Season</th><th>W-L</th></tr></thead>
   <tbody>{rows}</tbody></table>
 </div>'''
 
@@ -211,7 +215,7 @@ def render(data, history, theme, copy, h) -> str:
     for t in teams:
         top = t["top_scorer"]
         first, last = t["rank"] == 1, t["rank"] == n
-        diff = t["points_for"] - t["projected_total"]
+        diff = t["week_proj_diff"]
         skills = "".join(
             f'<div class="sk1">{pix(p, POS_COLOR[p], 16)}<span>{SKILL[p]}</span><b>{t["positional"].get(p, 0):.1f}</b></div>'
             for p in POS_ORDER)
@@ -236,7 +240,7 @@ def render(data, history, theme, copy, h) -> str:
     <span class="lg-r">{t["rank"]}</span>
     <img class="lg-av" src="{av(t)}" alt="" loading="lazy">
     <div class="lg-n"><h3>{e(t["name"])}{mvj}</h3><span>{e(t["owner"])} &middot; Combat <b>{combat(t.get("power_score"))}</b></span></div>
-    <div class="lg-p"><b>{t["points_for"]:.1f}</b><span>{t["wins"]}-{t["losses"]} &middot; {"+" if diff >= 0 else ""}{diff:.1f} vs proj &middot; all-play {t.get("all_play", "")}</span></div>
+    <div class="lg-p"><b>{t["week_points"]:.1f}</b><span>{t["wins"]}-{t["losses"]} &middot; {"+" if diff >= 0 else ""}{diff:.1f} vs proj &middot; all-play {t.get("all_play", "")} &middot; season {t["points_for"]:.1f}</span></div>
   </header>
   {banner}
   <div class="scroll">
@@ -255,7 +259,7 @@ def render(data, history, theme, copy, h) -> str:
     head = "".join(f'<th>{pix(p, POS_COLOR[p], 18)}<span>{SKILL[p]}</span><i>{p}</i></th>'
                    for p in POS_ORDER)
     mrows = ""
-    for t in sorted(teams, key=lambda x: -x["points_for"]):
+    for t in sorted(teams, key=lambda x: -x["week_points"]):
         cells = ""
         for p in POS_ORDER:
             v = t["positional"].get(p, 0)
@@ -264,7 +268,7 @@ def render(data, history, theme, copy, h) -> str:
             cells += (f'<td class="c{" boss" if boss else ""}{" neg" if v < 0 else ""}">'
                       f'<span class="fill" style="width:{w:.1f}%;background:{POS_COLOR[p]}"></span>'
                       f'<b>{v:.1f}</b></td>')
-        mrows += f'<tr><th class="mn">{e(SH[t["team_id"]])}</th>{cells}<td class="mt">{t["points_for"]:.1f}</td></tr>'
+        mrows += f'<tr><th class="mn">{e(SH[t["team_id"]])}</th>{cells}<td class="mt">{t["week_points"]:.1f}</td></tr>'
     matrix = f'''<div class="mx-wrap"><table class="mx">
   <thead><tr><th class="mn">Account</th>{head}<th class="mt">Total</th></tr></thead>
   <tbody>{mrows}</tbody></table></div>'''
