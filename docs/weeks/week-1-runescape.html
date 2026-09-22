@@ -25,11 +25,12 @@
    Winners are marked by words and yellow, never red versus green.
    Fonts self-hosted in docs/assets/fonts (all OFL).
    ------------------------------------------------------------------ */
-/* Pixelify for letters, Silkscreen for digits: Pixelify's 2 and 5 read as Z and S. */
-@font-face{font-family:"Pixelify";font-weight:400;font-display:swap;unicode-range:U+0000-002F,U+003A-FFFF;src:url("../assets/fonts/pixelify-sans-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"Pixelify";font-weight:700;font-display:swap;unicode-range:U+0000-002F,U+003A-FFFF;src:url("../assets/fonts/pixelify-sans-latin-700-normal.woff2") format("woff2")}
-@font-face{font-family:"Pixelify";font-weight:400;font-display:swap;unicode-range:U+0030-0039;src:url("../assets/fonts/silkscreen-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"Pixelify";font-weight:700;font-display:swap;unicode-range:U+0030-0039;src:url("../assets/fonts/silkscreen-latin-700-normal.woff2") format("woff2")}
+/* Pixelify for letters, Press Start 2P for digits (scaled to match):
+   Pixelify's 2 and 5 read as Z and S, Silkscreen's 4 looked broken. */
+@font-face{font-family:"Pixelify";font-weight:400;font-display:swap;unicode-range:U+0000-002C,U+002F,U+003A-FFFF;src:url("../assets/fonts/pixelify-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Pixelify";font-weight:700;font-display:swap;unicode-range:U+0000-002C,U+002F,U+003A-FFFF;src:url("../assets/fonts/pixelify-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Pixelify";font-weight:400;font-display:swap;unicode-range:U+002D-002E,U+0030-0039;size-adjust:70%;src:url("../assets/fonts/press-start-2p-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Pixelify";font-weight:700;font-display:swap;unicode-range:U+002D-002E,U+0030-0039;size-adjust:70%;src:url("../assets/fonts/press-start-2p-latin-400-normal.woff2") format("woff2")}
 @font-face{font-family:"Silk";font-weight:400;font-display:swap;src:url("../assets/fonts/silkscreen-latin-400-normal.woff2") format("woff2")}
 @font-face{font-family:"Cinzel D";font-weight:700;font-display:swap;src:url("../assets/fonts/cinzel-decorative-latin-700-normal.woff2") format("woff2")}
 @font-face{font-family:"Cinzel D";font-weight:900;font-display:swap;src:url("../assets/fonts/cinzel-decorative-latin-900-normal.woff2") format("woff2")}
@@ -37,8 +38,8 @@
 @font-face{font-family:"Cinzel";font-weight:900;font-display:swap;src:url("../assets/fonts/cinzel-latin-900-normal.woff2") format("woff2")}
 /* IM Fell for the letters, EB Garamond for the digits: Fell only has old-style
    figures, which make scores like 177.9 hard to read. */
-@font-face{font-family:"Fell";font-style:normal;font-display:swap;unicode-range:U+0000-002F,U+003A-FFFF;src:url("../assets/fonts/im-fell-english-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"Fell";font-style:italic;font-display:swap;unicode-range:U+0000-002F,U+003A-FFFF;src:url("../assets/fonts/im-fell-english-latin-400-italic.woff2") format("woff2")}
+@font-face{font-family:"Fell";font-style:normal;font-display:swap;unicode-range:U+0000-002C,U+002F,U+003A-FFFF;src:url("../assets/fonts/im-fell-english-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Fell";font-style:italic;font-display:swap;unicode-range:U+0000-002C,U+002F,U+003A-FFFF;src:url("../assets/fonts/im-fell-english-latin-400-italic.woff2") format("woff2")}
 @font-face{font-family:"Fell";font-style:normal;font-display:swap;unicode-range:U+0030-0039;src:url("../assets/fonts/eb-garamond-latin-500-normal.woff2") format("woff2")}
 @font-face{font-family:"Fell";font-style:italic;font-display:swap;unicode-range:U+0030-0039;src:url("../assets/fonts/eb-garamond-latin-500-italic.woff2") format("woff2")}
 
@@ -404,6 +405,7 @@ footer{margin-top:46px;padding-top:16px;border-top:2px solid #000;color:var(--di
   .lg-r{font-size:20px}
   .lg-p{grid-column:1/-1;text-align:left;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
   .lg-p b{font-size:24px}
+  .lg-p span{white-space:normal}
   .scroll{padding:12px 13px 14px}
   .sc-b,.log.first .sc-b{grid-template-columns:1fr}
   .port{display:flex;align-items:center;gap:14px;text-align:left}

@@ -48,10 +48,10 @@ def build(week: int, copy_path: str) -> str:
     fonts = f"{docs}/assets/fonts"
     headline = c.get("card_headline") or c.get("headline", "")
     return f'''<!doctype html><html><head><meta charset="utf-8"><style>
-@font-face{{font-family:P;font-weight:400;unicode-range:U+0000-002F,U+003A-FFFF;src:url({fonts}/pixelify-sans-latin-400-normal.woff2)}}
-@font-face{{font-family:P;font-weight:700;unicode-range:U+0000-002F,U+003A-FFFF;src:url({fonts}/pixelify-sans-latin-700-normal.woff2)}}
-@font-face{{font-family:P;font-weight:400;unicode-range:U+0030-0039;src:url({fonts}/silkscreen-latin-400-normal.woff2)}}
-@font-face{{font-family:P;font-weight:700;unicode-range:U+0030-0039;src:url({fonts}/silkscreen-latin-700-normal.woff2)}}
+@font-face{{font-family:P;font-weight:400;unicode-range:U+0000-002C,U+002F,U+003A-FFFF;src:url({fonts}/pixelify-sans-latin-400-normal.woff2)}}
+@font-face{{font-family:P;font-weight:700;unicode-range:U+0000-002C,U+002F,U+003A-FFFF;src:url({fonts}/pixelify-sans-latin-700-normal.woff2)}}
+@font-face{{font-family:P;font-weight:400;unicode-range:U+002D-002E,U+0030-0039;size-adjust:70%;src:url({fonts}/press-start-2p-latin-400-normal.woff2)}}
+@font-face{{font-family:P;font-weight:700;unicode-range:U+002D-002E,U+0030-0039;size-adjust:70%;src:url({fonts}/press-start-2p-latin-400-normal.woff2)}}
 @font-face{{font-family:CD;src:url({fonts}/cinzel-decorative-latin-900-normal.woff2)}}
 @font-face{{font-family:C;src:url({fonts}/cinzel-latin-900-normal.woff2)}}
 *{{box-sizing:border-box;margin:0;padding:0}}
