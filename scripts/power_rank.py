@@ -83,7 +83,9 @@ def side_points(side: dict) -> float:
     While a week is live ESPN leaves totalPoints at 0 and puts the running
     score in totalPointsLive, so check both before giving up.
     """
-    for key in ("totalPoints", "totalPointsLive", "totalProjectedPointsLive"):
+    # Never fall back to projected points: a future week carries projections
+    # for every team, which made an unplayed week look complete.
+    for key in ("totalPoints", "totalPointsLive"):
         v = side.get(key)
         if v:
             return float(v)
