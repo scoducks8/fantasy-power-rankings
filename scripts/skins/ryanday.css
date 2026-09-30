@@ -178,7 +178,7 @@ footer{margin-top:40px;padding-top:16px;border-top:3px double var(--line);font-s
   .brief{grid-template-columns:1fr 1fr}
   .tlwrap{grid-template-columns:1fr}
   .tlpics{flex-direction:row;flex-wrap:wrap}
-  .tlpics .pic{flex:1 1 30%}
+  .tlpics .pic{flex:1 1 220px;min-width:0}
   .hero-in{grid-template-columns:1fr}
   .pic.big{max-width:340px;transform:none}
   .facts{grid-template-columns:1fr}
@@ -217,6 +217,19 @@ footer{margin-top:40px;padding-top:16px;border-top:3px double var(--line);font-s
   background:var(--scarlet);border:2px solid #efece4;border-radius:50%}
 .yr{display:block;font-family:var(--grad);font-size:12px;letter-spacing:.08em;color:#e8b5b5}
 .ev{font-size:15.5px;line-height:1.5;color:#e7e3d9}
-.tlpics{display:flex;flex-direction:column;gap:12px}
+.tlpics{display:flex;flex-direction:column;gap:12px;min-width:0}
+.tlpics .pic{max-width:100%}
 .tlpics .pic{transform:rotate(-1.4deg)}
 .tlpics .pic:nth-child(2){transform:rotate(1.2deg)}
+
+/* responsive overrides for the biography block, kept last so they win */
+@media (max-width:900px){
+  .brief{grid-template-columns:1fr 1fr}
+  .tlwrap{grid-template-columns:1fr}
+  .tlpics{flex-direction:row;flex-wrap:wrap}
+  .tlpics .pic{flex:1 1 200px;min-width:0}
+}
+@media (max-width:620px){
+  .brief{grid-template-columns:1fr}
+  .tlpics .pic{flex:1 1 100%}
+}

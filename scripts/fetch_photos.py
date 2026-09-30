@@ -21,6 +21,11 @@ API = "https://commons.wikimedia.org/w/api.php"
 UA = {"User-Agent": "fantasy-power-rankings/1.0 (github.com/scoducks8)"}
 
 # search term -> how many files to keep
+# term -> how many files to keep. A required word filters look-alikes: there is
+# a snooker player named Ryan Day, and searches otherwise return other coaches.
+REQUIRE = {"Ryan Day football coach": ("ryan day",)}
+BLOCK = ("snooker", "walden", "eckardt", "zook", "withers", "walters", "white house")
+
 TERMS = {
     "Ryan Day football coach": 8,
     "Ohio State Buckeyes football head coach": 4,
@@ -99,6 +104,14 @@ def main() -> None:
                 if not mime.startswith("image/") or mime == "image/svg+xml":
                     continue
                 if not lic or BAD_LICENSE.search(lic):
+                    continue
+                low = name.lower()
+                if any(b in low for b in BLOCK):
+                    print(f"  - skipped {name[5:]} (look-alike)")
+                    continue
+                need = REQUIRE.get(term)
+                if need and not any(w in low for w in need):
+                    print(f"  - skipped {name[5:]} (missing {need[0]})")
                     continue
                 ext = ".jpg" if "jpeg" in mime else "." + mime.split("/")[-1]
                 fname = f"{slug(name[5:])}{ext}"
