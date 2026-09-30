@@ -207,8 +207,7 @@ def render(data, history, theme, copy, h) -> str:
                 f'{e(copy.get("guestbook_title", "Guestbook"))}</h2>'
                 f'<ul class="gb">{guest}</ul></section>') if guest else ""
     cred_block = ('<details class="cred"><summary>Photo credits and licences</summary><ul>'
-                  + credits + '</ul><p>Photographs from Wikimedia Commons, reused under their '
-                  'stated licences.</p></details>') if photos else ""
+                  + credits + '</ul><p>' + e(copy.get("credits_note", "")) + '</p></details>') if photos else ""
 
     return f'''<!doctype html>
 <html lang="en">

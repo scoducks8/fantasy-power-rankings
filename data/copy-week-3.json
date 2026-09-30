@@ -5,7 +5,7 @@
  "card_headline": "Ryan Day: a life and a career",
  "hero_caption": "Ryan Day, head coach, Ohio State University.",
  "hits_note": "this page is maintained weekly",
- "standfirst": "Ryan Day has been the head coach at Ohio State since 2019. He grew up in Manchester, New Hampshire, played quarterback at the University of New Hampshire, and worked at four schools and two NFL teams before he got there. What follows is that career, set out in order, along with the Week 3 power rankings of the Chach Champions League.",
+ "standfirst": "Ryan Day has been the head coach at Ohio State since 2019. He grew up in Manchester, New Hampshire, played quarterback at the University of New Hampshire, and worked at four schools and two NFL teams before he got there. He has won a national championship and lost four straight games to Michigan. What follows is that career, set out in order, along with the Week 3 power rankings of the Chach Champions League.",
  "shrine_title": "The life and career of Ryan Day",
  "shrine_sub": "Set down here in the order it happened.",
  "brief": [
@@ -73,7 +73,19 @@
   },
   {
    "year": "2019",
-   "text": "First full season as head coach. The team finished 13-1."
+   "text": "First full season as head coach. The team finished 13-1. The loss was to Clemson in the Fiesta Bowl, 29-23."
+  },
+  {
+   "year": "2020",
+   "text": "Reached the national championship game. Alabama won 52-24."
+  },
+  {
+   "year": "2021 to 2023",
+   "text": "Three consecutive 11-2 seasons. Won the Rose Bowl, then lost the Peach Bowl to Georgia 42-41 after leading by fourteen in the fourth quarter, then lost the Cotton Bowl to Missouri 14-3."
+  },
+  {
+   "year": "2021 to 2024",
+   "text": "Lost to Michigan four seasons running: 42-27, then 45-23, then 30-24, then 13-10 in Columbus, where Ohio State were 20.5-point favorites."
   },
   {
    "year": "January 2025",
@@ -81,11 +93,11 @@
   },
   {
    "year": "November 2025",
-   "text": "Beat Michigan 27-9, ending a four-game losing run in the rivalry."
+   "text": "Beat Michigan 27-9 in Ann Arbor, ending the run of four defeats. The season finished 12-2 after a playoff loss in the Cotton Bowl."
   },
   {
    "year": "2026",
-   "text": "Ohio State is 3-1 through four games, the loss by a single point at Texas. Most recently a 42-19 win over Illinois on September 26."
+   "text": "Ohio State is 3-1 through four games. The loss was by a single point at Texas, 24-23. Most recently a 42-19 win over Illinois on September 26."
   }
  ],
  "labels": {
@@ -101,7 +113,7 @@
  "lede_scores": "Six games, closest first. A gold border marks a margin under ten points.",
  "lede_rankings": "Ranked by record, recent form, scoring and luck. The bar under each team divides that week's points by position. The figure at right is the week's score, not the season total.",
  "lede_positions": "Points by position. The highest figure in each column is outlined. Negative figures are shown in red.",
- "gallery_note": "Photographs are from Wikimedia Commons and are reused under their stated licences. Credits are listed at the foot of the page.",
+ "gallery_note": "Photographs of the coach, in order. The first two are dated. Credits are listed at the foot of the page.",
  "disclaimer": "An unofficial tribute page. Not affiliated with Ryan Day or Ohio State University.",
  "scout": {
   "2": "Receivers, tight end and kicker all led the league.",
@@ -120,18 +132,19 @@
  "takes": {
   "2": "Ben's Brilliant Team scored 150.84 and beat michael's Monstrous Team by 3.88, the closest game of the week. Jaxon Smith-Njigba led the way with 35.4. The receivers, the tight end and the kicker each finished first in the league at their position, which is the first time any team has done that this season. Three wins from three. Ryan Day was born on March 12, 1979, in Manchester, New Hampshire.",
   "3": "CeeDeez Nutz scored 133.64 and beat Adams and Jefferson by 43.64. Christian Watson led the team with 22.6 from the flex, and the Vikings defense added 19, the best defensive figure of the week. The team is 3-0 and second in the rankings, having won every week without once holding the highest score. Day played quarterback at Manchester Central High School and was named New Hampshire's Gatorade player of the year.",
-  "9": "michael's Monstrous Team scored 146.96, the highest losing score recorded this season, and lost by 3.88. Jahmyr Gibbs returned 41.4, the best individual figure in the league this week. A further 107.54 points were left on the bench, more than seven teams scored in total. The team falls from first to third at 2-1. Day played quarterback at the University of New Hampshire from 1998 to 2001 and was a captain in his senior year.",
-  "7": "Purdy Seconds to Mars scored 149.08 against 65.92, a margin of 83.16 and the widest of the season so far. Bijan Robinson led the team with 35.3. It is a second consecutive win and lifts the team two places to fourth at 2-1. Day's offensive coordinator at New Hampshire was Chip Kelly, who later hired him twice in the NFL.",
+  "9": "michael's Monstrous Team scored 146.96, the highest losing score recorded this season, and lost by 3.88. Jahmyr Gibbs returned 41.4, the best individual figure in the league this week. A further 107.54 points were left on the bench, more than seven teams scored in total. The team falls from first to third at 2-1. Ohio State lost the Peach Bowl to Georgia 42-41 at the end of the 2022 season, having led by fourteen points in the fourth quarter.",
+  "7": "Purdy Seconds to Mars scored 149.08 against 65.92, a margin of 83.16 and the widest of the season so far. Bijan Robinson led the team with 35.3. It is a second consecutive win and lifts the team two places to fourth at 2-1. Alabama beat Ohio State 52-24 in the national championship game following the 2020 season.",
   "4": "Cortisol Spyke Weeks scored 139.44 and beat Team Galakrond by 48.3. Ja'Marr Chase led the team with 24.8, and both the backfield and the receiver room finished in the league's top three. It is a second straight win and a rise of five places to fifth, the largest move anybody made this week. Day's first coaching job came in 2002, with the tight ends at New Hampshire.",
-  "8": "Dake Bates scored 96.48 and beat the roadrunners by 5.14 in the lowest-scoring game of the week. Jordan Love led the team with 18.5. It was the lowest winning score on the board, and the team sits sixth at 2-1, having opened the season with 177.86 in week one. Day spent 2003 and 2004 as a graduate assistant at Boston College, then 2005 in the same role at Florida.",
-  "6": "Bingo Night scored 65.92 and lost by 83.16. Travis Kelce led the team with 13.9. The bench returned 82.8, well above the lineup that played, and the team lost all eleven of its all-play matchups, the first time any team has done so this season. The record stands at 2-1, seventh in the rankings. Day coached wide receivers at Temple in 2006.",
-  "12": "Team evil scored 109.08 and beat Drake Maye Sucks Ass by 14.32 for its first win of the season. Garrett Wilson led the team with 26.7. The 49ers defense returned nothing. The team rises three places to eighth at 1-2, after losing by 75.9 in week one and by 0.4 in week two. Day coached wide receivers at Boston College for five seasons, from 2007 to 2011.",
-  "5": "Adams and Jefferson scored 90.00 and lost by 43.64. Matthew Stafford led the team with 20.9. A further 81.54 points were left on the bench. The team is 0-3 while holding the fourth-most points in the league, a combination no other team has managed this season. Day was offensive coordinator at Temple in 2012, then at Boston College in 2013 and 2014.",
+  "8": "Dake Bates scored 96.48 and beat the roadrunners by 5.14 in the lowest-scoring game of the week. Jordan Love led the team with 18.5. It was the lowest winning score on the board, and the team sits sixth at 2-1, having opened the season with 177.86 in week one. Ohio State's only defeat this autumn came by a single point, 24-23 at Texas.",
+  "6": "Bingo Night scored 65.92 and lost by 83.16. Travis Kelce led the team with 13.9. The bench returned 82.8, well above the lineup that played, and the team lost all eleven of its all-play matchups, the first time any team has done so this season. The record stands at 2-1, seventh in the rankings. Michigan beat Ohio State 13-10 in Columbus in 2024, where Ohio State were 20.5-point favorites.",
+  "12": "Team evil scored 109.08 and beat Drake Maye Sucks Ass by 14.32 for its first win of the season. Garrett Wilson led the team with 26.7. The 49ers defense returned nothing. The team rises three places to eighth at 1-2, after losing by 75.9 in week one and by 0.4 in week two. Ohio State lost the 2019 Fiesta Bowl to Clemson 29-23.",
+  "5": "Adams and Jefferson scored 90.00 and lost by 43.64. Matthew Stafford led the team with 20.9. A further 81.54 points were left on the bench. The team is 0-3 while holding the fourth-most points in the league, a combination no other team has managed this season. Ohio State finished 11-2 in three consecutive seasons, from 2021 to 2023, and lost a bowl game in each of them.",
   "11": "Drake Maye Sucks Ass scored 94.76 and lost by 14.32. Drake London led the team with 28.4. Drake Maye, the quarterback the team is named after, returned 3.8, and the Eagles defense finished at minus one, a negative figure in a starting lineup. The team falls two places to tenth at 1-2. Day coached quarterbacks in the NFL for two seasons, with the Philadelphia Eagles in 2015 and the San Francisco 49ers in 2016.",
-  "1": "Team Galakrond scored 91.14 and lost by 48.3. Kenneth Walker led the team with 21.3 and the backfield produced 40.4, the best rushing figure of the week. Every other position returned less than the league average. The team is 0-3 and eleventh. Day arrived at Ohio State in 2017 as co-offensive coordinator and quarterbacks coach, and served as acting head coach for the first three games of 2018, all of which the team won.",
-  "10": "The roadrunners scored 91.34 and lost by 5.14. Matthew Golden led the team with 21.0, and the tight end slot returned zero for the second time in three weeks. A further 72.18 points were left on the bench. The team is 0-3 and twelfth, the only side yet to record a win or a top-half finish. Day's first full season as head coach, in 2019, ended 13-1, and Ohio State won the national championship in January 2025, beating Notre Dame 34-23."
+  "1": "Team Galakrond scored 91.14 and lost by 48.3. Kenneth Walker led the team with 21.3 and the backfield produced 40.4, the best rushing figure of the week. Every other position returned less than the league average. The team is 0-3 and eleventh. Michigan beat Ohio State four seasons running, from 2021 to 2024, by scores of 42-27, 45-23, 30-24 and 13-10.",
+  "10": "The roadrunners scored 91.34 and lost by 5.14. Matthew Golden led the team with 21.0, and the tight end slot returned zero for the second time in three weeks. A further 72.18 points were left on the bench. The team is 0-3 and twelfth, the only side yet to record a win. Missouri beat Ohio State 14-3 in the Cotton Bowl at the end of the 2023 season."
  },
  "og_title": "Week 3: Ryan Day, a life and a career",
  "og_description": "The career of Ohio State's head coach, set out in order, with the Chach Champions League Week 3 power rankings.",
- "card_strip": "RYAN DAY · A TRIBUTE PAGE · CHACH CHAMPIONS LEAGUE"
+ "card_strip": "RYAN DAY · A TRIBUTE PAGE · CHACH CHAMPIONS LEAGUE",
+ "credits_note": "Most photographs are from Wikimedia Commons and are reused under their stated licences. The remainder are credited as supplied."
 }
