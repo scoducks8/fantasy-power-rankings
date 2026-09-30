@@ -78,14 +78,15 @@ h1{margin:0;font-family:var(--anton);font-size:clamp(30px,5.6vw,52px);line-heigh
 
 .pic{margin:0;background:linear-gradient(180deg,#fff,#efece4);padding:7px;border:1px solid var(--line);
   box-shadow:3px 3px 0 rgba(0,0,0,.18);display:block}
-.pic img{display:block;width:100%;height:100%;object-fit:cover;border:1px solid #d6d0c4}
+.pic img{display:block;width:100%;height:auto;max-height:300px;object-fit:contain;
+  background:#f3f0e8;border:1px solid #d6d0c4}
 .pic figcaption{margin-top:6px;font-size:11.5px;color:var(--muted);text-align:center;
   font-style:italic;line-height:1.3}
-.pic.big img{height:260px}
+.pic.big img{max-height:300px}
 .pic.big{transform:rotate(-1.2deg)}
-.pic.sm img{height:120px}
+.pic.sm img{max-height:170px}
 .pic.mug{width:132px;flex:none;transform:rotate(1deg)}
-.pic.mug img{height:120px}
+.pic.mug img{max-height:190px}
 
 .shrine{background:linear-gradient(180deg,#2b2b2b,#1b1b1b);color:#f1ede4;
   border-bottom:6px solid var(--scarlet)}
@@ -171,11 +172,11 @@ section{padding:30px 0 0;scroll-margin-top:58px}
 .wl{fill:#8d8779;font-family:"Grad",Georgia,serif;font-size:10px;letter-spacing:.08em}
 .cnote{margin:10px 0 0;font-size:12px;color:var(--muted);font-style:italic}
 
-.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:start}
 .gp{margin:0;background:#fff;border:1px solid var(--line);padding:6px;box-shadow:3px 3px 0 rgba(0,0,0,.16)}
 .gp:nth-child(odd){transform:rotate(-1deg)}
 .gp:nth-child(3n){transform:rotate(1.4deg)}
-.gp img{display:block;width:100%;height:150px;object-fit:cover}
+.gp img{display:block;width:100%;height:auto;max-height:230px;object-fit:contain;background:#f6f3ec}
 .gp figcaption{margin-top:5px;font-size:11px;line-height:1.3;color:var(--muted)}
 .gp figcaption span{display:block;font-size:10px;color:#8d8779}
 
@@ -217,8 +218,8 @@ footer{margin-top:40px;padding-top:16px;border-top:3px double var(--line);font-s
   .pts span{white-space:normal}
   .rk-b{flex-direction:column}
   .pic.mug{width:100%;transform:none}
-  .pic.mug img{height:180px}
-  .gp img{height:110px}
+  .pic.mug img{max-height:320px}
+  .gp img{max-height:220px}
 }
 
 /* biography: brief box and timeline */
