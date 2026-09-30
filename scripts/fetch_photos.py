@@ -37,8 +37,13 @@ BAD_LICENSE = re.compile(r"fair use|non-free|copyright", re.I)
 def api(params: dict) -> dict:
     url = f"{API}?{urllib.parse.urlencode({**params, 'format': 'json'})}"
     req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=30) as r:
-        return json.loads(r.read().decode())
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            return json.loads(r.read().decode())
+    except Exception as exc:  # network, HTTP error, bad JSON
+        print(f"  ! api call failed: {exc}")
+        print(f"    {url[:160]}")
+        return {}
 
 
 def search(term: str, limit: int) -> list[str]:
@@ -71,7 +76,14 @@ def main() -> None:
     credits, seen = [], set()
     for term, want in TERMS.items():
         kept = 0
-        titles = search(term, want)
+        try:
+            titles = search(term, want)
+        except Exception as exc:
+            print(f"{term}: search failed ({exc})")
+            continue
+        if not titles:
+            print(f"{term}: no results")
+            continue
         for chunk in [titles[i:i + 10] for i in range(0, len(titles), 10)]:
             for page in info(chunk).values():
                 if kept >= want:
@@ -113,7 +125,9 @@ def main() -> None:
         print(f"{term}: kept {kept}")
 
     (root / a.credits).write_text(json.dumps(credits, indent=1))
-    print(f"\n{len(credits)} photos, credits in {a.credits}")
+    print(f"\n{len(credits)} photos saved, credits written to {a.credits}")
+    if not credits:
+        print("No photos were downloaded. The page will build without them.")
 
 
 if __name__ == "__main__":

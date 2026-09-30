@@ -22,13 +22,21 @@ jobs:
       - name: Download Commons photos
         run: python scripts/fetch_photos.py --out docs/assets/day
 
+      - name: What landed
+        run: |
+          mkdir -p docs/assets/day
+          echo "files in docs/assets/day:"
+          ls -la docs/assets/day || true
+          echo "credits:"
+          head -c 600 data/photo-credits.json || echo "(no credits file)"
+
       - name: Commit the photos
         run: |
           git config user.name "power-rankings-bot"
           git config user.email "actions@github.com"
-          git add docs/assets/day data/photo-credits.json
+          git add -A docs/assets/day data/photo-credits.json || true
           if git diff --staged --quiet; then
-            echo "Nothing new."
+            echo "Nothing new to commit."
           else
             git commit -m "Theme photos: $(date -u +%Y-%m-%d)"
             git push

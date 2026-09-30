@@ -21,6 +21,186 @@ ROOT = Path(__file__).resolve().parent.parent
 e = html.escape
 
 
+def build_ryanday(week: int, copy_path: str) -> str:
+    """Scarlet and gray card for the Ryan Day shrine week."""
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    docs = (ROOT / "docs").as_uri()
+    teams = d["teams"]
+    lead = min(teams, key=lambda t: t["rank"])
+    score = {}
+    for m in d["matchups"]:
+        score[m["home_id"]], score[m["away_id"]] = m["home_score"], m["away_score"]
+    num = score.get(lead["team_id"], lead["points_for"])
+    creds = ROOT / "data" / "photo-credits.json"
+    photos = json.loads(creds.read_text()) if creds.exists() else []
+    day = [p for p in photos if "ryan day" in p.get("term", "").lower()]
+    pic = f'{docs}/{day[0]["file"]}' if day else ""
+    credit = (day[0]["author"][:40] + " / " + day[0]["license"]) if day else "Week " + str(week)
+    av = f'{docs}/{lead["logo_local"]}' if lead.get("logo_local") else ""
+    fonts = f"{docs}/assets/fonts"
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:G;src:url({fonts}/graduate-latin-400-normal.woff2)}}
+@font-face{{font-family:A;src:url({fonts}/anton-latin-400-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;position:relative;color:#1d1d1d;
+  font-family:"Trebuchet MS",sans-serif;
+  background:repeating-linear-gradient(45deg,rgba(187,0,0,.06) 0 16px,transparent 16px 32px),#efece4}}
+.top{{height:56px;background:#bb0000;color:#fff;font-family:G;font-size:19px;letter-spacing:.06em;
+  display:flex;align-items:center;padding:0 32px;border-bottom:4px double #fff}}
+.body{{display:grid;grid-template-columns:1fr 420px;height:574px}}
+.left{{padding:28px 30px 28px 34px}}
+.kick{{font-family:G;font-size:16px;color:#8a0000;letter-spacing:.07em;text-transform:uppercase}}
+.head{{font-family:A;font-size:46px;line-height:1.02;text-transform:uppercase;color:#bb0000;margin:10px 0 0;
+  text-shadow:2px 2px 0 #fff,4px 4px 0 rgba(0,0,0,.16)}}
+.num{{font-family:A;font-size:104px;line-height:.94;color:#1d1d1d;margin-top:18px}}
+.who{{font-family:G;font-size:21px;color:#5b5b5b;margin-top:2px}}
+.right{{position:relative;padding:24px 30px 24px 0;display:flex;align-items:center}}
+.pic{{background:#fff;padding:11px;border:1px solid #b9b2a4;box-shadow:6px 6px 0 rgba(0,0,0,.22);
+  transform:rotate(-1.6deg);width:100%}}
+.pic img{{display:block;width:100%;height:392px;object-fit:cover;border:1px solid #d6d0c4}}
+.pic figcaption{{margin-top:8px;font-size:13px;color:#5b5b5b;font-style:italic;text-align:center}}
+.noimg{{width:100%;height:392px;display:grid;place-items:center;background:#2b2b2b;color:#fff;
+  font-family:G;font-size:26px;text-align:center;padding:24px;line-height:1.4}}
+.hel{{position:absolute;right:42px;bottom:34px;width:92px;height:92px;border-radius:50%;
+  border:4px solid #fff;box-shadow:0 0 0 3px #bb0000;object-fit:cover;background:#ddd}}
+</style></head><body>
+<div class="top">{e(c.get("card_strip", "A TRIBUTE PAGE"))}</div>
+<div class="body">
+  <div class="left">
+    <div class="kick">Week {week} Power Rankings</div>
+    <div class="head">{e(c.get("card_headline", ""))}</div>
+    <div class="num">{num:.1f}</div>
+    <div class="who">{e(lead["name"])} &middot; {e(lead["owner"])} &middot; {lead["wins"]}-{lead["losses"]}</div>
+  </div>
+  <div class="right"><figure class="pic">
+    {f'<img src="{pic}">' if pic else '<div class="noimg">RYAN DAY<br>HEAD COACH, OHIO STATE</div>'}
+    <figcaption>{e(credit)}</figcaption>
+  </figure>{f'<img class="hel" src="{av}">' if av else ''}</div>
+</div>
+</body></html>"""
+
+
+def build_occult(week: int, copy_path: str) -> str:
+    """Card for the occult ledger: the seal, the title, the two figures."""
+    import sys as _sys
+    _sys.path.insert(0, str(ROOT / "scripts" / "layouts"))
+    import occult as _oc
+
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    docs = (ROOT / "docs").as_uri()
+    teams = d["teams"]
+    lead = min(teams, key=lambda t: t["rank"])
+    score = {}
+    for m in d["matchups"]:
+        score[m["home_id"]], score[m["away_id"]] = m["home_score"], m["away_score"]
+    num = score.get(lead["team_id"], lead["points_for"])
+    fonts = f"{docs}/assets/fonts"
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:F;src:url({fonts}/unifrakturmaguntia-latin-400-normal.woff2)}}
+@font-face{{font-family:C;font-weight:700;src:url({fonts}/cinzel-latin-700-normal.woff2)}}
+@font-face{{font-family:C;font-weight:900;src:url({fonts}/cinzel-latin-900-normal.woff2)}}
+@font-face{{font-family:G;src:url({fonts}/eb-garamond-latin-400-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;position:relative;color:#d8cfbd;font-family:G;
+  background:radial-gradient(ellipse at 28% 45%,rgba(200,162,74,.13),transparent 55%),
+    radial-gradient(ellipse at 90% 110%,rgba(143,31,36,.14),transparent 55%),#07070a}}
+.wrap{{display:grid;grid-template-columns:1fr 430px;height:100%;align-items:center}}
+.left{{padding:0 20px 0 62px}}
+.over{{font-family:C;font-size:15px;letter-spacing:.34em;text-transform:uppercase;color:#6b6354}}
+h1{{font-family:F;font-weight:400;font-size:64px;line-height:1.04;margin:10px 0 8px;color:#e7dfcd;
+  text-shadow:0 0 30px rgba(200,162,74,.25)}}
+.wk{{font-family:C;font-size:16px;letter-spacing:.24em;text-transform:uppercase;color:#c8a24a}}
+.rule{{margin:22px 0 18px;font-size:17px;letter-spacing:1em;color:#8a6d28}}
+.fig{{font-family:C;font-weight:900;font-size:64px;color:#c8a24a;line-height:1}}
+.fig small{{display:block;font-family:C;font-weight:700;font-size:16px;letter-spacing:.14em;
+  text-transform:uppercase;color:#9a907d;margin-top:8px}}
+.head{{margin-top:22px;font-size:26px;font-style:italic;color:#b9b0a0}}
+.seal svg{{display:block;filter:drop-shadow(0 0 26px rgba(200,162,74,.22))}}
+.seal .ink{{fill:none;stroke:#c8a24a;stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}}
+.seal .ring{{stroke:#8a6d28;stroke-width:.9}}
+.seal .ring2{{stroke:#8a6d28;stroke-width:.5;stroke-dasharray:2 3}}
+.seal .rays line,.seal .tick line{{stroke:#8a6d28;stroke-width:.5;opacity:.6}}
+.seal .line{{stroke-width:1.3}}
+.seal circle.core{{fill:#c8a24a;stroke:none}}
+.grain{{position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.3) 0 1px,transparent 1px 2px);opacity:.5}}
+</style></head><body>
+<div class="wrap">
+  <div class="left">
+    <div class="over">{e(c.get("overline", ""))}</div>
+    <h1>{e(c.get("board_name", ""))}</h1>
+    <div class="wk">{e(c.get("thread_title", ""))}</div>
+    <div class="rule">{e(c.get("glyph_rule", ""))}</div>
+    <div class="fig">{num:.2f}<small>{e(lead["name"])} &middot; station I</small></div>
+    <div class="head">{e(c.get("card_headline", ""))}</div>
+  </div>
+  <div class="seal">{_oc.seal(teams, 400)}</div>
+</div>
+<div class="grain"></div>
+</body></html>"""
+
+
+def build_deepweb(week: int, copy_path: str) -> str:
+    """Card for the deep-web thread week: one post, cropped."""
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    docs = (ROOT / "docs").as_uri()
+    teams = d["teams"]
+    lead = min(teams, key=lambda t: t["rank"])
+    score = {}
+    for m in d["matchups"]:
+        score[m["home_id"]], score[m["away_id"]] = m["home_score"], m["away_score"]
+    num = score.get(lead["team_id"], lead["points_for"])
+    av = f'{docs}/{lead["logo_local"]}' if lead.get("logo_local") else ""
+    fonts = f"{docs}/assets/fonts"
+    green = c.get("op_green", [])[:3]
+    lines = "".join(f'<p class="gt">&gt;{e(x)}</p>' for x in green)
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:P;font-weight:400;src:url({fonts}/ibm-plex-mono-latin-400-normal.woff2)}}
+@font-face{{font-family:P;font-weight:700;src:url({fonts}/ibm-plex-mono-latin-700-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;position:relative;font-family:P;color:#c3cfc9;
+  background:radial-gradient(ellipse at 50% -20%,rgba(127,219,160,.08),transparent 60%),#080a0a}}
+.scan{{position:absolute;inset:0;z-index:5;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.25) 0 1px,transparent 1px 3px)}}
+.url{{padding:16px 40px 0;font-size:15px;color:#4d5956}}
+.logo{{padding:4px 40px 0;font-size:44px;font-weight:700;color:#7fdba0;letter-spacing:.06em;
+  text-shadow:0 0 22px rgba(127,219,160,.3)}}
+.post{{margin:22px 40px 0;border:1px solid #2f3a3a;background:#121617}}
+.ph{{display:flex;align-items:baseline;gap:10px;padding:9px 16px;background:#171c1d;
+  border-bottom:1px solid #232b2c;font-size:17px}}
+.subj{{color:#d8a657;font-weight:700}} .nm{{color:#4f9c6b}} .no{{margin-left:auto;color:#7d8a85;font-size:15px}}
+.pb{{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 16px}}
+.pb img{{width:150px;height:150px;object-fit:cover;border:1px solid #2f3a3a;filter:grayscale(.55)}}
+.num{{font-size:74px;font-weight:700;color:#7fdba0;line-height:1}}
+.who{{font-size:19px;color:#7d8a85;margin-top:4px}}
+.gt{{color:#9cbb57;font-size:21px;margin-top:9px}}
+.head{{margin:20px 40px 0;font-size:31px;color:#c3cfc9}}
+.foot{{position:absolute;left:40px;bottom:22px;font-size:15px;color:#4d5956}}
+</style></head><body>
+<div class="url">{e(c.get("host", ""))}</div>
+<div class="logo">{e(c.get("board_name", "the ledger"))}</div>
+<div class="post">
+  <div class="ph"><span class="subj">{e(c.get("op_subject", ""))}</span>
+    <span class="nm">Anonymous</span><span class="no">No.8231 [Archived]</span></div>
+  <div class="pb">
+    {f'<img src="{av}">' if av else '<div></div>'}
+    <div><div class="num">{num:.2f}</div>
+      <div class="who">{e(lead["name"])} &middot; {e(lead["owner"])} &middot; {lead["wins"]}-{lead["losses"]}</div>
+      {lines}</div>
+  </div>
+</div>
+<div class="head">{e(c.get("card_headline", ""))}</div>
+<div class="foot">chach champions league // week {week} // entries are permanent</div>
+<div class="scan"></div>
+</body></html>"""
+
+
 def build(week: int, copy_path: str) -> str:
     d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
     c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
@@ -113,10 +293,12 @@ def main() -> None:
     ap.add_argument("--week", type=int, required=True)
     ap.add_argument("--copy", default="")
     ap.add_argument("--out", default="")
+    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday"])
     a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "docs" / f"og-week-{a.week}.png"
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
-        fh.write(build(a.week, a.copy))
+        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday}.get(a.style, build)
+        fh.write(builder(a.week, a.copy))
         src = fh.name
     js = f'''const {{chromium}}=require('playwright');(async()=>{{
 const b=await chromium.launch({{executablePath:process.env.CHROMIUM||undefined}});
