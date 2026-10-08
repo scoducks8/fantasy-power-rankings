@@ -1,0 +1,29 @@
+{
+ "_comment": "Week 4 copy, SportsCenter skin. Numbers checked against scripts/fact_sheet.py --week 4.",
+ "headline": "Adams and Jefferson hang 190 on the league",
+ "card_headline": "Season high. Still 1-3.",
+ "standfirst": "Tetairoa McMillan goes for 45.2, Lyudmil puts up 190.06, the biggest number anybody has posted this season, and he is still 1-3. Ben E. survives by two tenths of a point to stay perfect. Team Galakrond scores 140 and loses by fifty. A team called Drake Maye Sucks Ass gets 26.2 out of Drake Maye. And Bingo Night posts the lowest score in the league for the second week in a row. Week 4 had everything.",
+ "lede_scores": "Closest game first. Two tenths of a point decided the top one. Gold border means it came down to less than ten.",
+ "lede_rankings": "Four weeks in, and the record now carries the most weight. The color bar under each team splits the week's points by position.",
+ "lede_positions": "Long orange bar, the backfield showed up. Long green, the receivers. Find Team Galakrond's backfield, then look at the rest of that row.",
+ "labels": {
+  "lede_season": "Four weeks on the board. Bingo Night drops five spots, the biggest fall of the season. Adams and Jefferson climbs three.",
+  "cnote": "Rank one at the top. Every Monday night adds a column."
+ },
+ "takes": {
+  "2": "Two tenths of a point. Ben's Brilliant Team 133.38, CeeDeez Nutz 133.18, the closest game this league has played all season. Chuba Hubbard leads the way with 25.9 and Brock Bowers adds 20.6 from the tight end spot. Ben E. is 4-0, the only unbeaten team left. That is the good news. The bad news, for everybody else, is that he knows it.",
+  "9": "Ugly, and it counts. michael gets past Team evil by two and a half with 125.92, fifteen under projection. Chris Olave leads the team with 19.6 and nobody on the roster cracks twenty. Still a win. He moves back up to second, and he has more total points than anybody in the league, which he would like you to know.",
+  "3": "CeeDee Lamb goes for 41.3 for the team named after him, and it is not enough. Lost by two tenths of a point. Now the part that hurts: 88.7 points sat on the bench. Two tenths. First loss of the season, down a spot to third, and somewhere skyler is still staring at that lineup.",
+  "8": "Back on track. Javonte Williams runs for 31.3, Puka Nacua adds 27.7 out of the flex, and Dake Bates puts 131.38 on Cortisol Spyke Weeks for a 38.4 point win. Second straight win, up two spots to fourth at 3-1. Turns out the opener was not a fluke.",
+  "7": "Two receivers, two zeros. Rashee Rice: zero. Jalen Coker: zero. Bijan Robinson does his part with 27.7, but 96.02 is not getting it done, and it hands the roadrunners their first win of the season. Nineteen under projection. Down a spot to fifth at 2-2. Rough Sunday at the Purdy household.",
+  "5": "One ninety. Tetairoa McMillan goes for 45.2, the best individual number in the league this week, and Kyren Williams adds 36.7. 190.06 is the highest score anyone has posted this season, 74.6 over projection, eleven and oh against the field. Team Galakrond put up 140 and got buried by fifty. Lyudmil is finally in the win column at 1-3 and jumps three spots. Davante Adams, half the team name, chips in 7.2.",
+  "4": "Back to earth. 93.0 points, 35.7 under projection, a 38.4 point loss to Dake Bates. Dak Prescott leads the team with 18.1, and that tells you how the afternoon went. Ja'Marr Chase manages 5.7. The two-game streak is over and Mason slides two spots to seventh at 2-2.",
+  "11": "Plot twist. The team called Drake Maye Sucks Ass starts Drake Maye, and Drake Maye goes for 26.2, the best quarterback score in the league this week. Sam LaPorta adds 22.4, best at tight end. Jackson beats Bingo Night 112.26 to 91.72 and climbs two spots to eighth. The team name stays. Of course it stays.",
+  "12": "So close, again. Tee Higgins goes for 26.7, Joe Burrow throws in 23.7, and Team evil loses to michael by two and a half. The Jets defense: zero. That is your ballgame. It is the second time this season kelly has lost by less than three. 1-3, down a spot to ninth.",
+  "10": "Finally. Nico Collins goes for 30.8, Malik Nabers adds 23.2, and the roadrunners get on the board, 118.08 to 96.02 over Purdy Seconds to Mars. And Colston Loveland, who opened the season with a zero, catches some footballs. 11.7. Up two spots to tenth. One and three never felt this good.",
+  "1": "You cannot make this up. 140.28 points, the second-best score in the league this week, ten and one against the field, and Neil loses by fifty because the team across from him put up the highest score of the season. Kenneth Walker runs for 30.9 and the backfield goes for 75.2, best in the league. 0-4. Sixth in total points. Somebody check on Neil.",
+  "6": "Lowest score in the league for the second straight week, and zero for eleven against the field for the second straight week. 91.72, a 20.5 point loss to Drake Maye Sucks Ass. Rhamondre Stevenson leads the team with 18.4. Travis Kelce: 3.5. Saquon Barkley: 2.0. Fewest points in the league on the season. Bingo Night is still 2-2, but the power rankings have seen enough. Down five spots to twelfth."
+ },
+ "og_title": "Week 4: Adams and Jefferson hang 190",
+ "og_description": "The highest score of the season, a game decided by two tenths of a point, and Drake Maye Sucks Ass winning on a big day from Drake Maye."
+}

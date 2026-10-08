@@ -21,6 +21,95 @@ ROOT = Path(__file__).resolve().parent.parent
 e = html.escape
 
 
+def build_sportscenter(week: int, copy_path: str) -> str:
+    """2000s SportsCenter card: chrome bar, big gold number, ticker of results."""
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    docs = (ROOT / "docs").as_uri()
+    teams = d["teams"]
+    score = {}
+    for m in d["matchups"]:
+        score[m["home_id"]], score[m["away_id"]] = m["home_score"], m["away_score"]
+    top = max(teams, key=lambda t: score.get(t["team_id"], 0))
+    num = score.get(top["team_id"], 0)
+    best = top.get("top_scorer") or {}
+    av = f'{docs}/{top["logo_local"]}' if top.get("logo_local") else ""
+    hs = f'{docs}/{best["headshot_local"]}' if best.get("headshot_local") else ""
+    first = {}
+    for t in teams:
+        first.setdefault(t["owner"].split()[0], []).append(t)
+    sh = {}
+    for name, grp in first.items():
+        for t in grp:
+            parts = t["owner"].split()
+            sh[t["team_id"]] = f"{name} {parts[-1][0]}." if len(grp) > 1 and len(parts) > 1 else name
+    items = ""
+    for i, m in enumerate(d["matchups"][:3]):
+        hw = m["home_score"] >= m["away_score"]
+        w, l = (m["home_id"], m["away_id"]) if hw else (m["away_id"], m["home_id"])
+        ws, ls = max(m["home_score"], m["away_score"]), min(m["home_score"], m["away_score"])
+        cls = ' class="hot"' if w == top["team_id"] else ""
+        items += (f'<span{cls}>{e(sh[w]).upper()} {ws:.1f}, {e(sh[l]).upper()} {ls:.1f}</span>'
+                  + ('<em>&#8226;</em>' if i < 2 else ""))
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+*{{box-sizing:border-box;margin:0;padding:0}}
+:root{{--red:#cc0000;--red2:#9b0000;--gold:#ffd24a;
+  --cond:"Arial Narrow","Liberation Sans Narrow",Impact,Haettenschweiler,sans-serif}}
+body{{width:1200px;height:630px;overflow:hidden;position:relative;color:#fff;font-family:var(--cond);
+  background:repeating-linear-gradient(135deg,rgba(255,255,255,.015) 0 2px,transparent 2px 6px),
+    linear-gradient(115deg,rgba(204,0,0,.34) 0%,transparent 46%),
+    linear-gradient(180deg,#14294c 0%,#0a1730 60%,#060e1e 100%)}}
+.bar{{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 26px;
+  border-bottom:3px solid var(--red);
+  background:linear-gradient(180deg,#f7f9fb 0%,#d6dce5 45%,#aab3c0 52%,#cbd3dd 100%)}}
+.bar b{{font-size:20px;font-weight:900;font-style:italic;letter-spacing:.07em;text-transform:uppercase;color:#0a1730}}
+.bar b:before{{content:"●";color:var(--red);font-style:normal;font-size:12px;margin-right:9px;vertical-align:2px}}
+.bar i{{font-size:15px;font-weight:900;font-style:italic;letter-spacing:.13em;text-transform:uppercase;color:#43506b}}
+.body{{display:grid;grid-template-columns:1fr 300px;gap:34px;padding:26px 34px 0;height:520px;align-items:center}}
+.badge{{display:inline-block;background:linear-gradient(180deg,var(--red),var(--red2));font-size:17px;
+  font-weight:900;font-style:italic;letter-spacing:.2em;text-transform:uppercase;padding:6px 18px 6px 14px;
+  margin-bottom:16px;clip-path:polygon(0 0,100% 0,calc(100% - 12px) 100%,0 100%)}}
+.num{{font-size:172px;line-height:.82;font-weight:900;font-style:italic;color:var(--gold);letter-spacing:-.035em;
+  text-shadow:0 5px 0 rgba(0,0,0,.6),0 0 40px rgba(255,210,74,.28)}}
+.head{{margin-top:14px;font-size:50px;line-height:1.0;font-weight:900;font-style:italic;text-transform:uppercase;
+  letter-spacing:-.02em;text-shadow:0 3px 0 rgba(0,0,0,.6)}}
+.faces{{display:flex;flex-direction:column;align-items:center;gap:7px}}
+.ava{{width:200px;height:200px;border-radius:50%;object-fit:cover;background:#0d1c38;
+  border:4px solid #c3cad4;box-shadow:0 0 0 5px var(--red),0 12px 34px rgba(0,0,0,.7)}}
+.who{{font-size:28px;font-weight:900;font-style:italic;color:var(--gold);text-transform:uppercase;margin-top:6px;
+  text-align:center;line-height:1}}
+.mini{{position:relative;margin-top:10px}}
+.mini img{{width:118px;height:118px;object-fit:cover;object-position:top center;border:3px solid #8e97a4;background:#0d1c38}}
+.mini b{{position:absolute;left:0;right:0;bottom:0;padding:26px 7px 4px;
+  background:linear-gradient(transparent,rgba(5,12,26,.95));font-size:23px;font-weight:900;font-style:italic;
+  color:var(--gold);text-align:center}}
+.cap{{font-size:13px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:#9fb0c9;text-align:center;
+  font-family:system-ui,sans-serif}}
+.tick{{position:absolute;left:0;right:0;bottom:0;height:62px;display:flex;align-items:center;
+  background:linear-gradient(180deg,#11203c,#060d1c);border-top:3px solid var(--red)}}
+.tick .bug{{height:100%;display:flex;align-items:center;padding:0 20px;
+  background:linear-gradient(180deg,var(--red),var(--red2));font-size:22px;font-weight:900;font-style:italic;letter-spacing:.1em}}
+.tick .items{{display:flex;gap:22px;padding-left:22px;white-space:nowrap;overflow:hidden}}
+.tick span{{font-size:17px;font-weight:800;color:#dbe6f5;letter-spacing:.05em}}
+.tick span.hot{{color:var(--gold)}} .tick em{{color:var(--red);font-style:normal}}
+</style></head><body>
+<div class="bar"><b>Chach Champions League</b><i>Week {week} &middot; SportsCenter</i></div>
+<div class="body">
+  <div><div class="badge">Week {week} Power Rankings</div>
+    <div class="num">{num:.1f}</div>
+    <div class="head">{e(c.get("card_headline") or c.get("headline", ""))}</div></div>
+  <div class="faces">
+    {f'<img class="ava" src="{av}">' if av else ''}
+    <div class="who">{e(top["name"])}</div>
+    <div class="cap">{e(top["owner"])}</div>
+    {f'<div class="mini"><img src="{hs}"><b>{best.get("points", 0):.1f}</b></div><div class="cap">{e(best.get("name", ""))} &middot; top scorer</div>' if hs else ''}
+  </div>
+</div>
+<div class="tick"><div class="bug">CCL</div><div class="items">{items}</div></div>
+</body></html>"""
+
+
 def build_ryanday(week: int, copy_path: str) -> str:
     """Scarlet and gray card for the Ryan Day shrine week."""
     d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
@@ -293,11 +382,11 @@ def main() -> None:
     ap.add_argument("--week", type=int, required=True)
     ap.add_argument("--copy", default="")
     ap.add_argument("--out", default="")
-    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday"])
+    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter"])
     a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "docs" / f"og-week-{a.week}.png"
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
-        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday}.get(a.style, build)
+        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter}.get(a.style, build)
         fh.write(builder(a.week, a.copy))
         src = fh.name
     js = f'''const {{chromium}}=require('playwright');(async()=>{{

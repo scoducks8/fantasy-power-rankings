@@ -6,7 +6,7 @@ ranked team write-ups, scoring by position, and the season rank line.
     python scripts/render_week.py --week 1 --theme "Lord of the Rings"
 
 Writes docs/weeks/week-N.html from data/week-N.json. Edit the copy in the
-generated file afterwards — the takes and the framing are hand-written.
+generated file afterwards; the takes and the framing are hand-written.
 """
 
 from __future__ import annotations
@@ -126,8 +126,11 @@ def render(data, history, theme="Week One", copy=None):
     lab = lambda k, **kw: e(LB[k].format(week=wk, **kw))
     teams = data["teams"]
     mus = data["matchups"]
+    for t in teams:
+        t.setdefault("week_points", t["points_for"])
+        t.setdefault("week_proj_diff", t["week_points"] - (t.get("projected_total") or 0))
     SH = short_names(teams)
-    hi = max(teams, key=lambda t: t["points_for"])
+    hi = max(teams, key=lambda t: t["week_points"])
     best = max((s for t in teams for s in t["starters"]), key=lambda s: s["points"])
     best_team = next(t for t in teams if best in t["starters"])
     close, blow = mus[0], mus[-1]
@@ -148,7 +151,7 @@ def render(data, history, theme="Week One", copy=None):
     for t in teams:
         top = t["top_scorer"]
         seg = "".join(
-            f'<span style="width:{t["positional"].get(p,0)/t["points_for"]*100:.2f}%;'
+            f'<span style="width:{t["positional"].get(p,0)/t["week_points"]*100:.2f}%;'
             f'background:{POS_COLOR[p]}"></span>'
             for p in POS_ORDER if t["positional"].get(p, 0) > 0)
         chip = ""
@@ -164,8 +167,8 @@ def render(data, history, theme="Week One", copy=None):
           <span class="wr">{t['rank']}</span>
           <img class="wav" src="{e(asset(t.get("logo_local",""), t.get("logo",""), t["owner"]))}" alt="" loading="lazy">
           <div class="wt"><h3>{e(t['name'])}{chip}</h3><span>{e(t['owner'])}</span>{pw}</div>
-          <span class="wp">{t['points_for']:.1f}
-            <i>{t['wins']}-{t['losses']} · {'+' if t['points_for']-t['projected_total']>=0 else ''}{t['points_for']-t['projected_total']:.1f} vs proj</i>
+          <span class="wp">{t['week_points']:.1f}
+            <i>{t['wins']}-{t['losses']} · {'+' if t['week_proj_diff']>=0 else ''}{t['week_proj_diff']:.1f} vs proj</i>
           </span>
         </header>
         <div class="wbar">{seg}</div>
@@ -177,15 +180,15 @@ def render(data, history, theme="Week One", copy=None):
       </article>'''
 
     # positional chart
-    mx = max(t["points_for"] for t in teams)
+    mx = max(t["week_points"] for t in teams)
     prow = ""
-    for t in sorted(teams, key=lambda x: -x["points_for"]):
+    for t in sorted(teams, key=lambda x: -x["week_points"]):
         segs = "".join(
             f'<span style="width:{t["positional"].get(p,0)/mx*100:.2f}%;background:{POS_COLOR[p]}"></span>'
             for p in POS_ORDER if t["positional"].get(p, 0) > 0)
         prow += (f'<div class="prow"><div class="plbl">{e(SH[t["team_id"]])}</div>'
                  f'<div class="ptrack">{segs}</div>'
-                 f'<div class="pval">{t["points_for"]:.1f}</div></div>')
+                 f'<div class="pval">{t["week_points"]:.1f}</div></div>')
     legend = "".join(f'<span><i style="background:{POS_COLOR[p]}"></i>{p}</span>'
                      for p in POS_ORDER)
 
@@ -220,13 +223,17 @@ def render(data, history, theme="Week One", copy=None):
 
     # Ticker copy: scores first, then the week's outliers. The default skin
     # hides it; a broadcast-style skin scrolls it along the bottom.
-    hi = max(teams, key=lambda t: t["points_for"])
-    lo = min(teams, key=lambda t: t["points_for"])
-    ticker_items = [f'{e(SH[m["away_id"]])} {m["away_score"]:.1f} — '
-                    f'{e(SH[m["home_id"]])} {m["home_score"]:.1f}' for m in mus]
+    hi = max(teams, key=lambda t: t["week_points"])
+    lo = min(teams, key=lambda t: t["week_points"])
+    def _line(m):
+        hw = m["home_score"] >= m["away_score"]
+        w, l = (m["home_id"], m["away_id"]) if hw else (m["away_id"], m["home_id"])
+        ws, ls = (m["home_score"], m["away_score"]) if hw else (m["away_score"], m["home_score"])
+        return f'{e(SH[w])} {ws:.1f}, {e(SH[l])} {ls:.1f}'
+    ticker_items = [_line(m) for m in mus]
     ticker_items += [
-        f'HIGH: {e(SH[hi["team_id"]])} {hi["points_for"]:.1f}',
-        f'LOW: {e(SH[lo["team_id"]])} {lo["points_for"]:.1f}',
+        f'HIGH: {e(SH[hi["team_id"]])} {hi["week_points"]:.1f}',
+        f'LOW: {e(SH[lo["team_id"]])} {lo["week_points"]:.1f}',
         f'CLOSEST: {mus[0]["margin"]:.1f} PTS',
     ]
     if copy.get("ticker"):
@@ -349,6 +356,9 @@ def main():
     history = (json.loads(hist_path.read_text()) if hist_path.exists()
                else [{"week": a.week,
                       "ranks": {str(t["team_id"]): t["rank"] for t in data["teams"]}}])
+    # A page only knows the weeks up to its own, so re-rendering an old week
+    # never shows rank moves or chart columns from later weeks.
+    history = [h for h in history if h["week"] <= a.week]
 
     out = Path(a.out) if a.out else root / "docs" / "weeks" / f"week-{a.week}.html"
     if out.exists() and not a.force:
@@ -369,7 +379,7 @@ def main():
         out.write_text(mod.render(data, history, theme, copy, helpers))
     else:
         out.write_text(render(data, history, theme, copy))
-    print(f"Wrote {out} — now edit the hero copy and the twelve takes.")
+    print(f"Wrote {out}")
 
 
 if __name__ == "__main__":
