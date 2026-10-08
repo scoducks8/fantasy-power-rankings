@@ -21,6 +21,52 @@ ROOT = Path(__file__).resolve().parent.parent
 e = html.escape
 
 
+def build_clean(week: int, copy_path: str) -> str:
+    """Quiet editorial card: headline, one hero figure, the team behind it."""
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    docs = (ROOT / "docs").as_uri()
+    teams = d["teams"]
+    score = {}
+    for m in d["matchups"]:
+        score[m["home_id"]], score[m["away_id"]] = m["home_score"], m["away_score"]
+    top = max(teams, key=lambda t: score.get(t["team_id"], 0))
+    lead = min(teams, key=lambda t: t["rank"])
+    av = f'{docs}/{top["logo_local"]}' if top.get("logo_local") else ""
+    lav = f'{docs}/{lead["logo_local"]}' if lead.get("logo_local") else ""
+    fonts = f"{docs}/assets/fonts"
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:I;font-weight:500;src:url({fonts}/inter-latin-500-normal.woff2)}}
+@font-face{{font-family:I;font-weight:600;src:url({fonts}/inter-latin-600-normal.woff2)}}
+@font-face{{font-family:I;font-weight:700;src:url({fonts}/inter-latin-700-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;background:#f9f9f7;color:#0b0b0b;font-family:I,system-ui,sans-serif;
+  padding:64px 72px;display:grid;grid-template-columns:1fr 360px;gap:56px;align-items:center}}
+.k{{font-size:20px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#2a78d6}}
+h1{{margin-top:18px;font-size:64px;line-height:1.06;font-weight:700;letter-spacing:-.03em}}
+.lg{{margin-top:30px;font-size:22px;font-weight:500;color:#52514e;display:flex;align-items:center;gap:12px}}
+.lg img{{width:40px;height:40px;border-radius:50%;object-fit:cover}}
+.tile{{background:#fff;border:1px solid #e1e0d9;border-radius:24px;padding:34px 34px 30px;box-shadow:0 10px 30px rgba(0,0,0,.06)}}
+.tl{{font-size:20px;font-weight:500;color:#52514e}}
+.tv{{margin-top:10px;font-size:96px;font-weight:600;letter-spacing:-.04em;line-height:1}}
+.tw{{margin-top:22px;display:flex;align-items:center;gap:14px;font-size:22px;font-weight:600}}
+.tw img{{width:52px;height:52px;border-radius:50%;object-fit:cover}}
+.ts{{margin-top:4px;font-size:18px;font-weight:500;color:#898781}}
+</style></head><body>
+<div>
+  <div class="k">Week {week} power rankings</div>
+  <h1>{e(c.get("headline", ""))}</h1>
+  <div class="lg">{f'<img src="{lav}">' if lav else ''}<span>No. 1 {e(lead["name"])}, {lead["wins"]}-{lead["losses"]}</span></div>
+</div>
+<div class="tile">
+  <div class="tl">Top score</div>
+  <div class="tv">{score.get(top["team_id"], 0):.1f}</div>
+  <div class="tw">{f'<img src="{av}">' if av else ''}<div>{e(top["name"])}<div class="ts">{e(top["owner"])}</div></div></div>
+</div>
+</body></html>"""
+
+
 def build_sportscenter(week: int, copy_path: str) -> str:
     """2000s SportsCenter card: chrome bar, big gold number, ticker of results."""
     d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
@@ -382,11 +428,11 @@ def main() -> None:
     ap.add_argument("--week", type=int, required=True)
     ap.add_argument("--copy", default="")
     ap.add_argument("--out", default="")
-    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter"])
+    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean"])
     a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "docs" / f"og-week-{a.week}.png"
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
-        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter}.get(a.style, build)
+        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean}.get(a.style, build)
         fh.write(builder(a.week, a.copy))
         src = fh.name
     js = f'''const {{chromium}}=require('playwright');(async()=>{{
