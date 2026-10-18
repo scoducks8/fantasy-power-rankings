@@ -90,8 +90,24 @@ def render(weeks: list[dict], latest: dict | None, recap: dict | None = None) ->
         )
 
     feature = ""
+    # A matchup preview for the week in progress, until that week's page lands.
+    previews = sorted(
+        (int(m.group(1)), m.group(0))
+        for m in (re.fullmatch(r"preview-week-(\d+)\.html", f.name)
+                  for f in WEEKS_DIR.glob("preview-week-*.html")) if m
+    )
+    if previews and previews[-1][0] > max((w["number"] for w in weeks), default=0):
+        n, name = previews[-1]
+        feature += f"""    <section class="feature">
+      <a class="feature-card" href="weeks/{name}">
+        <span class="feature-kicker">This week</span>
+        <span class="feature-title">Week {n} Preview</span>
+        <span class="feature-sub">Every matchup, and what's on the line</span>
+      </a>
+    </section>
+"""
     if recap:
-        feature = f"""    <section class="feature">
+        feature += f"""    <section class="feature">
       <a class="feature-card" href="{esc(recap['href'])}">
         <span class="feature-kicker">Season preview</span>
         <span class="feature-title">2026 Draft Recap</span>

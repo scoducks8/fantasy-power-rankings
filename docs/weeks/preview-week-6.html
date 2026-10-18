@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-name" content="Clean" />
+<meta name="color-scheme" content="light dark" />
+<title>Week 6 preview &middot; Chach Champions League</title>
+<meta name="description" content="Ben E. puts 5-0 on the line, Galakrond is favored for once, and Cortisol against Purdy is the game of the week." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Chach Champions League" />
+<meta property="og:url" content="https://scoducks8.github.io/fantasy-power-rankings/weeks/preview-week-6.html" />
+<meta property="og:title" content="Week 6 preview" />
+<meta property="og:description" content="Ben E. puts 5-0 on the line, Galakrond is favored for once, and Cortisol against Purdy is the game of the week." />
+<meta property="og:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-preview-week-6.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-preview-week-6.png" />
+<style>/* ------------------------------------------------------------------
+   SKIN: clean (paired with scripts/layouts/clean.py)
+   Editorial reading page. Serif body, sans UI, one column, light + dark.
+   Position colours are the dataviz reference categorical slots
+   (1,2,3,4,5,7), validated in this order for both modes:
+   light passes with a contrast WARN on aqua/yellow/magenta, relieved by
+   the table view under the position chart; dark passes every check.
+   Fonts self-hosted (OFL).
+   ------------------------------------------------------------------ */
+@font-face{font-family:"Inter";font-weight:400;font-display:swap;src:url("../assets/fonts/inter-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;font-display:swap;src:url("../assets/fonts/inter-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;font-display:swap;src:url("../assets/fonts/inter-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:700;font-display:swap;src:url("../assets/fonts/inter-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Serif4";font-weight:400;font-display:swap;src:url("../assets/fonts/source-serif-4-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Serif4";font-weight:600;font-display:swap;src:url("../assets/fonts/source-serif-4-latin-600-normal.woff2") format("woff2")}
+
+:root{
+  color-scheme:light;
+  --page:#f9f9f7; --surface:#fcfcfb; --raised:#ffffff;
+  --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --hair:#e1e0d9; --base:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --accent:#2a78d6; --up:#006300; --down:#d03b3b;
+  --qb:#2a78d6; --rb:#eb6834; --wr:#1baf7a; --te:#eda100; --k:#e87ba4; --dst:#4a3aa7;
+  --gold:#b88400;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Serif4",Georgia,"Times New Roman",serif;
+  --measure:68ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme:dark;
+    --page:#0d0d0d; --surface:#1a1a19; --raised:#1f1f1e;
+    --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+    --hair:#2c2c2a; --base:#383835; --ring:rgba(255,255,255,.10);
+    --accent:#3987e5; --up:#0ca30c; --down:#e66767;
+    --qb:#3987e5; --rb:#d95926; --wr:#199e70; --te:#c98500; --k:#d55181; --dst:#9085e9;
+    --gold:#e0b341;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --page:#0d0d0d; --surface:#1a1a19; --raised:#1f1f1e;
+  --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+  --hair:#2c2c2a; --base:#383835; --ring:rgba(255,255,255,.10);
+  --accent:#3987e5; --up:#0ca30c; --down:#e66767;
+  --qb:#3987e5; --rb:#d95926; --wr:#199e70; --te:#c98500; --k:#d55181; --dst:#9085e9;
+  --gold:#e0b341;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font:400 16px/1.55 var(--sans);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%}
+a{color:inherit}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb,var(--page) 82%,transparent);
+  -webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);
+  border-bottom:1px solid var(--hair);padding-top:env(safe-area-inset-top,0px)}
+.top-in{max-width:760px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:600;font-size:15px;text-decoration:none;letter-spacing:-.01em;white-space:nowrap;flex:none}
+.brand .short{display:none}
+.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:14px;color:var(--ink2);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
+.links a:hover{background:var(--surface);color:var(--ink)}
+
+main{max-width:760px;margin:0 auto;padding:0 20px 80px}
+section{scroll-margin-top:72px;padding-top:56px}
+
+/* intro */
+.intro{padding:56px 0 8px}
+.kicker{margin:0 0 14px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0;font-size:clamp(32px,6vw,48px);line-height:1.08;font-weight:700;letter-spacing:-.025em;text-wrap:balance}
+.dek{margin:20px 0 0;font:400 20px/1.6 var(--serif);color:var(--ink2);max-width:var(--measure);text-wrap:pretty}
+
+/* stat tiles */
+.glance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-top:40px}
+.tile{background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:16px 16px 14px}
+.tl{margin:0;font-size:13px;color:var(--ink2)}
+.tv{margin:6px 0 4px;font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.ts{margin:0;font-size:13px;line-height:1.35;color:var(--muted)}
+
+h2{margin:0;font-size:26px;font-weight:700;letter-spacing:-.02em}
+.lede{margin:10px 0 24px;font:400 18px/1.6 var(--serif);color:var(--ink2);max-width:var(--measure)}
+
+/* results */
+.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.game{background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:12px 14px 10px}
+.game.close{box-shadow:inset 3px 0 0 var(--gold)}
+.side{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:10px;padding:5px 0;color:var(--ink2)}
+.side img{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--hair)}
+.side .nm{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.side .sc{font-size:16px;font-variant-numeric:tabular-nums}
+.side.win{color:var(--ink)}
+.side.win .nm,.side.win .sc{font-weight:600}
+.mg{margin:6px 0 0;padding-top:8px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--muted)}
+.game.close .mg{color:var(--gold);font-weight:500}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 16px;font-size:13px;color:var(--ink2)}
+.lk{display:inline-flex;align-items:center;gap:7px}
+.sw{width:10px;height:10px;border-radius:3px;display:block}
+
+/* position fills */
+.qb{background:var(--qb)}.rb{background:var(--rb)}.wr{background:var(--wr)}
+.te{background:var(--te)}.k{background:var(--k)}.dst{background:var(--dst)}
+
+/* team entries */
+.teams{display:flex;flex-direction:column;gap:14px}
+.team{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:20px 22px 18px}
+.team.first{border-color:color-mix(in srgb,var(--accent) 45%,var(--hair))}
+.th{display:grid;grid-template-columns:34px 44px minmax(0,1fr) auto;gap:12px;align-items:center}
+.rk{font-size:28px;font-weight:700;letter-spacing:-.03em;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+.team.first .rk{color:var(--accent)}
+.lg{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--hair);box-shadow:0 0 0 1px var(--ring)}
+.who{min-width:0}
+.who h3{margin:0;font-size:19px;font-weight:600;letter-spacing:-.015em;line-height:1.25}
+.who p{margin:2px 0 0;font-size:14px;color:var(--ink2)}
+.dot{color:var(--muted);margin:0 2px}
+.mv{font-size:12.5px;font-weight:600;margin-left:6px;white-space:nowrap}
+.mv.up{color:var(--up)}.mv.dn{color:var(--down)}.mv.eq{color:var(--muted)}
+.pts{text-align:right}
+.pts b{display:block;font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.pts span{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.bar{display:flex;gap:2px;height:8px;margin:16px 0 0;border-radius:4px;overflow:hidden;cursor:default;outline-offset:3px}
+.bar .seg{display:block;height:100%}
+.take{margin:16px 0 0;font:400 18px/1.65 var(--serif);color:var(--ink);text-wrap:pretty}
+.pog{display:flex;align-items:center;gap:10px;margin:16px 0 0;padding-top:14px;border-top:1px solid var(--hair);
+  font-size:14px;color:var(--ink2)}
+.pog img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:top center;background:var(--hair)}
+.pog b{color:var(--ink);font-weight:600;margin-right:4px}
+
+/* position chart: one row per team, sorted by score */
+.pchart{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:18px 20px 14px}
+.prow{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px;align-items:center;padding:5px 0;border-radius:6px;outline-offset:2px}
+.prow:hover .ps{filter:brightness(1.06)}
+.pn{font-size:14px;color:var(--ink2);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pt{display:flex;align-items:center;gap:10px;min-width:0}
+.ps{display:flex;gap:2px;height:18px;border-radius:0 4px 4px 0;overflow:hidden;flex:none}
+.ps .seg{display:block;height:100%}
+.pv{font-size:13.5px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
+.tview{margin-top:14px}
+.tview summary{cursor:pointer;font-size:14px;color:var(--accent);width:max-content}
+.twrap{overflow-x:auto;margin-top:12px;border:1px solid var(--hair);border-radius:12px;background:var(--surface)}
+.twrap table{width:100%;min-width:560px;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.twrap th,.twrap td{padding:9px 12px;border-bottom:1px solid var(--hair);text-align:right}
+.twrap th:first-child{text-align:left;font-weight:500}
+.twrap thead th{font-weight:600;color:var(--ink2);font-size:12.5px}
+.twrap .tot{font-weight:600}
+.twrap tbody tr:last-child th,.twrap tbody tr:last-child td{border-bottom:0}
+
+/* bump chart */
+.bumpwrap{margin:0;background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:16px 12px 12px}
+.bump{display:block;width:100%;height:auto}
+.bump .grid{stroke:var(--hair);stroke-width:1}
+.bump .wkl{fill:var(--muted);font:500 12px var(--sans)}
+.bump .ax{fill:var(--muted);font:500 12px var(--sans)}
+.bump .ln{cursor:pointer;outline:none}
+.bump .ln .hit{fill:none;stroke:transparent;stroke-width:16}
+.bump .ln .stroke{fill:none;stroke:var(--base);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;transition:stroke .15s,opacity .15s}
+.bump .ln circle{fill:var(--base);stroke:var(--surface);stroke-width:2;transition:fill .15s}
+.bump .ln text{fill:var(--ink2);font:500 13px var(--sans);transition:fill .15s}
+.bump .ln.lead .stroke{stroke:var(--accent)}
+.bump .ln.lead circle{fill:var(--accent)}
+.bump .ln.lead text{fill:var(--ink);font-weight:600}
+.bump.focus .ln:not(.on){opacity:.25}
+.bump .ln.on .stroke{stroke:var(--ink);stroke-width:2.5}
+.bump .ln.on circle{fill:var(--ink)}
+.bump .ln.on text{fill:var(--ink);font-weight:600}
+.bumpwrap figcaption{margin:8px 8px 0;font-size:13px;color:var(--muted)}
+
+/* tooltip */
+.tip{position:fixed;z-index:50;pointer-events:none;min-width:150px;max-width:240px;padding:10px 12px;
+  background:var(--raised);color:var(--ink);border:1px solid var(--hair);border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.14);font-size:13px}
+.tip p{margin:0;display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.tip p b{order:2;font-weight:600;font-variant-numeric:tabular-nums}
+.tip p span{order:1;color:var(--ink2)}
+.tip .key{display:inline-block;width:10px;height:2px;border-radius:1px;margin-right:7px;vertical-align:middle}
+.tip .tt{display:block;font-weight:600;margin-bottom:6px}
+.tip .tsum{margin-top:6px;padding-top:6px;border-top:1px solid var(--hair)}
+
+.foot{margin-top:64px;padding-top:20px;border-top:1px solid var(--hair);font-size:14px;color:var(--muted)}
+.foot a{color:var(--ink2)}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+@media (max-width:720px){
+  .glance{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .games{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  main,.top-in{padding-left:16px;padding-right:16px}
+  .intro{padding-top:36px}
+  .dek{font-size:18.5px}
+  .team{padding:16px 16px 14px}
+  .th{grid-template-columns:26px 38px minmax(0,1fr);gap:10px}
+  .rk{font-size:22px}
+  .lg{width:38px;height:38px}
+  .who h3{font-size:17.5px}
+  .pts{grid-column:1/-1;text-align:left;display:flex;align-items:baseline;gap:10px;padding-left:36px}
+  .pts b{font-size:22px}
+  .take{font-size:17.5px}
+  .prow{grid-template-columns:64px minmax(0,1fr);gap:10px}
+  .pn{font-size:13px}
+  .brand .full{display:none}
+  .brand .short{display:inline}
+  .links a{padding:6px 8px;font-size:13.5px}
+  .top-in{gap:8px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.pvs{display:grid;gap:14px}
+.pv{background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:16px 18px}
+.pv.gotw{box-shadow:inset 3px 0 0 var(--gold)}
+.pv-tag{margin:0 0 10px;font:600 12px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.pv-teams{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:12px}
+.pv-side{display:grid;grid-template-columns:36px minmax(0,1fr);column-gap:10px;align-items:center;min-width:0}
+.pv-side img{grid-row:span 2;width:36px;height:36px;border-radius:50%;object-fit:cover}
+.pv-side .nm{font:600 15px/1.25 var(--sans);overflow-wrap:anywhere}
+.pv-side .pv-rk{font:400 13px/1.3 var(--sans);color:var(--muted)}
+.pv-vs{font:500 13px/1 var(--sans);color:var(--muted)}
+.pv-text{margin:14px 0 0;font-family:var(--serif);font-size:17px;line-height:1.6}
+@media (max-width:520px){
+  .pv-teams{grid-template-columns:minmax(0,1fr);gap:8px}
+  .pv-vs{display:none}
+}
+</style>
+</head>
+<body>
+<nav class="top"><div class="top-in">
+  <a class="brand" href="../index.html"><span class="full">Chach Champions League</span><span class="short">CCL</span></a>
+  <div class="links"><a href="week-5.html">Week 5 rankings</a></div>
+</div></nav>
+<main>
+  <header class="intro">
+    <p class="kicker">Week 6 preview</p>
+    <h1>Week 6 preview</h1>
+    <p class="dek">Six games, one unbeaten team, and a playoff line that runs right through the middle of the standings. The midpoint is one week away.</p>
+  </header>
+  <section id="matchups">
+    <h2>Matchups</h2>
+    <div class="pvs"><article class="pv">
+  <div class="pv-teams"><div class="pv-side"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt=""><span class="nm">Ben&#x27;s Brilliant Team</span><span class="pv-rk">No. 1 &middot; 5-0</span></div><span class="pv-vs">vs</span><div class="pv-side"><img src="../assets/logos/5-adams-and-jefferson.svg" alt=""><span class="nm">Adams and Jefferson</span><span class="pv-rk">No. 8 &middot; 1-4</span></div></div>
+  <p class="pv-text">On paper this is the top team against one of the bottom three. It&#x27;s closer than that. Adams and Jefferson scores like a winning team and has run into the week&#x27;s best score again and again. ESPN has it within about five points. If anyone is going to end the unbeaten run, this is a good spot for it.</p>
+</article><article class="pv">
+  <div class="pv-teams"><div class="pv-side"><img src="../assets/logos/9-michael-s-monstrous-team.svg" alt=""><span class="nm">michael&#x27;s Monstrous Team</span><span class="pv-rk">No. 2 &middot; 4-1</span></div><span class="pv-vs">vs</span><div class="pv-side"><img src="../assets/logos/10-roadrunners.svg" alt=""><span class="nm">roadrunners</span><span class="pv-rk">No. 10 &middot; 1-4</span></div></div>
+  <p class="pv-text">Jahmyr Gibbs isn&#x27;t in michael&#x27;s lineup this week, so Josh Allen has to carry more of it. roadrunners have set season highs two weeks running and are projected about even. With Gibbs out, this is roadrunners&#x27; best chance at a second win.</p>
+</article><article class="pv">
+  <div class="pv-teams"><div class="pv-side"><img src="../assets/logos/8-dake-bates.png" alt=""><span class="nm">Dake Bates</span><span class="pv-rk">No. 3 &middot; 4-1</span></div><span class="pv-vs">vs</span><div class="pv-side"><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt=""><span class="nm">Drake Maye Sucks Ass</span><span class="pv-rk">No. 6 &middot; 3-2</span></div></div>
+  <p class="pv-text">Puka Nacua and Ashton Jeanty against a team that won the last two on the arm of the quarterback it&#x27;s named after. Dake is the clear favorite. Drake Maye Sucks Ass holds the last playoff spot right now, so it can&#x27;t afford to slip.</p>
+</article><article class="pv gotw">
+  <p class="pv-tag">Game of the week</p><div class="pv-teams"><div class="pv-side"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt=""><span class="nm">Cortisol Spyke Weeks</span><span class="pv-rk">No. 4 &middot; 3-2</span></div><span class="pv-vs">vs</span><div class="pv-side"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt=""><span class="nm">Purdy Seconds to Mars</span><span class="pv-rk">No. 9 &middot; 2-3</span></div></div>
+  <p class="pv-text">The best game of the week. Cortisol is coming off the top score of week 5. Purdy Seconds to Mars is coming off two straight 96s and needs its receivers to show up. The projections are almost dead even, and a Purdy win puts both teams at 3-3.</p>
+</article><article class="pv">
+  <div class="pv-teams"><div class="pv-side"><img src="../assets/logos/12-team-evil.svg" alt=""><span class="nm">Team evil </span><span class="pv-rk">No. 7 &middot; 2-3</span></div><span class="pv-vs">vs</span><div class="pv-side"><img src="../assets/logos/1-team-galakrond.png" alt=""><span class="nm">Team Galakrond</span><span class="pv-rk">No. 12 &middot; 0-5</span></div></div>
+  <p class="pv-text">Galakrond is the favorite for once. Kenneth Walker III and Jonathan Taylor lead a backfield that has been one of the best in the league, while the schedule kept serving up the week&#x27;s top scores. Team evil comes in with two straight season highs, so the first win won&#x27;t come easy.</p>
+</article><article class="pv">
+  <div class="pv-teams"><div class="pv-side"><img src="../assets/logos/3-ceedeez-nutz.svg" alt=""><span class="nm">CeeDeez Nutz</span><span class="pv-rk">No. 5 &middot; 3-2</span></div><span class="pv-vs">vs</span><div class="pv-side"><img src="../assets/logos/6-bingo-night.svg" alt=""><span class="nm">Bingo Night</span><span class="pv-rk">No. 11 &middot; 2-3</span></div></div>
+  <p class="pv-text">CeeDeez needs to stop a two-game skid, and CeeDee Lamb has to bounce back from a 2.9. Bingo has posted the lowest score three weeks running. This is CeeDeez&#x27;s game to lose.</p>
+</article></div>
+  </section>
+  <footer class="foot"><p>Records and ranks are through week 5.
+    <a href="../index.html">All weeks</a></p></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+ "headline": "Week 6 preview",
+ "standfirst": "Six games, one unbeaten team, and a playoff line that runs right through the middle of the standings. The midpoint is one week away.",
+ "og_title": "Week 6 preview",
+ "og_description": "Ben E. puts 5-0 on the line, Galakrond is favored for once, and Cortisol against Purdy is the game of the week.",
+ "games": [
+  {"a": 2, "b": 5, "title": "Ben E. vs Adams and Jefferson",
+   "text": "On paper this is the top team against one of the bottom three. It's closer than that. Adams and Jefferson scores like a winning team and has run into the week's best score again and again. ESPN has it within about five points. If anyone is going to end the unbeaten run, this is a good spot for it."},
+  {"a": 9, "b": 10,
+   "text": "Jahmyr Gibbs isn't in michael's lineup this week, so Josh Allen has to carry more of it. roadrunners have set season highs two weeks running and are projected about even. With Gibbs out, this is roadrunners' best chance at a second win."},
+  {"a": 8, "b": 11,
+   "text": "Puka Nacua and Ashton Jeanty against a team that won the last two on the arm of the quarterback it's named after. Dake is the clear favorite. Drake Maye Sucks Ass holds the last playoff spot right now, so it can't afford to slip."},
+  {"a": 4, "b": 7, "gotw": true,
+   "text": "The best game of the week. Cortisol is coming off the top score of week 5. Purdy Seconds to Mars is coming off two straight 96s and needs its receivers to show up. The projections are almost dead even, and a Purdy win puts both teams at 3-3."},
+  {"a": 12, "b": 1,
+   "text": "Galakrond is the favorite for once. Kenneth Walker III and Jonathan Taylor lead a backfield that has been one of the best in the league, while the schedule kept serving up the week's top scores. Team evil comes in with two straight season highs, so the first win won't come easy."},
+  {"a": 3, "b": 6,
+   "text": "CeeDeez needs to stop a two-game skid, and CeeDee Lamb has to bounce back from a 2.9. Bingo has posted the lowest score three weeks running. This is CeeDeez's game to lose."}
+ ]
+}
