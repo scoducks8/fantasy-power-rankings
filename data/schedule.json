@@ -1,0 +1,427 @@
+{
+ "regular_season_weeks": 14,
+ "playoff_teams": 6,
+ "playoff_matchup_length": 1,
+ "games": [
+  {
+   "week": 1,
+   "home_id": 3,
+   "away_id": 4
+  },
+  {
+   "week": 1,
+   "home_id": 6,
+   "away_id": 10
+  },
+  {
+   "week": 1,
+   "home_id": 9,
+   "away_id": 1
+  },
+  {
+   "week": 1,
+   "home_id": 12,
+   "away_id": 8
+  },
+  {
+   "week": 1,
+   "home_id": 11,
+   "away_id": 5
+  },
+  {
+   "week": 1,
+   "home_id": 2,
+   "away_id": 7
+  },
+  {
+   "week": 2,
+   "home_id": 4,
+   "away_id": 10
+  },
+  {
+   "week": 2,
+   "home_id": 1,
+   "away_id": 3
+  },
+  {
+   "week": 2,
+   "home_id": 8,
+   "away_id": 6
+  },
+  {
+   "week": 2,
+   "home_id": 5,
+   "away_id": 9
+  },
+  {
+   "week": 2,
+   "home_id": 7,
+   "away_id": 12
+  },
+  {
+   "week": 2,
+   "home_id": 2,
+   "away_id": 11
+  },
+  {
+   "week": 3,
+   "home_id": 1,
+   "away_id": 4
+  },
+  {
+   "week": 3,
+   "home_id": 10,
+   "away_id": 8
+  },
+  {
+   "week": 3,
+   "home_id": 3,
+   "away_id": 5
+  },
+  {
+   "week": 3,
+   "home_id": 6,
+   "away_id": 7
+  },
+  {
+   "week": 3,
+   "home_id": 9,
+   "away_id": 2
+  },
+  {
+   "week": 3,
+   "home_id": 12,
+   "away_id": 11
+  },
+  {
+   "week": 4,
+   "home_id": 4,
+   "away_id": 8
+  },
+  {
+   "week": 4,
+   "home_id": 5,
+   "away_id": 1
+  },
+  {
+   "week": 4,
+   "home_id": 7,
+   "away_id": 10
+  },
+  {
+   "week": 4,
+   "home_id": 2,
+   "away_id": 3
+  },
+  {
+   "week": 4,
+   "home_id": 11,
+   "away_id": 6
+  },
+  {
+   "week": 4,
+   "home_id": 12,
+   "away_id": 9
+  },
+  {
+   "week": 5,
+   "home_id": 5,
+   "away_id": 4
+  },
+  {
+   "week": 5,
+   "home_id": 8,
+   "away_id": 7
+  },
+  {
+   "week": 5,
+   "home_id": 1,
+   "away_id": 2
+  },
+  {
+   "week": 5,
+   "home_id": 10,
+   "away_id": 11
+  },
+  {
+   "week": 5,
+   "home_id": 3,
+   "away_id": 12
+  },
+  {
+   "week": 5,
+   "home_id": 6,
+   "away_id": 9
+  },
+  {
+   "week": 6,
+   "home_id": 4,
+   "away_id": 7
+  },
+  {
+   "week": 6,
+   "home_id": 2,
+   "away_id": 5
+  },
+  {
+   "week": 6,
+   "home_id": 11,
+   "away_id": 8
+  },
+  {
+   "week": 6,
+   "home_id": 12,
+   "away_id": 1
+  },
+  {
+   "week": 6,
+   "home_id": 9,
+   "away_id": 10
+  },
+  {
+   "week": 6,
+   "home_id": 6,
+   "away_id": 3
+  },
+  {
+   "week": 7,
+   "home_id": 2,
+   "away_id": 4
+  },
+  {
+   "week": 7,
+   "home_id": 7,
+   "away_id": 11
+  },
+  {
+   "week": 7,
+   "home_id": 5,
+   "away_id": 12
+  },
+  {
+   "week": 7,
+   "home_id": 8,
+   "away_id": 9
+  },
+  {
+   "week": 7,
+   "home_id": 1,
+   "away_id": 6
+  },
+  {
+   "week": 7,
+   "home_id": 10,
+   "away_id": 3
+  },
+  {
+   "week": 8,
+   "home_id": 4,
+   "away_id": 11
+  },
+  {
+   "week": 8,
+   "home_id": 12,
+   "away_id": 2
+  },
+  {
+   "week": 8,
+   "home_id": 9,
+   "away_id": 7
+  },
+  {
+   "week": 8,
+   "home_id": 6,
+   "away_id": 5
+  },
+  {
+   "week": 8,
+   "home_id": 3,
+   "away_id": 8
+  },
+  {
+   "week": 8,
+   "home_id": 10,
+   "away_id": 1
+  },
+  {
+   "week": 9,
+   "home_id": 12,
+   "away_id": 4
+  },
+  {
+   "week": 9,
+   "home_id": 11,
+   "away_id": 9
+  },
+  {
+   "week": 9,
+   "home_id": 2,
+   "away_id": 6
+  },
+  {
+   "week": 9,
+   "home_id": 7,
+   "away_id": 3
+  },
+  {
+   "week": 9,
+   "home_id": 5,
+   "away_id": 10
+  },
+  {
+   "week": 9,
+   "home_id": 8,
+   "away_id": 1
+  },
+  {
+   "week": 10,
+   "home_id": 4,
+   "away_id": 9
+  },
+  {
+   "week": 10,
+   "home_id": 6,
+   "away_id": 12
+  },
+  {
+   "week": 10,
+   "home_id": 3,
+   "away_id": 11
+  },
+  {
+   "week": 10,
+   "home_id": 10,
+   "away_id": 2
+  },
+  {
+   "week": 10,
+   "home_id": 1,
+   "away_id": 7
+  },
+  {
+   "week": 10,
+   "home_id": 8,
+   "away_id": 5
+  },
+  {
+   "week": 11,
+   "home_id": 6,
+   "away_id": 4
+  },
+  {
+   "week": 11,
+   "home_id": 9,
+   "away_id": 3
+  },
+  {
+   "week": 11,
+   "home_id": 12,
+   "away_id": 10
+  },
+  {
+   "week": 11,
+   "home_id": 11,
+   "away_id": 1
+  },
+  {
+   "week": 11,
+   "home_id": 2,
+   "away_id": 8
+  },
+  {
+   "week": 11,
+   "home_id": 7,
+   "away_id": 5
+  },
+  {
+   "week": 12,
+   "home_id": 4,
+   "away_id": 3
+  },
+  {
+   "week": 12,
+   "home_id": 10,
+   "away_id": 6
+  },
+  {
+   "week": 12,
+   "home_id": 1,
+   "away_id": 9
+  },
+  {
+   "week": 12,
+   "home_id": 8,
+   "away_id": 12
+  },
+  {
+   "week": 12,
+   "home_id": 5,
+   "away_id": 11
+  },
+  {
+   "week": 12,
+   "home_id": 7,
+   "away_id": 2
+  },
+  {
+   "week": 13,
+   "home_id": 10,
+   "away_id": 4
+  },
+  {
+   "week": 13,
+   "home_id": 3,
+   "away_id": 1
+  },
+  {
+   "week": 13,
+   "home_id": 6,
+   "away_id": 8
+  },
+  {
+   "week": 13,
+   "home_id": 9,
+   "away_id": 5
+  },
+  {
+   "week": 13,
+   "home_id": 12,
+   "away_id": 7
+  },
+  {
+   "week": 13,
+   "home_id": 11,
+   "away_id": 2
+  },
+  {
+   "week": 14,
+   "home_id": 4,
+   "away_id": 1
+  },
+  {
+   "week": 14,
+   "home_id": 8,
+   "away_id": 10
+  },
+  {
+   "week": 14,
+   "home_id": 5,
+   "away_id": 3
+  },
+  {
+   "week": 14,
+   "home_id": 7,
+   "away_id": 6
+  },
+  {
+   "week": 14,
+   "home_id": 2,
+   "away_id": 9
+  },
+  {
+   "week": 14,
+   "home_id": 11,
+   "away_id": 12
+  }
+ ]
+}
