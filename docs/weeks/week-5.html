@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-name" content="Clean" />
+<meta name="color-scheme" content="light dark" />
+<title>Week 5 power rankings &middot; Chach Champions League</title>
+<meta name="description" content="Ben E. stays perfect and takes the scoring lead. Cortisol Spyke Weeks posts 168.44 and climbs to fourth." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Chach Champions League" />
+<meta property="og:url" content="https://scoducks8.github.io/fantasy-power-rankings/weeks/week-5.html" />
+<meta property="og:title" content="Week 5 power rankings: Ben E. goes to 5-0" />
+<meta property="og:description" content="Ben E. stays perfect and takes the scoring lead. Cortisol Spyke Weeks posts 168.44 and climbs to fourth." />
+<meta property="og:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-league.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-league.png" />
+<style>/* ------------------------------------------------------------------
+   SKIN: clean (paired with scripts/layouts/clean.py)
+   Editorial reading page. Serif body, sans UI, one column, light + dark.
+   Position colours are the dataviz reference categorical slots
+   (1,2,3,4,5,7), validated in this order for both modes:
+   light passes with a contrast WARN on aqua/yellow/magenta, relieved by
+   the table view under the position chart; dark passes every check.
+   Fonts self-hosted (OFL).
+   ------------------------------------------------------------------ */
+@font-face{font-family:"Inter";font-weight:400;font-display:swap;src:url("../assets/fonts/inter-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:500;font-display:swap;src:url("../assets/fonts/inter-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:600;font-display:swap;src:url("../assets/fonts/inter-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-weight:700;font-display:swap;src:url("../assets/fonts/inter-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Serif4";font-weight:400;font-display:swap;src:url("../assets/fonts/source-serif-4-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Serif4";font-weight:600;font-display:swap;src:url("../assets/fonts/source-serif-4-latin-600-normal.woff2") format("woff2")}
+
+:root{
+  color-scheme:light;
+  --page:#f9f9f7; --surface:#fcfcfb; --raised:#ffffff;
+  --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+  --hair:#e1e0d9; --base:#c3c2b7; --ring:rgba(11,11,11,.10);
+  --accent:#2a78d6; --up:#006300; --down:#d03b3b;
+  --qb:#2a78d6; --rb:#eb6834; --wr:#1baf7a; --te:#eda100; --k:#e87ba4; --dst:#4a3aa7;
+  --gold:#b88400;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Serif4",Georgia,"Times New Roman",serif;
+  --measure:68ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme:dark;
+    --page:#0d0d0d; --surface:#1a1a19; --raised:#1f1f1e;
+    --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+    --hair:#2c2c2a; --base:#383835; --ring:rgba(255,255,255,.10);
+    --accent:#3987e5; --up:#0ca30c; --down:#e66767;
+    --qb:#3987e5; --rb:#d95926; --wr:#199e70; --te:#c98500; --k:#d55181; --dst:#9085e9;
+    --gold:#e0b341;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --page:#0d0d0d; --surface:#1a1a19; --raised:#1f1f1e;
+  --ink:#ffffff; --ink2:#c3c2b7; --muted:#898781;
+  --hair:#2c2c2a; --base:#383835; --ring:rgba(255,255,255,.10);
+  --accent:#3987e5; --up:#0ca30c; --down:#e66767;
+  --qb:#3987e5; --rb:#d95926; --wr:#199e70; --te:#c98500; --k:#d55181; --dst:#9085e9;
+  --gold:#e0b341;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font:400 16px/1.55 var(--sans);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%}
+a{color:inherit}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb,var(--page) 82%,transparent);
+  -webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);
+  border-bottom:1px solid var(--hair);padding-top:env(safe-area-inset-top,0px)}
+.top-in{max-width:760px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{font-weight:600;font-size:15px;text-decoration:none;letter-spacing:-.01em;white-space:nowrap;flex:none}
+.brand .short{display:none}
+.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.links::-webkit-scrollbar{display:none}
+.links a{font-size:14px;color:var(--ink2);text-decoration:none;padding:6px 10px;border-radius:8px;white-space:nowrap}
+.links a:hover{background:var(--surface);color:var(--ink)}
+
+main{max-width:760px;margin:0 auto;padding:0 20px 80px}
+section{scroll-margin-top:72px;padding-top:56px}
+
+/* intro */
+.intro{padding:56px 0 8px}
+.kicker{margin:0 0 14px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+h1{margin:0;font-size:clamp(32px,6vw,48px);line-height:1.08;font-weight:700;letter-spacing:-.025em;text-wrap:balance}
+.dek{margin:20px 0 0;font:400 20px/1.6 var(--serif);color:var(--ink2);max-width:var(--measure);text-wrap:pretty}
+
+/* stat tiles */
+.glance{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-top:40px}
+.tile{background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:16px 16px 14px}
+.tl{margin:0;font-size:13px;color:var(--ink2)}
+.tv{margin:6px 0 4px;font-size:30px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.ts{margin:0;font-size:13px;line-height:1.35;color:var(--muted)}
+
+h2{margin:0;font-size:26px;font-weight:700;letter-spacing:-.02em}
+.lede{margin:10px 0 24px;font:400 18px/1.6 var(--serif);color:var(--ink2);max-width:var(--measure)}
+
+/* results */
+.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.game{background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:12px 14px 10px}
+.game.close{box-shadow:inset 3px 0 0 var(--gold)}
+.side{display:grid;grid-template-columns:28px minmax(0,1fr) auto;align-items:center;gap:10px;padding:5px 0;color:var(--ink2)}
+.side img{width:28px;height:28px;border-radius:50%;object-fit:cover;background:var(--hair)}
+.side .nm{font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.side .sc{font-size:16px;font-variant-numeric:tabular-nums}
+.side.win{color:var(--ink)}
+.side.win .nm,.side.win .sc{font-weight:600}
+.mg{margin:6px 0 0;padding-top:8px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--muted)}
+.game.close .mg{color:var(--gold);font-weight:500}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0 0 16px;font-size:13px;color:var(--ink2)}
+.lk{display:inline-flex;align-items:center;gap:7px}
+.sw{width:10px;height:10px;border-radius:3px;display:block}
+
+/* position fills */
+.qb{background:var(--qb)}.rb{background:var(--rb)}.wr{background:var(--wr)}
+.te{background:var(--te)}.k{background:var(--k)}.dst{background:var(--dst)}
+
+/* team entries */
+.teams{display:flex;flex-direction:column;gap:14px}
+.team{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:20px 22px 18px}
+.team.first{border-color:color-mix(in srgb,var(--accent) 45%,var(--hair))}
+.th{display:grid;grid-template-columns:34px 44px minmax(0,1fr) auto;gap:12px;align-items:center}
+.rk{font-size:28px;font-weight:700;letter-spacing:-.03em;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+.team.first .rk{color:var(--accent)}
+.lg{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--hair);box-shadow:0 0 0 1px var(--ring)}
+.who{min-width:0}
+.who h3{margin:0;font-size:19px;font-weight:600;letter-spacing:-.015em;line-height:1.25}
+.who p{margin:2px 0 0;font-size:14px;color:var(--ink2)}
+.dot{color:var(--muted);margin:0 2px}
+.mv{font-size:12.5px;font-weight:600;margin-left:6px;white-space:nowrap}
+.mv.up{color:var(--up)}.mv.dn{color:var(--down)}.mv.eq{color:var(--muted)}
+.pts{text-align:right}
+.pts b{display:block;font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.pts span{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.bar{display:flex;gap:2px;height:8px;margin:16px 0 0;border-radius:4px;overflow:hidden;cursor:default;outline-offset:3px}
+.bar .seg{display:block;height:100%}
+.take{margin:16px 0 0;font:400 18px/1.65 var(--serif);color:var(--ink);text-wrap:pretty}
+.pog{display:flex;align-items:center;gap:10px;margin:16px 0 0;padding-top:14px;border-top:1px solid var(--hair);
+  font-size:14px;color:var(--ink2)}
+.pog img{width:34px;height:34px;border-radius:50%;object-fit:cover;object-position:top center;background:var(--hair)}
+.pog b{color:var(--ink);font-weight:600;margin-right:4px}
+
+/* position chart: one row per team, sorted by score */
+.pchart{background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:18px 20px 14px}
+.prow{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px;align-items:center;padding:5px 0;border-radius:6px;outline-offset:2px}
+.prow:hover .ps{filter:brightness(1.06)}
+.pn{font-size:14px;color:var(--ink2);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pt{display:flex;align-items:center;gap:10px;min-width:0}
+.ps{display:flex;gap:2px;height:18px;border-radius:0 4px 4px 0;overflow:hidden;flex:none}
+.ps .seg{display:block;height:100%}
+.pv{font-size:13.5px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink)}
+.tview{margin-top:14px}
+.tview summary{cursor:pointer;font-size:14px;color:var(--accent);width:max-content}
+.twrap{overflow-x:auto;margin-top:12px;border:1px solid var(--hair);border-radius:12px;background:var(--surface)}
+.twrap table{width:100%;min-width:560px;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+.twrap th,.twrap td{padding:9px 12px;border-bottom:1px solid var(--hair);text-align:right}
+.twrap th:first-child{text-align:left;font-weight:500}
+.twrap thead th{font-weight:600;color:var(--ink2);font-size:12.5px}
+.twrap .tot{font-weight:600}
+.twrap tbody tr:last-child th,.twrap tbody tr:last-child td{border-bottom:0}
+
+/* bump chart */
+.bumpwrap{margin:0;background:var(--surface);border:1px solid var(--hair);border-radius:16px;padding:16px 12px 12px}
+.bump{display:block;width:100%;height:auto}
+.bump .grid{stroke:var(--hair);stroke-width:1}
+.bump .wkl{fill:var(--muted);font:500 12px var(--sans)}
+.bump .ax{fill:var(--muted);font:500 12px var(--sans)}
+.bump .ln{cursor:pointer;outline:none}
+.bump .ln .hit{fill:none;stroke:transparent;stroke-width:16}
+.bump .ln .stroke{fill:none;stroke:var(--base);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;transition:stroke .15s,opacity .15s}
+.bump .ln circle{fill:var(--base);stroke:var(--surface);stroke-width:2;transition:fill .15s}
+.bump .ln text{fill:var(--ink2);font:500 13px var(--sans);transition:fill .15s}
+.bump .ln.lead .stroke{stroke:var(--accent)}
+.bump .ln.lead circle{fill:var(--accent)}
+.bump .ln.lead text{fill:var(--ink);font-weight:600}
+.bump.focus .ln:not(.on){opacity:.25}
+.bump .ln.on .stroke{stroke:var(--ink);stroke-width:2.5}
+.bump .ln.on circle{fill:var(--ink)}
+.bump .ln.on text{fill:var(--ink);font-weight:600}
+.bumpwrap figcaption{margin:8px 8px 0;font-size:13px;color:var(--muted)}
+
+/* tooltip */
+.tip{position:fixed;z-index:50;pointer-events:none;min-width:150px;max-width:240px;padding:10px 12px;
+  background:var(--raised);color:var(--ink);border:1px solid var(--hair);border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.14);font-size:13px}
+.tip p{margin:0;display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+.tip p b{order:2;font-weight:600;font-variant-numeric:tabular-nums}
+.tip p span{order:1;color:var(--ink2)}
+.tip .key{display:inline-block;width:10px;height:2px;border-radius:1px;margin-right:7px;vertical-align:middle}
+.tip .tt{display:block;font-weight:600;margin-bottom:6px}
+.tip .tsum{margin-top:6px;padding-top:6px;border-top:1px solid var(--hair)}
+
+.foot{margin-top:64px;padding-top:20px;border-top:1px solid var(--hair);font-size:14px;color:var(--muted)}
+.foot a{color:var(--ink2)}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+@media (max-width:720px){
+  .glance{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .games{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  main,.top-in{padding-left:16px;padding-right:16px}
+  .intro{padding-top:36px}
+  .dek{font-size:18.5px}
+  .team{padding:16px 16px 14px}
+  .th{grid-template-columns:26px 38px minmax(0,1fr);gap:10px}
+  .rk{font-size:22px}
+  .lg{width:38px;height:38px}
+  .who h3{font-size:17.5px}
+  .pts{grid-column:1/-1;text-align:left;display:flex;align-items:baseline;gap:10px;padding-left:36px}
+  .pts b{font-size:22px}
+  .take{font-size:17.5px}
+  .prow{grid-template-columns:64px minmax(0,1fr);gap:10px}
+  .pn{font-size:13px}
+  .brand .full{display:none}
+  .brand .short{display:inline}
+  .links a{padding:6px 8px;font-size:13.5px}
+  .top-in{gap:8px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="top-in">
+  <a class="brand" href="../index.html"><span class="full">Chach Champions League</span><span class="short">CCL</span></a>
+  <div class="links"><a href="#results">Results</a><a href="#rankings">Rankings</a><a href="#positions">Positions</a><a href="#trend">Trend</a></div>
+</div></nav>
+
+<main>
+  <header class="intro">
+    <p class="kicker">Week 5 power rankings &middot; October 13, 2026</p>
+    <h1>Ben E. goes to 5-0 and takes the scoring lead</h1>
+    <p class="dek">Five weeks in, Ben E. is the only unbeaten team and now leads the league in points, 7.1 ahead of michael. Those two are a combined 92-18 against the field, and nobody else is better than 35-20. Cortisol Spyke Weeks put up 168.44, the third-best week of the season, and has climbed from last in the power rankings after week one to fourth. At the other end, the schedule is still shaping the standings. Team Galakrond is 0-5 after facing 779.6 points, and four of its five opponents posted one of the top two scores in the league that week.</p>
+  </header>
+
+  <section class="glance" aria-label="At a glance"><div class="tile"><p class="tl">Top score</p><p class="tv">168.4</p><p class="ts">Cortisol Spyke Weeks</p></div><div class="tile"><p class="tl">Unbeaten</p><p class="tv">5-0</p><p class="ts">Ben&#x27;s Brilliant Team</p></div><div class="tile"><p class="tl">Closest game</p><p class="tv">5.02</p><p class="ts">Drake Maye Sucks Ass over roadrunners</p></div><div class="tile"><p class="tl">Highest losing score</p><p class="tv">131.6</p><p class="ts">Adams and Jefferson</p></div></section>
+
+  <section id="results">
+    <h2>Results</h2>
+    <p class="lede">Closest game first. Drake Maye Sucks Ass beat roadrunners by 5.02, the only game this week decided by less than ten, which is what the gold border marks.</p>
+    <ul class="games"><li class="game close">
+  <div class="side win"><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt="" loading="lazy"><span class="nm">Drake Maye Sucks Ass</span><span class="sc">124.8</span></div>
+  <div class="side"><img src="../assets/logos/10-roadrunners.svg" alt="" loading="lazy"><span class="nm">roadrunners</span><span class="sc">119.7</span></div>
+  <p class="mg">Decided by 5.02</p>
+</li><li class="game">
+  <div class="side win"><img src="../assets/logos/12-team-evil.svg" alt="" loading="lazy"><span class="nm">Team evil </span><span class="sc">128.2</span></div>
+  <div class="side"><img src="../assets/logos/3-ceedeez-nutz.svg" alt="" loading="lazy"><span class="nm">CeeDeez Nutz</span><span class="sc">117.7</span></div>
+  <p class="mg">Won by 10.5</p>
+</li><li class="game">
+  <div class="side win"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt="" loading="lazy"><span class="nm">Ben&#x27;s Brilliant Team</span><span class="sc">156.6</span></div>
+  <div class="side"><img src="../assets/logos/1-team-galakrond.png" alt="" loading="lazy"><span class="nm">Team Galakrond</span><span class="sc">123.5</span></div>
+  <p class="mg">Won by 33.1</p>
+</li><li class="game">
+  <div class="side win"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="" loading="lazy"><span class="nm">Cortisol Spyke Weeks</span><span class="sc">168.4</span></div>
+  <div class="side"><img src="../assets/logos/5-adams-and-jefferson.svg" alt="" loading="lazy"><span class="nm">Adams and Jefferson</span><span class="sc">131.6</span></div>
+  <p class="mg">Won by 36.8</p>
+</li><li class="game">
+  <div class="side win"><img src="../assets/logos/8-dake-bates.png" alt="" loading="lazy"><span class="nm">Dake Bates</span><span class="sc">134.4</span></div>
+  <div class="side"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="" loading="lazy"><span class="nm">Purdy Seconds to Mars</span><span class="sc">96.6</span></div>
+  <p class="mg">Won by 37.8</p>
+</li><li class="game">
+  <div class="side win"><img src="../assets/logos/9-michael-s-monstrous-team.svg" alt="" loading="lazy"><span class="nm">michael&#x27;s Monstrous Team</span><span class="sc">134.8</span></div>
+  <div class="side"><img src="../assets/logos/6-bingo-night.svg" alt="" loading="lazy"><span class="nm">Bingo Night</span><span class="sc">87.8</span></div>
+  <p class="mg">Won by 47.0</p>
+</li></ul>
+  </section>
+
+  <section id="rankings">
+    <h2>Power rankings</h2>
+    <p class="lede">Record carries the most weight now, with recent form, scoring and luck behind it. Where a blurb mentions expected wins, that is a team&#x27;s record against the whole league each week, scaled to five games: what its scoring has earned, regardless of schedule. The color bar splits this week&#x27;s points by position.</p>
+    <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
+    <div class="teams"><article class="team first" id="t2" data-team="2">
+  <header class="th">
+    <span class="rk">1</span>
+    <img class="lg" src="../assets/logos/2-ben-s-brilliant-team.svg" alt="" loading="lazy">
+    <div class="who"><h3>Ben&#x27;s Brilliant Team</h3>
+      <p>Ben Elton <span class="dot">&middot;</span> 5-0 <span class="mv eq" aria-label="no change">&ndash;</span></p></div>
+    <div class="pts"><b>156.6</b><span>+24.3 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;32.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;22.5&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;67.8&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;23.0&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;2.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;9.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;156.6&quot;}" aria-label="Points by position"><span class="seg qb" style="width:20.61%"></span><span class="seg rb" style="width:14.37%"></span><span class="seg wr" style="width:43.31%"></span><span class="seg te" style="width:14.69%"></span><span class="seg k" style="width:1.28%"></span><span class="seg dst" style="width:5.75%"></span></div>
+  <p class="take">Five wins, and the only unbeaten team left. Ben E. is 47-8 against the whole league, the best mark in the league, and has now passed michael for the most points scored at 716.5. The floor is the story: every week between 131.1 and 156.6, and wins over michael and CeeDeez Nutz, the second and third-highest scorers. This week&#x27;s 156.56 was a season high, with Jayden Daniels at 32.3 and Parker Washington adding 30.4 from the flex. The receiver room runs 23.5 a week above average, and Jaxon Smith-Njigba has 139.5 on the season. The backfield is still about five a week below. Expected wins of 4.27 say the 5-0 is mostly earned.</p>
+  <p class="pog"><img src="../assets/players/4426348.png" alt="" loading="lazy"><span>Top performer <b>Jayden Daniels</b> 32.3</span></p>
+</article><article class="team" id="t9" data-team="9">
+  <header class="th">
+    <span class="rk">2</span>
+    <img class="lg" src="../assets/logos/9-michael-s-monstrous-team.svg" alt="" loading="lazy">
+    <div class="who"><h3>michael&#x27;s Monstrous Team</h3>
+      <p>michael prince <span class="dot">&middot;</span> 4-1 <span class="mv eq" aria-label="no change">&ndash;</span></p></div>
+    <div class="pts"><b>134.8</b><span>-5.9 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;30.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;68.0&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;15.9&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;5.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;134.8&quot;}" aria-label="Points by position"><span class="seg qb" style="width:22.63%"></span><span class="seg rb" style="width:50.45%"></span><span class="seg wr" style="width:11.78%"></span><span class="seg te" style="width:1.04%"></span><span class="seg k" style="width:3.71%"></span><span class="seg dst" style="width:10.39%"></span></div>
+  <p class="take">Second in points at 709.3, 7.1 behind Ben E., and 45-10 against the field. The only loss came in week three, 146.96 against Ben E.&#x27;s 150.84. Jahmyr Gibbs went for 37.7 and leads every starter in the league with 153.7 on the season, and Josh Allen is second at 143.0. Together, quarterback and running back run about 32 a week above average. Receivers and tight end are both below it, and Harold Fannin Jr. gave 1.4 at tight end this week. The bench keeps growing: 369.1 points over five weeks, the most in the league. Expected wins of 4.09 match the 4-1.</p>
+  <p class="pog"><img src="../assets/players/4429795.png" alt="" loading="lazy"><span>Top performer <b>Jahmyr Gibbs</b> 37.7</span></p>
+</article><article class="team" id="t8" data-team="8">
+  <header class="th">
+    <span class="rk">3</span>
+    <img class="lg" src="../assets/logos/8-dake-bates.png" alt="" loading="lazy">
+    <div class="who"><h3>Dake Bates</h3>
+      <p>Jake Danielson <span class="dot">&middot;</span> 4-1 <span class="mv up" aria-label="up 1">&#9650; 1</span></p></div>
+    <div class="pts"><b>134.4</b><span>+14.3 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;25.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;24.9&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;62.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;11.6&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;1.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;134.4&quot;}" aria-label="Points by position"><span class="seg qb" style="width:18.81%"></span><span class="seg rb" style="width:18.53%"></span><span class="seg wr" style="width:46.58%"></span><span class="seg te" style="width:8.63%"></span><span class="seg k" style="width:6.70%"></span><span class="seg dst" style="width:0.74%"></span></div>
+  <p class="take">4-1 and up to third, with the gentlest schedule in the league. Dake has faced 482.6 points, 58.4 fewer than anyone else. The scoring is mid-table: sixth in points at 596.6, 31-24 against the field, expected wins of 2.82. This week was the steady version, 134.38, with Puka Nacua at 37.7 from the flex and Jordan Love at 25.3. Weekly scores still range from 56.5 to 177.9, the widest spread in the league. Javonte Williams and Ashton Jeanty keep the backfield about eight a week above average. Receivers run about seven below.</p>
+  <p class="pog"><img src="../assets/players/4426515.png" alt="" loading="lazy"><span>Top performer <b>Puka Nacua</b> 37.7</span></p>
+</article><article class="team" id="t4" data-team="4">
+  <header class="th">
+    <span class="rk">4</span>
+    <img class="lg" src="../assets/logos/4-cortisol-spyke-weeks.png" alt="" loading="lazy">
+    <div class="who"><h3>Cortisol Spyke Weeks</h3>
+      <p>Mason Morgan <span class="dot">&middot;</span> 3-2 <span class="mv up" aria-label="up 3">&#9650; 3</span></p></div>
+    <div class="pts"><b>168.4</b><span>+42.0 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;57.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;56.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;32.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;10.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-1.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;168.4&quot;}" aria-label="Points by position"><span class="seg qb" style="width:7.50%"></span><span class="seg rb" style="width:34.31%"></span><span class="seg wr" style="width:33.60%"></span><span class="seg te" style="width:19.24%"></span><span class="seg k" style="width:5.94%"></span></div>
+  <p class="take">168.44, the best score of the week and the third-best of the season, 41.99 above projection. Jaylen Warren ran for 36.8, Isaiah Likely added 32.4, the top tight end score of the week, and George Pickens chipped in 28.0. Last in the power rankings after week one, fourth now. Over five weeks the team sits close to league average at nearly every position, 26-29 against the field, with expected wins of 2.36 next to a 3-2 record. The weekly scores swing: 92.0 and 93.0 in two weeks, 139.4 and 168.4 in two others. Derrick Henry leads the team with 111.8 on the season, and 357.3 points have been left on the bench, second-most in the league.</p>
+  <p class="pog"><img src="../assets/players/4569987.png" alt="" loading="lazy"><span>Top performer <b>Jaylen Warren</b> 36.8</span></p>
+</article><article class="team" id="t3" data-team="3">
+  <header class="th">
+    <span class="rk">5</span>
+    <img class="lg" src="../assets/logos/3-ceedeez-nutz.svg" alt="" loading="lazy">
+    <div class="who"><h3>CeeDeez Nutz</h3>
+      <p>skyler cortez <span class="dot">&middot;</span> 3-2 <span class="mv dn" aria-label="down 2">&#9660; 2</span></p></div>
+    <div class="pts"><b>117.7</b><span>-3.2 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;25.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;22.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;35.2&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;21.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;0.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;13.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;117.7&quot;}" aria-label="Points by position"><span class="seg qb" style="width:21.48%"></span><span class="seg rb" style="width:19.37%"></span><span class="seg wr" style="width:29.91%"></span><span class="seg te" style="width:18.18%"></span><span class="seg dst" style="width:11.05%"></span></div>
+  <p class="take">A season low, and a second straight loss. CeeDeez Nutz had scored between 133.2 and 147.3 every week, then posted 117.68 and lost to Team evil by 10.52. Most of the drop traces to two spots: CeeDee Lamb scored 2.9 and Cairo Santos 0.0 at kicker. Jacoby Brissett started at quarterback and gave 25.3, and Christian Watson went for 32.3. Over five weeks this is still the third-highest scoring team at 670.5, 35-20 against the field, with expected wins of 3.18. The two losses came by 0.2 and 10.5. Receivers run 16.9 a week above average. The backfield, 13.0 below, has been the weak spot all season.</p>
+  <p class="pog"><img src="../assets/players/4248528.png" alt="" loading="lazy"><span>Top performer <b>Christian Watson</b> 32.3</span></p>
+</article><article class="team" id="t11" data-team="11">
+  <header class="th">
+    <span class="rk">6</span>
+    <img class="lg" src="../assets/logos/11-drake-maye-sucks-ass.svg" alt="" loading="lazy">
+    <div class="who"><h3>Drake Maye Sucks Ass</h3>
+      <p>Jackson Helling <span class="dot">&middot;</span> 3-2 <span class="mv up" aria-label="up 2">&#9650; 2</span></p></div>
+    <div class="pts"><b>124.8</b><span>+3.9 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;39.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;20.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;31.7&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;19.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;7.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;124.8&quot;}" aria-label="Points by position"><span class="seg qb" style="width:31.63%"></span><span class="seg rb" style="width:16.67%"></span><span class="seg wr" style="width:25.41%"></span><span class="seg te" style="width:15.87%"></span><span class="seg k" style="width:5.61%"></span><span class="seg dst" style="width:4.81%"></span></div>
+  <p class="take">Drake Maye scored 39.5 for the team named Drake Maye Sucks Ass, the best individual score in the league this week, and it won the closest game of the week by 5.02. That is two straight wins and a 3-2 record. The 124.76 was a season high. Maye has 87.2 on the season, 65.7 of it in the last two weeks. Amon-Ra St. Brown leads the team with 104.2, and Sam LaPorta keeps tight end about four a week above average. The backfield is the gap, about 10 a week below. At 22-33 against the field, expected wins of 2.00 trail the record by a full game.</p>
+  <p class="pog"><img src="../assets/players/4431452.png" alt="" loading="lazy"><span>Top performer <b>Drake Maye</b> 39.5</span></p>
+</article><article class="team" id="t12" data-team="12">
+  <header class="th">
+    <span class="rk">7</span>
+    <img class="lg" src="../assets/logos/12-team-evil.svg" alt="" loading="lazy">
+    <div class="who"><h3>Team evil </h3>
+      <p>kelly brown <span class="dot">&middot;</span> 2-3 <span class="mv up" aria-label="up 2">&#9650; 2</span></p></div>
+    <div class="pts"><b>128.2</b><span>+11.8 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;24.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;22.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;32.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;21.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;18.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;128.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:19.19%"></span><span class="seg rb" style="width:17.32%"></span><span class="seg wr" style="width:25.43%"></span><span class="seg te" style="width:7.64%"></span><span class="seg k" style="width:16.38%"></span><span class="seg dst" style="width:14.04%"></span></div>
+  <p class="take">The last two weeks have been season highs: 123.4, then 128.20 to beat CeeDeez Nutz. Scores have gone up in three of the four weeks since week one. Spencer Shrader&#x27;s 21.0 was the best kicker score of the week, and the Jets defense added 18.0. Joe Burrow (101.2 on the season), Christian McCaffrey (91.3) and Garrett Wilson (86.4) give it depth, and the team is within 3.5 points of average at every position except running back, 6.0 below. kelly has faced 628.8 points, fourth-most, and lost twice by less than three: 0.4 in week two and 2.5 in week four. Expected wins of 2.18 match the 2-3.</p>
+  <p class="pog"><img src="../assets/players/3915511.png" alt="" loading="lazy"><span>Top performer <b>Joe Burrow</b> 24.6</span></p>
+</article><article class="team" id="t5" data-team="5">
+  <header class="th">
+    <span class="rk">8</span>
+    <img class="lg" src="../assets/logos/5-adams-and-jefferson.svg" alt="" loading="lazy">
+    <div class="who"><h3>Adams and Jefferson</h3>
+      <p>Lyudmil Zdravkov <span class="dot">&middot;</span> 1-4 <span class="mv dn" aria-label="down 2">&#9660; 2</span></p></div>
+    <div class="pts"><b>131.6</b><span>+6.9 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;27.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;34.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;42.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;3.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;131.6&quot;}" aria-label="Points by position"><span class="seg qb" style="width:20.76%"></span><span class="seg rb" style="width:26.14%"></span><span class="seg wr" style="width:32.29%"></span><span class="seg te" style="width:5.62%"></span><span class="seg k" style="width:12.92%"></span><span class="seg dst" style="width:2.28%"></span></div>
+  <p class="take">131.62 was the fifth-best score of the week, and it ran into the best one. That keeps happening. Adams and Jefferson has faced the week&#x27;s top score twice and the second-best once, and has seen 712.7 points, second-most in the league. The scoring says this is a winning team: fourth in points at 652.6, 29-26 against the field, expected wins of 2.64. Matthew Stafford gave 27.3, Davante Adams 22.1 and Justin Jefferson 18.8, and only 12.62 points sat on the bench, the fewest in the league this week. Receivers run 11.7 a week above average, third-best in the league, and Kyren Williams leads the team with 109.3 on the season.</p>
+  <p class="pog"><img src="../assets/players/12483.png" alt="" loading="lazy"><span>Top performer <b>Matthew Stafford</b> 27.3</span></p>
+</article><article class="team" id="t7" data-team="7">
+  <header class="th">
+    <span class="rk">9</span>
+    <img class="lg" src="../assets/logos/7-purdy-seconds-to-mars.png" alt="" loading="lazy">
+    <div class="who"><h3>Purdy Seconds to Mars</h3>
+      <p>Ben T <span class="dot">&middot;</span> 2-3 <span class="mv dn" aria-label="down 4">&#9660; 4</span></p></div>
+    <div class="pts"><b>96.6</b><span>-24.3 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;16.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;22.9&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;14.9&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;21.6&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;6.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;15.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;96.6&quot;}" aria-label="Points by position"><span class="seg qb" style="width:16.74%"></span><span class="seg rb" style="width:23.72%"></span><span class="seg wr" style="width:15.43%"></span><span class="seg te" style="width:22.37%"></span><span class="seg k" style="width:6.21%"></span><span class="seg dst" style="width:15.53%"></span></div>
+  <p class="take">Down four spots, the biggest drop of the week. 96.0 in week four and 96.56 this week, after a 149.1 in week three. Brock Purdy gave 16.2 and Bijan Robinson 15.8, and the receivers produced 14.9 combined, the lowest at that position this week. That is the season-long problem: receivers run 16.7 a week below average, the worst in the league. The rest of the roster is in good shape. Bijan (121.2) and Purdy (116.6) are the fourth and fifth-highest scoring starters in the league, and Trey McBride gives tight end about seven a week above average. Expected wins of 2.27 next to a 2-3 record say the scoring and the results agree.</p>
+  <p class="pog"><img src="../assets/players/4361307.png" alt="" loading="lazy"><span>Top performer <b>Trey McBride</b> 21.6</span></p>
+</article><article class="team" id="t10" data-team="10">
+  <header class="th">
+    <span class="rk">10</span>
+    <img class="lg" src="../assets/logos/10-roadrunners.svg" alt="" loading="lazy">
+    <div class="who"><h3>roadrunners</h3>
+      <p>Ricky Verastegui <span class="dot">&middot;</span> 1-4 <span class="mv eq" aria-label="no change">&ndash;</span></p></div>
+    <div class="pts"><b>119.7</b><span>+9.1 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;21.7&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;27.6&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;60.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;5.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;119.7&quot;}" aria-label="Points by position"><span class="seg qb" style="width:18.16%"></span><span class="seg rb" style="width:23.05%"></span><span class="seg wr" style="width:50.11%"></span><span class="seg te" style="width:6.18%"></span><span class="seg k" style="width:4.18%"></span></div>
+  <p class="take">A second straight season high, 119.74 after 118.1, and a 5.02 loss in the closest game of the week. Malik Nabers went for 29.1, James Cook III 22.8 and Matthew Golden 20.3 from the flex, and the receivers&#x27; 60.0 was third-most this week. Since a 61.7 in week two the line has gone up every week: 91.3, 118.1, 119.7. Two spots are holding it back. Tight end runs 7.1 a week below average and defense 4.9 below, both the lowest in the league. At 14-41 against the field, expected wins of 1.27 sit right next to the 1-4.</p>
+  <p class="pog"><img src="../assets/players/4595348.png" alt="" loading="lazy"><span>Top performer <b>Malik Nabers</b> 29.1</span></p>
+</article><article class="team" id="t6" data-team="6">
+  <header class="th">
+    <span class="rk">11</span>
+    <img class="lg" src="../assets/logos/6-bingo-night.svg" alt="" loading="lazy">
+    <div class="who"><h3>Bingo Night</h3>
+      <p>Thomas Fowler <span class="dot">&middot;</span> 2-3 <span class="mv up" aria-label="up 1">&#9650; 1</span></p></div>
+    <div class="pts"><b>87.8</b><span>-3.8 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;35.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;23.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;0.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;12.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;4.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;87.8&quot;}" aria-label="Points by position"><span class="seg qb" style="width:13.90%"></span><span class="seg rb" style="width:40.77%"></span><span class="seg wr" style="width:26.77%"></span><span class="seg te" style="width:0.34%"></span><span class="seg k" style="width:13.67%"></span><span class="seg dst" style="width:4.56%"></span></div>
+  <p class="take">Up one spot on the strength of a 2-3 record, with Team Galakrond dropping below at 0-5. 87.80 was the lowest score of the week for the third week running. Over five weeks Bingo Night is 6-49 against the field, with expected wins of 0.55 next to two actual wins, the biggest gap in the league in that direction. Rhamondre Stevenson (17.5) and Blake Corum (16.2) carried the backfield this week. Deshaun Watson started at quarterback for 12.2, and the tight end spot gave 0.3. Jalen Hurts leads the team with 67.0 on the season.</p>
+  <p class="pog"><img src="../assets/players/4426388.png" alt="" loading="lazy"><span>Top performer <b>Jameson Williams</b> 18.7</span></p>
+</article><article class="team" id="t1" data-team="1">
+  <header class="th">
+    <span class="rk">12</span>
+    <img class="lg" src="../assets/logos/1-team-galakrond.png" alt="" loading="lazy">
+    <div class="who"><h3>Team Galakrond</h3>
+      <p>Neil Gibeaut <span class="dot">&middot;</span> 0-5 <span class="mv dn" aria-label="down 1">&#9660; 1</span></p></div>
+    <div class="pts"><b>123.5</b><span>+14.9 vs projection</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;19.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;43.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;6.5&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;20.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;123.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:14.79%"></span><span class="seg rb" style="width:15.55%"></span><span class="seg wr" style="width:35.23%"></span><span class="seg te" style="width:5.26%"></span><span class="seg k" style="width:12.96%"></span><span class="seg dst" style="width:16.20%"></span></div>
+  <p class="take">0-5, and the schedule has a lot to do with it. Team Galakrond has faced 779.6 points, 66.9 more than any other team, and four of its five opponents posted one of the top two scores in the league that week. Last week it scored 140.28, second-best in the league, and lost to the 190. This week it scored 123.46 against Ben E.&#x27;s 156.56. Against the whole league it is 26-29, the same as 3-2 Cortisol Spyke Weeks, with expected wins of 2.36. The backfield runs 18.6 a week above average, second only to michael&#x27;s, behind Kenneth Walker III (110.1) and Jonathan Taylor (97.4). Quarterback is 6.6 below, the lowest in the league, and receivers 13.6 below. Mike Evans led the team this week with 26.3.</p>
+  <p class="pog"><img src="../assets/players/16737.png" alt="" loading="lazy"><span>Top performer <b>Mike Evans</b> 26.3</span></p>
+</article></div>
+  </section>
+
+  <section id="positions">
+    <h2>Scoring by position</h2>
+    <p class="lede">This week&#x27;s points by position. michael&#x27;s backfield put up 68.0 and Ben E.&#x27;s receivers 67.8, the two biggest position groups of the week. Over five weeks, Ben E.&#x27;s receivers run 23.5 a week above league average, the biggest edge any team has at any position.</p>
+    <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
+    <div class="pchart"><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;57.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;56.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;32.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;10.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-1.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;168.4&quot;}"><span class="pn">Mason</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 1.0000)"><span class="seg qb" style="width:7.50%"></span><span class="seg rb" style="width:34.31%"></span><span class="seg wr" style="width:33.60%"></span><span class="seg te" style="width:19.24%"></span><span class="seg k" style="width:5.94%"></span></span><span class="pv">168.4</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;32.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;22.5&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;67.8&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;23.0&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;2.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;9.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;156.6&quot;}"><span class="pn">Ben E.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.9295)"><span class="seg qb" style="width:20.61%"></span><span class="seg rb" style="width:14.37%"></span><span class="seg wr" style="width:43.31%"></span><span class="seg te" style="width:14.69%"></span><span class="seg k" style="width:1.28%"></span><span class="seg dst" style="width:5.75%"></span></span><span class="pv">156.6</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;30.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;68.0&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;15.9&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;5.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;134.8&quot;}"><span class="pn">michael</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8002)"><span class="seg qb" style="width:22.63%"></span><span class="seg rb" style="width:50.45%"></span><span class="seg wr" style="width:11.78%"></span><span class="seg te" style="width:1.04%"></span><span class="seg k" style="width:3.71%"></span><span class="seg dst" style="width:10.39%"></span></span><span class="pv">134.8</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;25.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;24.9&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;62.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;11.6&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;1.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;134.4&quot;}"><span class="pn">Jake</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7978)"><span class="seg qb" style="width:18.81%"></span><span class="seg rb" style="width:18.53%"></span><span class="seg wr" style="width:46.58%"></span><span class="seg te" style="width:8.63%"></span><span class="seg k" style="width:6.70%"></span><span class="seg dst" style="width:0.74%"></span></span><span class="pv">134.4</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;27.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;34.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;42.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;3.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;131.6&quot;}"><span class="pn">Lyudmil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7814)"><span class="seg qb" style="width:20.76%"></span><span class="seg rb" style="width:26.14%"></span><span class="seg wr" style="width:32.29%"></span><span class="seg te" style="width:5.62%"></span><span class="seg k" style="width:12.92%"></span><span class="seg dst" style="width:2.28%"></span></span><span class="pv">131.6</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;24.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;22.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;32.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;21.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;18.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;128.2&quot;}"><span class="pn">kelly</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7611)"><span class="seg qb" style="width:19.19%"></span><span class="seg rb" style="width:17.32%"></span><span class="seg wr" style="width:25.43%"></span><span class="seg te" style="width:7.64%"></span><span class="seg k" style="width:16.38%"></span><span class="seg dst" style="width:14.04%"></span></span><span class="pv">128.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;39.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;20.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;31.7&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;19.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;7.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;124.8&quot;}"><span class="pn">Jackson</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7407)"><span class="seg qb" style="width:31.63%"></span><span class="seg rb" style="width:16.67%"></span><span class="seg wr" style="width:25.41%"></span><span class="seg te" style="width:15.87%"></span><span class="seg k" style="width:5.61%"></span><span class="seg dst" style="width:4.81%"></span></span><span class="pv">124.8</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;19.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;43.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;6.5&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;20.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;123.5&quot;}"><span class="pn">Neil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7330)"><span class="seg qb" style="width:14.79%"></span><span class="seg rb" style="width:15.55%"></span><span class="seg wr" style="width:35.23%"></span><span class="seg te" style="width:5.26%"></span><span class="seg k" style="width:12.96%"></span><span class="seg dst" style="width:16.20%"></span></span><span class="pv">123.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;21.7&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;27.6&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;60.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;5.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;119.7&quot;}"><span class="pn">Ricky</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7109)"><span class="seg qb" style="width:18.16%"></span><span class="seg rb" style="width:23.05%"></span><span class="seg wr" style="width:50.11%"></span><span class="seg te" style="width:6.18%"></span><span class="seg k" style="width:4.18%"></span></span><span class="pv">119.7</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;25.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;22.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;35.2&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;21.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;0.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;13.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;117.7&quot;}"><span class="pn">skyler</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.6986)"><span class="seg qb" style="width:21.48%"></span><span class="seg rb" style="width:19.37%"></span><span class="seg wr" style="width:29.91%"></span><span class="seg te" style="width:18.18%"></span><span class="seg dst" style="width:11.05%"></span></span><span class="pv">117.7</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;16.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;22.9&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;14.9&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;21.6&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;6.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;15.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;96.6&quot;}"><span class="pn">Ben T.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5733)"><span class="seg qb" style="width:16.74%"></span><span class="seg rb" style="width:23.72%"></span><span class="seg wr" style="width:15.43%"></span><span class="seg te" style="width:22.37%"></span><span class="seg k" style="width:6.21%"></span><span class="seg dst" style="width:15.53%"></span></span><span class="pv">96.6</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;35.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;23.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;0.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;12.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;4.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;87.8&quot;}"><span class="pn">Thomas</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5213)"><span class="seg qb" style="width:13.90%"></span><span class="seg rb" style="width:40.77%"></span><span class="seg wr" style="width:26.77%"></span><span class="seg te" style="width:0.34%"></span><span class="seg k" style="width:13.67%"></span><span class="seg dst" style="width:4.56%"></span></span><span class="pv">87.8</span></span></div></div>
+    <details class="tview"><summary>Show as a table</summary>
+      <div class="twrap"><table><thead><tr><th>Team</th><th>QB</th><th>RB</th><th>WR</th><th>TE</th><th>K</th><th>D/ST</th><th>Total</th></tr></thead><tbody><tr><th>Cortisol Spyke Weeks</th><td>12.6</td><td>57.8</td><td>56.6</td><td>32.4</td><td>10.0</td><td>-1.0</td><td class="tot">168.4</td></tr><tr><th>Ben&#x27;s Brilliant Team</th><td>32.3</td><td>22.5</td><td>67.8</td><td>23.0</td><td>2.0</td><td>9.0</td><td class="tot">156.6</td></tr><tr><th>michael&#x27;s Monstrous Team</th><td>30.5</td><td>68.0</td><td>15.9</td><td>1.4</td><td>5.0</td><td>14.0</td><td class="tot">134.8</td></tr><tr><th>Dake Bates</th><td>25.3</td><td>24.9</td><td>62.6</td><td>11.6</td><td>9.0</td><td>1.0</td><td class="tot">134.4</td></tr><tr><th>Adams and Jefferson</th><td>27.3</td><td>34.4</td><td>42.5</td><td>7.4</td><td>17.0</td><td>3.0</td><td class="tot">131.6</td></tr><tr><th>Team evil </th><td>24.6</td><td>22.2</td><td>32.6</td><td>9.8</td><td>21.0</td><td>18.0</td><td class="tot">128.2</td></tr><tr><th>Drake Maye Sucks Ass</th><td>39.5</td><td>20.8</td><td>31.7</td><td>19.8</td><td>7.0</td><td>6.0</td><td class="tot">124.8</td></tr><tr><th>Team Galakrond</th><td>18.3</td><td>19.2</td><td>43.5</td><td>6.5</td><td>16.0</td><td>20.0</td><td class="tot">123.5</td></tr><tr><th>roadrunners</th><td>21.7</td><td>27.6</td><td>60.0</td><td>7.4</td><td>5.0</td><td>-2.0</td><td class="tot">119.7</td></tr><tr><th>CeeDeez Nutz</th><td>25.3</td><td>22.8</td><td>35.2</td><td>21.4</td><td>0.0</td><td>13.0</td><td class="tot">117.7</td></tr><tr><th>Purdy Seconds to Mars</th><td>16.2</td><td>22.9</td><td>14.9</td><td>21.6</td><td>6.0</td><td>15.0</td><td class="tot">96.6</td></tr><tr><th>Bingo Night</th><td>12.2</td><td>35.8</td><td>23.5</td><td>0.3</td><td>12.0</td><td>4.0</td><td class="tot">87.8</td></tr></tbody></table></div>
+    </details>
+  </section>
+
+  <section id="trend">
+    <h2>Rank by week</h2>
+    <p class="lede">Five weeks on the board. Ben E. has been first three weeks running. Purdy Seconds to Mars falls four spots, the biggest drop of the week. Cortisol Spyke Weeks climbs three.</p>
+    <figure class="bumpwrap"><svg class="bump" viewBox="0 0 560 380" role="img" aria-label="Power ranking by week for every team"><line class="grid" x1="34.0" y1="22" x2="34.0" y2="370"/><text class="wkl" x="34.0" y="16" text-anchor="middle">Week 1</text><line class="grid" x1="128.0" y1="22" x2="128.0" y2="370"/><text class="wkl" x="128.0" y="16" text-anchor="middle">Week 2</text><line class="grid" x1="222.0" y1="22" x2="222.0" y2="370"/><text class="wkl" x="222.0" y="16" text-anchor="middle">Week 3</text><line class="grid" x1="316.0" y1="22" x2="316.0" y2="370"/><text class="wkl" x="316.0" y="16" text-anchor="middle">Week 4</text><line class="grid" x1="410.0" y1="22" x2="410.0" y2="370"/><text class="wkl" x="410.0" y="16" text-anchor="middle">Week 5</text><g class="ln" data-team="1" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#7&quot;], [&quot;Week 2&quot;, &quot;#9&quot;], [&quot;Week 3&quot;, &quot;#11&quot;], [&quot;Week 4&quot;, &quot;#11&quot;], [&quot;Week 5&quot;, &quot;#12&quot;]]}"><path class="hit" d="M34.0,212.2 L128.0,272.9 L222.0,333.6 L316.0,333.6 L410.0,364.0"/><path class="stroke" d="M34.0,212.2 L128.0,272.9 L222.0,333.6 L316.0,333.6 L410.0,364.0"/><circle cx="34.0" cy="212.2" r="4"/><circle cx="128.0" cy="272.9" r="4"/><circle cx="222.0" cy="333.6" r="4"/><circle cx="316.0" cy="333.6" r="4"/><circle cx="410.0" cy="364.0" r="4"/><text x="422.0" y="368.5">12. Neil</text></g><g class="ln" data-team="6" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#6&quot;], [&quot;Week 2&quot;, &quot;#4&quot;], [&quot;Week 3&quot;, &quot;#7&quot;], [&quot;Week 4&quot;, &quot;#12&quot;], [&quot;Week 5&quot;, &quot;#11&quot;]]}"><path class="hit" d="M34.0,181.8 L128.0,121.1 L222.0,212.2 L316.0,364.0 L410.0,333.6"/><path class="stroke" d="M34.0,181.8 L128.0,121.1 L222.0,212.2 L316.0,364.0 L410.0,333.6"/><circle cx="34.0" cy="181.8" r="4"/><circle cx="128.0" cy="121.1" r="4"/><circle cx="222.0" cy="212.2" r="4"/><circle cx="316.0" cy="364.0" r="4"/><circle cx="410.0" cy="333.6" r="4"/><text x="422.0" y="338.1">11. Thomas</text></g><g class="ln" data-team="10" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#9&quot;], [&quot;Week 2&quot;, &quot;#12&quot;], [&quot;Week 3&quot;, &quot;#12&quot;], [&quot;Week 4&quot;, &quot;#10&quot;], [&quot;Week 5&quot;, &quot;#10&quot;]]}"><path class="hit" d="M34.0,272.9 L128.0,364.0 L222.0,364.0 L316.0,303.3 L410.0,303.3"/><path class="stroke" d="M34.0,272.9 L128.0,364.0 L222.0,364.0 L316.0,303.3 L410.0,303.3"/><circle cx="34.0" cy="272.9" r="4"/><circle cx="128.0" cy="364.0" r="4"/><circle cx="222.0" cy="364.0" r="4"/><circle cx="316.0" cy="303.3" r="4"/><circle cx="410.0" cy="303.3" r="4"/><text x="422.0" y="307.8">10. Ricky</text></g><g class="ln" data-team="7" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#8&quot;], [&quot;Week 2&quot;, &quot;#6&quot;], [&quot;Week 3&quot;, &quot;#4&quot;], [&quot;Week 4&quot;, &quot;#5&quot;], [&quot;Week 5&quot;, &quot;#9&quot;]]}"><path class="hit" d="M34.0,242.5 L128.0,181.8 L222.0,121.1 L316.0,151.5 L410.0,272.9"/><path class="stroke" d="M34.0,242.5 L128.0,181.8 L222.0,121.1 L316.0,151.5 L410.0,272.9"/><circle cx="34.0" cy="242.5" r="4"/><circle cx="128.0" cy="181.8" r="4"/><circle cx="222.0" cy="121.1" r="4"/><circle cx="316.0" cy="151.5" r="4"/><circle cx="410.0" cy="272.9" r="4"/><text x="422.0" y="277.4">9. Ben T.</text></g><g class="ln" data-team="5" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#11&quot;], [&quot;Week 2&quot;, &quot;#7&quot;], [&quot;Week 3&quot;, &quot;#9&quot;], [&quot;Week 4&quot;, &quot;#6&quot;], [&quot;Week 5&quot;, &quot;#8&quot;]]}"><path class="hit" d="M34.0,333.6 L128.0,212.2 L222.0,272.9 L316.0,181.8 L410.0,242.5"/><path class="stroke" d="M34.0,333.6 L128.0,212.2 L222.0,272.9 L316.0,181.8 L410.0,242.5"/><circle cx="34.0" cy="333.6" r="4"/><circle cx="128.0" cy="212.2" r="4"/><circle cx="222.0" cy="272.9" r="4"/><circle cx="316.0" cy="181.8" r="4"/><circle cx="410.0" cy="242.5" r="4"/><text x="422.0" y="247.0">8. Lyudmil</text></g><g class="ln" data-team="12" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#10&quot;], [&quot;Week 2&quot;, &quot;#11&quot;], [&quot;Week 3&quot;, &quot;#8&quot;], [&quot;Week 4&quot;, &quot;#9&quot;], [&quot;Week 5&quot;, &quot;#7&quot;]]}"><path class="hit" d="M34.0,303.3 L128.0,333.6 L222.0,242.5 L316.0,272.9 L410.0,212.2"/><path class="stroke" d="M34.0,303.3 L128.0,333.6 L222.0,242.5 L316.0,272.9 L410.0,212.2"/><circle cx="34.0" cy="303.3" r="4"/><circle cx="128.0" cy="333.6" r="4"/><circle cx="222.0" cy="242.5" r="4"/><circle cx="316.0" cy="272.9" r="4"/><circle cx="410.0" cy="212.2" r="4"/><text x="422.0" y="216.7">7. kelly</text></g><g class="ln" data-team="11" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#5&quot;], [&quot;Week 2&quot;, &quot;#8&quot;], [&quot;Week 3&quot;, &quot;#10&quot;], [&quot;Week 4&quot;, &quot;#8&quot;], [&quot;Week 5&quot;, &quot;#6&quot;]]}"><path class="hit" d="M34.0,151.5 L128.0,242.5 L222.0,303.3 L316.0,242.5 L410.0,181.8"/><path class="stroke" d="M34.0,151.5 L128.0,242.5 L222.0,303.3 L316.0,242.5 L410.0,181.8"/><circle cx="34.0" cy="151.5" r="4"/><circle cx="128.0" cy="242.5" r="4"/><circle cx="222.0" cy="303.3" r="4"/><circle cx="316.0" cy="242.5" r="4"/><circle cx="410.0" cy="181.8" r="4"/><text x="422.0" y="186.3">6. Jackson</text></g><g class="ln" data-team="3" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#4&quot;], [&quot;Week 2&quot;, &quot;#2&quot;], [&quot;Week 3&quot;, &quot;#2&quot;], [&quot;Week 4&quot;, &quot;#3&quot;], [&quot;Week 5&quot;, &quot;#5&quot;]]}"><path class="hit" d="M34.0,121.1 L128.0,60.4 L222.0,60.4 L316.0,90.7 L410.0,151.5"/><path class="stroke" d="M34.0,121.1 L128.0,60.4 L222.0,60.4 L316.0,90.7 L410.0,151.5"/><circle cx="34.0" cy="121.1" r="4"/><circle cx="128.0" cy="60.4" r="4"/><circle cx="222.0" cy="60.4" r="4"/><circle cx="316.0" cy="90.7" r="4"/><circle cx="410.0" cy="151.5" r="4"/><text x="422.0" y="156.0">5. skyler</text></g><g class="ln" data-team="4" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#12&quot;], [&quot;Week 2&quot;, &quot;#10&quot;], [&quot;Week 3&quot;, &quot;#5&quot;], [&quot;Week 4&quot;, &quot;#7&quot;], [&quot;Week 5&quot;, &quot;#4&quot;]]}"><path class="hit" d="M34.0,364.0 L128.0,303.3 L222.0,151.5 L316.0,212.2 L410.0,121.1"/><path class="stroke" d="M34.0,364.0 L128.0,303.3 L222.0,151.5 L316.0,212.2 L410.0,121.1"/><circle cx="34.0" cy="364.0" r="4"/><circle cx="128.0" cy="303.3" r="4"/><circle cx="222.0" cy="151.5" r="4"/><circle cx="316.0" cy="212.2" r="4"/><circle cx="410.0" cy="121.1" r="4"/><text x="422.0" y="125.6">4. Mason</text></g><g class="ln" data-team="8" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#1&quot;], [&quot;Week 2&quot;, &quot;#5&quot;], [&quot;Week 3&quot;, &quot;#6&quot;], [&quot;Week 4&quot;, &quot;#4&quot;], [&quot;Week 5&quot;, &quot;#3&quot;]]}"><path class="hit" d="M34.0,30.0 L128.0,151.5 L222.0,181.8 L316.0,121.1 L410.0,90.7"/><path class="stroke" d="M34.0,30.0 L128.0,151.5 L222.0,181.8 L316.0,121.1 L410.0,90.7"/><circle cx="34.0" cy="30.0" r="4"/><circle cx="128.0" cy="151.5" r="4"/><circle cx="222.0" cy="181.8" r="4"/><circle cx="316.0" cy="121.1" r="4"/><circle cx="410.0" cy="90.7" r="4"/><text x="422.0" y="95.2">3. Jake</text></g><g class="ln" data-team="9" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#2&quot;], [&quot;Week 2&quot;, &quot;#1&quot;], [&quot;Week 3&quot;, &quot;#3&quot;], [&quot;Week 4&quot;, &quot;#2&quot;], [&quot;Week 5&quot;, &quot;#2&quot;]]}"><path class="hit" d="M34.0,60.4 L128.0,30.0 L222.0,90.7 L316.0,60.4 L410.0,60.4"/><path class="stroke" d="M34.0,60.4 L128.0,30.0 L222.0,90.7 L316.0,60.4 L410.0,60.4"/><circle cx="34.0" cy="60.4" r="4"/><circle cx="128.0" cy="30.0" r="4"/><circle cx="222.0" cy="90.7" r="4"/><circle cx="316.0" cy="60.4" r="4"/><circle cx="410.0" cy="60.4" r="4"/><text x="422.0" y="64.9">2. michael</text></g><g class="ln lead" data-team="2" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#3&quot;], [&quot;Week 2&quot;, &quot;#3&quot;], [&quot;Week 3&quot;, &quot;#1&quot;], [&quot;Week 4&quot;, &quot;#1&quot;], [&quot;Week 5&quot;, &quot;#1&quot;]]}"><path class="hit" d="M34.0,90.7 L128.0,90.7 L222.0,30.0 L316.0,30.0 L410.0,30.0"/><path class="stroke" d="M34.0,90.7 L128.0,90.7 L222.0,30.0 L316.0,30.0 L410.0,30.0"/><circle cx="34.0" cy="90.7" r="4"/><circle cx="128.0" cy="90.7" r="4"/><circle cx="222.0" cy="30.0" r="4"/><circle cx="316.0" cy="30.0" r="4"/><circle cx="410.0" cy="30.0" r="4"/><text x="422.0" y="34.5">1. Ben E.</text></g><text class="ax" x="20" y="34.0" text-anchor="end">1</text><text class="ax" x="20" y="368.0" text-anchor="end">12</text></svg>
+      <figcaption>Rank one at the top. Every Monday night adds a column. Hover or tap a line to follow one team.</figcaption></figure>
+  </section>
+
+  <footer class="foot"><p>Data from ESPN, pulled Monday night once the last game is final.
+    <a href="../index.html">All weeks</a></p></footer>
+</main>
+<script>
+(function(){
+  var tip=document.createElement('div');tip.className='tip';tip.setAttribute('role','tooltip');tip.hidden=true;
+  document.body.appendChild(tip);
+  function show(el,x,y){
+    var d;try{d=JSON.parse(el.getAttribute('data-tip'))}catch(_){return}
+    while(tip.firstChild)tip.removeChild(tip.firstChild);
+    var h=document.createElement('p');h.className='tt';h.textContent=d.t;tip.appendChild(h);
+    d.rows.forEach(function(r){var p=document.createElement('p');var k=document.createElement('span');
+      k.textContent=r[0];if(r[2]){var i=document.createElement('i');i.className='key '+r[2];k.insertBefore(i,k.firstChild)}
+      var v=document.createElement('b');v.textContent=r[1];p.appendChild(v);p.appendChild(k);tip.appendChild(p)});
+    if(d.total!==undefined){var t=document.createElement('p');t.className='tsum';var b=document.createElement('b');
+      b.textContent=d.total;var s=document.createElement('span');s.textContent='Total';t.appendChild(b);t.appendChild(s);tip.appendChild(t)}
+    tip.hidden=false;place(x,y);
+  }
+  function place(x,y){var w=tip.offsetWidth,hh=tip.offsetHeight,vw=window.innerWidth;
+    var l=Math.min(Math.max(8,x+14),vw-w-8),t=y-hh-14;if(t<8)t=y+18;
+    tip.style.left=l+'px';tip.style.top=t+'px'}
+  function hide(){tip.hidden=true}
+  document.querySelectorAll('[data-tip]').forEach(function(el){
+    el.addEventListener('pointermove',function(ev){show(el,ev.clientX,ev.clientY)});
+    el.addEventListener('pointerleave',hide);
+    el.addEventListener('focus',function(){var r=el.getBoundingClientRect();show(el,r.left+r.width/2,r.top)});
+    el.addEventListener('blur',hide);
+  });
+  window.addEventListener('scroll',hide,{passive:true});
+  var chart=document.querySelector('.bump');
+  function hl(id){if(!chart)return;chart.classList.toggle('focus',!!id);
+    chart.querySelectorAll('.ln').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-team')===id)})}
+  document.querySelectorAll('.bump .ln').forEach(function(g){
+    var id=g.getAttribute('data-team');
+    g.addEventListener('pointerenter',function(){hl(id)});g.addEventListener('pointerleave',function(){hl(null)});
+    g.addEventListener('focus',function(){hl(id)});g.addEventListener('blur',function(){hl(null)});
+  });
+})();
+</script>
+</body>
+</html>

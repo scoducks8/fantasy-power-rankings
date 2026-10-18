@@ -85,6 +85,31 @@ def fallback_avatar(label: str, subdir: str, name: str) -> str:
     return f"assets/{subdir}/{name}.svg"
 
 
+
+def save_schedule(base: dict) -> None:
+    """Record season length, playoff size and the full schedule (for midseason outlook)."""
+    try:
+        ss = ((base.get("settings") or {}).get("scheduleSettings") or {})
+        games = []
+        for m in base.get("schedule") or []:
+            home = (m.get("home") or {}).get("teamId")
+            away = (m.get("away") or {}).get("teamId")
+            if home is None or away is None:
+                continue
+            games.append({"week": m.get("matchupPeriodId"), "home_id": home, "away_id": away})
+        out = {
+            "regular_season_weeks": ss.get("matchupPeriodCount"),
+            "playoff_teams": ss.get("playoffTeamCount"),
+            "playoff_matchup_length": ss.get("playoffMatchupPeriodLength"),
+            "games": games,
+        }
+        (DATA_DIR / "schedule.json").write_text(json.dumps(out, indent=1))
+        print(f"Saved schedule: {out['regular_season_weeks']} regular-season weeks, "
+              f"{out['playoff_teams']} playoff teams, {len(games)} games.")
+    except Exception as exc:  # never block the weekly build on this
+        print(f"Schedule not saved: {exc}", file=sys.stderr)
+
+
 def main() -> int:
     league_id = os.environ.get("LEAGUE_ID")
     season = int(os.environ.get("SEASON", "2026"))
@@ -100,6 +125,7 @@ def main() -> int:
         return 2
 
     DATA_DIR.mkdir(exist_ok=True)
+    save_schedule(base)
     live = os.environ.get("INCLUDE_LIVE", "").lower() in ("1", "true", "yes")
 
     week = (base.get("status") or {}).get("currentMatchupPeriod") or 0
