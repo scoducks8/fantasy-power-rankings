@@ -1,0 +1,46 @@
+name: Week preview data
+
+on:
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Week to preview (blank = current week)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch schedule and projections
+        env:
+          LEAGUE_ID: ${{ vars.LEAGUE_ID }}
+          SEASON: ${{ vars.SEASON }}
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+          PREVIEW_WEEK: ${{ inputs.week }}
+        run: python scripts/preview.py
+
+      - name: Commit
+        run: |
+          git config user.name "power-rankings-bot"
+          git config user.email "actions@github.com"
+          git add data/schedule.json data/preview-week-*.json
+          if git diff --staged --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "Preview data: $(date -u +%Y-%m-%d)"
+            git push
+          fi
