@@ -205,6 +205,29 @@ def render(data, history, theme, copy, h) -> str:
 })();
 """
 
+    # ---------- up next (optional short preview of the coming week) ----------
+    nx = copy.get("up_next") or {}
+    upnext, nxlink = "", ""
+    if nx.get("games"):
+        def rec(t):
+            return f'{t["wins"]}-{t["losses"]}' + (f'-{t["ties"]}' if t.get("ties") else "")
+        items = ""
+        for g in nx["games"]:
+            A, B = by_id[g["a"]], by_id[g["b"]]
+            tag = '<span class="nx-tag">Game of the week</span>' if g.get("gotw") else ""
+            items += (f'<li class="nx{" gotw" if g.get("gotw") else ""}">{tag}'
+                      f'<p class="nx-m"><span class="nx-u"><img src="{av(A)}" alt="">{e(A["name"])} <span class="nx-r">{rec(A)}</span></span>'
+                      f'<span class="nx-u"><span class="nx-vs">vs</span><img src="{av(B)}" alt="">{e(B["name"])} <span class="nx-r">{rec(B)}</span></span></p>'
+                      f'<p class="nx-t">{e(g["text"])}</p></li>')
+        upnext = f'''
+  <section id="next">
+    <h2>{e(nx.get("title", f"Up next: week {wk + 1}"))}</h2>
+    {f'<p class="lede">{e(nx["intro"])}</p>' if nx.get("intro") else ""}
+    <ul class="nxs">{items}</ul>
+  </section>
+'''
+        nxlink = '<a href="#next">Up next</a>'
+
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -229,7 +252,7 @@ def render(data, history, theme, copy, h) -> str:
 <body>
 <nav class="top"><div class="top-in">
   <a class="brand" href="../index.html"><span class="full">{e(data["league_name"])}</span><span class="short">CCL</span></a>
-  <div class="links"><a href="#results">Results</a><a href="#rankings">Rankings</a><a href="#positions">Positions</a><a href="#trend">Trend</a></div>
+  <div class="links"><a href="#results">Results</a><a href="#rankings">Rankings</a><a href="#positions">Positions</a><a href="#trend">Trend</a>{nxlink}</div>
 </div></nav>
 
 <main>
@@ -271,6 +294,7 @@ def render(data, history, theme, copy, h) -> str:
       <figcaption>{e(labels.get("cnote", ""))} Hover or tap a line to follow one team.</figcaption></figure>
   </section>
 
+{upnext}
   <footer class="foot"><p>Data from ESPN, pulled Monday night once the last game is final.
     <a href="../index.html">All weeks</a></p></footer>
 </main>

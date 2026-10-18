@@ -57,7 +57,7 @@ h1{{margin-top:18px;font-size:64px;line-height:1.06;font-weight:700;letter-spaci
 <div>
   <div class="k">Week {week} power rankings</div>
   <h1>{e(c.get("headline", ""))}</h1>
-  <div class="lg">{f'<img src="{lav}">' if lav else ''}<span>No. 1 {e(lead["name"])}, {lead["wins"]}-{lead["losses"]}</span></div>
+  <div class="lg">{f'<span>{e(c["og_sub"])}</span>' if c.get("og_sub") else (f'<img src="{lav}">' if lav else '') + f'<span>No. 1 {e(lead["name"])}, {lead["wins"]}-{lead["losses"]}</span>'}</div>
 </div>
 <div class="tile">
   <div class="tl">Top score</div>

@@ -1,8 +1,8 @@
 {
  "_comment": "Week 5 copy, clean skin. Numbers checked against scripts/fact_sheet.py --week 5 and the season analysis.",
- "headline": "Ben E. goes to 5-0 and takes the scoring lead",
- "card_headline": "Five down, still perfect.",
- "standfirst": "Five weeks in, Ben E. is the only unbeaten team and now leads the league in points, 7.1 ahead of michael. Those two are a combined 92-18 against the field, and nobody else is better than 35-20. Cortisol Spyke Weeks put up 168.44, the third-best week of the season, and has climbed from last in the power rankings after week one to fourth. At the other end, the schedule is still shaping the standings. Team Galakrond is 0-5 after facing 779.6 points, and four of its five opponents posted one of the top two scores in the league that week.",
+ "headline": "Cortisol Spyke Weeks climbs from last to fourth",
+ "card_headline": "From last to fourth.",
+ "standfirst": "Cortisol Spyke Weeks put up 168.44, the best score of the week and the third-best of the season, and has climbed from last in the power rankings after week one to fourth. Behind the top three, the standings are bunched: six teams sit at 3-2 or 2-3. Adams and Jefferson ran into the week's best score again and is 1-4 despite the fourth-most points in the league. And Team Galakrond is 0-5 after facing 779.6 points, with four of its five opponents posting one of the top two scores in the league that week.",
  "lede_scores": "Closest game first. Drake Maye Sucks Ass beat roadrunners by 5.02, the only game this week decided by less than ten, which is what the gold border marks.",
  "lede_rankings": "Record carries the most weight now, with recent form, scoring and luck behind it. Where a blurb mentions expected wins, that is a team's record against the whole league each week, scaled to five games: what its scoring has earned, regardless of schedule. The color bar splits this week's points by position.",
  "lede_positions": "This week's points by position. michael's backfield put up 68.0 and Ben E.'s receivers 67.8, the two biggest position groups of the week. Over five weeks, Ben E.'s receivers run 23.5 a week above league average, the biggest edge any team has at any position.",
@@ -24,6 +24,44 @@
   "6": "Up one spot on the strength of a 2-3 record, with Team Galakrond dropping below at 0-5. 87.80 was the lowest score of the week for the third week running. Over five weeks Bingo Night is 6-49 against the field, with expected wins of 0.55 next to two actual wins, the biggest gap in the league in that direction. Rhamondre Stevenson (17.5) and Blake Corum (16.2) carried the backfield this week. Deshaun Watson started at quarterback for 12.2, and the tight end spot gave 0.3. Jalen Hurts leads the team with 67.0 on the season.",
   "1": "0-5, and the schedule has a lot to do with it. Team Galakrond has faced 779.6 points, 66.9 more than any other team, and four of its five opponents posted one of the top two scores in the league that week. Last week it scored 140.28, second-best in the league, and lost to the 190. This week it scored 123.46 against Ben E.'s 156.56. Against the whole league it is 26-29, the same as 3-2 Cortisol Spyke Weeks, with expected wins of 2.36. The backfield runs 18.6 a week above average, second only to michael's, behind Kenneth Walker III (110.1) and Jonathan Taylor (97.4). Quarterback is 6.6 below, the lowest in the league, and receivers 13.6 below. Mike Evans led the team this week with 26.3."
  },
- "og_title": "Week 5 power rankings: Ben E. goes to 5-0",
- "og_description": "Ben E. stays perfect and takes the scoring lead. Cortisol Spyke Weeks posts 168.44 and climbs to fourth."
+ "og_title": "Week 5 power rankings: Cortisol climbs from last to fourth",
+ "og_description": "Cortisol Spyke Weeks posts 168.44 and climbs to fourth. Six teams sit at 3-2 or 2-3. Plus a look at week 6.",
+ "up_next": {
+  "title": "Up next: week 6",
+  "intro": "Six teams sit at 3-2 or 2-3, and two of this week's games are played between them.",
+  "games": [
+   {
+    "a": 4,
+    "b": 7,
+    "gotw": true,
+    "text": "The best game of the week. Cortisol is coming off the top score of week 5, Purdy Seconds to Mars off two straight 96s. The projections are almost even, and a Purdy win puts both teams at 3-3."
+   },
+   {
+    "a": 2,
+    "b": 5,
+    "text": "Closer than the records say. Adams and Jefferson scores like a winning team, and ESPN has this within about five points."
+   },
+   {
+    "a": 9,
+    "b": 10,
+    "text": "Jahmyr Gibbs isn't in michael's lineup, and roadrunners have set season highs two weeks running. Projected about even."
+   },
+   {
+    "a": 8,
+    "b": 11,
+    "text": "Dake is the clear favorite. Drake Maye Sucks Ass holds the last playoff spot right now and can't afford to slip."
+   },
+   {
+    "a": 12,
+    "b": 1,
+    "text": "Galakrond's best shot yet at a first win, projected about 14 points clear. Team evil comes in with two straight season highs."
+   },
+   {
+    "a": 3,
+    "b": 6,
+    "text": "CeeDeez needs to stop a two-game skid, and CeeDee Lamb has to bounce back from a 2.9."
+   }
+  ]
+ },
+ "og_sub": "Six teams sit at 3-2 or 2-3"
 }
