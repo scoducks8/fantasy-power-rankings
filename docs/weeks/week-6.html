@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-name" content="Hyphy" />
+<meta name="color-scheme" content="dark" />
+<title>Week 6 power rankings &middot; Chach Champions League</title>
+<meta name="description" content="142.74 and a 57-point beatdown of the No. 2 team. Galakrond finally gets one. Five teams at 4-2. Hyphy edition." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Chach Champions League" />
+<meta property="og:url" content="https://scoducks8.github.io/fantasy-power-rankings/weeks/week-6.html" />
+<meta property="og:title" content="Week 6 power rankings: the roadrunners went STUPID" />
+<meta property="og:description" content="142.74 and a 57-point beatdown of the No. 2 team. Galakrond finally gets one. Five teams at 4-2. Hyphy edition." />
+<meta property="og:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-week-6.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-week-6.png" />
+<style>@font-face{font-family:Anton;src:url(../assets/fonts/anton-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Marker;src:url(../assets/fonts/permanent-marker-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Oswald;font-weight:400;src:url(../assets/fonts/oswald-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Oswald;font-weight:700;src:url(../assets/fonts/oswald-latin-700-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:400;src:url(../assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:600;src:url(../assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-display:swap}
+
+:root{
+  --asphalt:#0c0c0f;--asphalt2:#141418;--panel:#18181d;--hair:#2c2c34;
+  --ink:#f4f1ea;--ink2:#c9c5bc;--muted:#8d8a84;
+  --red:#d7263d;--red2:#ff4d5e;--gold:#ffb627;--lime:#5be37d;--blue:#39b8ff;--grape:#b47cff;
+  --qb:#ff4d5e;--rb:#ffb627;--wr:#5be37d;--te:#39b8ff;--k:#b47cff;--dst:#e9e9ee;
+  --display:Anton,Impact,"Arial Narrow",sans-serif;--marker:Marker,"Comic Sans MS",cursive;
+  --cond:Oswald,"Arial Narrow",sans-serif;--body:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--asphalt)}
+body{margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  background:
+    radial-gradient(circle at 15% 30%,rgba(255,255,255,.025) 0 1px,transparent 1.5px) 0 0/7px 7px,
+    radial-gradient(circle at 70% 60%,rgba(255,255,255,.02) 0 1px,transparent 1.5px) 0 0/11px 11px,
+    var(--asphalt);
+  -webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+img{display:block;max-width:100%}
+
+/* radio ticker */
+.radio{display:flex;align-items:stretch;background:#000;border-bottom:2px solid var(--red);font:700 13px/1 var(--cond);letter-spacing:.06em;text-transform:uppercase;overflow:hidden}
+.station{flex:none;padding:9px 12px;background:var(--red);color:#fff;white-space:nowrap}
+.tickwrap{overflow:hidden;flex:1;display:flex;align-items:center}
+.tick{display:flex;gap:36px;white-space:nowrap;padding-left:24px;animation:tick 60s linear infinite;color:var(--gold)}
+.tick span::after{content:"\2605";margin-left:36px;color:var(--red2)}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* nav */
+.top{position:sticky;top:0;z-index:20;background:rgba(12,12,15,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top-in{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font:400 20px/1 var(--display);letter-spacing:.02em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.brand .short{display:none}
+.links{display:flex;gap:16px;font:700 13px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase}
+.links a{color:var(--ink2);text-decoration:none}
+.links a:hover{color:var(--gold)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#1a0508 0%,#0c0c0f 70%)}
+.skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:180px;opacity:.9}
+.skyline .lights circle{animation:blink 2.4s ease-in-out infinite}
+@keyframes blink{50%{opacity:.2}}
+.hero-in{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:48px 16px 120px;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:36px;align-items:center}
+.kicker{margin:0 0 14px;font:700 13px/1.3 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.hero h1{margin:0;font:400 clamp(44px,8vw,96px)/.92 var(--display);text-transform:uppercase;letter-spacing:.005em;
+  color:var(--ink);text-shadow:4px 4px 0 var(--red),8px 8px 0 rgba(0,0,0,.6)}
+.tag{display:inline-block;margin:18px 0 0;padding:6px 12px;font:400 20px/1 var(--marker);color:#111;background:var(--gold);transform:rotate(-2deg);box-shadow:3px 3px 0 var(--red)}
+.dek{margin:20px 0 0;font-size:18px;line-height:1.6;color:var(--ink2);max-width:62ch}
+.fogband{position:absolute;left:-10%;right:-10%;bottom:-20px;height:120px;z-index:3;pointer-events:none;
+  background:radial-gradient(ellipse 40% 60% at 20% 70%,rgba(220,220,230,.18),transparent 70%),
+             radial-gradient(ellipse 35% 50% at 60% 80%,rgba(220,220,230,.14),transparent 70%),
+             radial-gradient(ellipse 30% 55% at 90% 75%,rgba(220,220,230,.16),transparent 70%);
+  animation:drift 30s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translateX(6%)}}
+
+/* polaroid snaps */
+.snap{margin:0;background:#f4f1ea;padding:10px 10px 0;transform:rotate(var(--tilt,-2deg));box-shadow:0 14px 30px rgba(0,0,0,.55);position:relative}
+.snap::before{content:"";position:absolute;top:-12px;left:50%;width:84px;height:24px;margin-left:-42px;background:rgba(255,182,39,.75);transform:rotate(-3deg)}
+.snap img{width:100%;height:auto}
+.snap figcaption{padding:10px 4px 12px;font:400 17px/1.2 var(--marker);color:#111;text-align:center}
+.phbox{aspect-ratio:4/5;display:grid;place-items:center;background:repeating-linear-gradient(45deg,#222 0 14px,#2a2a2a 14px 28px);border:2px dashed var(--gold)}
+.phbox span{font:400 18px/1 var(--marker);color:var(--gold)}
+.heropic{max-width:420px;justify-self:center}
+.footpic{float:right;width:260px;margin:-10px 6px 20px 26px}
+.foot::after{content:"";display:block;clear:both}
+
+main{max-width:1080px;margin:0 auto;padding:0 16px}
+section{margin-top:72px}
+h2{margin:0 0 12px;font:400 clamp(36px,6vw,60px)/.95 var(--display);text-transform:uppercase;letter-spacing:.01em;color:var(--ink)}
+h2 span{display:inline-block;font:400 .55em/1 var(--marker);text-transform:none;color:var(--gold);transform:rotate(-4deg) translateY(-.2em);margin-right:.2em}
+.lede{margin:0 0 22px;max-width:70ch;color:var(--ink2);font-size:17px}
+
+/* awards: bumper stickers */
+.awards{position:relative;z-index:4;margin-top:-56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.award{position:relative;background:var(--panel);border:2px solid var(--hair);border-radius:16px;padding:16px 16px 14px;overflow:hidden}
+.award:nth-child(odd){transform:rotate(-.8deg)}.award:nth-child(even){transform:rotate(.8deg)}
+.award .ic{display:block;height:34px;width:auto;margin:0 0 10px;font-size:30px;line-height:34px}
+.award .ic.mini{height:34px;width:auto}
+.al{margin:0 0 8px;font:400 15px/1.1 var(--marker);color:var(--gold)}
+.av{margin:0;font:700 19px/1.15 var(--cond);text-transform:uppercase;letter-spacing:.02em;}
+.as{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.award.stunna{border-color:var(--gold)}
+.award.thizz{border-color:var(--grape)}
+.award.side{border-color:var(--red)}
+.award.scrape{border-color:var(--lime)}
+.award.ghost{border-color:#6b6b75}
+.ic.donut{width:34px!important;height:34px;border-radius:50%;border:5px dashed #555;animation:spin 3s linear infinite}
+
+/* results */
+.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.game{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:14px 16px 12px;overflow:hidden}
+.game.side{grid-column:1/-1;border:2px solid var(--red);background:radial-gradient(circle at 85% 50%,rgba(215,38,61,.18),transparent 60%),var(--panel)}
+.gtag{margin:0 0 10px;font:400 18px/1 var(--marker);color:var(--red2)}
+.donuts{position:absolute;right:24px;top:50%;width:120px;height:120px;margin-top:-60px;border-radius:50%;
+  border:10px solid transparent;border-top-color:rgba(255,255,255,.12);border-left-color:rgba(255,255,255,.08);animation:spin 2.4s linear infinite}
+.donuts::after{content:"";position:absolute;inset:14px;border-radius:50%;border:8px solid transparent;border-bottom-color:rgba(255,182,39,.25);animation:spin 1.6s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.gs{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;padding:5px 0;min-width:0}
+.gs img{width:30px;height:30px;border-radius:50%;object-fit:cover}
+.gs .nm{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gs .sc{font:700 22px/1 var(--cond);font-variant-numeric:tabular-nums}
+.gs:not(.win){color:var(--muted)}
+.gs.win .sc{color:var(--gold)}
+.mg{position:relative;margin:8px 0 0;padding-top:8px;border-top:1px dashed var(--hair);font:700 12px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.game.side .mg{color:var(--red2)}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0 0 16px;font:700 12px/1 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.lk{display:inline-flex;align-items:center;gap:6px}
+.sw,.key{display:inline-block;width:12px;height:12px;border-radius:3px}
+.qb{background:var(--qb)}.rb{background:var(--rb)}.wr{background:var(--wr)}.te{background:var(--te)}.k{background:var(--k)}.dst{background:var(--dst)}
+
+/* tiers */
+.tier{position:relative;margin-top:28px;padding:4px 0 8px}
+.chain{height:22px;margin:8px 0 26px;background:
+  radial-gradient(ellipse 13px 7px at 13px 11px,transparent 8px,#8d8d96 8.5px,#c9c9d1 10px,#6b6b75 12px,transparent 12.5px) 0 0/26px 22px repeat-x,
+  linear-gradient(transparent 9px,#55555e 9px,#55555e 13px,transparent 13px) 13px 0/26px 22px repeat-x;opacity:.85}
+.tierh{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.tierh h3{margin:0;font:400 34px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.t0 .tierh h3{color:var(--gold);text-shadow:2px 2px 0 var(--red)}
+.t1 .tierh h3{color:var(--lime)}
+.t2 .tierh h3{color:#b9c4d0}
+.t3 .tierh h3{color:var(--muted)}
+.tierh p{margin:0;font:400 18px/1 var(--marker);color:var(--ink2)}
+.tierpic{float:right;width:220px;margin:0 6px 20px 26px}
+.teams{display:grid;gap:14px}
+.tier.fog .teams{position:relative}
+.tier.fog .teams::after{content:"";position:absolute;inset:-20px -10px;pointer-events:none;z-index:3;
+  background:radial-gradient(ellipse 50% 30% at 20% 30%,rgba(210,214,222,.26),transparent 70%),
+             radial-gradient(ellipse 45% 35% at 75% 60%,rgba(210,214,222,.22),transparent 70%),
+             radial-gradient(ellipse 40% 25% at 40% 90%,rgba(210,214,222,.22),transparent 70%);
+  animation:drift 22s ease-in-out infinite alternate}
+
+.team{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:16px 18px;overflow:hidden}
+.team.r1{border:2px solid var(--gold);box-shadow:0 0 0 4px rgba(255,182,39,.12),0 20px 40px rgba(0,0,0,.4)}
+.crown{display:flex;align-items:center;gap:10px;margin:-4px 0 10px;font:400 17px/1 var(--marker);color:var(--gold)}
+.crown svg{width:78px;height:auto}
+.th{display:grid;grid-template-columns:auto 48px minmax(0,1fr) auto;gap:14px;align-items:center}
+.rk{font:400 46px/1 var(--display);min-width:1.1em;text-align:center;
+  background:linear-gradient(180deg,#fff 0%,#a7a7b0 48%,#f0f0f4 52%,#6b6b75 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(2px 2px 0 var(--red))}
+.th .lg{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--hair)}
+.who{min-width:0}
+.who h3{margin:0;font:700 20px/1.15 var(--cond);text-transform:uppercase;letter-spacing:.02em;overflow-wrap:anywhere}
+.who p{margin:3px 0 0;font-size:14px;color:var(--muted)}
+.sign{display:inline-block;margin-top:6px;padding:4px 8px;border-radius:6px;font:700 11px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase}
+.sign.up{background:#0f5132;color:#b7f5c9;border:1px solid #2e8b57}
+.sign.dn{background:#5a1018;color:#ffc2c8;border:1px solid var(--red)}
+.sign.eq{background:#22222a;color:var(--ink2);border:1px solid var(--hair)}
+.pts{text-align:right}
+.pts b{display:block;font:700 30px/1 var(--cond);color:var(--gold);font-variant-numeric:tabular-nums}
+.pts span{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.bar{display:flex;gap:2px;height:12px;margin:14px 0 2px;border-radius:6px;overflow:hidden;background:#222;cursor:default}
+.seg{display:block;height:100%;background-image:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0) 55%)}
+.seg.qb{background-color:var(--qb)}.seg.rb{background-color:var(--rb)}.seg.wr{background-color:var(--wr)}
+.seg.te{background-color:var(--te)}.seg.k{background-color:var(--k)}.seg.dst{background-color:var(--dst)}
+.take{margin:14px 0 0;font-size:16.5px;line-height:1.65;color:var(--ink)}
+.fact{margin:12px 0 0;font-size:14.5px;color:var(--ink2)}
+.ft{margin-right:8px;font:400 14px/1 var(--marker);color:var(--gold)}
+.pog{display:flex;align-items:center;gap:10px;margin:14px 0 0;padding-top:12px;border-top:1px dashed var(--hair);font-size:14px;color:var(--ink2)}
+.pog img{width:34px;height:34px;border-radius:50%;object-fit:cover;background:#222}
+.pog b{color:var(--ink)}
+
+/* the build */
+.buildhead{display:grid;grid-template-columns:260px minmax(0,1fr);gap:28px;align-items:center;margin-bottom:10px}
+.bike.big{width:100%;height:auto}
+.spin{animation:spin 2.8s linear infinite}
+.pchart{display:grid;gap:8px}
+.prow{display:grid;grid-template-columns:130px minmax(0,1fr);gap:12px;align-items:center;outline:none}
+.pn{font:700 13px/1.1 var(--cond);text-transform:uppercase;letter-spacing:.04em;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pt{display:flex;align-items:center;gap:8px;min-width:0}
+.ps{display:flex;gap:2px;height:22px;border-radius:5px;overflow:hidden}
+.pv{font:700 14px/1 var(--cond);font-variant-numeric:tabular-nums;color:var(--ink)}
+.prow:hover .ps,.prow:focus .ps{outline:2px solid var(--gold);outline-offset:2px}
+.tview{margin-top:18px}
+.tview summary{cursor:pointer;font:700 13px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.twrap{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;border-bottom:1px solid var(--hair);text-align:right}
+th:first-child{text-align:left}
+thead th{font:700 12px/1 var(--cond);letter-spacing:.06em;color:var(--muted)}
+td.tot{font-weight:700;color:var(--gold)}
+
+/* bridge toll */
+.trendgrid{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:30px;align-items:center}
+.bumpwrap{margin:0;background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:16px;
+  background-image:radial-gradient(ellipse 80% 60% at 50% 120%,rgba(215,38,61,.12),transparent 70%)}
+.bump{width:100%;height:auto;display:block}
+.bump .grid{stroke:#2c2c34;stroke-dasharray:2 4}
+.bump .wkl,.bump .ax{fill:var(--muted);font:700 12px var(--cond);letter-spacing:.05em}
+.ln .hit{stroke:transparent;stroke-width:14;fill:none}
+.ln .stroke{stroke:var(--c);stroke-width:2.5;fill:none;opacity:.85}
+.ln circle{fill:var(--asphalt);stroke:var(--c);stroke-width:2}
+.ln text{fill:var(--c);font:700 12px var(--cond);letter-spacing:.02em}
+.bump.focus .ln{opacity:.15}
+.bump.focus .ln.on{opacity:1}
+.bump.focus .ln.on .stroke{stroke-width:4}
+.ln{outline:none;cursor:pointer;transition:opacity .15s}
+.bumpwrap figcaption{margin-top:10px;font-size:13px;color:var(--muted)}
+
+/* up next */
+.nxs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.nx{background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:14px 16px}
+.nx.gotw{grid-column:1/-1;border:2px solid var(--red)}
+.nx-tag{display:block;margin-bottom:8px;font:400 17px/1 var(--marker);color:var(--red2)}
+.nx-m{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font:700 15px/1.3 var(--cond);text-transform:uppercase;letter-spacing:.02em}
+.nx-u{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.nx-m img{width:24px;height:24px;border-radius:50%;object-fit:cover}
+.nx-r{color:var(--muted);font-weight:400}
+.nx-vs{font:400 15px/1 var(--marker);color:var(--gold);text-transform:none}
+.nx-t{margin:8px 0 0;color:var(--ink2)}
+
+/* footer */
+.foot{margin-top:80px;padding:28px 0 48px;border-top:2px solid var(--red);color:var(--muted);font-size:14px}
+.sign-off{margin:0 0 10px;font:400 26px/1.2 var(--marker);color:var(--gold)}
+
+/* tooltip */
+.tip{position:fixed;z-index:50;min-width:170px;padding:10px 12px;background:#000;border:1px solid var(--gold);border-radius:10px;font-size:13px;box-shadow:0 10px 30px rgba(0,0,0,.6);pointer-events:none}
+.tip p{margin:2px 0;display:flex;justify-content:space-between;flex-direction:row-reverse;gap:16px}
+.tip .tt{display:block;margin-bottom:6px;font:700 13px/1.2 var(--cond);text-transform:uppercase;color:var(--gold)}
+.tip span{display:inline-flex;align-items:center;gap:6px;color:var(--ink2)}
+.tip .tsum{margin-top:6px;padding-top:6px;border-top:1px solid var(--hair)}
+
+@media (max-width:820px){
+  .hero-in{grid-template-columns:minmax(0,1fr);padding-bottom:120px}
+  .heropic{max-width:260px}
+  .trendgrid{grid-template-columns:minmax(0,1fr)}
+  .trendgrid .snap{max-width:240px;justify-self:center}
+  .buildhead{grid-template-columns:minmax(0,1fr)}
+  .bike.big{max-width:280px}
+}
+@media (max-width:620px){
+  .games,.nxs{grid-template-columns:minmax(0,1fr)}
+  .links a:not(:nth-child(-n+2)){display:none}
+  .brand .full{display:none}.brand .short{display:inline}
+  .tierpic{float:none;width:240px;margin:0 auto 22px}
+  .footpic{float:none;width:260px;margin:0 auto 26px}
+  .th{grid-template-columns:auto 40px minmax(0,1fr);gap:10px}
+  .th .lg{width:40px;height:40px}
+  .pts{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;text-align:left}
+  .pts b{font-size:26px}
+  .rk{font-size:38px}
+  .prow{grid-template-columns:92px minmax(0,1fr);gap:8px}
+  .awards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .award{padding:12px 12px 10px}
+  .award .ic{height:28px;font-size:24px;line-height:28px}
+  .award .ic.mini{height:28px}
+  .ic.donut{width:28px!important;height:28px}
+  .av{font-size:15px}
+  .donuts{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="radio" aria-label="Scores"><span class="station">THE YAY 40.0 FM</span><div class="tickwrap"><div class="tick"><span>roadrunners 142.7, michael 85.3</span><span>Cortisol 129.2, Purdy 67.9</span><span>Ben E. 135.6, Adams &amp; Jefferson 113.0</span><span>Galakrond 126.4, Team evil 103.0</span><span>CeeDeez 112.2, Bingo 79.2</span><span>Drake Maye Sucks Ass 105.1, Dake 100.4</span><span>Galakrond got one. YEE</span><span>Five teams at 4-2</span><span>roadrunners 142.7, michael 85.3</span><span>Cortisol 129.2, Purdy 67.9</span><span>Ben E. 135.6, Adams &amp; Jefferson 113.0</span><span>Galakrond 126.4, Team evil 103.0</span><span>CeeDeez 112.2, Bingo 79.2</span><span>Drake Maye Sucks Ass 105.1, Dake 100.4</span><span>Galakrond got one. YEE</span><span>Five teams at 4-2</span></div></div></div>
+<nav class="top"><div class="top-in">
+  <a class="brand" href="../index.html"><span class="full">Chach Champions League</span><span class="short">CCL</span></a>
+  <div class="links"><a href="#results">Sideshow</a><a href="#rankings">Rankings</a><a href="#build">Build</a><a href="#trend">Toll</a><a href="#next">Next</a></div>
+</div></nav>
+
+<header class="hero">
+  <svg class="skyline" viewBox="0 0 1200 180" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<g fill="#16161b">
+<rect x="0" y="150" width="1200" height="30"/>
+<polygon points="128,150 150,40 172,150"/><rect x="146" y="70" width="8" height="80"/>
+<rect x="60" y="110" width="40" height="40"/><rect x="200" y="96" width="34" height="54"/><rect x="240" y="120" width="44" height="30"/>
+<rect x="300" y="84" width="26" height="66"/><rect x="330" y="108" width="40" height="42"/>
+<rect x="960" y="100" width="30" height="50"/><rect x="996" y="118" width="46" height="32"/><rect x="1050" y="90" width="28" height="60"/>
+<rect x="1086" y="112" width="60" height="38"/>
+</g>
+<g stroke="#2b2b33" stroke-width="3" fill="none">
+<path d="M1150 150 L1150 30 M1140 150 L1150 30 L1160 150 M1132 70 L1168 70 M1136 90 L1164 90"/>
+</g>
+<g stroke="#3a3a44" fill="none">
+<rect x="520" y="30" width="12" height="120" fill="#1d1d23" stroke="none"/><rect x="760" y="30" width="12" height="120" fill="#1d1d23" stroke="none"/>
+<path d="M400 118 Q463 110 526 32 Q646 128 766 32 Q829 110 900 118" stroke-width="3"/>
+<path d="M400 120 L900 120" stroke-width="6" stroke="#2b2b33"/>
+<g class="cables" stroke-width="1.2">
+<path d="M440 120 L440 113 M470 120 L470 104 M500 120 L500 76 M560 120 L560 66 M590 120 L590 88 M620 120 L620 104 M650 120 L650 110 M680 120 L680 104 M710 120 L710 88 M740 120 L740 66 M800 120 L800 76 M830 120 L830 104 M860 120 L860 113"/>
+</g></g>
+<g class="lights" fill="#ffb627"><circle cx="526" cy="32" r="2.5"/><circle cx="766" cy="32" r="2.5"/></g>
+</svg>
+  <div class="hero-in">
+    <div class="htext">
+      <p class="kicker">Week 6 &middot; From the City to the Town &middot; October 20, 2026</p>
+      <h1>The Roadrunners Went STUPID</h1>
+      <p class="tag">Niner Gang &middot; Hyphy Edition</p>
+      <p class="dek">CLEAR THE INTERSECTION. The roadrunners came off the BART platform doin&#x27; donuts: 142.74, the top score in the league, and a 57-point beatdown of michael, the No. 2 team in the Yay. Galakrond FINALLY scraped a W after five straight L&#x27;s. Cortisol went from dead last in week one to second. And it&#x27;s HELLA crowded up top: five teams sittin&#x27; at 4-2, one week before the midpoint.</p>
+    </div>
+    <figure class="snap heropic" style="--tilt:-3deg"><img src="../assets/hyphy/01-jersey.jpg" alt="E-40"><figcaption>ONLY ONE IN THE YAY WITH REAL MOVES. Y&#x27;all&#x27;s lineups HELLA tragic, yadadamean</figcaption></figure>
+  </div>
+  <div class="fogband" aria-hidden="true"></div>
+</header>
+
+<main>
+  <section class="awards" aria-label="Awards"><div class="award stunna"><svg class="ic" viewBox="0 0 120 44" aria-hidden="true">
+<path d="M4 10 Q60 0 116 10 L112 22 Q104 40 82 38 Q66 36 62 22 L58 22 Q54 36 38 38 Q16 40 8 22 Z" fill="#0b0b0d" stroke="url(#gold)" stroke-width="3"/>
+<defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb627"/><stop offset="1" stop-color="#ff4d5e"/></linearGradient></defs>
+<path d="M18 16 L34 16" stroke="#fff" stroke-width="3" opacity=".55" stroke-linecap="round"/>
+<path d="M72 16 L88 16" stroke="#fff" stroke-width="3" opacity=".55" stroke-linecap="round"/></svg><p class="al">Stunna Shades</p><p class="av">Christian McCaffrey</p><p class="as">30.7 for Team evil </p></div><div class="award thizz"><span class="ic face" aria-hidden="true">&#128556;</span><p class="al">Thizz Face of the Week</p><p class="av">roadrunners</p><p class="as">142.74 from a 2-4 team, and a 57-point beatdown of the No. 2 team</p></div><div class="award side"><span class="ic donut" aria-hidden="true"></span><p class="al">Sideshow of the Week</p><p class="av">Drake Maye Sucks Ass over Dake Bates</p><p class="as">by 4.66</p></div><div class="award scrape"><svg class="ic mini" viewBox="0 0 400 220" role="img" aria-label="Scraper bike">
+<defs><linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fafafa"/>
+<stop offset=".45" stop-color="#9a9aa3"/><stop offset=".55" stop-color="#e8e8ee"/><stop offset="1" stop-color="#6b6b75"/></linearGradient>
+<linearGradient id="candy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2a4f"/>
+<stop offset=".5" stop-color="#c8102e"/><stop offset="1" stop-color="#ffb627"/></linearGradient></defs>
+<g class="whl"><circle cx="88" cy="150" r="58" fill="none" stroke="#2a2a30" stroke-width="10"/><g class="spin" style="transform-origin:88px 150px"><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(0.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(22.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(45.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(67.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(90.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(112.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(135.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(157.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(180.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(202.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(225.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(247.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(270.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(292.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(315.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(337.5 88 150)" stroke-linecap="round" opacity=".9"/><circle cx="88" cy="150" r="50" fill="none" stroke="url(#chrome)" stroke-width="5"/></g><circle cx="88" cy="150" r="9" fill="url(#chrome)"/></g><g class="whl"><circle cx="312" cy="150" r="58" fill="none" stroke="#2a2a30" stroke-width="10"/><g class="spin" style="transform-origin:312px 150px"><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(0.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(22.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(45.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(67.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(90.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(112.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(135.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(157.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(180.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(202.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(225.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(247.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(270.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(292.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(315.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(337.5 312 150)" stroke-linecap="round" opacity=".9"/><circle cx="312" cy="150" r="50" fill="none" stroke="url(#chrome)" stroke-width="5"/></g><circle cx="312" cy="150" r="9" fill="url(#chrome)"/></g>
+<g stroke="url(#candy)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M88 150 L170 150 L250 70 L140 70 Z"/><path d="M170 150 L120 52"/><path d="M250 70 L312 150"/>
+<path d="M248 70 L262 24"/></g>
+<path d="M232 26 Q262 6 292 18" stroke="url(#chrome)" stroke-width="8" fill="none" stroke-linecap="round"/>
+<rect x="92" y="40" width="58" height="14" rx="7" fill="#111" stroke="#ffb627" stroke-width="3"/>
+<circle cx="170" cy="150" r="14" fill="none" stroke="url(#chrome)" stroke-width="5"/>
+</svg><p class="al">Scraper of the Week</p><p class="av">Team Galakrond</p><p class="as">up 4 to No. 8</p></div><div class="award ghost"><span class="ic ghost" aria-hidden="true">&#128123;</span><p class="al">Ghost Ride the Whip</p><p class="av">Dake Bates</p><p class="as">down 3 to No. 6</p></div></section>
+
+  <section id="results">
+    <h2><span>Sideshow</span> Results</h2>
+    <p class="lede">Six sideshows, one intersection. The closest one gets the spotlight. Everybody else is sorted by how UGLY it got.</p>
+    <ul class="games"><li class="game side">
+  <p class="gtag">Sideshow of the Week</p><span class="donuts" aria-hidden="true"></span>
+  <div class="gs win"><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt="" loading="lazy"><span class="nm">Drake Maye Sucks Ass</span><span class="sc">105.1</span></div>
+  <div class="gs"><img src="../assets/logos/8-dake-bates.png" alt="" loading="lazy"><span class="nm">Dake Bates</span><span class="sc">100.4</span></div>
+  <p class="mg">Ghost ride finish: 4.66</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt="" loading="lazy"><span class="nm">Ben&#x27;s Brilliant Team</span><span class="sc">135.6</span></div>
+  <div class="gs"><img src="../assets/logos/5-adams-and-jefferson.svg" alt="" loading="lazy"><span class="nm">Adams and Jefferson</span><span class="sc">113.0</span></div>
+  <p class="mg">Won by 22.6</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/1-team-galakrond.png" alt="" loading="lazy"><span class="nm">Team Galakrond</span><span class="sc">126.4</span></div>
+  <div class="gs"><img src="../assets/logos/12-team-evil.svg" alt="" loading="lazy"><span class="nm">Team evil </span><span class="sc">103.0</span></div>
+  <p class="mg">Won by 23.4</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/3-ceedeez-nutz.svg" alt="" loading="lazy"><span class="nm">CeeDeez Nutz</span><span class="sc">112.2</span></div>
+  <div class="gs"><img src="../assets/logos/6-bingo-night.svg" alt="" loading="lazy"><span class="nm">Bingo Night</span><span class="sc">79.2</span></div>
+  <p class="mg">Won by 33.0</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/10-roadrunners.svg" alt="" loading="lazy"><span class="nm">roadrunners</span><span class="sc">142.7</span></div>
+  <div class="gs"><img src="../assets/logos/9-michael-s-monstrous-team.svg" alt="" loading="lazy"><span class="nm">michael&#x27;s Monstrous Team</span><span class="sc">85.3</span></div>
+  <p class="mg">Won by 57.4</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="" loading="lazy"><span class="nm">Cortisol Spyke Weeks</span><span class="sc">129.2</span></div>
+  <div class="gs"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="" loading="lazy"><span class="nm">Purdy Seconds to Mars</span><span class="sc">67.9</span></div>
+  <p class="mg">Won by 61.4</p>
+</li></ul>
+  </section>
+
+  <section id="rankings">
+    <h2><span>Who's</span> Goin' Dumb</h2>
+    <p class="lede">Record drives the whip, with recent form, scoring and luck ridin&#x27; shotgun. The candy bar under each team is this week&#x27;s points by position. Express means you climbed. Delayed means you know what you did.</p>
+    <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
+    <div class="tier t0">
+  
+  <header class="tierh"><h3>Hyphy Mode</h3><p>Ghost ridin&#x27; the standings</p></header>
+  <figure class="snap tierpic" style="--tilt:2.5deg"><img src="../assets/hyphy/02-grills.jpg" alt="E-40"><figcaption>That grill worth more than your WHOLE DAMN ROSTER. Fa sho</figcaption></figure>
+  <div class="teams"><article class="team r1" id="t2">
+  <div class="crown"><svg class="mini" viewBox="0 0 400 220" role="img" aria-label="Scraper bike">
+<defs><linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fafafa"/>
+<stop offset=".45" stop-color="#9a9aa3"/><stop offset=".55" stop-color="#e8e8ee"/><stop offset="1" stop-color="#6b6b75"/></linearGradient>
+<linearGradient id="candy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2a4f"/>
+<stop offset=".5" stop-color="#c8102e"/><stop offset="1" stop-color="#ffb627"/></linearGradient></defs>
+<g class="whl"><circle cx="88" cy="150" r="58" fill="none" stroke="#2a2a30" stroke-width="10"/><g class="spin" style="transform-origin:88px 150px"><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(0.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(22.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(45.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(67.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(90.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(112.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(135.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(157.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(180.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(202.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(225.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(247.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(270.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(292.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(315.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(337.5 88 150)" stroke-linecap="round" opacity=".9"/><circle cx="88" cy="150" r="50" fill="none" stroke="url(#chrome)" stroke-width="5"/></g><circle cx="88" cy="150" r="9" fill="url(#chrome)"/></g><g class="whl"><circle cx="312" cy="150" r="58" fill="none" stroke="#2a2a30" stroke-width="10"/><g class="spin" style="transform-origin:312px 150px"><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(0.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(22.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(45.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(67.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(90.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(112.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(135.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(157.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(180.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(202.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(225.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(247.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(270.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(292.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(315.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(337.5 312 150)" stroke-linecap="round" opacity=".9"/><circle cx="312" cy="150" r="50" fill="none" stroke="url(#chrome)" stroke-width="5"/></g><circle cx="312" cy="150" r="9" fill="url(#chrome)"/></g>
+<g stroke="url(#candy)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M88 150 L170 150 L250 70 L140 70 Z"/><path d="M170 150 L120 52"/><path d="M250 70 L312 150"/>
+<path d="M248 70 L262 24"/></g>
+<path d="M232 26 Q262 6 292 18" stroke="url(#chrome)" stroke-width="8" fill="none" stroke-linecap="round"/>
+<rect x="92" y="40" width="58" height="14" rx="7" fill="#111" stroke="#ffb627" stroke-width="3"/>
+<circle cx="170" cy="150" r="14" fill="none" stroke="url(#chrome)" stroke-width="5"/>
+</svg><span>King of the Yay</span></div><header class="th">
+    <span class="rk">1</span>
+    <img class="lg" src="../assets/logos/2-ben-s-brilliant-team.svg" alt="" loading="lazy">
+    <div class="who"><h3>Ben&#x27;s Brilliant Team</h3><p>Ben Elton &middot; 6-0</p><span class="sign eq">On time</span></div>
+    <div class="pts"><b>135.6</b><span>+0.7 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;21.0&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;42.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;48.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;11.0&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;3.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;135.6&quot;}" aria-label="Points by position"><span class="seg qb" style="width:15.49%"></span><span class="seg rb" style="width:31.05%"></span><span class="seg wr" style="width:35.77%"></span><span class="seg te" style="width:8.11%"></span><span class="seg k" style="width:2.21%"></span><span class="seg dst" style="width:7.37%"></span></div>
+  <p class="take">SIX AND OH. Still mobbin&#x27; the 80 with the windows down and the toll booth waving him through. Ben E. put up 135.60, beat Adams and Jefferson by 22.62, and is 57-9 against the whole league. Jaxon Smith-Njigba went for 25.4 and has 164.9 on the season, the most of any starter in the league. Every week between 131 and 157: gas, brake, dip, never a swerve. Somebody tell this man to TAP THE BRAKES.</p>
+  
+  <p class="pog"><img src="../assets/players/4430878.png" alt="" loading="lazy"><span>Went stupid: <b>Jaxon Smith-Njigba</b> 25.4</span></p>
+</article><article class="team r2" id="t4">
+  <header class="th">
+    <span class="rk">2</span>
+    <img class="lg" src="../assets/logos/4-cortisol-spyke-weeks.png" alt="" loading="lazy">
+    <div class="who"><h3>Cortisol Spyke Weeks</h3><p>Mason Morgan &middot; 4-2</p><span class="sign up">Express &#9650;2</span></div>
+    <div class="pts"><b>129.2</b><span>+13.8 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;11.0&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;14.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;23.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;129.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:8.53%"></span><span class="seg rb" style="width:11.45%"></span><span class="seg wr" style="width:44.50%"></span><span class="seg te" style="width:18.50%"></span><span class="seg k" style="width:13.16%"></span><span class="seg dst" style="width:3.87%"></span></div>
+  <p class="take">From the bottom of the Yay to No. 2 in five weeks, yadadamean. Cortisol Spyke Weeks was DEAD LAST after week one. Now: two straight dubs, 4-2, and a 61.36-point stomping of Purdy Seconds to Mars, the biggest margin of the week. Tre Tucker went for 26.7 and Isaiah Likely added 23.9, the best tight end score of the week. Next week? Ben E. Lord help.</p>
+  
+  <p class="pog"><img src="../assets/players/4428718.png" alt="" loading="lazy"><span>Went stupid: <b>Tre Tucker</b> 26.7</span></p>
+</article><article class="team r3" id="t9">
+  <header class="th">
+    <span class="rk">3</span>
+    <img class="lg" src="../assets/logos/9-michael-s-monstrous-team.svg" alt="" loading="lazy">
+    <div class="who"><h3>michael&#x27;s Monstrous Team</h3><p>michael prince &middot; 4-2</p><span class="sign dn">Delayed &#9660;1</span></div>
+    <div class="pts"><b>85.3</b><span>-36.8 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;31.6&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;21.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;1.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;85.3&quot;}" aria-label="Points by position"><span class="seg qb" style="width:21.45%"></span><span class="seg rb" style="width:37.05%"></span><span class="seg wr" style="width:25.21%"></span><span class="seg te" style="width:2.23%"></span><span class="seg k" style="width:1.17%"></span><span class="seg dst" style="width:12.90%"></span></div>
+  <p class="take">Somebody ghost rode michael&#x27;s whip into Lake Merritt. 85.30, a season low by more than 40 points, and a 57-point loss to the roadrunners, 36.77 under what ESPN said. The kicker gave 1.0, the flex gave a goose egg, and Jahmyr Gibbs was nowhere in the lineup. Still 4-2 and still second in the league in points at 794.6. But 429.3 points have sat on that bench this year, the most in the league. HELLA rims in the garage, none on the car.</p>
+  
+  <p class="pog"><img src="../assets/players/4882093.png" alt="" loading="lazy"><span>Went stupid: <b>Bhayshul Tuten</b> 24.7</span></p>
+</article></div>
+</div><div class="tier t1">
+  <div class="chain" aria-hidden="true"></div>
+  <header class="tierh"><h3>Scrapin&#x27; On &#x27;Em</h3><p>Candy paint, foil on the spokes</p></header>
+  <figure class="snap tierpic" style="--tilt:-1.5deg"><img src="../assets/hyphy/03-glasses.jpg" alt="E-40"><figcaption>Checkin&#x27; the box score...</figcaption></figure>
+  <div class="teams"><article class="team r4" id="t11">
+  <header class="th">
+    <span class="rk">4</span>
+    <img class="lg" src="../assets/logos/11-drake-maye-sucks-ass.svg" alt="" loading="lazy">
+    <div class="who"><h3>Drake Maye Sucks Ass</h3><p>Jackson Helling &middot; 4-2</p><span class="sign up">Express &#9650;2</span></div>
+    <div class="pts"><b>105.1</b><span>+4.3 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;23.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;28.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;32.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;4.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;12.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;105.1&quot;}" aria-label="Points by position"><span class="seg qb" style="width:22.65%"></span><span class="seg rb" style="width:26.74%"></span><span class="seg wr" style="width:30.45%"></span><span class="seg te" style="width:4.00%"></span><span class="seg k" style="width:11.42%"></span><span class="seg dst" style="width:4.76%"></span></div>
+  <p class="take">Three straight dubs, 4-2, and the luckiest team in the Yay. Drake Maye Sucks Ass won the closest sideshow of the week by 4.66 with 105.10, the lowest winning score of the week. Drake Maye put up 23.8 for a team that&#x27;s still named after hating him. Against the whole league they&#x27;re 27-39, and the record says 4-2. Don&#x27;t ask questions. Just ride it, blood.</p>
+  
+  <p class="pog"><img src="../assets/players/4431452.png" alt="" loading="lazy"><span>Went stupid: <b>Drake Maye</b> 23.8</span></p>
+</article><article class="team r5" id="t3">
+  <header class="th">
+    <span class="rk">5</span>
+    <img class="lg" src="../assets/logos/3-ceedeez-nutz.svg" alt="" loading="lazy">
+    <div class="who"><h3>CeeDeez Nutz</h3><p>skyler cortez &middot; 4-2</p><span class="sign eq">On time</span></div>
+    <div class="pts"><b>112.2</b><span>-0.5 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;13.4&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;20.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;45.9&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;10.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;8.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;112.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.94%"></span><span class="seg rb" style="width:17.91%"></span><span class="seg wr" style="width:40.91%"></span><span class="seg te" style="width:9.63%"></span><span class="seg k" style="width:7.13%"></span><span class="seg dst" style="width:12.48%"></span></div>
+  <p class="take">Stopped the bleeding. After two straight L&#x27;s, CeeDeez Nutz took care of Bingo Night 112.20 to 79.16. DeVonta Smith went for 20.5 from the flex and CeeDee Lamb bounced back with 16.0 after last week&#x27;s 2.9. Still third in the league in points at 782.7. The receivers run about 16 a week above average. The backfield is STILL the busted part of this whip, 12 a week below.</p>
+  
+  <p class="pog"><img src="../assets/players/4241478.png" alt="" loading="lazy"><span>Went stupid: <b>DeVonta Smith</b> 20.5</span></p>
+</article><article class="team r6" id="t8">
+  <header class="th">
+    <span class="rk">6</span>
+    <img class="lg" src="../assets/logos/8-dake-bates.png" alt="" loading="lazy">
+    <div class="who"><h3>Dake Bates</h3><p>Jake Danielson &middot; 4-2</p><span class="sign dn">Delayed &#9660;3</span></div>
+    <div class="pts"><b>100.4</b><span>-28.6 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;20.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;28.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;21.7&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;8.7&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;10.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;100.4&quot;}" aria-label="Points by position"><span class="seg qb" style="width:20.15%"></span><span class="seg rb" style="width:28.67%"></span><span class="seg wr" style="width:21.60%"></span><span class="seg te" style="width:8.66%"></span><span class="seg k" style="width:9.96%"></span><span class="seg dst" style="width:10.95%"></span></div>
+  <p class="take">Ghost Ride the Whip of the week, fa sho. Dake hopped out, waved at the crowd, and watched the car roll down three spots. 100.44, 28.65 under projection, and a 4.66 loss in the closest game of the week. The two starting receivers gave 7.7 combined. Still 4-2 and still the softest schedule in the league at 587.7 points against. The ride&#x27;s fine. The driver just went to get a burrito mid-sideshow.</p>
+  
+  <p class="pog"><img src="../assets/players/4036378.png" alt="" loading="lazy"><span>Went stupid: <b>Jordan Love</b> 20.2</span></p>
+</article></div>
+</div><div class="tier t2">
+  <div class="chain" aria-hidden="true"></div>
+  <header class="tierh"><h3>Stuck in the Fog</h3><p>Karl rolled in</p></header>
+  <figure class="snap tierpic" style="--tilt:3deg"><img src="../assets/hyphy/04-cigar.jpg" alt="E-40"><figcaption>Lit one up after seein&#x27; the bottom three. Shit is BLEAK</figcaption></figure>
+  <div class="teams"><article class="team r7" id="t10">
+  <header class="th">
+    <span class="rk">7</span>
+    <img class="lg" src="../assets/logos/10-roadrunners.svg" alt="" loading="lazy">
+    <div class="who"><h3>roadrunners</h3><p>Ricky Verastegui &middot; 2-4</p><span class="sign up">Express &#9650;3</span></div>
+    <div class="pts"><b>142.7</b><span>+22.5 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;27.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;30.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;61.8&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;18.5&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;7.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;142.7&quot;}" aria-label="Points by position"><span class="seg qb" style="width:19.15%"></span><span class="seg rb" style="width:21.09%"></span><span class="seg wr" style="width:43.30%"></span><span class="seg te" style="width:12.96%"></span><span class="seg k" style="width:4.90%"></span></div>
+  <p class="take">THE ROADRUNNERS WENT STUPID. 142.74, the top score of the week, a perfect 11-0 against the field, and a 57.44-point beatdown of michael, the No. 2 team in the league. Malik Nabers went for 28.5, Trevor Lawrence 27.3, James Cook III 24.3, and Matthew Golden 22.4 off the flex. Scores have gone UP every week since week two: 61.7, 91.3, 118.1, 119.7, 142.7. That train ain&#x27;t stoppin&#x27;. Up three spots. YEE.</p>
+  
+  <p class="pog"><img src="../assets/players/4595348.png" alt="" loading="lazy"><span>Went stupid: <b>Malik Nabers</b> 28.5</span></p>
+</article><article class="team r8" id="t1">
+  <header class="th">
+    <span class="rk">8</span>
+    <img class="lg" src="../assets/logos/1-team-galakrond.png" alt="" loading="lazy">
+    <div class="who"><h3>Team Galakrond</h3><p>Neil Gibeaut &middot; 1-5</p><span class="sign up">Express &#9650;4</span></div>
+    <div class="pts"><b>126.4</b><span>+3.8 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;49.0&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;44.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;8.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;126.4&quot;}" aria-label="Points by position"><span class="seg qb" style="width:14.65%"></span><span class="seg rb" style="width:38.76%"></span><span class="seg wr" style="width:35.20%"></span><span class="seg te" style="width:1.11%"></span><span class="seg k" style="width:6.33%"></span><span class="seg dst" style="width:3.96%"></span></div>
+  <p class="take">SOMEBODY CALL THE TOWN. Team Galakrond got its first W of the year, 126.42 over Team evil, and jumped four spots, the biggest climb of the week. Kenneth Walker III (27.9) and Jonathan Taylor (21.1) put up 49.0 out of the backfield, the best of any team this week. This team has faced 882.6 points, the most in the league by 34. The schedule finally blinked. Scrapin&#x27; on &#x27;em.</p>
+  
+  <p class="pog"><img src="../assets/players/4567048.png" alt="" loading="lazy"><span>Went stupid: <b>Kenneth Walker III</b> 27.9</span></p>
+</article><article class="team r9" id="t12">
+  <header class="th">
+    <span class="rk">9</span>
+    <img class="lg" src="../assets/logos/12-team-evil.svg" alt="" loading="lazy">
+    <div class="who"><h3>Team evil </h3><p>kelly brown &middot; 2-4</p><span class="sign dn">Delayed &#9660;2</span></div>
+    <div class="pts"><b>103.0</b><span>-5.6 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;6.9&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;44.3&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;15.3&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;21.5&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;103.0&quot;}" aria-label="Points by position"><span class="seg qb" style="width:6.72%"></span><span class="seg rb" style="width:43.00%"></span><span class="seg wr" style="width:14.85%"></span><span class="seg te" style="width:20.87%"></span><span class="seg k" style="width:8.74%"></span><span class="seg dst" style="width:5.82%"></span></div>
+  <p class="take">Christian McCaffrey went for 30.7, the best individual score in the WHOLE league this week, and Team evil still lost by 23.40. Why? Jacoby Brissett gave 6.9 at quarterback, the lowest QB score of the week, and the receivers gave 15.3 combined, also the lowest. Down two spots. One guy can&#x27;t push the whole whip up the hill, blood.</p>
+  
+  <p class="pog"><img src="../assets/players/3117251.png" alt="" loading="lazy"><span>Went stupid: <b>Christian McCaffrey</b> 30.7</span></p>
+</article></div>
+</div><div class="tier t3 fog">
+  <div class="chain" aria-hidden="true"></div>
+  <header class="tierh"><h3>Waiting on BART</h3><p>Next train: delayed</p></header>
+  <figure class="snap tierpic" style="--tilt:-2.5deg"><img src="../assets/hyphy/05-sam.jpg" alt="E-40"><figcaption>Even Sourdough Sam can&#x27;t believe your WACK ASS team</figcaption></figure>
+  <div class="teams"><article class="team r10" id="t5">
+  <header class="th">
+    <span class="rk">10</span>
+    <img class="lg" src="../assets/logos/5-adams-and-jefferson.svg" alt="" loading="lazy">
+    <div class="who"><h3>Adams and Jefferson</h3><p>Lyudmil Zdravkov &middot; 1-5</p><span class="sign dn">Delayed &#9660;2</span></div>
+    <div class="pts"><b>113.0</b><span>-13.3 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;16.9&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;24.7&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;40.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;17.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;11.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;113.0&quot;}" aria-label="Points by position"><span class="seg qb" style="width:14.94%"></span><span class="seg rb" style="width:21.86%"></span><span class="seg wr" style="width:35.85%"></span><span class="seg te" style="width:15.84%"></span><span class="seg k" style="width:9.74%"></span><span class="seg dst" style="width:1.77%"></span></div>
+  <p class="take">Hella robbed. AGAIN. 112.98 was the fifth-best score in the league and it ran into the undefeated man. Adams and Jefferson has now seen 848.3 points against, second-most in the league. Against the field they&#x27;re 36-30. That scoring is worth about 3.3 wins. The record says 1-5, the unluckiest gap in the Yay. Carnell Tate went for 19.0. The schedule keeps ghost ridin&#x27; &#x27;em straight into the fog.</p>
+  
+  <p class="pog"><img src="../assets/players/4871023.png" alt="" loading="lazy"><span>Went stupid: <b>Carnell Tate</b> 19.0</span></p>
+</article><article class="team r11" id="t7">
+  <header class="th">
+    <span class="rk">11</span>
+    <img class="lg" src="../assets/logos/7-purdy-seconds-to-mars.png" alt="" loading="lazy">
+    <div class="who"><h3>Purdy Seconds to Mars</h3><p>Ben T &middot; 2-4</p><span class="sign dn">Delayed &#9660;2</span></div>
+    <div class="pts"><b>67.9</b><span>-51.1 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;17.4&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;8.3&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;26.9&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;5.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;67.9&quot;}" aria-label="Points by position"><span class="seg qb" style="width:25.58%"></span><span class="seg rb" style="width:12.23%"></span><span class="seg wr" style="width:39.64%"></span><span class="seg te" style="width:18.13%"></span><span class="seg k" style="width:7.37%"></span></div>
+  <p class="take">Bootsie. 67.86, the lowest score of the week, 0-11 against the field, and 51.14 under projection, the worst miss in the league. Bijan Robinson gave 7.3, Cam Skattebo a straight zero, and the defense went negative. Third straight L, down two spots, and a 61-point loss to Cortisol. Brock Purdy did his part with 17.4. Nobody else showed up to the sideshow.</p>
+  
+  <p class="pog"><img src="../assets/players/4361741.png" alt="" loading="lazy"><span>Went stupid: <b>Brock Purdy</b> 17.4</span></p>
+</article><article class="team r12" id="t6">
+  <header class="th">
+    <span class="rk">12</span>
+    <img class="lg" src="../assets/logos/6-bingo-night.svg" alt="" loading="lazy">
+    <div class="who"><h3>Bingo Night</h3><p>Thomas Fowler &middot; 2-4</p><span class="sign dn">Delayed &#9660;1</span></div>
+    <div class="pts"><b>79.2</b><span>-17.6 vs proj</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;9.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;19.3&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;79.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.95%"></span><span class="seg rb" style="width:22.87%"></span><span class="seg wr" style="width:24.38%"></span><span class="seg te" style="width:11.75%"></span><span class="seg k" style="width:21.48%"></span><span class="seg dst" style="width:7.58%"></span></div>
+  <p class="take">Waitin&#x27; on BART and the board says DELAYED, again. Fourth straight L, 79.16, and the bottom spot in the rankings. The best player on the team this week was the KICKER: Tyler Bass, 17.0. Over six weeks Bingo is 7-59 against the field, but 2-4 is still on the board, which is the most Bay Area thing ever. Hella fog, zero visibility, still out here swervin&#x27;.</p>
+  
+  <p class="pog"><img src="../assets/players/3917232.png" alt="" loading="lazy"><span>Went stupid: <b>Tyler Bass</b> 17.0</span></p>
+</article></div>
+</div>
+  </section>
+
+  <section id="build">
+    <div class="buildhead"><svg class="bike big" viewBox="0 0 400 220" role="img" aria-label="Scraper bike">
+<defs><linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fafafa"/>
+<stop offset=".45" stop-color="#9a9aa3"/><stop offset=".55" stop-color="#e8e8ee"/><stop offset="1" stop-color="#6b6b75"/></linearGradient>
+<linearGradient id="candy" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2a4f"/>
+<stop offset=".5" stop-color="#c8102e"/><stop offset="1" stop-color="#ffb627"/></linearGradient></defs>
+<g class="whl"><circle cx="88" cy="150" r="58" fill="none" stroke="#2a2a30" stroke-width="10"/><g class="spin" style="transform-origin:88px 150px"><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(0.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(22.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(45.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(67.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(90.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(112.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(135.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(157.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(180.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(202.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(225.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(247.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(270.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(292.5 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(315.0 88 150)" stroke-linecap="round" opacity=".9"/><line x1="88" y1="150" x2="88" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(337.5 88 150)" stroke-linecap="round" opacity=".9"/><circle cx="88" cy="150" r="50" fill="none" stroke="url(#chrome)" stroke-width="5"/></g><circle cx="88" cy="150" r="9" fill="url(#chrome)"/></g><g class="whl"><circle cx="312" cy="150" r="58" fill="none" stroke="#2a2a30" stroke-width="10"/><g class="spin" style="transform-origin:312px 150px"><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(0.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(22.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(45.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(67.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(90.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(112.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(135.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(157.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(180.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(202.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(225.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#39b8ff" stroke-width="7" transform="rotate(247.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#b47cff" stroke-width="7" transform="rotate(270.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ff4d5e" stroke-width="7" transform="rotate(292.5 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#ffb627" stroke-width="7" transform="rotate(315.0 312 150)" stroke-linecap="round" opacity=".9"/><line x1="312" y1="150" x2="312" y2="96" stroke="#5be37d" stroke-width="7" transform="rotate(337.5 312 150)" stroke-linecap="round" opacity=".9"/><circle cx="312" cy="150" r="50" fill="none" stroke="url(#chrome)" stroke-width="5"/></g><circle cx="312" cy="150" r="9" fill="url(#chrome)"/></g>
+<g stroke="url(#candy)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M88 150 L170 150 L250 70 L140 70 Z"/><path d="M170 150 L120 52"/><path d="M250 70 L312 150"/>
+<path d="M248 70 L262 24"/></g>
+<path d="M232 26 Q262 6 292 18" stroke="url(#chrome)" stroke-width="8" fill="none" stroke-linecap="round"/>
+<rect x="92" y="40" width="58" height="14" rx="7" fill="#111" stroke="#ffb627" stroke-width="3"/>
+<circle cx="170" cy="150" r="14" fill="none" stroke="url(#chrome)" stroke-width="5"/>
+</svg><div><h2><span>The</span> Build</h2>
+    <p class="lede">Every whip is built different. This is what each team&#x27;s ride was made of this week, sorted by total. Galakrond&#x27;s backfield put up 49.0, the best of the week. Tap a row for the parts list.</p></div></div>
+    <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
+    <div class="pchart"><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;27.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;30.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;61.8&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;18.5&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;7.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;142.7&quot;}"><span class="pn">Ricky</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 1.0000)"><span class="seg qb" style="width:19.15%"></span><span class="seg rb" style="width:21.09%"></span><span class="seg wr" style="width:43.30%"></span><span class="seg te" style="width:12.96%"></span><span class="seg k" style="width:4.90%"></span></span><span class="pv">142.7</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;21.0&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;42.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;48.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;11.0&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;3.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;135.6&quot;}"><span class="pn">Ben E.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.9500)"><span class="seg qb" style="width:15.49%"></span><span class="seg rb" style="width:31.05%"></span><span class="seg wr" style="width:35.77%"></span><span class="seg te" style="width:8.11%"></span><span class="seg k" style="width:2.21%"></span><span class="seg dst" style="width:7.37%"></span></span><span class="pv">135.6</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;11.0&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;14.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;23.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;129.2&quot;}"><span class="pn">Mason</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.9053)"><span class="seg qb" style="width:8.53%"></span><span class="seg rb" style="width:11.45%"></span><span class="seg wr" style="width:44.50%"></span><span class="seg te" style="width:18.50%"></span><span class="seg k" style="width:13.16%"></span><span class="seg dst" style="width:3.87%"></span></span><span class="pv">129.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;49.0&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;44.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;8.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;126.4&quot;}"><span class="pn">Neil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8857)"><span class="seg qb" style="width:14.65%"></span><span class="seg rb" style="width:38.76%"></span><span class="seg wr" style="width:35.20%"></span><span class="seg te" style="width:1.11%"></span><span class="seg k" style="width:6.33%"></span><span class="seg dst" style="width:3.96%"></span></span><span class="pv">126.4</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;16.9&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;24.7&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;40.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;17.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;11.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;113.0&quot;}"><span class="pn">Lyudmil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7915)"><span class="seg qb" style="width:14.94%"></span><span class="seg rb" style="width:21.86%"></span><span class="seg wr" style="width:35.85%"></span><span class="seg te" style="width:15.84%"></span><span class="seg k" style="width:9.74%"></span><span class="seg dst" style="width:1.77%"></span></span><span class="pv">113.0</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;13.4&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;20.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;45.9&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;10.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;8.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;112.2&quot;}"><span class="pn">skyler</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7860)"><span class="seg qb" style="width:11.94%"></span><span class="seg rb" style="width:17.91%"></span><span class="seg wr" style="width:40.91%"></span><span class="seg te" style="width:9.63%"></span><span class="seg k" style="width:7.13%"></span><span class="seg dst" style="width:12.48%"></span></span><span class="pv">112.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;23.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;28.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;32.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;4.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;12.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;105.1&quot;}"><span class="pn">Jackson</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7363)"><span class="seg qb" style="width:22.65%"></span><span class="seg rb" style="width:26.74%"></span><span class="seg wr" style="width:30.45%"></span><span class="seg te" style="width:4.00%"></span><span class="seg k" style="width:11.42%"></span><span class="seg dst" style="width:4.76%"></span></span><span class="pv">105.1</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;6.9&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;44.3&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;15.3&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;21.5&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;103.0&quot;}"><span class="pn">kelly</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7217)"><span class="seg qb" style="width:6.72%"></span><span class="seg rb" style="width:43.00%"></span><span class="seg wr" style="width:14.85%"></span><span class="seg te" style="width:20.87%"></span><span class="seg k" style="width:8.74%"></span><span class="seg dst" style="width:5.82%"></span></span><span class="pv">103.0</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;20.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;28.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;21.7&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;8.7&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;10.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;100.4&quot;}"><span class="pn">Jake</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7037)"><span class="seg qb" style="width:20.15%"></span><span class="seg rb" style="width:28.67%"></span><span class="seg wr" style="width:21.60%"></span><span class="seg te" style="width:8.66%"></span><span class="seg k" style="width:9.96%"></span><span class="seg dst" style="width:10.95%"></span></span><span class="pv">100.4</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;31.6&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;21.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;1.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;85.3&quot;}"><span class="pn">michael</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5976)"><span class="seg qb" style="width:21.45%"></span><span class="seg rb" style="width:37.05%"></span><span class="seg wr" style="width:25.21%"></span><span class="seg te" style="width:2.23%"></span><span class="seg k" style="width:1.17%"></span><span class="seg dst" style="width:12.90%"></span></span><span class="pv">85.3</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;9.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;19.3&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;79.2&quot;}"><span class="pn">Thomas</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5546)"><span class="seg qb" style="width:11.95%"></span><span class="seg rb" style="width:22.87%"></span><span class="seg wr" style="width:24.38%"></span><span class="seg te" style="width:11.75%"></span><span class="seg k" style="width:21.48%"></span><span class="seg dst" style="width:7.58%"></span></span><span class="pv">79.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;17.4&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;8.3&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;26.9&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;5.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;67.9&quot;}"><span class="pn">Ben T.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.4754)"><span class="seg qb" style="width:25.58%"></span><span class="seg rb" style="width:12.23%"></span><span class="seg wr" style="width:39.64%"></span><span class="seg te" style="width:18.13%"></span><span class="seg k" style="width:7.37%"></span></span><span class="pv">67.9</span></span></div></div>
+    <details class="tview"><summary>Show as a table</summary>
+      <div class="twrap"><table><thead><tr><th>Team</th><th>QB</th><th>RB</th><th>WR</th><th>TE</th><th>K</th><th>D/ST</th><th>Total</th></tr></thead><tbody><tr><th>roadrunners</th><td>27.3</td><td>30.1</td><td>61.8</td><td>18.5</td><td>7.0</td><td>-2.0</td><td class="tot">142.7</td></tr><tr><th>Ben&#x27;s Brilliant Team</th><td>21.0</td><td>42.1</td><td>48.5</td><td>11.0</td><td>3.0</td><td>10.0</td><td class="tot">135.6</td></tr><tr><th>Cortisol Spyke Weeks</th><td>11.0</td><td>14.8</td><td>57.5</td><td>23.9</td><td>17.0</td><td>5.0</td><td class="tot">129.2</td></tr><tr><th>Team Galakrond</th><td>18.5</td><td>49.0</td><td>44.5</td><td>1.4</td><td>8.0</td><td>5.0</td><td class="tot">126.4</td></tr><tr><th>Adams and Jefferson</th><td>16.9</td><td>24.7</td><td>40.5</td><td>17.9</td><td>11.0</td><td>2.0</td><td class="tot">113.0</td></tr><tr><th>CeeDeez Nutz</th><td>13.4</td><td>20.1</td><td>45.9</td><td>10.8</td><td>8.0</td><td>14.0</td><td class="tot">112.2</td></tr><tr><th>Drake Maye Sucks Ass</th><td>23.8</td><td>28.1</td><td>32.0</td><td>4.2</td><td>12.0</td><td>5.0</td><td class="tot">105.1</td></tr><tr><th>Team evil </th><td>6.9</td><td>44.3</td><td>15.3</td><td>21.5</td><td>9.0</td><td>6.0</td><td class="tot">103.0</td></tr><tr><th>Dake Bates</th><td>20.2</td><td>28.8</td><td>21.7</td><td>8.7</td><td>10.0</td><td>11.0</td><td class="tot">100.4</td></tr><tr><th>michael&#x27;s Monstrous Team</th><td>18.3</td><td>31.6</td><td>21.5</td><td>1.9</td><td>1.0</td><td>11.0</td><td class="tot">85.3</td></tr><tr><th>Bingo Night</th><td>9.5</td><td>18.1</td><td>19.3</td><td>9.3</td><td>17.0</td><td>6.0</td><td class="tot">79.2</td></tr><tr><th>Purdy Seconds to Mars</th><td>17.4</td><td>8.3</td><td>26.9</td><td>12.3</td><td>5.0</td><td>-2.0</td><td class="tot">67.9</td></tr></tbody></table></div>
+    </details>
+  </section>
+
+  <section id="trend">
+    <h2><span>Bridge</span> Toll</h2>
+    <p class="lede">Six weeks of tolls paid. Galakrond came up four spots, the biggest jump of the week. Dake took the off-ramp down three. And Cortisol went from 12th in week one to 2nd like it had a FasTrak.</p>
+    <div class="trendgrid">
+      <figure class="bumpwrap"><svg class="bump" viewBox="0 0 560 380" role="img" aria-label="Power ranking by week for every team"><line class="grid" x1="34.0" y1="22" x2="34.0" y2="370"/><text class="wkl" x="34.0" y="16" text-anchor="middle">Wk 1</text><line class="grid" x1="109.2" y1="22" x2="109.2" y2="370"/><text class="wkl" x="109.2" y="16" text-anchor="middle">Wk 2</text><line class="grid" x1="184.4" y1="22" x2="184.4" y2="370"/><text class="wkl" x="184.4" y="16" text-anchor="middle">Wk 3</text><line class="grid" x1="259.6" y1="22" x2="259.6" y2="370"/><text class="wkl" x="259.6" y="16" text-anchor="middle">Wk 4</text><line class="grid" x1="334.8" y1="22" x2="334.8" y2="370"/><text class="wkl" x="334.8" y="16" text-anchor="middle">Wk 5</text><line class="grid" x1="410.0" y1="22" x2="410.0" y2="370"/><text class="wkl" x="410.0" y="16" text-anchor="middle">Wk 6</text><g class="ln" style="--c:#e9e9ee" data-team="6" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#6&quot;], [&quot;Week 2&quot;, &quot;#4&quot;], [&quot;Week 3&quot;, &quot;#7&quot;], [&quot;Week 4&quot;, &quot;#12&quot;], [&quot;Week 5&quot;, &quot;#11&quot;], [&quot;Week 6&quot;, &quot;#12&quot;]]}"><path class="hit" d="M34.0,181.8 L109.2,121.1 L184.4,212.2 L259.6,364.0 L334.8,333.6 L410.0,364.0"/><path class="stroke" d="M34.0,181.8 L109.2,121.1 L184.4,212.2 L259.6,364.0 L334.8,333.6 L410.0,364.0"/><circle cx="34.0" cy="181.8" r="4"/><circle cx="109.2" cy="121.1" r="4"/><circle cx="184.4" cy="212.2" r="4"/><circle cx="259.6" cy="364.0" r="4"/><circle cx="334.8" cy="333.6" r="4"/><circle cx="410.0" cy="364.0" r="4"/><text x="422.0" y="368.5">12. Thomas</text></g><g class="ln" style="--c:#f4a261" data-team="7" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#8&quot;], [&quot;Week 2&quot;, &quot;#6&quot;], [&quot;Week 3&quot;, &quot;#4&quot;], [&quot;Week 4&quot;, &quot;#5&quot;], [&quot;Week 5&quot;, &quot;#9&quot;], [&quot;Week 6&quot;, &quot;#11&quot;]]}"><path class="hit" d="M34.0,242.5 L109.2,181.8 L184.4,121.1 L259.6,151.5 L334.8,272.9 L410.0,333.6"/><path class="stroke" d="M34.0,242.5 L109.2,181.8 L184.4,121.1 L259.6,151.5 L334.8,272.9 L410.0,333.6"/><circle cx="34.0" cy="242.5" r="4"/><circle cx="109.2" cy="181.8" r="4"/><circle cx="184.4" cy="121.1" r="4"/><circle cx="259.6" cy="151.5" r="4"/><circle cx="334.8" cy="272.9" r="4"/><circle cx="410.0" cy="333.6" r="4"/><text x="422.0" y="338.1">11. Ben T.</text></g><g class="ln" style="--c:#cdb4db" data-team="5" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#11&quot;], [&quot;Week 2&quot;, &quot;#7&quot;], [&quot;Week 3&quot;, &quot;#9&quot;], [&quot;Week 4&quot;, &quot;#6&quot;], [&quot;Week 5&quot;, &quot;#8&quot;], [&quot;Week 6&quot;, &quot;#10&quot;]]}"><path class="hit" d="M34.0,333.6 L109.2,212.2 L184.4,272.9 L259.6,181.8 L334.8,242.5 L410.0,303.3"/><path class="stroke" d="M34.0,333.6 L109.2,212.2 L184.4,272.9 L259.6,181.8 L334.8,242.5 L410.0,303.3"/><circle cx="34.0" cy="333.6" r="4"/><circle cx="109.2" cy="212.2" r="4"/><circle cx="184.4" cy="272.9" r="4"/><circle cx="259.6" cy="181.8" r="4"/><circle cx="334.8" cy="242.5" r="4"/><circle cx="410.0" cy="303.3" r="4"/><text x="422.0" y="307.8">10. Lyudmil</text></g><g class="ln" style="--c:#8ecae6" data-team="12" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#10&quot;], [&quot;Week 2&quot;, &quot;#11&quot;], [&quot;Week 3&quot;, &quot;#8&quot;], [&quot;Week 4&quot;, &quot;#9&quot;], [&quot;Week 5&quot;, &quot;#7&quot;], [&quot;Week 6&quot;, &quot;#9&quot;]]}"><path class="hit" d="M34.0,303.3 L109.2,333.6 L184.4,242.5 L259.6,272.9 L334.8,212.2 L410.0,272.9"/><path class="stroke" d="M34.0,303.3 L109.2,333.6 L184.4,242.5 L259.6,272.9 L334.8,212.2 L410.0,272.9"/><circle cx="34.0" cy="303.3" r="4"/><circle cx="109.2" cy="333.6" r="4"/><circle cx="184.4" cy="242.5" r="4"/><circle cx="259.6" cy="272.9" r="4"/><circle cx="334.8" cy="212.2" r="4"/><circle cx="410.0" cy="272.9" r="4"/><text x="422.0" y="277.4">9. kelly</text></g><g class="ln" style="--c:#06d6a0" data-team="1" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#7&quot;], [&quot;Week 2&quot;, &quot;#9&quot;], [&quot;Week 3&quot;, &quot;#11&quot;], [&quot;Week 4&quot;, &quot;#11&quot;], [&quot;Week 5&quot;, &quot;#12&quot;], [&quot;Week 6&quot;, &quot;#8&quot;]]}"><path class="hit" d="M34.0,212.2 L109.2,272.9 L184.4,333.6 L259.6,333.6 L334.8,364.0 L410.0,242.5"/><path class="stroke" d="M34.0,212.2 L109.2,272.9 L184.4,333.6 L259.6,333.6 L334.8,364.0 L410.0,242.5"/><circle cx="34.0" cy="212.2" r="4"/><circle cx="109.2" cy="272.9" r="4"/><circle cx="184.4" cy="333.6" r="4"/><circle cx="259.6" cy="333.6" r="4"/><circle cx="334.8" cy="364.0" r="4"/><circle cx="410.0" cy="242.5" r="4"/><text x="422.0" y="247.0">8. Neil</text></g><g class="ln" style="--c:#ffd166" data-team="10" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#9&quot;], [&quot;Week 2&quot;, &quot;#12&quot;], [&quot;Week 3&quot;, &quot;#12&quot;], [&quot;Week 4&quot;, &quot;#10&quot;], [&quot;Week 5&quot;, &quot;#10&quot;], [&quot;Week 6&quot;, &quot;#7&quot;]]}"><path class="hit" d="M34.0,272.9 L109.2,364.0 L184.4,364.0 L259.6,303.3 L334.8,303.3 L410.0,212.2"/><path class="stroke" d="M34.0,272.9 L109.2,364.0 L184.4,364.0 L259.6,303.3 L334.8,303.3 L410.0,212.2"/><circle cx="34.0" cy="272.9" r="4"/><circle cx="109.2" cy="364.0" r="4"/><circle cx="184.4" cy="364.0" r="4"/><circle cx="259.6" cy="303.3" r="4"/><circle cx="334.8" cy="303.3" r="4"/><circle cx="410.0" cy="212.2" r="4"/><text x="422.0" y="216.7">7. Ricky</text></g><g class="ln" style="--c:#ff8fab" data-team="8" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#1&quot;], [&quot;Week 2&quot;, &quot;#5&quot;], [&quot;Week 3&quot;, &quot;#6&quot;], [&quot;Week 4&quot;, &quot;#4&quot;], [&quot;Week 5&quot;, &quot;#3&quot;], [&quot;Week 6&quot;, &quot;#6&quot;]]}"><path class="hit" d="M34.0,30.0 L109.2,151.5 L184.4,181.8 L259.6,121.1 L334.8,90.7 L410.0,181.8"/><path class="stroke" d="M34.0,30.0 L109.2,151.5 L184.4,181.8 L259.6,121.1 L334.8,90.7 L410.0,181.8"/><circle cx="34.0" cy="30.0" r="4"/><circle cx="109.2" cy="151.5" r="4"/><circle cx="184.4" cy="181.8" r="4"/><circle cx="259.6" cy="121.1" r="4"/><circle cx="334.8" cy="90.7" r="4"/><circle cx="410.0" cy="181.8" r="4"/><text x="422.0" y="186.3">6. Jake</text></g><g class="ln" style="--c:#b47cff" data-team="3" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#4&quot;], [&quot;Week 2&quot;, &quot;#2&quot;], [&quot;Week 3&quot;, &quot;#2&quot;], [&quot;Week 4&quot;, &quot;#3&quot;], [&quot;Week 5&quot;, &quot;#5&quot;], [&quot;Week 6&quot;, &quot;#5&quot;]]}"><path class="hit" d="M34.0,121.1 L109.2,60.4 L184.4,60.4 L259.6,90.7 L334.8,151.5 L410.0,151.5"/><path class="stroke" d="M34.0,121.1 L109.2,60.4 L184.4,60.4 L259.6,90.7 L334.8,151.5 L410.0,151.5"/><circle cx="34.0" cy="121.1" r="4"/><circle cx="109.2" cy="60.4" r="4"/><circle cx="184.4" cy="60.4" r="4"/><circle cx="259.6" cy="90.7" r="4"/><circle cx="334.8" cy="151.5" r="4"/><circle cx="410.0" cy="151.5" r="4"/><text x="422.0" y="156.0">5. skyler</text></g><g class="ln" style="--c:#39b8ff" data-team="11" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#5&quot;], [&quot;Week 2&quot;, &quot;#8&quot;], [&quot;Week 3&quot;, &quot;#10&quot;], [&quot;Week 4&quot;, &quot;#8&quot;], [&quot;Week 5&quot;, &quot;#6&quot;], [&quot;Week 6&quot;, &quot;#4&quot;]]}"><path class="hit" d="M34.0,151.5 L109.2,242.5 L184.4,303.3 L259.6,242.5 L334.8,181.8 L410.0,121.1"/><path class="stroke" d="M34.0,151.5 L109.2,242.5 L184.4,303.3 L259.6,242.5 L334.8,181.8 L410.0,121.1"/><circle cx="34.0" cy="151.5" r="4"/><circle cx="109.2" cy="242.5" r="4"/><circle cx="184.4" cy="303.3" r="4"/><circle cx="259.6" cy="242.5" r="4"/><circle cx="334.8" cy="181.8" r="4"/><circle cx="410.0" cy="121.1" r="4"/><text x="422.0" y="125.6">4. Jackson</text></g><g class="ln" style="--c:#5be37d" data-team="9" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#2&quot;], [&quot;Week 2&quot;, &quot;#1&quot;], [&quot;Week 3&quot;, &quot;#3&quot;], [&quot;Week 4&quot;, &quot;#2&quot;], [&quot;Week 5&quot;, &quot;#2&quot;], [&quot;Week 6&quot;, &quot;#3&quot;]]}"><path class="hit" d="M34.0,60.4 L109.2,30.0 L184.4,90.7 L259.6,60.4 L334.8,60.4 L410.0,90.7"/><path class="stroke" d="M34.0,60.4 L109.2,30.0 L184.4,90.7 L259.6,60.4 L334.8,60.4 L410.0,90.7"/><circle cx="34.0" cy="60.4" r="4"/><circle cx="109.2" cy="30.0" r="4"/><circle cx="184.4" cy="90.7" r="4"/><circle cx="259.6" cy="60.4" r="4"/><circle cx="334.8" cy="60.4" r="4"/><circle cx="410.0" cy="90.7" r="4"/><text x="422.0" y="95.2">3. michael</text></g><g class="ln" style="--c:#ffb627" data-team="4" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#12&quot;], [&quot;Week 2&quot;, &quot;#10&quot;], [&quot;Week 3&quot;, &quot;#5&quot;], [&quot;Week 4&quot;, &quot;#7&quot;], [&quot;Week 5&quot;, &quot;#4&quot;], [&quot;Week 6&quot;, &quot;#2&quot;]]}"><path class="hit" d="M34.0,364.0 L109.2,303.3 L184.4,151.5 L259.6,212.2 L334.8,121.1 L410.0,60.4"/><path class="stroke" d="M34.0,364.0 L109.2,303.3 L184.4,151.5 L259.6,212.2 L334.8,121.1 L410.0,60.4"/><circle cx="34.0" cy="364.0" r="4"/><circle cx="109.2" cy="303.3" r="4"/><circle cx="184.4" cy="151.5" r="4"/><circle cx="259.6" cy="212.2" r="4"/><circle cx="334.8" cy="121.1" r="4"/><circle cx="410.0" cy="60.4" r="4"/><text x="422.0" y="64.9">2. Mason</text></g><g class="ln" style="--c:#ff4d5e" data-team="2" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#3&quot;], [&quot;Week 2&quot;, &quot;#3&quot;], [&quot;Week 3&quot;, &quot;#1&quot;], [&quot;Week 4&quot;, &quot;#1&quot;], [&quot;Week 5&quot;, &quot;#1&quot;], [&quot;Week 6&quot;, &quot;#1&quot;]]}"><path class="hit" d="M34.0,90.7 L109.2,90.7 L184.4,30.0 L259.6,30.0 L334.8,30.0 L410.0,30.0"/><path class="stroke" d="M34.0,90.7 L109.2,90.7 L184.4,30.0 L259.6,30.0 L334.8,30.0 L410.0,30.0"/><circle cx="34.0" cy="90.7" r="4"/><circle cx="109.2" cy="90.7" r="4"/><circle cx="184.4" cy="30.0" r="4"/><circle cx="259.6" cy="30.0" r="4"/><circle cx="334.8" cy="30.0" r="4"/><circle cx="410.0" cy="30.0" r="4"/><text x="422.0" y="34.5">1. Ben E.</text></g><text class="ax" x="20" y="34.0" text-anchor="end">1</text><text class="ax" x="20" y="368.0" text-anchor="end">12</text></svg>
+        <figcaption>Rank one at the top. Hover or tap a line to follow one team.</figcaption></figure>
+      <figure class="snap trendpic" style="--tilt:1.5deg"><img src="../assets/hyphy/06-sequins.jpg" alt="E-40"><figcaption>Dressed for a parade your sorry ass AIN&#x27;T INVITED TO. Bootsie</figcaption></figure>
+    </div>
+  </section>
+<section id="next"><h2><span>Up next</span> Week 7, the midpoint</h2>
+    <p class="lede">Six games, then the halfway mark. That&#x27;s when the odds come out.</p><ul class="nxs"><li class="nx gotw"><span class=nx-tag>Sideshow of the Week</span><p class="nx-m"><span class="nx-u"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt="">Ben&#x27;s Brilliant Team <span class="nx-r">6-0</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="">Cortisol Spyke Weeks <span class="nx-r">4-2</span></span></p><p class="nx-t">No. 1 against No. 2. Ben E. is 6-0. Cortisol came up from dead last in week one to get a shot at him. If anybody&#x27;s handin&#x27; out the first L, it&#x27;s this one.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/8-dake-bates.png" alt="">Dake Bates <span class="nx-r">4-2</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/9-michael-s-monstrous-team.svg" alt="">michael&#x27;s Monstrous Team <span class="nx-r">4-2</span></span></p><p class="nx-t">Both 4-2, both comin&#x27; off losses, and michael just posted a season low. Somebody&#x27;s gettin&#x27; right.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/10-roadrunners.svg" alt="">roadrunners <span class="nx-r">2-4</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/3-ceedeez-nutz.svg" alt="">CeeDeez Nutz <span class="nx-r">4-2</span></span></p><p class="nx-t">The hottest team in the Yay, with higher scores four weeks running, against a CeeDeez team that just stopped the bleeding.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="">Purdy Seconds to Mars <span class="nx-r">2-4</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt="">Drake Maye Sucks Ass <span class="nx-r">4-2</span></span></p><p class="nx-t">Drake Maye Sucks Ass has won three straight. Purdy Seconds to Mars just posted the lowest score of the week. Bad timing, blood.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/5-adams-and-jefferson.svg" alt="">Adams and Jefferson <span class="nx-r">1-5</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/12-team-evil.svg" alt="">Team evil  <span class="nx-r">2-4</span></span></p><p class="nx-t">Adams and Jefferson keeps scoring like a winner and losing anyway. Team evil needs this one to stay in the mix.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/1-team-galakrond.png" alt="">Team Galakrond <span class="nx-r">1-5</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/6-bingo-night.svg" alt="">Bingo Night <span class="nx-r">2-4</span></span></p><p class="nx-t">Galakrond tries to make it two straight. Bingo tries to stop a four-game skid.</p></li></ul></section>
+  <footer class="foot">
+    <figure class="snap footpic" style="--tilt:-3deg"><img src="../assets/hyphy/07-sideline.jpg" alt="E-40"><figcaption>LAST CALL. Everybody out the sideshow. GO DUMB OR GO HOME</figcaption></figure>
+    <p class="sign-off">Stay hyphy, stay Faithful, keep scrapin&#x27;.</p>
+    <p>Data from ESPN, pulled Monday night once the last game is final. <a href="../index.html">All weeks</a></p>
+  </footer>
+</main>
+<script>
+(function(){
+  var tip=document.createElement('div');tip.className='tip';tip.setAttribute('role','tooltip');tip.hidden=true;
+  document.body.appendChild(tip);
+  function show(el,x,y){
+    var d;try{d=JSON.parse(el.getAttribute('data-tip'))}catch(_){return}
+    while(tip.firstChild)tip.removeChild(tip.firstChild);
+    var h=document.createElement('p');h.className='tt';h.textContent=d.t;tip.appendChild(h);
+    d.rows.forEach(function(r){var p=document.createElement('p');var k=document.createElement('span');
+      k.textContent=r[0];if(r[2]){var i=document.createElement('i');i.className='key '+r[2];k.insertBefore(i,k.firstChild)}
+      var v=document.createElement('b');v.textContent=r[1];p.appendChild(v);p.appendChild(k);tip.appendChild(p)});
+    if(d.total!==undefined){var t=document.createElement('p');t.className='tsum';var b=document.createElement('b');
+      b.textContent=d.total;var s=document.createElement('span');s.textContent='Total';t.appendChild(b);t.appendChild(s);tip.appendChild(t)}
+    tip.hidden=false;place(x,y);
+  }
+  function place(x,y){var w=tip.offsetWidth,hh=tip.offsetHeight,vw=window.innerWidth;
+    var l=Math.min(Math.max(8,x+14),vw-w-8),t=y-hh-14;if(t<8)t=y+18;
+    tip.style.left=l+'px';tip.style.top=t+'px'}
+  function hide(){tip.hidden=true}
+  document.querySelectorAll('[data-tip]').forEach(function(el){
+    el.addEventListener('pointermove',function(ev){show(el,ev.clientX,ev.clientY)});
+    el.addEventListener('pointerleave',hide);
+    el.addEventListener('focus',function(){var r=el.getBoundingClientRect();show(el,r.left+r.width/2,r.top)});
+    el.addEventListener('blur',hide);
+  });
+  window.addEventListener('scroll',hide,{passive:true});
+  var chart=document.querySelector('.bump');
+  function hl(id){if(!chart)return;chart.classList.toggle('focus',!!id);
+    chart.querySelectorAll('.ln').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-team')===id)})}
+  document.querySelectorAll('.bump .ln').forEach(function(g){
+    var id=g.getAttribute('data-team');
+    g.addEventListener('pointerenter',function(){hl(id)});g.addEventListener('pointerleave',function(){hl(null)});
+    g.addEventListener('focus',function(){hl(id)});g.addEventListener('blur',function(){hl(null)});
+  });
+})();
+</script>
+</body>
+</html>

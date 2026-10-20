@@ -1,0 +1,87 @@
+{
+ "_comment": "Week 6 copy, hyphy skin. Numbers checked against scripts/fact_sheet.py --week 6 and the season analysis.",
+ "headline": "The Roadrunners Went STUPID",
+ "standfirst": "CLEAR THE INTERSECTION. The roadrunners came off the BART platform doin' donuts: 142.74, the top score in the league, and a 57-point beatdown of michael, the No. 2 team in the Yay. Galakrond FINALLY scraped a W after five straight L's. Cortisol went from dead last in week one to second. And it's HELLA crowded up top: five teams sittin' at 4-2, one week before the midpoint.",
+ "ticker": [
+  "roadrunners 142.7, michael 85.3",
+  "Cortisol 129.2, Purdy 67.9",
+  "Ben E. 135.6, Adams & Jefferson 113.0",
+  "Galakrond 126.4, Team evil 103.0",
+  "CeeDeez 112.2, Bingo 79.2",
+  "Drake Maye Sucks Ass 105.1, Dake 100.4",
+  "Galakrond got one. YEE",
+  "Five teams at 4-2"
+ ],
+ "hero_caption": "ONLY ONE IN THE YAY WITH REAL MOVES. Y'all's lineups HELLA tragic, yadadamean",
+ "photo_captions": {
+  "01-jersey.jpg": "ONLY ONE IN THE YAY WITH REAL MOVES. Y'all's lineups HELLA tragic, yadadamean",
+  "02-grills.jpg": "That grill worth more than your WHOLE DAMN ROSTER. Fa sho",
+  "03-glasses.jpg": "Checkin' the box score...",
+  "04-cigar.jpg": "Lit one up after seein' the bottom three. Shit is BLEAK",
+  "05-sam.jpg": "Even Sourdough Sam can't believe your WACK ASS team",
+  "06-sequins.jpg": "Dressed for a parade your sorry ass AIN'T INVITED TO. Bootsie",
+  "07-sideline.jpg": "LAST CALL. Everybody out the sideshow. GO DUMB OR GO HOME"
+ },
+ "thizz_team": 10,
+ "awards": {
+  "thizz": "142.74 from a 2-4 team, and a 57-point beatdown of the No. 2 team"
+ },
+ "lede_scores": "Six sideshows, one intersection. The closest one gets the spotlight. Everybody else is sorted by how UGLY it got.",
+ "lede_rankings": "Record drives the whip, with recent form, scoring and luck ridin' shotgun. The candy bar under each team is this week's points by position. Express means you climbed. Delayed means you know what you did.",
+ "lede_positions": "Every whip is built different. This is what each team's ride was made of this week, sorted by total. Galakrond's backfield put up 49.0, the best of the week. Tap a row for the parts list.",
+ "lede_season": "Six weeks of tolls paid. Galakrond came up four spots, the biggest jump of the week. Dake took the off-ramp down three. And Cortisol went from 12th in week one to 2nd like it had a FasTrak.",
+ "footer": "Stay hyphy, stay Faithful, keep scrapin'.",
+ "takes": {
+  "2": "SIX AND OH. Still mobbin' the 80 with the windows down and the toll booth waving him through. Ben E. put up 135.60, beat Adams and Jefferson by 22.62, and is 57-9 against the whole league. Jaxon Smith-Njigba went for 25.4 and has 164.9 on the season, the most of any starter in the league. Every week between 131 and 157: gas, brake, dip, never a swerve. Somebody tell this man to TAP THE BRAKES.",
+  "4": "From the bottom of the Yay to No. 2 in five weeks, yadadamean. Cortisol Spyke Weeks was DEAD LAST after week one. Now: two straight dubs, 4-2, and a 61.36-point stomping of Purdy Seconds to Mars, the biggest margin of the week. Tre Tucker went for 26.7 and Isaiah Likely added 23.9, the best tight end score of the week. Next week? Ben E. Lord help.",
+  "9": "Somebody ghost rode michael's whip into Lake Merritt. 85.30, a season low by more than 40 points, and a 57-point loss to the roadrunners, 36.77 under what ESPN said. The kicker gave 1.0, the flex gave a goose egg, and Jahmyr Gibbs was nowhere in the lineup. Still 4-2 and still second in the league in points at 794.6. But 429.3 points have sat on that bench this year, the most in the league. HELLA rims in the garage, none on the car.",
+  "11": "Three straight dubs, 4-2, and the luckiest team in the Yay. Drake Maye Sucks Ass won the closest sideshow of the week by 4.66 with 105.10, the lowest winning score of the week. Drake Maye put up 23.8 for a team that's still named after hating him. Against the whole league they're 27-39, and the record says 4-2. Don't ask questions. Just ride it, blood.",
+  "3": "Stopped the bleeding. After two straight L's, CeeDeez Nutz took care of Bingo Night 112.20 to 79.16. DeVonta Smith went for 20.5 from the flex and CeeDee Lamb bounced back with 16.0 after last week's 2.9. Still third in the league in points at 782.7. The receivers run about 16 a week above average. The backfield is STILL the busted part of this whip, 12 a week below.",
+  "8": "Ghost Ride the Whip of the week, fa sho. Dake hopped out, waved at the crowd, and watched the car roll down three spots. 100.44, 28.65 under projection, and a 4.66 loss in the closest game of the week. The two starting receivers gave 7.7 combined. Still 4-2 and still the softest schedule in the league at 587.7 points against. The ride's fine. The driver just went to get a burrito mid-sideshow.",
+  "10": "THE ROADRUNNERS WENT STUPID. 142.74, the top score of the week, a perfect 11-0 against the field, and a 57.44-point beatdown of michael, the No. 2 team in the league. Malik Nabers went for 28.5, Trevor Lawrence 27.3, James Cook III 24.3, and Matthew Golden 22.4 off the flex. Scores have gone UP every week since week two: 61.7, 91.3, 118.1, 119.7, 142.7. That train ain't stoppin'. Up three spots. YEE.",
+  "1": "SOMEBODY CALL THE TOWN. Team Galakrond got its first W of the year, 126.42 over Team evil, and jumped four spots, the biggest climb of the week. Kenneth Walker III (27.9) and Jonathan Taylor (21.1) put up 49.0 out of the backfield, the best of any team this week. This team has faced 882.6 points, the most in the league by 34. The schedule finally blinked. Scrapin' on 'em.",
+  "12": "Christian McCaffrey went for 30.7, the best individual score in the WHOLE league this week, and Team evil still lost by 23.40. Why? Jacoby Brissett gave 6.9 at quarterback, the lowest QB score of the week, and the receivers gave 15.3 combined, also the lowest. Down two spots. One guy can't push the whole whip up the hill, blood.",
+  "5": "Hella robbed. AGAIN. 112.98 was the fifth-best score in the league and it ran into the undefeated man. Adams and Jefferson has now seen 848.3 points against, second-most in the league. Against the field they're 36-30. That scoring is worth about 3.3 wins. The record says 1-5, the unluckiest gap in the Yay. Carnell Tate went for 19.0. The schedule keeps ghost ridin' 'em straight into the fog.",
+  "7": "Bootsie. 67.86, the lowest score of the week, 0-11 against the field, and 51.14 under projection, the worst miss in the league. Bijan Robinson gave 7.3, Cam Skattebo a straight zero, and the defense went negative. Third straight L, down two spots, and a 61-point loss to Cortisol. Brock Purdy did his part with 17.4. Nobody else showed up to the sideshow.",
+  "6": "Waitin' on BART and the board says DELAYED, again. Fourth straight L, 79.16, and the bottom spot in the rankings. The best player on the team this week was the KICKER: Tyler Bass, 17.0. Over six weeks Bingo is 7-59 against the field, but 2-4 is still on the board, which is the most Bay Area thing ever. Hella fog, zero visibility, still out here swervin'."
+ },
+ "up_next": {
+  "title": "Week 7, the midpoint",
+  "intro": "Six games, then the halfway mark. That's when the odds come out.",
+  "games": [
+   {
+    "a": 2,
+    "b": 4,
+    "gotw": true,
+    "text": "No. 1 against No. 2. Ben E. is 6-0. Cortisol came up from dead last in week one to get a shot at him. If anybody's handin' out the first L, it's this one."
+   },
+   {
+    "a": 8,
+    "b": 9,
+    "text": "Both 4-2, both comin' off losses, and michael just posted a season low. Somebody's gettin' right."
+   },
+   {
+    "a": 10,
+    "b": 3,
+    "text": "The hottest team in the Yay, with higher scores four weeks running, against a CeeDeez team that just stopped the bleeding."
+   },
+   {
+    "a": 7,
+    "b": 11,
+    "text": "Drake Maye Sucks Ass has won three straight. Purdy Seconds to Mars just posted the lowest score of the week. Bad timing, blood."
+   },
+   {
+    "a": 5,
+    "b": 12,
+    "text": "Adams and Jefferson keeps scoring like a winner and losing anyway. Team evil needs this one to stay in the mix."
+   },
+   {
+    "a": 1,
+    "b": 6,
+    "text": "Galakrond tries to make it two straight. Bingo tries to stop a four-game skid."
+   }
+  ]
+ },
+ "og_title": "Week 6 power rankings: the roadrunners went STUPID",
+ "og_description": "142.74 and a 57-point beatdown of the No. 2 team. Galakrond finally gets one. Five teams at 4-2. Hyphy edition."
+}

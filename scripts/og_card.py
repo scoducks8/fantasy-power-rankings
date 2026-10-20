@@ -423,16 +423,54 @@ body{{width:1200px;height:630px;overflow:hidden;position:relative;font-family:P;
 </body></html>'''
 
 
+
+def build_hyphy(week: int, copy_path: str) -> str:
+    """Sideshow flyer card: asphalt, Anton headline, gold sticker, E-40 polaroid."""
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    docs = (ROOT / "docs").as_uri()
+    fonts = f"{docs}/assets/fonts"
+    pdir = ROOT / "docs" / "assets" / "hyphy"
+    pics = sorted(f.name for f in pdir.iterdir() if f.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")) if pdir.exists() else []
+    pic = f'<div class="snap"><img src="{docs}/assets/hyphy/{pics[0]}"></div>' if pics else ""
+    score = {}
+    for m in d["matchups"]:
+        score[m["home_id"]], score[m["away_id"]] = m["home_score"], m["away_score"]
+    top = max(d["teams"], key=lambda t: score.get(t["team_id"], 0))
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:A;src:url({fonts}/anton-latin-400-normal.woff2)}}
+@font-face{{font-family:M;src:url({fonts}/permanent-marker-latin-400-normal.woff2)}}
+@font-face{{font-family:O;font-weight:700;src:url({fonts}/oswald-latin-700-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;background:linear-gradient(180deg,#1a0508,#0c0c0f 75%);color:#f4f1ea;
+  display:grid;grid-template-columns:1fr 400px;gap:40px;align-items:center;padding:0 64px;position:relative}}
+body::before{{content:"THE YAY 40.0 FM";position:absolute;top:0;left:0;right:0;box-sizing:border-box;height:48px;padding:14px 22px;background:#d7263d;
+  font:700 20px/1 O,sans-serif;letter-spacing:.08em;color:#fff}}
+.k{{font:700 22px/1 O,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#ffb627}}
+h1{{margin-top:18px;font:400 96px/.92 A,Impact,sans-serif;text-transform:uppercase;text-shadow:5px 5px 0 #d7263d}}
+.tag{{display:inline-block;margin-top:26px;padding:8px 14px;font:400 26px/1 M,cursive;color:#111;background:#ffb627;transform:rotate(-2deg);box-shadow:4px 4px 0 #d7263d}}
+.sc{{margin-top:22px;font:700 26px/1.2 O,sans-serif;text-transform:uppercase;color:#c9c5bc}}
+.sc b{{color:#ffb627}}
+.snap{{background:#f4f1ea;padding:12px 12px 46px;transform:rotate(3deg);box-shadow:0 18px 40px rgba(0,0,0,.6)}}
+.snap img{{width:100%;display:block}}
+</style></head><body>
+<div><div class="k">Week {week} power rankings</div><h1>{e(c.get("headline", ""))}</h1>
+<div class="tag">Niner Gang &middot; Hyphy Edition</div>
+<div class="sc">Top score <b>{score.get(top["team_id"], 0):.1f}</b> &middot; {e(top["name"])}</div></div>
+{pic}
+</body></html>"""
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", type=int, required=True)
     ap.add_argument("--copy", default="")
     ap.add_argument("--out", default="")
-    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean"])
+    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy"])
     a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "docs" / f"og-week-{a.week}.png"
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
-        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean}.get(a.style, build)
+        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy}.get(a.style, build)
         fh.write(builder(a.week, a.copy))
         src = fh.name
     js = f'''const {{chromium}}=require('playwright');(async()=>{{
