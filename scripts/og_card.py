@@ -461,16 +461,45 @@ h1{{margin-top:18px;font:400 96px/.92 A,Impact,sans-serif;text-transform:upperca
 {pic}
 </body></html>"""
 
+
+def build_wedding(week: int, copy_path: str) -> str:
+    """Invitation card: cream stock, gold rules, script league name, headline."""
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    fonts = f"{(ROOT / 'docs').as_uri()}/assets/fonts"
+    lead = min(d["teams"], key=lambda t: t["rank"])
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:P;src:url({fonts}/pinyon-script-latin-400-normal.woff2)}}
+@font-face{{font-family:C;font-weight:600;src:url({fonts}/cormorant-garamond-latin-600-normal.woff2)}}
+@font-face{{font-family:Z;font-weight:700;src:url({fonts}/cinzel-latin-700-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;background:#f4eee5;display:grid;place-items:center;font-family:C,Georgia,serif;color:#2f2a26}}
+.card{{position:relative;width:1060px;height:500px;background:#fffdf8;border:1px solid #e4d9c6;box-shadow:0 24px 50px rgba(90,70,50,.14);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}}
+.card::before{{content:"";position:absolute;inset:18px;border:1px solid #d9c18f}}
+.card::after{{content:"";position:absolute;inset:26px;border:1px solid #ecdcb6}}
+.k{{font:700 20px/1 Z,serif;letter-spacing:.24em;text-transform:uppercase;color:#5a524b}}
+.s{{margin:18px 0 8px;font:400 64px/1.1 P,cursive}}
+h1{{font:600 76px/1.05 C,serif;color:#b08d57}}
+.f{{margin-top:22px;font:700 17px/1 Z,serif;letter-spacing:.2em;text-transform:uppercase;color:#c26d7c}}
+</style></head><body><div class="card">
+<div class="k">Week {week} power rankings</div>
+<div class="s">{e(d["league_name"])}</div>
+<h1>{e(c.get("headline", ""))}</h1>
+<div class="f">The midpoint &middot; Playoff odds inside</div>
+</div></body></html>"""
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", type=int, required=True)
     ap.add_argument("--copy", default="")
     ap.add_argument("--out", default="")
-    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy"])
+    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy", "wedding"])
     a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "docs" / f"og-week-{a.week}.png"
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
-        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy}.get(a.style, build)
+        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy, "wedding": build_wedding}.get(a.style, build)
         fh.write(builder(a.week, a.copy))
         src = fh.name
     js = f'''const {{chromium}}=require('playwright');(async()=>{{

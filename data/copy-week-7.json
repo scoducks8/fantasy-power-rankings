@@ -1,0 +1,71 @@
+{
+ "_comment": "Week 7 copy, wedding skin. Numbers checked against fact_sheet --week 7, season analysis and data/odds-week-7.json.",
+ "headline": "Congratulations, Mason",
+ "standfirst": "Mason got married this weekend. The league sends its congratulations, and its seating chart. Seven weeks in, we are at the halfway point of the regular season, so this week includes the first playoff odds. Ben E. is 7-0 and a near-lock for the top seed. Five teams have a firm grip on the other five playoff spots. Team evil is the only team outside them with a real shot, at 35%. Everyone else is at 13% or lower.",
+ "invite": {
+  "line1": "Together with their families",
+  "line2": "request the honour of your presence at",
+  "line3": "Monday, October 26, 2026"
+ },
+ "newlywed_team": 4,
+ "newlywed_note": "Congrats to Mason. Ben's team still won.",
+ "lede_scores": "Closest game first.",
+ "lede_rankings": "Seats are assigned by power score: record first, then recent form, scoring and luck.",
+ "lede_odds": "This is the halfway point of the 14-week regular season. Six teams make the playoffs, and the top two get a first-round bye. Here is where everyone stands.",
+ "lede_positions": "Points by position this week, sorted by total.",
+ "lede_season": "Rank by week. Mason's team is in rose, Ben E.'s in gold.",
+ "footer": "Congratulations, Mason",
+ "takes": {
+  "2": "Seven wins, no losses. Ben E. beat Cortisol Spyke Weeks 132.42 to 115.42, in the week of the opponent's wedding. Jaxon Smith-Njigba scored 31.3, the top individual score of the week, and has 196.2 on the season. Ben E. has scored between 131 and 157 in every game. The simulations give him a 94% chance at the top seed and a 99% chance at a first-round bye.",
+  "3": "Up three to second. CeeDeez Nutz has won two straight, beating roadrunners 118.82 to 96.58, with CeeDee Lamb at 24.4. Second in the league in points at 901.5, with the second-fewest points against. The simulations have this team at 97% to make the playoffs and 48% for a first-round bye. The backfield remains the weak spot, about 12 points a week below average.",
+  "11": "Four straight wins and the top score of the week, 132.94, a season high. Drake Maye scored 27.4. At 5-2, Drake Maye Sucks Ass sits third. The scoring is that of a .500 team, 38-39 against the whole league, which is why the simulations put it at 77%, the lowest of the top six. Next week it plays Mason.",
+  "8": "Up two to fourth after a 121.06 win over michael. Puka Nacua (21.8), Ashton Jeanty (21.6) and Javonte Williams (21.5) finished within three tenths of a point of each other. Dake has faced 679.5 points, the fewest in the league by 45. Next week is CeeDeez Nutz, a meeting of 5-2 teams. Playoff odds: 88%.",
+  "4": "Cortisol Spyke Weeks scored 115.42, the highest losing score of the week, against the only unbeaten team in the league. Mason left 86.78 points on the bench, the most of any team this week, and has 482.5 on the bench for the season, also the most in the league. This is understandable. He had other things going on. Isaiah Likely, last week's top tight end, scored 3.2. Down three spots to fifth, with an 82% chance at the playoffs.",
+  "9": "Down three to sixth. michael scored 91.80, the lowest score of the week, a week after scoring 85.30. Before that, he had scored at least 125 in all five games. Patrick Mahomes started at quarterback and scored 6.0. michael is still third in the league in points at 886.4 and 47-30 against the whole league, so the simulations still give him an 83% chance. The bench is at 460.3 points for the season, second only to the newlywed.",
+  "12": "Up two to seventh after beating Adams and Jefferson 109.88 to 93.92, the closest game of the week. Joe Burrow scored 28.9 and Tee Higgins 26.8. At 3-4, Team evil is the only team outside the top six with a realistic path: 35%. Next week it plays Ben E.",
+  "6": "Up four spots, the biggest climb of the week. Bingo Night scored 119.42, its best score of the season and 18.38 above projection, the biggest beat of the week. Jameson Williams scored 26.1. Over the season, Bingo is 15-62 against the whole league and 3-4 on the board, the luckiest record in the league by expected wins. Playoff odds: 7%.",
+  "1": "Team Galakrond's receivers scored 4.1 points this week, combined. The backfield scored 52.1. Galakrond lost 119.42 to 96.60 and fell to 1-6. It is the first team in the league to give up more than 1,000 points this season, at 1,002.1. Expected wins: 3.4. Actual wins: 1. Playoff odds: 6%.",
+  "10": "Last week, 142.74, the top score in the league. This week, 96.58, two hundredths of a point behind Team Galakrond. Down three spots to tenth. Colston Loveland scored 19.9 and Malik Nabers 18.1. Aaron Rodgers started at quarterback and scored 13.1. Playoff odds: 7%.",
+  "5": "Adams and Jefferson lost the closest game of the week, 109.88 to 93.92, and fell to 1-6. Bryce Young started at quarterback and scored 5.4, the lowest quarterback score of the week. Over the season, this team is fourth in the league in points, has faced the second-most points, and is 37-40 against the whole league. Expected wins: 3.4. Actual wins: 1. Playoff odds: 13%.",
+  "7": "Purdy Seconds to Mars had the highest-scoring backfield in the league this week, 56.4, and the top tight end score, Trey McBride with 27.1. The two receivers combined for 1.9. Fourth straight loss, last place, 2-5. Playoff odds: 5%, the lowest in the league."
+ },
+ "up_next": {
+  "title": "Next on the itinerary",
+  "intro": "Week 8.",
+  "games": [
+   {
+    "a": 4,
+    "b": 11,
+    "gotw": true,
+    "text": "Fourth and fifth in the playoff odds, 82% and 77%. Whoever loses drops toward the line."
+   },
+   {
+    "a": 3,
+    "b": 8,
+    "text": "Two 5-2 teams, and the inside track on the second bye."
+   },
+   {
+    "a": 12,
+    "b": 2,
+    "text": "Team evil's playoff hopes, against the only unbeaten team in the league."
+   },
+   {
+    "a": 9,
+    "b": 7,
+    "text": "michael needs a score above 92 for the first time in three weeks. Purdy Seconds to Mars needs a receiver."
+   },
+   {
+    "a": 6,
+    "b": 5,
+    "text": "The luckiest record in the league against one of the two unluckiest."
+   },
+   {
+    "a": 10,
+    "b": 1,
+    "text": "2-5 against 1-6. Both under 7% to make the playoffs."
+   }
+  ]
+ },
+ "og_title": "Week 7 power rankings: Congratulations, Mason",
+ "og_description": "The midpoint, the first playoff odds, and a seating chart. Ben E. is 7-0. Five teams hold the other five spots."
+}
