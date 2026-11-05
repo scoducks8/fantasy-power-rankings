@@ -3,152 +3,14 @@
  "week": 8,
  "provisional": false,
  "league_name": "Chach Champions League",
- "generated_at": "2026-11-03T22:12:26+00:00",
+ "generated_at": "2026-11-05T01:19:20+00:00",
  "weights": {
-  "win_pct": 0.45,
-  "momentum": 0.25,
-  "scoring": 0.2,
+  "win_pct": 0.35,
+  "momentum": 0.4,
+  "scoring": 0.15,
   "luck": 0.1
  },
  "teams": [
-  {
-   "team_id": 2,
-   "name": "Ben's Brilliant Team",
-   "abbrev": "BBT",
-   "owner": "Ben Elton",
-   "logo": "https://g.espncdn.com/lm-static/ffl/images/default_logos/6.svg",
-   "wins": 7,
-   "losses": 1,
-   "ties": 0,
-   "points_for": 1112.88,
-   "points_against": 994.7,
-   "streak": "L1",
-   "all_play_pct": 0.8409,
-   "components": {
-    "win_pct": 0.875,
-    "momentum": 0.5,
-    "scoring": 1.0,
-    "luck": 0.483
-   },
-   "power_score": 0.767,
-   "last_result": {
-    "result": "L",
-    "score": 128.38,
-    "opponent_score": 138.08,
-    "opponent": "Team evil "
-   },
-   "rank": 1,
-   "prev_rank": 1,
-   "movement": 0,
-   "starters": [
-    {
-     "player_id": 4432665,
-     "name": "Brock Bowers",
-     "position": "TE",
-     "slot": "TE",
-     "points": 28.2,
-     "projected": 16.16,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432665.png",
-     "headshot_local": "assets/players/4432665.png"
-    },
-    {
-     "player_id": 4259545,
-     "name": "D'Andre Swift",
-     "position": "RB",
-     "slot": "RB",
-     "points": 27.9,
-     "projected": 14.67,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4259545.png"
-    },
-    {
-     "player_id": 4241416,
-     "name": "Chuba Hubbard",
-     "position": "RB",
-     "slot": "RB",
-     "points": 24.9,
-     "projected": 15.26,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241416.png"
-    },
-    {
-     "player_id": 4430878,
-     "name": "Jaxon Smith-Njigba",
-     "position": "WR",
-     "slot": "WR",
-     "points": 23.8,
-     "projected": 22.06,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430878.png"
-    },
-    {
-     "player_id": 4426348,
-     "name": "Jayden Daniels",
-     "position": "QB",
-     "slot": "QB",
-     "points": 14.98,
-     "projected": 22.8,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426348.png"
-    },
-    {
-     "player_id": 4432620,
-     "name": "Parker Washington",
-     "position": "WR",
-     "slot": "FLEX",
-     "points": 3.6,
-     "projected": 15.95,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432620.png"
-    },
-    {
-     "player_id": 4697745,
-     "name": "Tyler Loop",
-     "position": "K",
-     "slot": "K",
-     "points": 3.0,
-     "projected": 8.88,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4697745.png"
-    },
-    {
-     "player_id": -16004,
-     "name": "Bengals D/ST",
-     "position": "D/ST",
-     "slot": "D/ST",
-     "points": 2.0,
-     "projected": 5.99,
-     "headshot": ""
-    },
-    {
-     "player_id": 4429615,
-     "name": "Zay Flowers",
-     "position": "WR",
-     "slot": "WR",
-     "points": 0.0,
-     "projected": 20.14,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429615.png"
-    }
-   ],
-   "positional": {
-    "TE": 28.2,
-    "RB": 52.8,
-    "WR": 27.4,
-    "QB": 14.98,
-    "K": 3.0,
-    "D/ST": 2.0
-   },
-   "top_scorer": {
-    "player_id": 4432665,
-    "name": "Brock Bowers",
-    "position": "TE",
-    "slot": "TE",
-    "points": 28.2,
-    "projected": 16.16,
-    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432665.png",
-    "headshot_local": "assets/players/4432665.png"
-   },
-   "bench_points": 65.0,
-   "projected_total": 141.91,
-   "logo_local": "assets/logos/2-ben-s-brilliant-team.svg",
-   "week_points": 128.38,
-   "week_proj_diff": -13.53,
-   "all_play": "7-4"
-  },
   {
    "team_id": 8,
    "name": "Dake Bates",
@@ -168,16 +30,16 @@
     "scoring": 0.6364,
     "luck": 0.4205
    },
-   "power_score": 0.7068,
+   "power_score": 0.72,
    "last_result": {
     "result": "W",
     "score": 131.22,
     "opponent_score": 75.0,
     "opponent": "CeeDeez Nutz"
    },
-   "rank": 2,
+   "rank": 1,
    "prev_rank": 4,
-   "movement": 2,
+   "movement": 3,
    "starters": [
     {
      "player_id": 4426515,
@@ -288,6 +150,144 @@
    "all_play": "9-2"
   },
   {
+   "team_id": 2,
+   "name": "Ben's Brilliant Team",
+   "abbrev": "BBT",
+   "owner": "Ben Elton",
+   "logo": "https://g.espncdn.com/lm-static/ffl/images/default_logos/6.svg",
+   "wins": 7,
+   "losses": 1,
+   "ties": 0,
+   "points_for": 1112.88,
+   "points_against": 994.7,
+   "streak": "L1",
+   "all_play_pct": 0.8409,
+   "components": {
+    "win_pct": 0.875,
+    "momentum": 0.5,
+    "scoring": 1.0,
+    "luck": 0.483
+   },
+   "power_score": 0.7045,
+   "last_result": {
+    "result": "L",
+    "score": 128.38,
+    "opponent_score": 138.08,
+    "opponent": "Team evil "
+   },
+   "rank": 2,
+   "prev_rank": 1,
+   "movement": -1,
+   "starters": [
+    {
+     "player_id": 4432665,
+     "name": "Brock Bowers",
+     "position": "TE",
+     "slot": "TE",
+     "points": 28.2,
+     "projected": 16.16,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432665.png",
+     "headshot_local": "assets/players/4432665.png"
+    },
+    {
+     "player_id": 4259545,
+     "name": "D'Andre Swift",
+     "position": "RB",
+     "slot": "RB",
+     "points": 27.9,
+     "projected": 14.67,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4259545.png"
+    },
+    {
+     "player_id": 4241416,
+     "name": "Chuba Hubbard",
+     "position": "RB",
+     "slot": "RB",
+     "points": 24.9,
+     "projected": 15.26,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4241416.png"
+    },
+    {
+     "player_id": 4430878,
+     "name": "Jaxon Smith-Njigba",
+     "position": "WR",
+     "slot": "WR",
+     "points": 23.8,
+     "projected": 22.06,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4430878.png"
+    },
+    {
+     "player_id": 4426348,
+     "name": "Jayden Daniels",
+     "position": "QB",
+     "slot": "QB",
+     "points": 14.98,
+     "projected": 22.8,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426348.png"
+    },
+    {
+     "player_id": 4432620,
+     "name": "Parker Washington",
+     "position": "WR",
+     "slot": "FLEX",
+     "points": 3.6,
+     "projected": 15.95,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432620.png"
+    },
+    {
+     "player_id": 4697745,
+     "name": "Tyler Loop",
+     "position": "K",
+     "slot": "K",
+     "points": 3.0,
+     "projected": 8.88,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4697745.png"
+    },
+    {
+     "player_id": -16004,
+     "name": "Bengals D/ST",
+     "position": "D/ST",
+     "slot": "D/ST",
+     "points": 2.0,
+     "projected": 5.99,
+     "headshot": ""
+    },
+    {
+     "player_id": 4429615,
+     "name": "Zay Flowers",
+     "position": "WR",
+     "slot": "WR",
+     "points": 0.0,
+     "projected": 20.14,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4429615.png"
+    }
+   ],
+   "positional": {
+    "TE": 28.2,
+    "RB": 52.8,
+    "WR": 27.4,
+    "QB": 14.98,
+    "K": 3.0,
+    "D/ST": 2.0
+   },
+   "top_scorer": {
+    "player_id": 4432665,
+    "name": "Brock Bowers",
+    "position": "TE",
+    "slot": "TE",
+    "points": 28.2,
+    "projected": 16.16,
+    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4432665.png",
+    "headshot_local": "assets/players/4432665.png"
+   },
+   "bench_points": 65.0,
+   "projected_total": 141.91,
+   "logo_local": "assets/logos/2-ben-s-brilliant-team.svg",
+   "week_points": 128.38,
+   "week_proj_diff": -13.53,
+   "all_play": "7-4"
+  },
+  {
    "team_id": 4,
    "name": "Cortisol Spyke Weeks",
    "abbrev": "MAXX",
@@ -306,7 +306,7 @@
     "scoring": 0.8182,
     "luck": 0.4659
    },
-   "power_score": 0.6665,
+   "power_score": 0.6681,
    "last_result": {
     "result": "W",
     "score": 130.2,
@@ -426,6 +426,144 @@
    "all_play": "8-3"
   },
   {
+   "team_id": 12,
+   "name": "Team evil ",
+   "abbrev": "KILL",
+   "owner": "kelly brown",
+   "logo": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/fd3192f0-d205-11f1-a617-f9c982b8970e",
+   "wins": 4,
+   "losses": 4,
+   "ties": 0,
+   "points_for": 925.82,
+   "points_against": 977.52,
+   "streak": "W2",
+   "all_play_pct": 0.4886,
+   "components": {
+    "win_pct": 0.5,
+    "momentum": 0.8,
+    "scoring": 0.4545,
+    "luck": 0.4943
+   },
+   "power_score": 0.6126,
+   "last_result": {
+    "result": "W",
+    "score": 138.08,
+    "opponent_score": 128.38,
+    "opponent": "Ben's Brilliant Team"
+   },
+   "rank": 4,
+   "prev_rank": 7,
+   "movement": 3,
+   "starters": [
+    {
+     "player_id": 3915511,
+     "name": "Joe Burrow",
+     "position": "QB",
+     "slot": "QB",
+     "points": 39.48,
+     "projected": 22.88,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915511.png",
+     "headshot_local": "assets/players/3915511.png"
+    },
+    {
+     "player_id": 4239993,
+     "name": "Tee Higgins",
+     "position": "WR",
+     "slot": "WR",
+     "points": 37.5,
+     "projected": 15.49,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239993.png"
+    },
+    {
+     "player_id": -16030,
+     "name": "Jaguars D/ST",
+     "position": "D/ST",
+     "slot": "D/ST",
+     "points": 21.0,
+     "projected": 7.41,
+     "headshot": ""
+    },
+    {
+     "player_id": 4569618,
+     "name": "Garrett Wilson",
+     "position": "WR",
+     "slot": "WR",
+     "points": 14.3,
+     "projected": 14.13,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569618.png"
+    },
+    {
+     "player_id": 5081397,
+     "name": "Dylan Sampson",
+     "position": "RB",
+     "slot": "RB",
+     "points": 12.9,
+     "projected": 6.8,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081397.png"
+    },
+    {
+     "player_id": 3121023,
+     "name": "Dallas Goedert",
+     "position": "TE",
+     "slot": "TE",
+     "points": 7.2,
+     "projected": 10.97,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3121023.png"
+    },
+    {
+     "player_id": 4685382,
+     "name": "Omarion Hampton",
+     "position": "RB",
+     "slot": "RB",
+     "points": 4.7,
+     "projected": 8.15,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685382.png"
+    },
+    {
+     "player_id": 4571557,
+     "name": "Spencer Shrader",
+     "position": "K",
+     "slot": "K",
+     "points": 1.0,
+     "projected": 10.16,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4571557.png"
+    },
+    {
+     "player_id": 4723820,
+     "name": "Omar Cooper Jr.",
+     "position": "WR",
+     "slot": "FLEX",
+     "points": 0.0,
+     "projected": 10.6,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4723820.png"
+    }
+   ],
+   "positional": {
+    "QB": 39.48,
+    "WR": 51.8,
+    "D/ST": 21.0,
+    "RB": 17.6,
+    "TE": 7.2,
+    "K": 1.0
+   },
+   "top_scorer": {
+    "player_id": 3915511,
+    "name": "Joe Burrow",
+    "position": "QB",
+    "slot": "QB",
+    "points": 39.48,
+    "projected": 22.88,
+    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915511.png",
+    "headshot_local": "assets/players/3915511.png"
+   },
+   "bench_points": 29.2,
+   "projected_total": 106.59,
+   "logo_local": "assets/logos/12-team-evil-kelly.png",
+   "week_points": 138.08,
+   "week_proj_diff": 31.49,
+   "all_play": "10-1"
+  },
+  {
    "team_id": 9,
    "name": "michael's Monstrous Team",
    "abbrev": "MMT",
@@ -444,16 +582,16 @@
     "scoring": 0.9091,
     "luck": 0.517
    },
-   "power_score": 0.6398,
+   "power_score": 0.6068,
    "last_result": {
     "result": "W",
     "score": 165.46,
     "opponent_score": 115.9,
     "opponent": "Purdy Seconds to Mars"
    },
-   "rank": 4,
+   "rank": 5,
    "prev_rank": 6,
-   "movement": 2,
+   "movement": 1,
    "starters": [
     {
      "player_id": 4882093,
@@ -582,16 +720,16 @@
     "scoring": 0.7273,
     "luck": 0.4602
    },
-   "power_score": 0.5977,
+   "power_score": 0.5739,
    "last_result": {
     "result": "L",
     "score": 75.0,
     "opponent_score": 131.22,
     "opponent": "Dake Bates"
    },
-   "rank": 5,
+   "rank": 6,
    "prev_rank": 2,
-   "movement": -3,
+   "movement": -4,
    "starters": [
     {
      "player_id": 4248528,
@@ -702,142 +840,132 @@
    "all_play": "0-11"
   },
   {
-   "team_id": 12,
-   "name": "Team evil ",
-   "abbrev": "KILL",
-   "owner": "kelly brown",
-   "logo": "https://mystique-api.fantasy.espn.com/apis/v1/domains/lm/images/fd3192f0-d205-11f1-a617-f9c982b8970e",
+   "team_id": 6,
+   "name": "Bingo Night",
+   "abbrev": "TCAT",
+   "owner": "Thomas Fowler",
+   "logo": "https://g.espncdn.com/lm-static/ffl/images/default_logos/14.svg",
    "wins": 4,
    "losses": 4,
    "ties": 0,
-   "points_for": 925.82,
-   "points_against": 977.52,
+   "points_for": 746.66,
+   "points_against": 859.92,
    "streak": "W2",
-   "all_play_pct": 0.4886,
+   "all_play_pct": 0.1932,
    "components": {
     "win_pct": 0.5,
     "momentum": 0.8,
-    "scoring": 0.4545,
-    "luck": 0.4943
+    "scoring": 0.0,
+    "luck": 0.3466
    },
-   "power_score": 0.5653,
+   "power_score": 0.5297,
    "last_result": {
     "result": "W",
-    "score": 138.08,
-    "opponent_score": 128.38,
-    "opponent": "Ben's Brilliant Team"
+    "score": 91.56,
+    "opponent_score": 88.08,
+    "opponent": "Adams and Jefferson"
    },
-   "rank": 6,
-   "prev_rank": 7,
+   "rank": 7,
+   "prev_rank": 8,
    "movement": 1,
    "starters": [
     {
-     "player_id": 3915511,
-     "name": "Joe Burrow",
-     "position": "QB",
-     "slot": "QB",
-     "points": 39.48,
-     "projected": 22.88,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915511.png",
-     "headshot_local": "assets/players/3915511.png"
-    },
-    {
-     "player_id": 4239993,
-     "name": "Tee Higgins",
+     "player_id": 4426388,
+     "name": "Jameson Williams",
      "position": "WR",
      "slot": "WR",
-     "points": 37.5,
-     "projected": 15.49,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4239993.png"
+     "points": 17.0,
+     "projected": 11.1,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426388.png",
+     "headshot_local": "assets/players/4426388.png"
     },
     {
-     "player_id": -16030,
-     "name": "Jaguars D/ST",
-     "position": "D/ST",
-     "slot": "D/ST",
-     "points": 21.0,
-     "projected": 7.41,
-     "headshot": ""
-    },
-    {
-     "player_id": 4569618,
-     "name": "Garrett Wilson",
+     "player_id": 4612826,
+     "name": "Ladd McConkey",
      "position": "WR",
      "slot": "WR",
-     "points": 14.3,
-     "projected": 14.13,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569618.png"
+     "points": 12.6,
+     "projected": 10.37,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4612826.png"
     },
     {
-     "player_id": 5081397,
-     "name": "Dylan Sampson",
+     "player_id": 3929630,
+     "name": "Saquon Barkley",
      "position": "RB",
      "slot": "RB",
-     "points": 12.9,
-     "projected": 6.8,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081397.png"
+     "points": 12.4,
+     "projected": 14.03,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3929630.png"
     },
     {
-     "player_id": 3121023,
-     "name": "Dallas Goedert",
-     "position": "TE",
-     "slot": "TE",
-     "points": 7.2,
-     "projected": 10.97,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3121023.png"
-    },
-    {
-     "player_id": 4685382,
-     "name": "Omarion Hampton",
+     "player_id": 4569173,
+     "name": "Rhamondre Stevenson",
      "position": "RB",
      "slot": "RB",
-     "points": 4.7,
-     "projected": 8.15,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4685382.png"
+     "points": 12.0,
+     "projected": 15.72,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569173.png"
     },
     {
-     "player_id": 4571557,
-     "name": "Spencer Shrader",
+     "player_id": 3150744,
+     "name": "Chase McLaughlin",
      "position": "K",
      "slot": "K",
-     "points": 1.0,
-     "projected": 10.16,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4571557.png"
+     "points": 12.0,
+     "projected": 9.45,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3150744.png"
     },
     {
-     "player_id": 4723820,
-     "name": "Omar Cooper Jr.",
+     "player_id": 15847,
+     "name": "Travis Kelce",
+     "position": "TE",
+     "slot": "TE",
+     "points": 11.7,
+     "projected": 9.3,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15847.png"
+    },
+    {
+     "player_id": 5081432,
+     "name": "Antonio Williams",
      "position": "WR",
      "slot": "FLEX",
-     "points": 0.0,
-     "projected": 10.6,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4723820.png"
+     "points": 10.4,
+     "projected": 8.16,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081432.png"
+    },
+    {
+     "player_id": 2578570,
+     "name": "Jacoby Brissett",
+     "position": "QB",
+     "slot": "QB",
+     "points": 3.46,
+     "projected": 15.56,
+     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2578570.png"
     }
    ],
    "positional": {
-    "QB": 39.48,
-    "WR": 51.8,
-    "D/ST": 21.0,
-    "RB": 17.6,
-    "TE": 7.2,
-    "K": 1.0
+    "WR": 40.0,
+    "RB": 24.4,
+    "K": 12.0,
+    "TE": 11.7,
+    "QB": 3.46
    },
    "top_scorer": {
-    "player_id": 3915511,
-    "name": "Joe Burrow",
-    "position": "QB",
-    "slot": "QB",
-    "points": 39.48,
-    "projected": 22.88,
-    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3915511.png",
-    "headshot_local": "assets/players/3915511.png"
+    "player_id": 4426388,
+    "name": "Jameson Williams",
+    "position": "WR",
+    "slot": "WR",
+    "points": 17.0,
+    "projected": 11.1,
+    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426388.png",
+    "headshot_local": "assets/players/4426388.png"
    },
-   "bench_points": 29.2,
-   "projected_total": 106.59,
-   "logo_local": "assets/logos/12-team-evil.svg",
-   "week_points": 138.08,
-   "week_proj_diff": 31.49,
-   "all_play": "10-1"
+   "bench_points": 27.06,
+   "projected_total": 93.69,
+   "logo_local": "assets/logos/6-bingo-night.svg",
+   "week_points": 91.56,
+   "week_proj_diff": -2.13,
+   "all_play": "2-9"
   },
   {
    "team_id": 11,
@@ -858,16 +986,16 @@
     "scoring": 0.2727,
     "luck": 0.4261
    },
-   "power_score": 0.5034,
+   "power_score": 0.5023,
    "last_result": {
     "result": "L",
     "score": 101.96,
     "opponent_score": 130.2,
     "opponent": "Cortisol Spyke Weeks"
    },
-   "rank": 7,
+   "rank": 8,
    "prev_rank": 3,
-   "movement": -4,
+   "movement": -5,
    "starters": [
     {
      "player_id": 4685247,
@@ -978,134 +1106,6 @@
    "all_play": "4-7"
   },
   {
-   "team_id": 6,
-   "name": "Bingo Night",
-   "abbrev": "TCAT",
-   "owner": "Thomas Fowler",
-   "logo": "https://g.espncdn.com/lm-static/ffl/images/default_logos/14.svg",
-   "wins": 4,
-   "losses": 4,
-   "ties": 0,
-   "points_for": 746.66,
-   "points_against": 859.92,
-   "streak": "W2",
-   "all_play_pct": 0.1932,
-   "components": {
-    "win_pct": 0.5,
-    "momentum": 0.8,
-    "scoring": 0.0,
-    "luck": 0.3466
-   },
-   "power_score": 0.4597,
-   "last_result": {
-    "result": "W",
-    "score": 91.56,
-    "opponent_score": 88.08,
-    "opponent": "Adams and Jefferson"
-   },
-   "rank": 8,
-   "prev_rank": 8,
-   "movement": 0,
-   "starters": [
-    {
-     "player_id": 4426388,
-     "name": "Jameson Williams",
-     "position": "WR",
-     "slot": "WR",
-     "points": 17.0,
-     "projected": 11.1,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426388.png",
-     "headshot_local": "assets/players/4426388.png"
-    },
-    {
-     "player_id": 4612826,
-     "name": "Ladd McConkey",
-     "position": "WR",
-     "slot": "WR",
-     "points": 12.6,
-     "projected": 10.37,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4612826.png"
-    },
-    {
-     "player_id": 3929630,
-     "name": "Saquon Barkley",
-     "position": "RB",
-     "slot": "RB",
-     "points": 12.4,
-     "projected": 14.03,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3929630.png"
-    },
-    {
-     "player_id": 4569173,
-     "name": "Rhamondre Stevenson",
-     "position": "RB",
-     "slot": "RB",
-     "points": 12.0,
-     "projected": 15.72,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4569173.png"
-    },
-    {
-     "player_id": 3150744,
-     "name": "Chase McLaughlin",
-     "position": "K",
-     "slot": "K",
-     "points": 12.0,
-     "projected": 9.45,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/3150744.png"
-    },
-    {
-     "player_id": 15847,
-     "name": "Travis Kelce",
-     "position": "TE",
-     "slot": "TE",
-     "points": 11.7,
-     "projected": 9.3,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/15847.png"
-    },
-    {
-     "player_id": 5081432,
-     "name": "Antonio Williams",
-     "position": "WR",
-     "slot": "FLEX",
-     "points": 10.4,
-     "projected": 8.16,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/5081432.png"
-    },
-    {
-     "player_id": 2578570,
-     "name": "Jacoby Brissett",
-     "position": "QB",
-     "slot": "QB",
-     "points": 3.46,
-     "projected": 15.56,
-     "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/2578570.png"
-    }
-   ],
-   "positional": {
-    "WR": 40.0,
-    "RB": 24.4,
-    "K": 12.0,
-    "TE": 11.7,
-    "QB": 3.46
-   },
-   "top_scorer": {
-    "player_id": 4426388,
-    "name": "Jameson Williams",
-    "position": "WR",
-    "slot": "WR",
-    "points": 17.0,
-    "projected": 11.1,
-    "headshot": "https://a.espncdn.com/i/headshots/nfl/players/full/4426388.png",
-    "headshot_local": "assets/players/4426388.png"
-   },
-   "bench_points": 27.06,
-   "projected_total": 93.69,
-   "logo_local": "assets/logos/6-bingo-night.svg",
-   "week_points": 91.56,
-   "week_proj_diff": -2.13,
-   "all_play": "2-9"
-  },
-  {
    "team_id": 10,
    "name": "roadrunners",
    "abbrev": "rr5",
@@ -1124,7 +1124,7 @@
     "scoring": 0.1818,
     "luck": 0.5
    },
-   "power_score": 0.4301,
+   "power_score": 0.4885,
    "last_result": {
     "result": "W",
     "score": 116.5,
@@ -1262,7 +1262,7 @@
     "scoring": 0.3636,
     "luck": 0.6648
    },
-   "power_score": 0.2455,
+   "power_score": 0.2448,
    "last_result": {
     "result": "L",
     "score": 96.6,
@@ -1400,7 +1400,7 @@
     "scoring": 0.5455,
     "luck": 0.6534
    },
-   "power_score": 0.2307,
+   "power_score": 0.1909,
    "last_result": {
     "result": "L",
     "score": 88.08,
@@ -1538,7 +1538,7 @@
     "scoring": 0.0909,
     "luck": 0.5682
    },
-   "power_score": 0.1875,
+   "power_score": 0.158,
    "last_result": {
     "result": "L",
     "score": 115.9,
@@ -1688,7 +1688,7 @@
    "total": 266.46,
    "winner": "HOME",
    "final": true,
-   "home_logo": "assets/logos/12-team-evil.svg",
+   "home_logo": "assets/logos/12-team-evil-kelly.png",
    "away_logo": "assets/logos/2-ben-s-brilliant-team.svg"
   },
   {

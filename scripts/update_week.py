@@ -86,6 +86,37 @@ def fallback_avatar(label: str, subdir: str, name: str) -> str:
 
 
 
+
+LOGO_OVERRIDES = DATA_DIR / "logo-overrides.json"
+
+
+def logo_for(t: dict, slug: str) -> str:
+    """Cached logo path for a team, one file per distinct logo URL.
+
+    Each logo URL gets its own file (slug plus a short hash), so a manager
+    changing their logo never rewrites the image older week pages point to.
+    data/logo-overrides.json maps team_id to a file in docs/assets/logos for
+    custom uploads ESPN won't serve to servers; drop the image in, add the
+    mapping, and every week from then on uses it.
+    """
+    import hashlib
+    try:
+        overrides = json.loads(LOGO_OVERRIDES.read_text()) if LOGO_OVERRIDES.exists() else {}
+    except json.JSONDecodeError:
+        overrides = {}
+    o = overrides.get(str(t.get("team_id")))
+    if o and (IMG_DIR / "logos" / o).exists():
+        return f"assets/logos/{o}"
+    url = t.get("logo", "")
+    name = f"{slug}-{hashlib.sha1(url.encode()).hexdigest()[:6]}" if url else slug
+    got = cache_image(url, "logos", name)
+    if got:
+        return got
+    tile = IMG_DIR / "logos" / f"{name}.svg"
+    if tile.exists():
+        return f"assets/logos/{name}.svg"
+    return fallback_avatar(t.get("owner") or t.get("name", ""), "logos", name)
+
 def save_schedule(base: dict) -> None:
     """Record season length, playoff size and the full schedule (for midseason outlook)."""
     try:
@@ -181,8 +212,7 @@ def main() -> int:
         t["projected_total"] = d.get("projected_total")
 
         slug = f'{t["team_id"]}-{slugify(t["name"])}'
-        t["logo_local"] = (cache_image(t.get("logo", ""), "logos", slug)
-                           or fallback_avatar(t["owner"] or t["name"], "logos", slug))
+        t["logo_local"] = logo_for(t, slug)
         top = t.get("top_scorer")
         if top and top.get("headshot"):
             top["headshot_local"] = cache_image(

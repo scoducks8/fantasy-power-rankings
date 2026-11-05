@@ -972,7 +972,7 @@
    },
    "bench_points": 51.7,
    "projected_total": 115.22,
-   "logo_local": "assets/logos/12-team-evil.svg",
+   "logo_local": "assets/logos/12-team-evil-kelly.png",
    "week_points": 109.88,
    "week_proj_diff": -5.34,
    "all_play": "5-6"
@@ -1683,7 +1683,7 @@
    "winner": "AWAY",
    "final": true,
    "home_logo": "assets/logos/5-adams-and-jefferson.svg",
-   "away_logo": "assets/logos/12-team-evil.svg"
+   "away_logo": "assets/logos/12-team-evil-kelly.png"
   },
   {
    "home_id": 2,

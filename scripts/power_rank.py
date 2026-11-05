@@ -16,12 +16,15 @@ from pathlib import Path
 # the priority order we want once it actually means something.
 #
 #            week 1                     week 6+
-#   record     0.25  ---------------->    0.45
-#   momentum   0.10  ---------------->    0.25
-#   scoring    0.55  ---------------->    0.20
+#   record     0.25  ---------------->    0.35
+#   momentum   0.10  ---------------->    0.40
+#   scoring    0.55  ---------------->    0.15
 #   luck       0.10  (constant)           0.10
+#
+# From week 8 on, momentum (last three results, newest weighted most) counts a
+# little more than record, so a hot team can pass a cold one ahead of it.
 WEIGHT_START = {"win_pct": 0.25, "momentum": 0.10, "scoring": 0.55, "luck": 0.10}
-WEIGHT_MATURE = {"win_pct": 0.45, "momentum": 0.25, "scoring": 0.20, "luck": 0.10}
+WEIGHT_MATURE = {"win_pct": 0.35, "momentum": 0.40, "scoring": 0.15, "luck": 0.10}
 RAMP_WEEKS = 6
 
 

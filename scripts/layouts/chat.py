@@ -17,7 +17,7 @@ e = html.escape
 POS = ["QB", "RB", "WR", "TE", "K", "D/ST"]
 POS_NAME = {"QB": "QB", "RB": "RB", "WR": "WR", "TE": "TE", "K": "K", "D/ST": "DEF"}
 PCLS = {"QB": "qb", "RB": "rb", "WR": "wr", "TE": "te", "K": "k", "D/ST": "dst"}
-ROLES = [("SIGMA 🗿", "r0"), ("RIZZLER 😏", "r1"), ("NPC 🤖", "r2"), ("OHIO 🌽", "r3")]
+ROLES = [("SIGMA 🗿", "r0"), ("RIZZLER 😏", "r1"), ("NPC 🤖", "r2"), ("GOOFY AHH 🤡", "r3")]
 EMOJI = ["💀", "😭", "🔥", "🗿", "😂", "🫡", "🤡", "📉", "📈", "👀", "🙏", "😤"]
 
 
