@@ -490,16 +490,95 @@ h1{{font:600 76px/1.05 C,serif;color:#b08d57}}
 <div class="f">The midpoint &middot; Playoff odds inside</div>
 </div></body></html>"""
 
+
+def build_mlg(week: int, copy_path: str) -> str:
+    """MLG montage card: deep-fried gradient, meme headline, WASTED stamp, killfeed."""
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    fonts = f"{(ROOT / 'docs').as_uri()}/assets/fonts"
+    by = {t["team_id"]: t for t in d["teams"]}
+    firsts = [t["owner"].split()[0] for t in d["teams"]]
+    def nm(t):
+        f = t["owner"].split()[0]
+        return f + (" " + t["owner"].split()[-1][0] + "." if firsts.count(f) > 1 else "")
+    feed = ""
+    for m in sorted(d["matchups"], key=lambda m: m["margin"])[:4]:
+        hw = m["winner"] == "HOME"
+        w, l = by[m["home_id"] if hw else m["away_id"]], by[m["away_id"] if hw else m["home_id"]]
+        feed += f'<li><span class="w">{e(nm(w))}</span> &#128299; <span class="l">{e(nm(l))}</span></li>'
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:A;src:url({fonts}/anton-latin-400-normal.woff2)}}
+@font-face{{font-family:P;src:url({fonts}/press-start-2p-latin-400-normal.woff2)}}
+@font-face{{font-family:M;src:url({fonts}/permanent-marker-latin-400-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;position:relative;color:#fff;
+  background:radial-gradient(ellipse at 15% 10%,rgba(255,106,0,.7),transparent 55%),radial-gradient(ellipse at 85% 30%,rgba(57,255,20,.55),transparent 55%),
+  radial-gradient(ellipse at 50% 110%,rgba(255,0,230,.6),transparent 60%),#07070a;padding:56px 64px}}
+.k{{font:400 18px/1 P,monospace;color:#39ff14}}
+h1{{margin-top:26px;font:400 118px/.92 A,Impact,sans-serif;text-transform:uppercase;-webkit-text-stroke:4px #000;paint-order:stroke fill;
+  text-shadow:6px 6px 0 #ff00e6,12px 12px 0 #00e5ff;transform:rotate(-2deg);max-width:760px}}
+.s{{margin-top:30px;font:400 40px/1 M,cursive;color:#ffe600;transform:rotate(-3deg)}}
+.w2{{position:absolute;right:40px;top:150px;transform:rotate(-14deg);font:400 120px/1 A,Impact;color:#e0101f;-webkit-text-stroke:4px #000;paint-order:stroke fill;
+  background:rgba(0,0,0,.5);padding:4px 24px;border-top:5px solid #000;border-bottom:5px solid #000}}
+ul{{position:absolute;right:48px;bottom:48px;list-style:none;display:grid;gap:8px}}
+li{{padding:10px 14px;background:rgba(0,0,0,.75);border-left:5px solid #ff1744;font:400 16px/1 P,monospace;text-align:right}}
+.w{{color:#39ff14}}.l{{color:#ff1744}}
+</style></head><body>
+<div class="k">WEEK {week} POWER RANKINGS // MLG</div>
+<h1>{e(c.get("headline", ""))}</h1>
+<div class="s">{e(c.get("headline_sub", ""))}</div>
+{'<div class="w2">WASTED</div>' if c.get("wasted_team") else ''}
+<ul>{feed}</ul>
+</body></html>"""
+
+
+def build_chat(week: int, copy_path: str) -> str:
+    """Group chat card: a pinned bot message with the headline and reactions."""
+    d = json.loads((ROOT / "data" / f"week-{week}.json").read_text())
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    docs = (ROOT / "docs").as_uri()
+    fonts = f"{docs}/assets/fonts"
+    by = {t["team_id"]: t for t in d["teams"]}
+    reacts = c.get("reactions", {}).get(str(c.get("wasted_team")), [["\U0001F480", 99]])
+    rx = "".join(f'<span class="re">{em} <b>{n}</b></span>' for em, n in reacts[:4])
+    logos = "".join(f'<img src="{docs}/{t["logo_local"]}">' for t in sorted(d["teams"], key=lambda t: t["rank"])[:7] if t.get("logo_local"))
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:I;font-weight:600;src:url({fonts}/inter-latin-600-normal.woff2)}}
+@font-face{{font-family:I;font-weight:700;src:url({fonts}/inter-latin-700-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;background:#2b2d31;color:#f2f3f5;font-family:I,system-ui,sans-serif;display:grid;grid-template-columns:96px 1fr}}
+.rail{{background:#1a1b1e;display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 0}}
+.rail img,.rail .h{{width:60px;height:60px;border-radius:50%;object-fit:cover}}
+.rail .h{{border-radius:18px;background:#7c6cf2;display:grid;place-items:center;font-weight:700;font-size:18px}}
+.m{{padding:28px 48px}}
+.top{{font-size:28px;font-weight:700;color:#c4c9ce;padding-bottom:18px;border-bottom:2px solid #1e1f22}}
+.top span{{color:#80848e}}
+.msg{{display:grid;grid-template-columns:72px 1fr;gap:22px;margin-top:30px;padding:22px 24px;background:rgba(240,178,50,.08);border-left:5px solid #f0b232}}
+.av{{width:72px;height:72px;border-radius:50%;background:#7c6cf2;display:grid;place-items:center;font-size:38px}}
+.n{{font-size:26px;font-weight:700;color:#a8a0ff}} .n i{{font-style:normal;margin-left:10px;padding:2px 8px;border-radius:5px;background:#7c6cf2;color:#fff;font-size:16px}}
+.p{{display:inline-block;margin-top:10px;padding:0 6px;border-radius:4px;background:rgba(124,108,242,.3);color:#c9c2ff;font-size:24px;font-weight:600}}
+h1{{margin-top:10px;font-size:78px;line-height:1.02;font-weight:700;letter-spacing:-.02em}}
+.rx{{margin-top:18px;display:flex;gap:10px}}
+.re{{padding:6px 14px;border-radius:12px;background:rgba(124,108,242,.22);border:2px solid #7c6cf2;font-size:24px}} .re b{{font-size:20px;color:#c9c2ff}}
+</style></head><body>
+<div class="rail"><div class="h">CCL</div>{logos}</div>
+<div class="m"><div class="top"><span>#</span> week-{week} &middot; power-rankings</div>
+<div class="msg"><div class="av">&#129302;</div><div><div class="n">ChachBot<i>BOT</i></div><div class="p">@everyone</div>
+<h1>{e(c.get("headline", ""))}</h1><div class="rx">{rx}</div></div></div></div>
+</body></html>"""
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", type=int, required=True)
     ap.add_argument("--copy", default="")
     ap.add_argument("--out", default="")
-    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy", "wedding"])
+    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy", "wedding", "mlg", "chat"])
     a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "docs" / f"og-week-{a.week}.png"
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
-        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy, "wedding": build_wedding}.get(a.style, build)
+        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy, "wedding": build_wedding, "mlg": build_mlg, "chat": build_chat}.get(a.style, build)
         fh.write(builder(a.week, a.copy))
         src = fh.name
     js = f'''const {{chromium}}=require('playwright');(async()=>{{

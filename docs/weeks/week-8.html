@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-name" content="Group chat" />
+<meta name="color-scheme" content="dark" />
+<title>Week 8 power rankings &middot; Chach Champions League</title>
+<meta name="description" content="kelly locked in 🔒 first L of the szn 📉 -10000000 aura. #power-rankings just dropped" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Chach Champions League" />
+<meta property="og:url" content="https://scoducks8.github.io/fantasy-power-rankings/weeks/week-8.html" />
+<meta property="og:title" content="Week 8: BEN E. GOT FANUM TAXED 🌽" />
+<meta property="og:description" content="kelly locked in 🔒 first L of the szn 📉 -10000000 aura. #power-rankings just dropped" />
+<meta property="og:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-week-8.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-week-8.png" />
+<style>@font-face{font-family:Inter;font-weight:400;src:url(../assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:500;src:url(../assets/fonts/inter-latin-500-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:600;src:url(../assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:700;src:url(../assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-display:swap}
+
+:root{
+  --rail:#1a1b1e;--side:#232428;--bg:#2b2d31;--msg-h:#2e3035;--embed:#25262b;--hair:#3a3c42;
+  --ink:#f2f3f5;--ink2:#c4c9ce;--muted:#949ba4;--link:#00a8fc;--accent:#7c6cf2;
+  --green:#23a55a;--red:#f23f43;--yel:#f0b232;--pink:#eb459e;
+  --r0:#f0b232;--r1:#eb459e;--r2:#7c8a9a;--r3:#3ba55c;
+  --qb:#f87171;--rb:#fbbf24;--wr:#34d399;--te:#60a5fa;--k:#c084fc;--dst:#e5e7eb;
+  --body:Inter,"gg sans","Noto Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45;-webkit-font-smoothing:antialiased}
+a{color:var(--link)}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit}
+
+.app{display:grid;grid-template-columns:72px 240px minmax(0,1fr) 240px;min-height:100vh}
+
+/* server rail */
+.rail{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--rail);padding:12px 0;display:flex;flex-direction:column;align-items:center;gap:8px;scrollbar-width:none}
+.rail .home{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:700;font-size:14px;text-decoration:none}
+.rail .sep{width:32px;height:2px;background:var(--hair);border-radius:1px;margin:2px 0}
+.sv{position:relative;width:48px;height:48px;border-radius:50%;overflow:hidden;transition:border-radius .15s;background:var(--side)}
+.sv:hover{border-radius:16px}
+.sv img{width:100%;height:100%;object-fit:cover}
+
+/* channel sidebar */
+.side{position:sticky;top:0;height:100vh;background:var(--side);display:flex;flex-direction:column}
+.sname{padding:14px 16px;font-weight:700;border-bottom:1px solid #1e1f22;box-shadow:0 1px 0 rgba(0,0,0,.2);display:flex;justify-content:space-between}
+.cat{margin:18px 8px 4px 16px;font-size:12px;font-weight:700;letter-spacing:.02em;color:var(--muted)}
+.chans{display:flex;flex-direction:column;padding:0 8px;gap:2px}
+.chans a{display:flex;gap:6px;padding:6px 8px;border-radius:4px;color:var(--muted);text-decoration:none;font-weight:500}
+.chans a span{font-size:20px;line-height:1;color:#80848e}
+.chans a:hover{background:#35373c;color:var(--ink)}
+.me{margin-top:auto;display:flex;gap:8px;align-items:center;padding:10px 12px;background:#1e1f22}
+.me small{display:block;color:var(--muted);font-size:12px}
+.bubble{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--accent);font-size:16px}
+
+/* main */
+.main{min-width:0;background:var(--bg)}
+.topbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:8px;padding:12px 16px;background:var(--bg);border-bottom:1px solid #1e1f22;box-shadow:0 1px 0 rgba(0,0,0,.2);font-weight:700}
+.topbar .back{display:none}
+.hash{color:#80848e;font-size:22px;font-weight:500;line-height:1}
+.topic{margin-left:10px;padding-left:12px;border-left:1px solid var(--hair);font-weight:500;font-size:14px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chips{display:none}
+.chan{padding:8px 0 20px}
+.chh{display:flex;align-items:center;gap:6px;margin:20px 16px 4px;font-size:24px;font-weight:700}
+.chh .hash{font-size:30px}
+.chh .topic{font-size:14px}
+.divider{display:flex;align-items:center;margin:14px 16px 8px;color:var(--muted);font-size:12px;font-weight:600}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--hair)}
+.divider span{padding:0 8px}
+
+/* messages */
+.msg{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:16px;padding:6px 16px 8px;margin-top:10px}
+.msg:hover{background:var(--msg-h)}
+.msg.pinned{background:rgba(240,178,50,.08);border-left:3px solid var(--yel);padding-left:13px}
+.ava{width:40px;height:40px;border-radius:50%;object-fit:cover;grid-row:span 3}
+.ava.bot{display:grid;place-items:center;background:var(--accent);font-size:20px}
+.mb{min-width:0}
+.mh{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.un{font-weight:600}
+.botn{color:#a8a0ff}
+.tag{padding:1px 5px;border-radius:3px;background:var(--accent);color:#fff;font-size:10px;font-weight:700}
+.role{padding:2px 7px;border-radius:10px;font-size:11.5px;font-weight:700;background:rgba(255,255,255,.06)}
+.role.r0,.members b.r0{color:var(--r0)}.role.r1,.members b.r1{color:var(--r1)}.role.r2,.members b.r2{color:var(--r2)}.role.r3,.members b.r3{color:var(--r3)}
+.ts{font-size:12px;color:var(--muted)}
+.mt{margin:4px 0 0;color:var(--ink2);overflow-wrap:anywhere}
+.mt.big{font-size:17px;line-height:1.55;color:var(--ink)}
+.ping{display:inline-block;margin:6px 0 0;padding:0 3px;border-radius:3px;background:rgba(124,108,242,.3);color:#c9c2ff;font-weight:600}
+.msg h1{margin:6px 0 4px;font-size:clamp(30px,6vw,50px);line-height:1.05;font-weight:700;letter-spacing:-.02em}
+.reply{grid-column:1/-1;display:flex;align-items:center;gap:6px;margin:0 0 4px 20px;font-size:13.5px;color:var(--muted);white-space:nowrap;overflow:hidden}
+.reply .rl{width:30px;height:12px;border-left:2px solid #4e5058;border-top:2px solid #4e5058;border-top-left-radius:6px;margin-top:8px;flex:none}
+.reply img{width:16px;height:16px;border-radius:50%}
+.reply b{color:var(--ink2)}
+.reply span{overflow:hidden;text-overflow:ellipsis}
+
+/* team embed card */
+.card{position:relative;max-width:520px;margin-top:8px;padding:12px 14px;background:var(--embed);border-left:4px solid var(--accent);border-radius:4px;overflow:hidden}
+.msg.team:nth-of-type(n) .card{border-left-color:var(--accent)}
+.isw .card{border-left-color:var(--red)}
+.cooked{display:inline-block;margin:0 0 8px;padding:3px 10px;border:2px solid var(--red);border-radius:6px;color:var(--red);font-weight:800;font-size:13px;transform:rotate(6deg);background:rgba(242,63,67,.08)}
+.ch{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center}
+.rk{font-size:26px;font-weight:800}
+.cn{margin:0;font-size:14px;color:var(--ink2)}
+.mv{display:inline-block;margin-top:4px;padding:2px 8px;border-radius:10px;font-size:12px;font-weight:700}
+.mv.up{background:rgba(35,165,90,.18);color:#57d68d}.mv.dn{background:rgba(242,63,67,.18);color:#ff7a7d}.mv.eq{background:rgba(255,255,255,.06);color:var(--muted)}
+.cp{margin:0;text-align:right}
+.cp b{display:block;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.cp span{font-size:11px;color:var(--muted)}
+.bar{display:flex;gap:2px;height:8px;margin:10px 0 0;border-radius:4px;overflow:hidden;background:#1e1f22;cursor:default}
+.seg{display:block;height:100%}
+.seg.qb,.qb{background:var(--qb)}.seg.rb,.rb{background:var(--rb)}.seg.wr,.wr{background:var(--wr)}.seg.te,.te{background:var(--te)}.seg.k,.k{background:var(--k)}.seg.dst,.dst{background:var(--dst)}
+.mvp{display:flex;align-items:center;gap:8px;margin:10px 0 0;font-size:13px;color:var(--muted)}
+.mvp img{width:24px;height:24px;border-radius:50%;object-fit:cover;background:#1e1f22}
+.mvp b{color:var(--ink)}
+
+/* reactions */
+.reacts{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.re{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:8px;border:1px solid transparent;background:#35373c;cursor:pointer;font-size:14px}
+.re b{font-size:13px;font-weight:600;color:var(--ink2)}
+.re[aria-pressed="true"]{background:rgba(124,108,242,.22);border-color:var(--accent)}
+.re[aria-pressed="true"] b{color:#c9c2ff}
+.re.add{color:var(--muted);opacity:0;transition:opacity .1s}
+.msg:hover .re.add,.re.add:focus{opacity:1}
+
+/* bot embeds */
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 0;font-size:12px;font-weight:600;color:var(--muted)}
+.lk{display:inline-flex;align-items:center;gap:5px}
+.sw,.key{display:inline-block;width:10px;height:10px;border-radius:3px}
+.embeds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:8px;max-width:760px}
+.embed{padding:10px 12px;background:var(--embed);border-left:4px solid #4e5058;border-radius:4px;min-width:0}
+.embed.hot{grid-column:1/-1;border-left-color:var(--red)}
+.embed.close{border-left-color:var(--yel)}
+.embed.blow{border-left-color:var(--pink)}
+.embed.ok{border-left-color:var(--green)}
+.et{margin:0 0 6px;font-size:13px;font-weight:700}
+.embed.hot .et{color:#ff7a7d}.embed.close .et{color:var(--yel)}.embed.blow .et{color:var(--pink)}
+.er{display:grid;grid-template-columns:22px minmax(0,1fr) auto 20px;gap:8px;align-items:center;padding:3px 0;color:var(--muted)}
+.er.win{color:var(--ink)}
+.er img{width:22px;height:22px;border-radius:50%;object-fit:cover}
+.er .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+.er b{font-variant-numeric:tabular-nums}
+.wl{font-size:11px;font-weight:800;text-align:center;border-radius:3px;padding:1px 0}
+.wl.w{background:rgba(35,165,90,.25);color:#57d68d}.wl.l{background:rgba(242,63,67,.2);color:#ff7a7d}
+.ef{margin:6px 0 0;font-size:12px;color:var(--muted)}
+.nxm{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-weight:600}
+.nxm img{width:20px;height:20px;border-radius:50%;object-fit:cover}
+.nxm span{color:var(--muted);font-weight:500}
+.nxm i{font-style:normal;color:var(--muted);font-size:13px}
+.nxt{margin:6px 0 0;color:var(--ink2)}
+
+/* poll */
+.poll{max-width:560px;margin-top:8px;padding:14px;background:var(--embed);border-radius:8px;border:1px solid var(--hair)}
+.pq{margin:0 0 10px;font-weight:700}
+.pos{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.po{position:relative;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;border-radius:6px;background:#1e1f22;overflow:hidden}
+.pf{position:absolute;left:0;top:0;bottom:0;background:rgba(124,108,242,.35)}
+.pl{position:relative;display:flex;align-items:center;gap:8px;min-width:0;font-weight:600;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pl img{width:20px;height:20px;border-radius:50%;object-fit:cover;flex:none}
+.pl small{color:var(--muted);font-weight:500}
+.po b{position:relative}
+.pn{margin:10px 0 0;font-size:12px;color:var(--muted)}
+
+/* loadout + grind */
+.pchart{display:grid;gap:7px;max-width:760px;margin-top:8px;padding:12px;background:var(--embed);border-radius:6px}
+.prow{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;align-items:center;outline:none}
+.pn2{font-size:13px;font-weight:600;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pt{display:flex;align-items:center;gap:8px;min-width:0}
+.ps{display:flex;gap:2px;height:16px;border-radius:3px;overflow:hidden}
+.pv{font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.prow:hover .ps,.prow:focus .ps{outline:2px solid var(--accent);outline-offset:2px}
+.tview{margin-top:10px}
+.tview summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--link)}
+.twrap{overflow-x:auto;margin-top:8px;max-width:760px}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums;background:var(--embed)}
+th,td{padding:7px 9px;border-bottom:1px solid var(--hair);text-align:right}
+th:first-child{text-align:left}
+thead th{font-size:11px;color:var(--muted)}
+td.tot{font-weight:700}
+.bumpwrap{max-width:760px;margin:8px 0 0;padding:12px;background:var(--embed);border-radius:6px}
+.bump{width:100%;height:auto;display:block}
+.bump .grid{stroke:var(--hair)}
+.bump .wkl,.bump .ax{fill:var(--muted);font:600 11px var(--body)}
+.ln .hit{stroke:transparent;stroke-width:14;fill:none}
+.ln .stroke{stroke:var(--c);stroke-width:2.5;fill:none}
+.ln circle{fill:var(--embed);stroke:var(--c);stroke-width:2}
+.ln text{fill:var(--c);font:600 12px var(--body)}
+.bump.focus .ln{opacity:.15}.bump.focus .ln.on{opacity:1}
+.bump.focus .ln.on .stroke{stroke-width:4}
+.ln{outline:none;cursor:pointer;transition:opacity .15s}
+.bumpwrap figcaption{margin-top:8px;font-size:12px;color:var(--muted)}
+
+/* typing + footer */
+.typing{display:flex;align-items:center;gap:8px;margin:10px 16px 0;font-size:13px;color:var(--ink2)}
+.dots{display:inline-flex;gap:3px}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--ink2);animation:dot 1.2s infinite}
+.dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+.foot{margin:30px 16px 0;padding:18px 0 40px;border-top:1px solid var(--hair);font-size:13px;color:var(--muted)}
+.foot p:first-child{font-size:18px;font-weight:700;color:var(--ink)}
+
+/* member list */
+.members{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--side);padding:8px 8px 20px}
+.members ul{list-style:none;margin:0;padding:0}
+.members li{display:flex;gap:10px;align-items:center;padding:6px 8px;border-radius:4px}
+.members li:hover{background:#35373c}
+.members b{display:block;font-weight:600;font-size:14.5px}
+.members small{display:block;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:150px}
+.mav{position:relative;flex:none}
+.mav img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+.st{position:absolute;right:-2px;bottom:-2px;width:12px;height:12px;border-radius:50%;border:3px solid var(--side)}
+.st.on{background:var(--green)}.st.dnd{background:var(--red)}
+
+/* tooltip */
+.tip{position:fixed;z-index:50;min-width:160px;padding:9px 11px;background:#111214;border-radius:6px;font-size:13px;box-shadow:0 8px 20px rgba(0,0,0,.4);pointer-events:none}
+.tip p{margin:2px 0;display:flex;justify-content:space-between;flex-direction:row-reverse;gap:16px}
+.tip .tt{display:block;margin-bottom:6px;font-weight:700}
+.tip span{display:inline-flex;align-items:center;gap:6px;color:var(--ink2)}
+.tip .tsum{margin-top:6px;padding-top:6px;border-top:1px solid var(--hair)}
+
+@media (max-width:1240px){.app{grid-template-columns:72px 230px minmax(0,1fr)}.members{display:none}}
+@media (max-width:900px){.app{grid-template-columns:minmax(0,1fr)}.rail,.side{display:none}
+  .topbar .back{display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-size:11px;font-weight:700;margin-right:4px}
+  .chips{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;position:sticky;top:55px;z-index:9;background:var(--bg);border-bottom:1px solid #1e1f22;scrollbar-width:none}
+  .chips a{flex:none;padding:5px 10px;border-radius:14px;background:#35373c;color:var(--ink2);text-decoration:none;font-size:13px;font-weight:600}
+}
+@media (max-width:620px){
+  .msg{grid-template-columns:34px minmax(0,1fr);column-gap:10px;padding:6px 12px 8px}
+  .ava{width:34px;height:34px}
+  .embeds{grid-template-columns:minmax(0,1fr)}
+  .chh{font-size:20px;margin:16px 12px 4px}
+  .topic{display:none}
+  .reply{margin-left:14px}
+  .mt.big{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+.chan{scroll-margin-top:60px}@media (max-width:900px){.chan{scroll-margin-top:104px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="rail" aria-label="Teams"><a class="home" href="../index.html" title="All weeks">CCL</a><span class="sep"></span><a class="sv" href="#t2" title="Ben&#x27;s Brilliant Team"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt=""></a><a class="sv" href="#t8" title="Dake Bates"><img src="../assets/logos/8-dake-bates.png" alt=""></a><a class="sv" href="#t4" title="Cortisol Spyke Weeks"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt=""></a><a class="sv" href="#t9" title="michael&#x27;s Monstrous Team"><img src="../assets/logos/9-michael-s-monstrous-team.svg" alt=""></a><a class="sv" href="#t3" title="CeeDeez Nutz"><img src="../assets/logos/3-ceedeez-nutz.svg" alt=""></a><a class="sv" href="#t12" title="Team evil "><img src="../assets/logos/12-team-evil.svg" alt=""></a><a class="sv" href="#t11" title="Drake Maye Sucks Ass"><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt=""></a><a class="sv" href="#t6" title="Bingo Night"><img src="../assets/logos/6-bingo-night.svg" alt=""></a><a class="sv" href="#t10" title="roadrunners"><img src="../assets/logos/10-roadrunners.svg" alt=""></a><a class="sv" href="#t1" title="Team Galakrond"><img src="../assets/logos/1-team-galakrond.png" alt=""></a><a class="sv" href="#t5" title="Adams and Jefferson"><img src="../assets/logos/5-adams-and-jefferson.svg" alt=""></a><a class="sv" href="#t7" title="Purdy Seconds to Mars"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt=""></a></nav>
+  <aside class="side">
+    <header class="sname">Chach Champions League <span>&#9662;</span></header>
+    <p class="cat">WEEK 8 &middot; TEXT CHANNELS</p>
+    <div class="chans"><a href="#announcements"><span>#</span>announcements 📢</a><a href="#results"><span>#</span>results 🏈</a><a href="#power-rankings"><span>#</span>power-rankings 🏆</a><a href="#copium"><span>#</span>copium 💊</a><a href="#loadout"><span>#</span>loadout 🎒</a><a href="#the-grind"><span>#</span>the-grind 📈</a><a href="#next-week"><span>#</span>next-week ⏭️</a></div>
+    <div class="me"><span class="mav"><span class="bubble">🤖</span><i class="st on"></i></span><span><b>ChachBot</b><small>posting rankings</small></span></div>
+  </aside>
+  <div class="main">
+    <header class="topbar"><a class="back" href="../index.html">CCL</a><span class="hash">#</span>week-8<span class="topic">week 8 rankings just dropped 🔥 no cap</span></header>
+    <nav class="chips" aria-label="Channels"><a href="#announcements">#announcements</a><a href="#results">#results</a><a href="#power-rankings">#power-rankings</a><a href="#copium">#copium</a><a href="#loadout">#loadout</a><a href="#the-grind">#the-grind</a><a href="#next-week">#next-week</a></nav>
+    <section class="chan" id="announcements"><header class="chh"><span class="hash">#</span>announcements<span class=topic>pinned 📌</span></header><div class="divider"><span>week 8</span></div><div class="msg pinned"><div class="ava bot" aria-hidden="true">🤖</div><div class="mb"><p class="mh"><span class="un botn">ChachBot</span><span class="tag">BOT</span><span class="ts">Today at 9:41 PM</span></p><p class="ping">@everyone</p><h1>BEN E. GOT FANUM TAXED 🌽</h1>
+<p class="mt big">CHAT. CHAT. CHAT 🗣️🗣️🗣️ IS THIS REAL 😭😭 THE KING LOBBY IS DEADASS OVER 💀 kelly said 🤫🧏‍♂️ then LOCKED IN 🔒 pulled up w/ burrow n higgins 🎯🎯 and caught ben e in 4k 📸 FIRST L OF THE SZN 📉📉 -10000000 AURA 🚫✨ unc got FANUM TAXED 🌽🌽🌽 skibidi ratio ohio final boss 🚽 it&#x27;s so joever 🫡</p></div></div></section>
+    <section class="chan" id="results"><header class="chh"><span class="hash">#</span>results<span class=topic>every game this week</span></header><div class="divider"><span>week 8</span></div><div class="msg"><div class="ava bot" aria-hidden="true">🤖</div><div class="mb"><p class="mh"><span class="un botn">ChachBot</span><span class="tag">BOT</span><span class="ts">Today at 9:41 PM</span></p><p class="mt">every match this week 🎮 closest first 😰 the one that matters has a big red tag 🚨</p><div class="embeds"><div class="embed hot">
+  <p class="et">🚨 UNDEFEATED NO MORE</p>
+  <div class="er win"><img src="../assets/logos/12-team-evil.svg" alt=""><span class="nm">Team evil </span><b>138.1</b><span class="wl w">W</span></div>
+  <div class="er"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt=""><span class="nm">Ben&#x27;s Brilliant Team</span><b>128.4</b><span class="wl l">L</span></div>
+  <p class="ef">diff 9.70</p>
+</div><div class="embed close">
+  <p class="et">😰 CLOSEST GAME</p>
+  <div class="er win"><img src="../assets/logos/6-bingo-night.svg" alt=""><span class="nm">Bingo Night</span><b>91.6</b><span class="wl w">W</span></div>
+  <div class="er"><img src="../assets/logos/5-adams-and-jefferson.svg" alt=""><span class="nm">Adams and Jefferson</span><b>88.1</b><span class="wl l">L</span></div>
+  <p class="ef">diff 3.48</p>
+</div><div class="embed ok">
+  
+  <div class="er win"><img src="../assets/logos/10-roadrunners.svg" alt=""><span class="nm">roadrunners</span><b>116.5</b><span class="wl w">W</span></div>
+  <div class="er"><img src="../assets/logos/1-team-galakrond.png" alt=""><span class="nm">Team Galakrond</span><b>96.6</b><span class="wl l">L</span></div>
+  <p class="ef">diff 19.90</p>
+</div><div class="embed ok">
+  
+  <div class="er win"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt=""><span class="nm">Cortisol Spyke Weeks</span><b>130.2</b><span class="wl w">W</span></div>
+  <div class="er"><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt=""><span class="nm">Drake Maye Sucks Ass</span><b>102.0</b><span class="wl l">L</span></div>
+  <p class="ef">diff 28.24</p>
+</div><div class="embed ok">
+  
+  <div class="er win"><img src="../assets/logos/9-michael-s-monstrous-team.svg" alt=""><span class="nm">michael&#x27;s Monstrous Team</span><b>165.5</b><span class="wl w">W</span></div>
+  <div class="er"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt=""><span class="nm">Purdy Seconds to Mars</span><b>115.9</b><span class="wl l">L</span></div>
+  <p class="ef">diff 49.56</p>
+</div><div class="embed blow">
+  <p class="et">☠️ BIGGEST L</p>
+  <div class="er win"><img src="../assets/logos/8-dake-bates.png" alt=""><span class="nm">Dake Bates</span><b>131.2</b><span class="wl w">W</span></div>
+  <div class="er"><img src="../assets/logos/3-ceedeez-nutz.svg" alt=""><span class="nm">CeeDeez Nutz</span><b>75.0</b><span class="wl l">L</span></div>
+  <p class="ef">diff 56.22</p>
+</div></div></div></div></section>
+    <section class="chan" id="power-rankings"><header class="chh"><span class="hash">#</span>power-rankings<span class=topic>ranked by power score, aura shows who moved</span></header><div class="divider"><span>week 8</span></div><div class="msg"><div class="ava bot" aria-hidden="true">🤖</div><div class="mb"><p class="mh"><span class="un botn">ChachBot</span><span class="tag">BOT</span><span class="ts">Today at 9:41 PM</span></p><p class="mt">ranked by power score fr 🤓 record first then form then points then luck. aura shows who moved 📈📉</p><div class="legend"><span class="lk"><i class="sw qb"></i>QB</span><span class="lk"><i class="sw rb"></i>RB</span><span class="lk"><i class="sw wr"></i>WR</span><span class="lk"><i class="sw te"></i>TE</span><span class="lk"><i class="sw k"></i>K</span><span class="lk"><i class="sw dst"></i>DEF</span></div></div></div><div class="msg team isw" id="t2">
+  <img class="ava" src="../assets/logos/2-ben-s-brilliant-team.svg" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Ben&#x27;s Brilliant Team</span><span class="role r0">SIGMA 🗿</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">bro got CLIPPED 🎬 and it&#x27;s going in EVERY montage 😭😭🎵 worst game of his whole szn AND lost to a team literally called evil 👹 zay flowers typed &quot;brb&quot; 🚶‍♂️💨 and NEVER CAME BACK 👻 still #1 still fav for the 1 seed 👑 but the undefeated rizz?? 🤨 GONE. 🫥 fanum taxed 🌽 unc is human fr 👴💔 aura debt 📉📉📉</p>
+    <div class="card">
+      <span class="cooked" aria-label="Cooked">COOKED 💀</span>
+      <div class="ch"><span class="rk">#1</span><div><p class="cn">Ben Elton &middot; 7-1</p><span class="mv eq">±0 aura</span></div>
+        <p class="cp"><b>128.4</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;15.0&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;52.8&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;27.4&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;28.2&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;3.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;128.4&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.67%"></span><span class="seg rb" style="width:41.13%"></span><span class="seg wr" style="width:21.34%"></span><span class="seg te" style="width:21.97%"></span><span class="seg k" style="width:2.34%"></span><span class="seg dst" style="width:1.56%"></span></div>
+      <p class="mvp"><img src="../assets/players/4432665.png" alt="" loading="lazy">MVP <b>Brock Bowers</b> 28.2</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>💀</span><b>99+</b></button><button type="button" class="re" aria-pressed="false"><span>😭</span><b>88</b></button><button type="button" class="re" aria-pressed="false"><span>🌽</span><b>61</b></button><button type="button" class="re" aria-pressed="false"><span>📉</span><b>40</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t8">
+  <img class="ava" src="../assets/logos/8-dake-bates.png" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Dake Bates</span><span class="role r0">SIGMA 🗿</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">6-2 🤫 sitting there like the secret final boss 👾 nobody even queued into yet 🕹️ STOMPED CeeDeez into another dimension 🌀🌀 biggest W of the wk 💪 puka 🍳 COOKING 🍳 schedule been EASY MODE all year 🍼 literally playing vs bots 🤖🤖 but a dub is a dub ✅ locked in 🔒 aura farming 🧑‍🌾✨</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#2</span><div><p class="cn">Jake Danielson &middot; 6-2</p><span class="mv up">+2000 aura</span></div>
+        <p class="cp"><b>131.2</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;21.5&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;17.0&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;54.4&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;17.3&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;5.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;16.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;131.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:16.40%"></span><span class="seg rb" style="width:12.96%"></span><span class="seg wr" style="width:41.46%"></span><span class="seg te" style="width:13.18%"></span><span class="seg k" style="width:3.81%"></span><span class="seg dst" style="width:12.19%"></span></div>
+      <p class="mvp"><img src="../assets/players/4426515.png" alt="" loading="lazy">MVP <b>Puka Nacua</b> 25.0</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>😤</span><b>14</b></button><button type="button" class="re" aria-pressed="false"><span>🫡</span><b>19</b></button><button type="button" class="re" aria-pressed="false"><span>📉</span><b>24</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t4">
+  <img class="ava" src="../assets/logos/4-cortisol-spyke-weeks.png" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Cortisol Spyke Weeks</span><span class="role r0">SIGMA 🗿</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">💍 MASON&#x27;S FIRST DUB AS A MARRIED MAN 💍 respawn arc ⬆️⬆️ ja&#x27;marr chase went 🤯 CRAZY 🤯 up 2 📈 bench still got more pts than some starting lineups 🪑🪑💰 bro is HOARDING LOOT 🎒🎒 like it&#x27;s fortnite in 2018 🌪️ but we take those 🫡🥂</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#3</span><div><p class="cn">Mason Morgan &middot; 5-3</p><span class="mv up">+2000 aura</span></div>
+        <p class="cp"><b>130.2</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;19.8&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;35.3&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;56.5&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;2.6&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;8.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;8.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;130.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:15.21%"></span><span class="seg rb" style="width:27.11%"></span><span class="seg wr" style="width:43.39%"></span><span class="seg te" style="width:2.00%"></span><span class="seg k" style="width:6.14%"></span><span class="seg dst" style="width:6.14%"></span></div>
+      <p class="mvp"><img src="../assets/players/4362628.png" alt="" loading="lazy">MVP <b>Ja&#x27;Marr Chase</b> 31.1</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>😂</span><b>11</b></button><button type="button" class="re" aria-pressed="false"><span>😤</span><b>20</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t9">
+  <img class="ava" src="../assets/logos/9-michael-s-monstrous-team.svg" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">michael&#x27;s Monstrous Team</span><span class="role r1">RIZZLER 😏</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">💥💥 TOP SCORE OF THE WEEK 💥💥 FULL TEAM WIPE 🧹🧹 FLAWLESS VICTORY 🏆 sent the whole lobby back to the lobby 🔁 backfield went FERAL 🐺🐺 tuten hard carrying like a sweaty duo 🧽💦 after 2 goofy ahh weeks 🤡🤡 bro unlocked GOD MODE 👼⚡ BUILT DIFFERENT 🏗️ ong 🙏</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#4</span><div><p class="cn">michael prince &middot; 5-3</p><span class="mv up">+2000 aura</span></div>
+        <p class="cp"><b>165.5</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;26.6&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;75.7&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;26.8&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;23.4&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;12.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;1.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;165.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:16.05%"></span><span class="seg rb" style="width:45.75%"></span><span class="seg wr" style="width:16.20%"></span><span class="seg te" style="width:14.14%"></span><span class="seg k" style="width:7.25%"></span><span class="seg dst" style="width:0.60%"></span></div>
+      <p class="mvp"><img src="../assets/players/4882093.png" alt="" loading="lazy">MVP <b>Bhayshul Tuten</b> 29.9</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>👼</span><b>34</b></button><button type="button" class="re" aria-pressed="false"><span>🔥</span><b>29</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t3">
+  <img class="ava" src="../assets/logos/3-ceedeez-nutz.svg" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">CeeDeez Nutz</span><span class="role r1">RIZZLER 😏</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">started lamar 🧍‍♂️ lamar scored a 0️⃣ A ZERO 💀💀💀💀 bro was INTING AT A PRO LEVEL 🏆🗑️ lowest score of the wk 📉 worst game of the szn 📉📉 got CLAPPED 👏👏 by dake 🫠 this is a CRASH OUT 🚗💥 check ur lineup b4 u queue 🙏🙏 it&#x27;s giving OHIO 🌽🌽🌽</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#5</span><div><p class="cn">skyler cortez &middot; 5-3</p><span class="mv dn">-3000 aura</span></div>
+        <p class="cp"><b>75.0</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;0.0&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;19.9&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;38.1&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;6.0&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;6.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;75.0&quot;}" aria-label="Points by position"><span class="seg rb" style="width:26.53%"></span><span class="seg wr" style="width:50.80%"></span><span class="seg te" style="width:8.00%"></span><span class="seg k" style="width:8.00%"></span><span class="seg dst" style="width:6.67%"></span></div>
+      <p class="mvp"><img src="../assets/players/4248528.png" alt="" loading="lazy">MVP <b>Christian Watson</b> 17.3</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>💀</span><b>66</b></button><button type="button" class="re" aria-pressed="false"><span>🤡</span><b>38</b></button><button type="button" class="re" aria-pressed="false"><span>0️⃣</span><b>21</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t12">
+  <p class="reply"><span class="rl" aria-hidden="true"></span><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt=""><b>@Ben&#x27;s Brilliant Team</b> <span>bro got CLIPPED 🎬 and it&#x27;s going in EVERY montage 😭😭🎵 worst&hellip;</span></p><img class="ava" src="../assets/logos/12-team-evil.svg" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Team evil </span><span class="role r1">RIZZLER 😏</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">😈 KELLY COOKED SO HARD THE KITCHEN IS GONE 🔥🔥🧑‍🍳💀 burrow + higgins = 🤖 AIMBOT DUO 🤖 top 2 frags in the WHOLE lobby 🎯🎯 diffed ben e&#x27;s WRs into the SHADOW REALM 🌑🌑 back2back dubz W W 🅆🅆 playoff odds went from 😐 to 😤📈 this is a SIGMA ARC 🐺🗿 he&#x27;s HIM he&#x27;s HIM HE&#x27;S HIM 🗣️🔥 report this man for hacks 🚩🚩 gg ez no re 😎</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#6</span><div><p class="cn">kelly brown &middot; 4-4</p><span class="mv up">+1000 aura</span></div>
+        <p class="cp"><b>138.1</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;39.5&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;17.6&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;51.8&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;7.2&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;1.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;21.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;138.1&quot;}" aria-label="Points by position"><span class="seg qb" style="width:28.59%"></span><span class="seg rb" style="width:12.75%"></span><span class="seg wr" style="width:37.51%"></span><span class="seg te" style="width:5.21%"></span><span class="seg k" style="width:0.72%"></span><span class="seg dst" style="width:15.21%"></span></div>
+      <p class="mvp"><img src="../assets/players/3915511.png" alt="" loading="lazy">MVP <b>Joe Burrow</b> 39.5</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>😈</span><b>93</b></button><button type="button" class="re" aria-pressed="false"><span>🔥</span><b>71</b></button><button type="button" class="re" aria-pressed="false"><span>🗿</span><b>44</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t11">
+  <img class="ava" src="../assets/logos/11-drake-maye-sucks-ass.svg" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Drake Maye Sucks Ass</span><span class="role r2">NPC 🤖</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">win streak 🔥➡️💨 DELETED 🗑️ receivers had POTATO AIM 🥔🥔🎯❌ drake london basically AFK in spawn 💤💤 biggest drop in the rankings 🪂📉 still 5-3 but team evil just SNIPED 🔫 the playoff spot by ONE PIXEL 🟥 L + ratio + lag + mid + skill issue + touch grass 🌱🌱</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#7</span><div><p class="cn">Jackson Helling &middot; 5-3</p><span class="mv dn">-4000 aura</span></div>
+        <p class="cp"><b>102.0</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;22.5&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;39.6&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;14.4&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;6.5&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;10.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;9.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;102.0&quot;}" aria-label="Points by position"><span class="seg qb" style="width:22.03%"></span><span class="seg rb" style="width:38.84%"></span><span class="seg wr" style="width:14.12%"></span><span class="seg te" style="width:6.38%"></span><span class="seg k" style="width:9.81%"></span><span class="seg dst" style="width:8.83%"></span></div>
+      <p class="mvp"><img src="../assets/players/4685247.png" alt="" loading="lazy">MVP <b>Braelon Allen</b> 23.3</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>🗿</span><b>42</b></button><button type="button" class="re" aria-pressed="false"><span>😤</span><b>6</b></button><button type="button" class="re" aria-pressed="false"><span>😭</span><b>24</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t6">
+  <img class="ava" src="../assets/logos/6-bingo-night.svg" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Bingo Night</span><span class="role r2">NPC 🤖</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">won the closest game of the wk 😳 w/ a QB who BARELY TOUCHED THE CONTROLLER 🎮❌ RNG carried this team harder than a mystery box 🎁🎰🎰 stats say this squad is COOKED 🍗 record says .500 😐 luckiest team in the league no cap 🧢❌🍀🍀 that&#x27;s not skill that&#x27;s a LAGSWITCH 🔌⚡</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#8</span><div><p class="cn">Thomas Fowler &middot; 4-4</p><span class="mv eq">±0 aura</span></div>
+        <p class="cp"><b>91.6</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;3.5&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;24.4&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;40.0&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;11.7&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;12.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;0.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;91.6&quot;}" aria-label="Points by position"><span class="seg qb" style="width:3.78%"></span><span class="seg rb" style="width:26.65%"></span><span class="seg wr" style="width:43.69%"></span><span class="seg te" style="width:12.78%"></span><span class="seg k" style="width:13.11%"></span></div>
+      <p class="mvp"><img src="../assets/players/4426388.png" alt="" loading="lazy">MVP <b>Jameson Williams</b> 17.0</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>😂</span><b>23</b></button><button type="button" class="re" aria-pressed="false"><span>👀</span><b>3</b></button><button type="button" class="re" aria-pressed="false"><span>🔥</span><b>25</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t10">
+  <img class="ava" src="../assets/logos/10-roadrunners.svg" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">roadrunners</span><span class="role r2">NPC 🤖</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">dub over galakrond ✅ up a spot ⬆️ matthew golden did his thing 🪙✨ BUT bro left a FULL INVENTORY on the bench 🎒🎒🎒 had a rocket launcher in the backpack 🚀 and threw a KNIFE instead 🔪🤦‍♂️ need a whole miracle to make it 🙏🙏 any% speedrun time ⏱️🏃‍♂️💨</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#9</span><div><p class="cn">Ricky Verastegui &middot; 3-5</p><span class="mv up">+1000 aura</span></div>
+        <p class="cp"><b>116.5</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;19.4&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;31.4&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;34.0&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;14.7&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;2.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;15.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;116.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:16.65%"></span><span class="seg rb" style="width:26.95%"></span><span class="seg wr" style="width:29.18%"></span><span class="seg te" style="width:12.62%"></span><span class="seg k" style="width:1.72%"></span><span class="seg dst" style="width:12.88%"></span></div>
+      <p class="mvp"><img src="../assets/players/4701936.png" alt="" loading="lazy">MVP <b>Matthew Golden</b> 20.9</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>👀</span><b>4</b></button><button type="button" class="re" aria-pressed="false"><span>🔥</span><b>18</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t1">
+  <img class="ava" src="../assets/logos/1-team-galakrond.png" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Team Galakrond</span><span class="role r3">OHIO 🌽</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">scored the EXACT SAME NUMBER two weeks in a row 🤨🤨🤨 TO THE DECIMAL 🔢 glitch in the matrix fr 🕶️💊 lost both 😭 kicker went 0️⃣ faced the most pts in the league BY A MILE 🛣️ perma spawn camped since wk 1 ⛺⛺ playoff odds basically 0️⃣ alt+f4 king 👑⌨️ it&#x27;s so joever 🫡</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#10</span><div><p class="cn">Neil Gibeaut &middot; 1-7</p><span class="mv dn">-1000 aura</span></div>
+        <p class="cp"><b>96.6</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;19.9&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;26.0&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;20.9&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;15.8&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;0.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;96.6&quot;}" aria-label="Points by position"><span class="seg qb" style="width:20.60%"></span><span class="seg rb" style="width:26.92%"></span><span class="seg wr" style="width:21.64%"></span><span class="seg te" style="width:16.36%"></span><span class="seg dst" style="width:14.49%"></span></div>
+      <p class="mvp"><img src="../assets/players/3917315.png" alt="" loading="lazy">MVP <b>Kyler Murray</b> 19.9</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>🤨</span><b>27</b></button><button type="button" class="re" aria-pressed="false"><span>🔢</span><b>12</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t5">
+  <img class="ava" src="../assets/logos/5-adams-and-jefferson.svg" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Adams and Jefferson</span><span class="role r3">OHIO 🌽</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">lost the closest game of the wk 🤏 4th L in a row 📉📉📉📉 best player was THE KICKER 🦵⚽ THE KICKER 🗣️🗣️ this team scores like it should have more dubs but the RNG is CURSED 🧿💀 delulu is NOT the solulu 🙅‍♂️ it&#x27;s so over 😩 we&#x27;re never back 🚫🔙</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#11</span><div><p class="cn">Lyudmil Zdravkov &middot; 1-7</p><span class="mv eq">±0 aura</span></div>
+        <p class="cp"><b>88.1</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;8.3&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;21.8&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;26.1&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;4.9&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;88.1&quot;}" aria-label="Points by position"><span class="seg qb" style="width:9.40%"></span><span class="seg rb" style="width:24.75%"></span><span class="seg wr" style="width:29.63%"></span><span class="seg te" style="width:5.56%"></span><span class="seg k" style="width:18.17%"></span><span class="seg dst" style="width:12.49%"></span></div>
+      <p class="mvp"><img src="../assets/players/3917232.png" alt="" loading="lazy">MVP <b>Tyler Bass</b> 16.0</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>🙏</span><b>9</b></button><button type="button" class="re" aria-pressed="false"><span>🔥</span><b>24</b></button><button type="button" class="re" aria-pressed="false"><span>📉</span><b>29</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div><div class="msg team" id="t7">
+  <img class="ava" src="../assets/logos/7-purdy-seconds-to-mars.png" alt="">
+  <div class="mb">
+    <p class="mh"><span class="un">Purdy Seconds to Mars</span><span class="role r3">OHIO 🌽</span><span class="ts">Today at 9:41 PM</span></p>
+    <p class="mt big">5 Ls IN A ROW 🖐️💀 scored more than 5 other teams 🤔 and STILL got spawn trapped 🪤 by the top score of the wk 💀 started GENO SMITH at QB 🧍 on a team NAMED AFTER BROCK PURDY 🪪❓❓ identity crisis any% WR 🏃‍♂️🏆 bro is NOT him 🙅‍♂️ 0 rizz 🚫💬 n00b 🍼 uninstall 🗑️</p>
+    <div class="card">
+      
+      <div class="ch"><span class="rk">#12</span><div><p class="cn">Ben T &middot; 2-6</p><span class="mv eq">±0 aura</span></div>
+        <p class="cp"><b>115.9</b><span>pts</span></p></div>
+      <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;18.0&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;44.8&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;27.9&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;20.2&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;3.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;115.9&quot;}" aria-label="Points by position"><span class="seg qb" style="width:15.53%"></span><span class="seg rb" style="width:38.65%"></span><span class="seg wr" style="width:24.07%"></span><span class="seg te" style="width:17.43%"></span><span class="seg k" style="width:2.59%"></span><span class="seg dst" style="width:1.73%"></span></div>
+      <p class="mvp"><img src="../assets/players/4047365.png" alt="" loading="lazy">MVP <b>Josh Jacobs</b> 23.2</p>
+    </div>
+    <div class="reacts"><button type="button" class="re" aria-pressed="false"><span>🪪</span><b>19</b></button><button type="button" class="re" aria-pressed="false"><span>💀</span><b>17</b></button><button type="button" class="re add" aria-label="Add reaction">&#9786;+</button></div>
+  </div>
+</div></section>
+    <section class="chan" id="copium"><header class="chh"><span class="hash">#</span>copium<span class=topic>playoff odds</span></header><div class="divider"><span>week 8</span></div><div class="msg"><div class="ava bot" aria-hidden="true">🤖</div><div class="mb"><p class="mh"><span class="un botn">ChachBot</span><span class="tag">BOT</span><span class="ts">Today at 9:41 PM</span></p><p class="mt">6 teams make playoffs 🏆 the bar is how much copium each team needs rn 💊💊</p>
+<div class="poll"><p class="pq">📊 who's making playoffs?? (the math version)</p><ol class="pos"><li class="po"><span class="pf" style="width:100.0%"></span><span class="pl"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt="">Ben&#x27;s Brilliant Team<small>locked in 🔒</small></span><b>>99%</b></li><li class="po"><span class="pf" style="width:94.3%"></span><span class="pl"><img src="../assets/logos/8-dake-bates.png" alt="">Dake Bates<small>locked in 🔒</small></span><b>94%</b></li><li class="po"><span class="pf" style="width:92.1%"></span><span class="pl"><img src="../assets/logos/9-michael-s-monstrous-team.svg" alt="">michael&#x27;s Monstrous Team<small>locked in 🔒</small></span><b>92%</b></li><li class="po"><span class="pf" style="width:88.8%"></span><span class="pl"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="">Cortisol Spyke Weeks<small>sweating 😰</small></span><b>89%</b></li><li class="po"><span class="pf" style="width:86.6%"></span><span class="pl"><img src="../assets/logos/3-ceedeez-nutz.svg" alt="">CeeDeez Nutz<small>sweating 😰</small></span><b>87%</b></li><li class="po"><span class="pf" style="width:58.5%"></span><span class="pl"><img src="../assets/logos/12-team-evil.svg" alt="">Team evil <small>sweating 😰</small></span><b>58%</b></li><li class="po"><span class="pf" style="width:57.1%"></span><span class="pl"><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt="">Drake Maye Sucks Ass<small>sweating 😰</small></span><b>57%</b></li><li class="po"><span class="pf" style="width:9.2%"></span><span class="pl"><img src="../assets/logos/6-bingo-night.svg" alt="">Bingo Night<small>it's over 🪦</small></span><b>9%</b></li><li class="po"><span class="pf" style="width:8.5%"></span><span class="pl"><img src="../assets/logos/10-roadrunners.svg" alt="">roadrunners<small>it's over 🪦</small></span><b>8%</b></li><li class="po"><span class="pf" style="width:2.1%"></span><span class="pl"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="">Purdy Seconds to Mars<small>it's over 🪦</small></span><b>2%</b></li><li class="po"><span class="pf" style="width:1.9%"></span><span class="pl"><img src="../assets/logos/5-adams-and-jefferson.svg" alt="">Adams and Jefferson<small>it's over 🪦</small></span><b>2%</b></li><li class="po"><span class="pf" style="width:1.5%"></span><span class="pl"><img src="../assets/logos/1-team-galakrond.png" alt="">Team Galakrond<small>it's over 🪦</small></span><b><1%</b></li></ol>
+<p class="pn">40,000 simulated seasons &middot; top 6 make it &middot; ties go to total points</p></div></div></div></section>
+    <section class="chan" id="loadout"><header class="chh"><span class="hash">#</span>loadout<span class=topic>points by position</span></header><div class="divider"><span>week 8</span></div><div class="msg"><div class="ava bot" aria-hidden="true">🤖</div><div class="mb"><p class="mh"><span class="un botn">ChachBot</span><span class="tag">BOT</span><span class="ts">Today at 9:41 PM</span></p><p class="mt">what everybody&#x27;s loadout dropped this week 🎒 hover a row for the stats 🤓</p><div class="legend"><span class="lk"><i class="sw qb"></i>QB</span><span class="lk"><i class="sw rb"></i>RB</span><span class="lk"><i class="sw wr"></i>WR</span><span class="lk"><i class="sw te"></i>TE</span><span class="lk"><i class="sw k"></i>K</span><span class="lk"><i class="sw dst"></i>DEF</span></div>
+<div class="pchart"><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;26.6&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;75.7&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;26.8&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;23.4&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;12.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;1.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;165.5&quot;}"><span class="pn2">michael</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 1.0000)"><span class="seg qb" style="width:16.05%"></span><span class="seg rb" style="width:45.75%"></span><span class="seg wr" style="width:16.20%"></span><span class="seg te" style="width:14.14%"></span><span class="seg k" style="width:7.25%"></span><span class="seg dst" style="width:0.60%"></span></span><span class="pv">165.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;39.5&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;17.6&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;51.8&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;7.2&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;1.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;21.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;138.1&quot;}"><span class="pn2">kelly</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8345)"><span class="seg qb" style="width:28.59%"></span><span class="seg rb" style="width:12.75%"></span><span class="seg wr" style="width:37.51%"></span><span class="seg te" style="width:5.21%"></span><span class="seg k" style="width:0.72%"></span><span class="seg dst" style="width:15.21%"></span></span><span class="pv">138.1</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;21.5&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;17.0&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;54.4&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;17.3&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;5.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;16.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;131.2&quot;}"><span class="pn2">Jake</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7931)"><span class="seg qb" style="width:16.40%"></span><span class="seg rb" style="width:12.96%"></span><span class="seg wr" style="width:41.46%"></span><span class="seg te" style="width:13.18%"></span><span class="seg k" style="width:3.81%"></span><span class="seg dst" style="width:12.19%"></span></span><span class="pv">131.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;19.8&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;35.3&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;56.5&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;2.6&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;8.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;8.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;130.2&quot;}"><span class="pn2">Mason</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7869)"><span class="seg qb" style="width:15.21%"></span><span class="seg rb" style="width:27.11%"></span><span class="seg wr" style="width:43.39%"></span><span class="seg te" style="width:2.00%"></span><span class="seg k" style="width:6.14%"></span><span class="seg dst" style="width:6.14%"></span></span><span class="pv">130.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;15.0&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;52.8&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;27.4&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;28.2&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;3.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;128.4&quot;}"><span class="pn2">Ben E.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7759)"><span class="seg qb" style="width:11.67%"></span><span class="seg rb" style="width:41.13%"></span><span class="seg wr" style="width:21.34%"></span><span class="seg te" style="width:21.97%"></span><span class="seg k" style="width:2.34%"></span><span class="seg dst" style="width:1.56%"></span></span><span class="pv">128.4</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;19.4&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;31.4&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;34.0&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;14.7&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;2.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;15.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;116.5&quot;}"><span class="pn2">Ricky</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7041)"><span class="seg qb" style="width:16.65%"></span><span class="seg rb" style="width:26.95%"></span><span class="seg wr" style="width:29.18%"></span><span class="seg te" style="width:12.62%"></span><span class="seg k" style="width:1.72%"></span><span class="seg dst" style="width:12.88%"></span></span><span class="pv">116.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;18.0&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;44.8&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;27.9&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;20.2&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;3.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;2.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;115.9&quot;}"><span class="pn2">Ben T.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7005)"><span class="seg qb" style="width:15.53%"></span><span class="seg rb" style="width:38.65%"></span><span class="seg wr" style="width:24.07%"></span><span class="seg te" style="width:17.43%"></span><span class="seg k" style="width:2.59%"></span><span class="seg dst" style="width:1.73%"></span></span><span class="pv">115.9</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;22.5&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;39.6&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;14.4&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;6.5&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;10.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;9.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;102.0&quot;}"><span class="pn2">Jackson</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.6162)"><span class="seg qb" style="width:22.03%"></span><span class="seg rb" style="width:38.84%"></span><span class="seg wr" style="width:14.12%"></span><span class="seg te" style="width:6.38%"></span><span class="seg k" style="width:9.81%"></span><span class="seg dst" style="width:8.83%"></span></span><span class="pv">102.0</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;19.9&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;26.0&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;20.9&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;15.8&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;0.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;96.6&quot;}"><span class="pn2">Neil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5838)"><span class="seg qb" style="width:20.60%"></span><span class="seg rb" style="width:26.92%"></span><span class="seg wr" style="width:21.64%"></span><span class="seg te" style="width:16.36%"></span><span class="seg dst" style="width:14.49%"></span></span><span class="pv">96.6</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;3.5&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;24.4&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;40.0&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;11.7&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;12.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;0.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;91.6&quot;}"><span class="pn2">Thomas</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5534)"><span class="seg qb" style="width:3.78%"></span><span class="seg rb" style="width:26.65%"></span><span class="seg wr" style="width:43.69%"></span><span class="seg te" style="width:12.78%"></span><span class="seg k" style="width:13.11%"></span></span><span class="pv">91.6</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;8.3&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;21.8&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;26.1&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;4.9&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;88.1&quot;}"><span class="pn2">Lyudmil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5323)"><span class="seg qb" style="width:9.40%"></span><span class="seg rb" style="width:24.75%"></span><span class="seg wr" style="width:29.63%"></span><span class="seg te" style="width:5.56%"></span><span class="seg k" style="width:18.17%"></span><span class="seg dst" style="width:12.49%"></span></span><span class="pv">88.1</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;QB&quot;, &quot;0.0&quot;, &quot;qb&quot;], [&quot;RB&quot;, &quot;19.9&quot;, &quot;rb&quot;], [&quot;WR&quot;, &quot;38.1&quot;, &quot;wr&quot;], [&quot;TE&quot;, &quot;6.0&quot;, &quot;te&quot;], [&quot;K&quot;, &quot;6.0&quot;, &quot;k&quot;], [&quot;DEF&quot;, &quot;5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;75.0&quot;}"><span class="pn2">skyler</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.4533)"><span class="seg rb" style="width:26.53%"></span><span class="seg wr" style="width:50.80%"></span><span class="seg te" style="width:8.00%"></span><span class="seg k" style="width:8.00%"></span><span class="seg dst" style="width:6.67%"></span></span><span class="pv">75.0</span></span></div></div><details class="tview"><summary>show as table 🤓</summary>
+<div class="twrap"><table><thead><tr><th>Team</th><th>QB</th><th>RB</th><th>WR</th><th>TE</th><th>K</th><th>DEF</th><th>Total</th></tr></thead><tbody><tr><th>michael&#x27;s Monstrous Team</th><td>26.6</td><td>75.7</td><td>26.8</td><td>23.4</td><td>12.0</td><td>1.0</td><td class="tot">165.5</td></tr><tr><th>Team evil </th><td>39.5</td><td>17.6</td><td>51.8</td><td>7.2</td><td>1.0</td><td>21.0</td><td class="tot">138.1</td></tr><tr><th>Dake Bates</th><td>21.5</td><td>17.0</td><td>54.4</td><td>17.3</td><td>5.0</td><td>16.0</td><td class="tot">131.2</td></tr><tr><th>Cortisol Spyke Weeks</th><td>19.8</td><td>35.3</td><td>56.5</td><td>2.6</td><td>8.0</td><td>8.0</td><td class="tot">130.2</td></tr><tr><th>Ben&#x27;s Brilliant Team</th><td>15.0</td><td>52.8</td><td>27.4</td><td>28.2</td><td>3.0</td><td>2.0</td><td class="tot">128.4</td></tr><tr><th>roadrunners</th><td>19.4</td><td>31.4</td><td>34.0</td><td>14.7</td><td>2.0</td><td>15.0</td><td class="tot">116.5</td></tr><tr><th>Purdy Seconds to Mars</th><td>18.0</td><td>44.8</td><td>27.9</td><td>20.2</td><td>3.0</td><td>2.0</td><td class="tot">115.9</td></tr><tr><th>Drake Maye Sucks Ass</th><td>22.5</td><td>39.6</td><td>14.4</td><td>6.5</td><td>10.0</td><td>9.0</td><td class="tot">102.0</td></tr><tr><th>Team Galakrond</th><td>19.9</td><td>26.0</td><td>20.9</td><td>15.8</td><td>0.0</td><td>14.0</td><td class="tot">96.6</td></tr><tr><th>Bingo Night</th><td>3.5</td><td>24.4</td><td>40.0</td><td>11.7</td><td>12.0</td><td>0.0</td><td class="tot">91.6</td></tr><tr><th>Adams and Jefferson</th><td>8.3</td><td>21.8</td><td>26.1</td><td>4.9</td><td>16.0</td><td>11.0</td><td class="tot">88.1</td></tr><tr><th>CeeDeez Nutz</th><td>0.0</td><td>19.9</td><td>38.1</td><td>6.0</td><td>6.0</td><td>5.0</td><td class="tot">75.0</td></tr></tbody></table></div></details></div></div></section>
+    <section class="chan" id="the-grind"><header class="chh"><span class="hash">#</span>the-grind<span class=topic>rank by week</span></header><div class="divider"><span>week 8</span></div><div class="msg"><div class="ava bot" aria-hidden="true">🤖</div><div class="mb"><p class="mh"><span class="un botn">ChachBot</span><span class="tag">BOT</span><span class="ts">Today at 9:41 PM</span></p><p class="mt">the grind, week by week 📈 everybody&#x27;s rank since week 1 🕹️</p>
+<figure class="bumpwrap"><svg class="bump" viewBox="0 0 560 380" role="img" aria-label="Power ranking by week for every team"><line class="grid" x1="34.0" y1="22" x2="34.0" y2="370"/><text class="wkl" x="34.0" y="16" text-anchor="middle">W1</text><line class="grid" x1="87.7" y1="22" x2="87.7" y2="370"/><text class="wkl" x="87.7" y="16" text-anchor="middle">W2</text><line class="grid" x1="141.4" y1="22" x2="141.4" y2="370"/><text class="wkl" x="141.4" y="16" text-anchor="middle">W3</text><line class="grid" x1="195.1" y1="22" x2="195.1" y2="370"/><text class="wkl" x="195.1" y="16" text-anchor="middle">W4</text><line class="grid" x1="248.9" y1="22" x2="248.9" y2="370"/><text class="wkl" x="248.9" y="16" text-anchor="middle">W5</text><line class="grid" x1="302.6" y1="22" x2="302.6" y2="370"/><text class="wkl" x="302.6" y="16" text-anchor="middle">W6</text><line class="grid" x1="356.3" y1="22" x2="356.3" y2="370"/><text class="wkl" x="356.3" y="16" text-anchor="middle">W7</text><line class="grid" x1="410.0" y1="22" x2="410.0" y2="370"/><text class="wkl" x="410.0" y="16" text-anchor="middle">W8</text><g class="ln" style="--c:#e5e7eb" data-team="7" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#8&quot;], [&quot;Week 2&quot;, &quot;#6&quot;], [&quot;Week 3&quot;, &quot;#4&quot;], [&quot;Week 4&quot;, &quot;#5&quot;], [&quot;Week 5&quot;, &quot;#9&quot;], [&quot;Week 6&quot;, &quot;#11&quot;], [&quot;Week 7&quot;, &quot;#12&quot;], [&quot;Week 8&quot;, &quot;#12&quot;]]}"><path class="hit" d="M34.0,242.5 L87.7,181.8 L141.4,121.1 L195.1,151.5 L248.9,272.9 L302.6,333.6 L356.3,364.0 L410.0,364.0"/><path class="stroke" d="M34.0,242.5 L87.7,181.8 L141.4,121.1 L195.1,151.5 L248.9,272.9 L302.6,333.6 L356.3,364.0 L410.0,364.0"/><circle cx="34.0" cy="242.5" r="4"/><circle cx="87.7" cy="181.8" r="4"/><circle cx="141.4" cy="121.1" r="4"/><circle cx="195.1" cy="151.5" r="4"/><circle cx="248.9" cy="272.9" r="4"/><circle cx="302.6" cy="333.6" r="4"/><circle cx="356.3" cy="364.0" r="4"/><circle cx="410.0" cy="364.0" r="4"/><text x="422.0" y="368.5">12. Ben T.</text></g><g class="ln" style="--c:#e879f9" data-team="5" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#11&quot;], [&quot;Week 2&quot;, &quot;#7&quot;], [&quot;Week 3&quot;, &quot;#9&quot;], [&quot;Week 4&quot;, &quot;#6&quot;], [&quot;Week 5&quot;, &quot;#8&quot;], [&quot;Week 6&quot;, &quot;#10&quot;], [&quot;Week 7&quot;, &quot;#11&quot;], [&quot;Week 8&quot;, &quot;#11&quot;]]}"><path class="hit" d="M34.0,333.6 L87.7,212.2 L141.4,272.9 L195.1,181.8 L248.9,242.5 L302.6,303.3 L356.3,333.6 L410.0,333.6"/><path class="stroke" d="M34.0,333.6 L87.7,212.2 L141.4,272.9 L195.1,181.8 L248.9,242.5 L302.6,303.3 L356.3,333.6 L410.0,333.6"/><circle cx="34.0" cy="333.6" r="4"/><circle cx="87.7" cy="212.2" r="4"/><circle cx="141.4" cy="272.9" r="4"/><circle cx="195.1" cy="181.8" r="4"/><circle cx="248.9" cy="242.5" r="4"/><circle cx="302.6" cy="303.3" r="4"/><circle cx="356.3" cy="333.6" r="4"/><circle cx="410.0" cy="333.6" r="4"/><text x="422.0" y="338.1">11. Lyudmil</text></g><g class="ln" style="--c:#4ade80" data-team="1" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#7&quot;], [&quot;Week 2&quot;, &quot;#9&quot;], [&quot;Week 3&quot;, &quot;#11&quot;], [&quot;Week 4&quot;, &quot;#11&quot;], [&quot;Week 5&quot;, &quot;#12&quot;], [&quot;Week 6&quot;, &quot;#8&quot;], [&quot;Week 7&quot;, &quot;#9&quot;], [&quot;Week 8&quot;, &quot;#10&quot;]]}"><path class="hit" d="M34.0,212.2 L87.7,272.9 L141.4,333.6 L195.1,333.6 L248.9,364.0 L302.6,242.5 L356.3,272.9 L410.0,303.3"/><path class="stroke" d="M34.0,212.2 L87.7,272.9 L141.4,333.6 L195.1,333.6 L248.9,364.0 L302.6,242.5 L356.3,272.9 L410.0,303.3"/><circle cx="34.0" cy="212.2" r="4"/><circle cx="87.7" cy="272.9" r="4"/><circle cx="141.4" cy="333.6" r="4"/><circle cx="195.1" cy="333.6" r="4"/><circle cx="248.9" cy="364.0" r="4"/><circle cx="302.6" cy="242.5" r="4"/><circle cx="356.3" cy="272.9" r="4"/><circle cx="410.0" cy="303.3" r="4"/><text x="422.0" y="307.8">10. Neil</text></g><g class="ln" style="--c:#fb923c" data-team="10" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#9&quot;], [&quot;Week 2&quot;, &quot;#12&quot;], [&quot;Week 3&quot;, &quot;#12&quot;], [&quot;Week 4&quot;, &quot;#10&quot;], [&quot;Week 5&quot;, &quot;#10&quot;], [&quot;Week 6&quot;, &quot;#7&quot;], [&quot;Week 7&quot;, &quot;#10&quot;], [&quot;Week 8&quot;, &quot;#9&quot;]]}"><path class="hit" d="M34.0,272.9 L87.7,364.0 L141.4,364.0 L195.1,303.3 L248.9,303.3 L302.6,212.2 L356.3,303.3 L410.0,272.9"/><path class="stroke" d="M34.0,272.9 L87.7,364.0 L141.4,364.0 L195.1,303.3 L248.9,303.3 L302.6,212.2 L356.3,303.3 L410.0,272.9"/><circle cx="34.0" cy="272.9" r="4"/><circle cx="87.7" cy="364.0" r="4"/><circle cx="141.4" cy="364.0" r="4"/><circle cx="195.1" cy="303.3" r="4"/><circle cx="248.9" cy="303.3" r="4"/><circle cx="302.6" cy="212.2" r="4"/><circle cx="356.3" cy="303.3" r="4"/><circle cx="410.0" cy="272.9" r="4"/><text x="422.0" y="277.4">9. Ricky</text></g><g class="ln" style="--c:#c084fc" data-team="6" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#6&quot;], [&quot;Week 2&quot;, &quot;#4&quot;], [&quot;Week 3&quot;, &quot;#7&quot;], [&quot;Week 4&quot;, &quot;#12&quot;], [&quot;Week 5&quot;, &quot;#11&quot;], [&quot;Week 6&quot;, &quot;#12&quot;], [&quot;Week 7&quot;, &quot;#8&quot;], [&quot;Week 8&quot;, &quot;#8&quot;]]}"><path class="hit" d="M34.0,181.8 L87.7,121.1 L141.4,212.2 L195.1,364.0 L248.9,333.6 L302.6,364.0 L356.3,242.5 L410.0,242.5"/><path class="stroke" d="M34.0,181.8 L87.7,121.1 L141.4,212.2 L195.1,364.0 L248.9,333.6 L302.6,364.0 L356.3,242.5 L410.0,242.5"/><circle cx="34.0" cy="181.8" r="4"/><circle cx="87.7" cy="121.1" r="4"/><circle cx="141.4" cy="212.2" r="4"/><circle cx="195.1" cy="364.0" r="4"/><circle cx="248.9" cy="333.6" r="4"/><circle cx="302.6" cy="364.0" r="4"/><circle cx="356.3" cy="242.5" r="4"/><circle cx="410.0" cy="242.5" r="4"/><text x="422.0" y="247.0">8. Thomas</text></g><g class="ln" style="--c:#22d3ee" data-team="11" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#5&quot;], [&quot;Week 2&quot;, &quot;#8&quot;], [&quot;Week 3&quot;, &quot;#10&quot;], [&quot;Week 4&quot;, &quot;#8&quot;], [&quot;Week 5&quot;, &quot;#6&quot;], [&quot;Week 6&quot;, &quot;#4&quot;], [&quot;Week 7&quot;, &quot;#3&quot;], [&quot;Week 8&quot;, &quot;#7&quot;]]}"><path class="hit" d="M34.0,151.5 L87.7,242.5 L141.4,303.3 L195.1,242.5 L248.9,181.8 L302.6,121.1 L356.3,90.7 L410.0,212.2"/><path class="stroke" d="M34.0,151.5 L87.7,242.5 L141.4,303.3 L195.1,242.5 L248.9,181.8 L302.6,121.1 L356.3,90.7 L410.0,212.2"/><circle cx="34.0" cy="151.5" r="4"/><circle cx="87.7" cy="242.5" r="4"/><circle cx="141.4" cy="303.3" r="4"/><circle cx="195.1" cy="242.5" r="4"/><circle cx="248.9" cy="181.8" r="4"/><circle cx="302.6" cy="121.1" r="4"/><circle cx="356.3" cy="90.7" r="4"/><circle cx="410.0" cy="212.2" r="4"/><text x="422.0" y="216.7">7. Jackson</text></g><g class="ln" style="--c:#f87171" data-team="12" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#10&quot;], [&quot;Week 2&quot;, &quot;#11&quot;], [&quot;Week 3&quot;, &quot;#8&quot;], [&quot;Week 4&quot;, &quot;#9&quot;], [&quot;Week 5&quot;, &quot;#7&quot;], [&quot;Week 6&quot;, &quot;#9&quot;], [&quot;Week 7&quot;, &quot;#7&quot;], [&quot;Week 8&quot;, &quot;#6&quot;]]}"><path class="hit" d="M34.0,303.3 L87.7,333.6 L141.4,242.5 L195.1,272.9 L248.9,212.2 L302.6,272.9 L356.3,212.2 L410.0,181.8"/><path class="stroke" d="M34.0,303.3 L87.7,333.6 L141.4,242.5 L195.1,272.9 L248.9,212.2 L302.6,272.9 L356.3,212.2 L410.0,181.8"/><circle cx="34.0" cy="303.3" r="4"/><circle cx="87.7" cy="333.6" r="4"/><circle cx="141.4" cy="242.5" r="4"/><circle cx="195.1" cy="272.9" r="4"/><circle cx="248.9" cy="212.2" r="4"/><circle cx="302.6" cy="272.9" r="4"/><circle cx="356.3" cy="212.2" r="4"/><circle cx="410.0" cy="181.8" r="4"/><text x="422.0" y="186.3">6. kelly</text></g><g class="ln" style="--c:#fbbf24" data-team="3" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#4&quot;], [&quot;Week 2&quot;, &quot;#2&quot;], [&quot;Week 3&quot;, &quot;#2&quot;], [&quot;Week 4&quot;, &quot;#3&quot;], [&quot;Week 5&quot;, &quot;#5&quot;], [&quot;Week 6&quot;, &quot;#5&quot;], [&quot;Week 7&quot;, &quot;#2&quot;], [&quot;Week 8&quot;, &quot;#5&quot;]]}"><path class="hit" d="M34.0,121.1 L87.7,60.4 L141.4,60.4 L195.1,90.7 L248.9,151.5 L302.6,151.5 L356.3,60.4 L410.0,151.5"/><path class="stroke" d="M34.0,121.1 L87.7,60.4 L141.4,60.4 L195.1,90.7 L248.9,151.5 L302.6,151.5 L356.3,60.4 L410.0,151.5"/><circle cx="34.0" cy="121.1" r="4"/><circle cx="87.7" cy="60.4" r="4"/><circle cx="141.4" cy="60.4" r="4"/><circle cx="195.1" cy="90.7" r="4"/><circle cx="248.9" cy="151.5" r="4"/><circle cx="302.6" cy="151.5" r="4"/><circle cx="356.3" cy="60.4" r="4"/><circle cx="410.0" cy="151.5" r="4"/><text x="422.0" y="156.0">5. skyler</text></g><g class="ln" style="--c:#60a5fa" data-team="9" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#2&quot;], [&quot;Week 2&quot;, &quot;#1&quot;], [&quot;Week 3&quot;, &quot;#3&quot;], [&quot;Week 4&quot;, &quot;#2&quot;], [&quot;Week 5&quot;, &quot;#2&quot;], [&quot;Week 6&quot;, &quot;#3&quot;], [&quot;Week 7&quot;, &quot;#6&quot;], [&quot;Week 8&quot;, &quot;#4&quot;]]}"><path class="hit" d="M34.0,60.4 L87.7,30.0 L141.4,90.7 L195.1,60.4 L248.9,60.4 L302.6,90.7 L356.3,181.8 L410.0,121.1"/><path class="stroke" d="M34.0,60.4 L87.7,30.0 L141.4,90.7 L195.1,60.4 L248.9,60.4 L302.6,90.7 L356.3,181.8 L410.0,121.1"/><circle cx="34.0" cy="60.4" r="4"/><circle cx="87.7" cy="30.0" r="4"/><circle cx="141.4" cy="90.7" r="4"/><circle cx="195.1" cy="60.4" r="4"/><circle cx="248.9" cy="60.4" r="4"/><circle cx="302.6" cy="90.7" r="4"/><circle cx="356.3" cy="181.8" r="4"/><circle cx="410.0" cy="121.1" r="4"/><text x="422.0" y="125.6">4. michael</text></g><g class="ln" style="--c:#34d399" data-team="4" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#12&quot;], [&quot;Week 2&quot;, &quot;#10&quot;], [&quot;Week 3&quot;, &quot;#5&quot;], [&quot;Week 4&quot;, &quot;#7&quot;], [&quot;Week 5&quot;, &quot;#4&quot;], [&quot;Week 6&quot;, &quot;#2&quot;], [&quot;Week 7&quot;, &quot;#5&quot;], [&quot;Week 8&quot;, &quot;#3&quot;]]}"><path class="hit" d="M34.0,364.0 L87.7,303.3 L141.4,151.5 L195.1,212.2 L248.9,121.1 L302.6,60.4 L356.3,151.5 L410.0,90.7"/><path class="stroke" d="M34.0,364.0 L87.7,303.3 L141.4,151.5 L195.1,212.2 L248.9,121.1 L302.6,60.4 L356.3,151.5 L410.0,90.7"/><circle cx="34.0" cy="364.0" r="4"/><circle cx="87.7" cy="303.3" r="4"/><circle cx="141.4" cy="151.5" r="4"/><circle cx="195.1" cy="212.2" r="4"/><circle cx="248.9" cy="121.1" r="4"/><circle cx="302.6" cy="60.4" r="4"/><circle cx="356.3" cy="151.5" r="4"/><circle cx="410.0" cy="90.7" r="4"/><text x="422.0" y="95.2">3. Mason</text></g><g class="ln" style="--c:#f472b6" data-team="8" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#1&quot;], [&quot;Week 2&quot;, &quot;#5&quot;], [&quot;Week 3&quot;, &quot;#6&quot;], [&quot;Week 4&quot;, &quot;#4&quot;], [&quot;Week 5&quot;, &quot;#3&quot;], [&quot;Week 6&quot;, &quot;#6&quot;], [&quot;Week 7&quot;, &quot;#4&quot;], [&quot;Week 8&quot;, &quot;#2&quot;]]}"><path class="hit" d="M34.0,30.0 L87.7,151.5 L141.4,181.8 L195.1,121.1 L248.9,90.7 L302.6,181.8 L356.3,121.1 L410.0,60.4"/><path class="stroke" d="M34.0,30.0 L87.7,151.5 L141.4,181.8 L195.1,121.1 L248.9,90.7 L302.6,181.8 L356.3,121.1 L410.0,60.4"/><circle cx="34.0" cy="30.0" r="4"/><circle cx="87.7" cy="151.5" r="4"/><circle cx="141.4" cy="181.8" r="4"/><circle cx="195.1" cy="121.1" r="4"/><circle cx="248.9" cy="90.7" r="4"/><circle cx="302.6" cy="181.8" r="4"/><circle cx="356.3" cy="121.1" r="4"/><circle cx="410.0" cy="60.4" r="4"/><text x="422.0" y="64.9">2. Jake</text></g><g class="ln" style="--c:#a78bfa" data-team="2" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#3&quot;], [&quot;Week 2&quot;, &quot;#3&quot;], [&quot;Week 3&quot;, &quot;#1&quot;], [&quot;Week 4&quot;, &quot;#1&quot;], [&quot;Week 5&quot;, &quot;#1&quot;], [&quot;Week 6&quot;, &quot;#1&quot;], [&quot;Week 7&quot;, &quot;#1&quot;], [&quot;Week 8&quot;, &quot;#1&quot;]]}"><path class="hit" d="M34.0,90.7 L87.7,90.7 L141.4,30.0 L195.1,30.0 L248.9,30.0 L302.6,30.0 L356.3,30.0 L410.0,30.0"/><path class="stroke" d="M34.0,90.7 L87.7,90.7 L141.4,30.0 L195.1,30.0 L248.9,30.0 L302.6,30.0 L356.3,30.0 L410.0,30.0"/><circle cx="34.0" cy="90.7" r="4"/><circle cx="87.7" cy="90.7" r="4"/><circle cx="141.4" cy="30.0" r="4"/><circle cx="195.1" cy="30.0" r="4"/><circle cx="248.9" cy="30.0" r="4"/><circle cx="302.6" cy="30.0" r="4"/><circle cx="356.3" cy="30.0" r="4"/><circle cx="410.0" cy="30.0" r="4"/><text x="422.0" y="34.5">1. Ben E.</text></g><text class="ax" x="20" y="34.0" text-anchor="end">1</text><text class="ax" x="20" y="368.0" text-anchor="end">12</text></svg>
+<figcaption>rank 1 at the top. hover or tap a line</figcaption></figure></div></div></section>
+    <section class="chan" id="next-week"><header class="chh"><span class="hash">#</span>next-week<span class=topic>week 9 lobby</span></header><div class="divider"><span>week 8</span></div><div class="msg"><div class="ava bot" aria-hidden="true">🤖</div><div class="mb"><p class="mh"><span class="un botn">ChachBot</span><span class="tag">BOT</span><span class="ts">Today at 9:41 PM</span></p><p class="mt">week 9 lobby just dropped 🎮</p><div class="embeds"><div class="embed hot"><p class=et>🚨 MAIN EVENT</p><p class="nxm"><img src="../assets/logos/12-team-evil.svg" alt="">Team evil  <span>4-4</span> <i>vs</i> <img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="">Cortisol Spyke Weeks <span>5-3</span></p><p class="nxt">kelly runs it back 🔁 vs mason 💍 can bro go back2back2back?? 🗣️🗣️ or is the married man about to SEND HIM 📨</p></div><div class="embed"><p class="nxm"><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt="">Drake Maye Sucks Ass <span>5-3</span> <i>vs</i> <img src="../assets/logos/9-michael-s-monstrous-team.svg" alt="">michael&#x27;s Monstrous Team <span>5-3</span></p><p class="nxt">drake maye sucks ass needs this dub BAD 😰😰 michael just unlocked god mode 👼 good luck soldier 🫡</p></div><div class="embed"><p class="nxm"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt="">Ben&#x27;s Brilliant Team <span>7-1</span> <i>vs</i> <img src="../assets/logos/6-bingo-night.svg" alt="">Bingo Night <span>4-4</span></p><p class="nxt">ben e&#x27;s comeback arc ⬆️ vs the luckiest team in the server 🍀🍀 aura vs RNG. who wins 🤔</p></div><div class="embed"><p class="nxm"><img src="../assets/logos/3-ceedeez-nutz.svg" alt="">CeeDeez Nutz <span>5-3</span> <i>vs</i> <img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="">Purdy Seconds to Mars <span>2-6</span></p><p class="nxt">CeeDeez pls start a QB who EXISTS 🙏🙏 purdy seconds to mars on a 5 L skid 💀 somebody&#x27;s streak ends here</p></div><div class="embed"><p class="nxm"><img src="../assets/logos/8-dake-bates.png" alt="">Dake Bates <span>6-2</span> <i>vs</i> <img src="../assets/logos/1-team-galakrond.png" alt="">Team Galakrond <span>1-7</span></p><p class="nxt">dake queueing into bots AGAIN 🤖🤖 galakrond pls 🙏 just once 🙏</p></div><div class="embed"><p class="nxm"><img src="../assets/logos/5-adams-and-jefferson.svg" alt="">Adams and Jefferson <span>1-7</span> <i>vs</i> <img src="../assets/logos/10-roadrunners.svg" alt="">roadrunners <span>3-5</span></p><p class="nxt">two teams speedrunning the draft lottery 🎰🏃‍♂️</p></div></div></div></div></section>
+    <div class="typing" aria-hidden="true"><span class="dots"><i></i><i></i><i></i></span><b>Ben Elton is typing...</b></div>
+    <footer class="foot"><p>gg go next 🫡 see u next week chat</p><p>Data from ESPN, pulled Monday night once the last game is final. <a href="../index.html">All weeks</a></p></footer>
+  </div>
+  <aside class="members" aria-label="Members"><p class="cat">ONLINE · 12</p><ul><li><span class="mav"><img src="../assets/logos/2-ben-s-brilliant-team.svg" alt=""><i class="st dnd"></i></span><span><b class="r0">Ben Elton</b><small>do not disturb 😭</small></span></li><li><span class="mav"><img src="../assets/logos/8-dake-bates.png" alt=""><i class="st on"></i></span><span><b class="r0">Jake Danielson</b><small>aura farming 🧑‍🌾</small></span></li><li><span class="mav"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt=""><i class="st on"></i></span><span><b class="r0">Mason Morgan</b><small>just married 💍</small></span></li><li><span class="mav"><img src="../assets/logos/9-michael-s-monstrous-team.svg" alt=""><i class="st on"></i></span><span><b class="r1">michael prince</b><small>god mode 👼</small></span></li><li><span class="mav"><img src="../assets/logos/3-ceedeez-nutz.svg" alt=""><i class="st on"></i></span><span><b class="r1">skyler cortez</b><small>looking for a QB 🔍</small></span></li><li><span class="mav"><img src="../assets/logos/12-team-evil.svg" alt=""><i class="st on"></i></span><span><b class="r1">kelly brown</b><small>😈 he&#x27;s him</small></span></li><li><span class="mav"><img src="../assets/logos/11-drake-maye-sucks-ass.svg" alt=""><i class="st on"></i></span><span><b class="r2">Jackson Helling</b><small>coping 🫠</small></span></li><li><span class="mav"><img src="../assets/logos/6-bingo-night.svg" alt=""><i class="st on"></i></span><span><b class="r2">Thomas Fowler</b><small>🍀 rng enjoyer</small></span></li><li><span class="mav"><img src="../assets/logos/10-roadrunners.svg" alt=""><i class="st on"></i></span><span><b class="r2">Ricky Verastegui</b><small>speedrunning ⏱️</small></span></li><li><span class="mav"><img src="../assets/logos/1-team-galakrond.png" alt=""><i class="st on"></i></span><span><b class="r3">Neil Gibeaut</b><small>alt+f4 🫡</small></span></li><li><span class="mav"><img src="../assets/logos/5-adams-and-jefferson.svg" alt=""><i class="st on"></i></span><span><b class="r3">Lyudmil Zdravkov</b><small>cursed 🧿</small></span></li><li><span class="mav"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt=""><i class="st on"></i></span><span><b class="r3">Ben T</b><small>identity crisis 🪪</small></span></li></ul></aside>
+</div>
+<script>
+(function(){
+  var tip=document.createElement('div');tip.className='tip';tip.setAttribute('role','tooltip');tip.hidden=true;
+  document.body.appendChild(tip);
+  function show(el,x,y){
+    var d;try{d=JSON.parse(el.getAttribute('data-tip'))}catch(_){return}
+    while(tip.firstChild)tip.removeChild(tip.firstChild);
+    var h=document.createElement('p');h.className='tt';h.textContent=d.t;tip.appendChild(h);
+    d.rows.forEach(function(r){var p=document.createElement('p');var k=document.createElement('span');
+      k.textContent=r[0];if(r[2]){var i=document.createElement('i');i.className='key '+r[2];k.insertBefore(i,k.firstChild)}
+      var v=document.createElement('b');v.textContent=r[1];p.appendChild(v);p.appendChild(k);tip.appendChild(p)});
+    if(d.total!==undefined){var t=document.createElement('p');t.className='tsum';var b=document.createElement('b');
+      b.textContent=d.total;var s=document.createElement('span');s.textContent='Total';t.appendChild(b);t.appendChild(s);tip.appendChild(t)}
+    tip.hidden=false;place(x,y);
+  }
+  function place(x,y){var w=tip.offsetWidth,hh=tip.offsetHeight,vw=window.innerWidth;
+    var l=Math.min(Math.max(8,x+14),vw-w-8),t=y-hh-14;if(t<8)t=y+18;
+    tip.style.left=l+'px';tip.style.top=t+'px'}
+  function hide(){tip.hidden=true}
+  document.querySelectorAll('[data-tip]').forEach(function(el){
+    el.addEventListener('pointermove',function(ev){show(el,ev.clientX,ev.clientY)});
+    el.addEventListener('pointerleave',hide);
+    el.addEventListener('focus',function(){var r=el.getBoundingClientRect();show(el,r.left+r.width/2,r.top)});
+    el.addEventListener('blur',hide);
+  });
+  window.addEventListener('scroll',hide,{passive:true});
+  var chart=document.querySelector('.bump');
+  function hl(id){if(!chart)return;chart.classList.toggle('focus',!!id);
+    chart.querySelectorAll('.ln').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-team')===id)})}
+  document.querySelectorAll('.bump .ln').forEach(function(g){
+    var id=g.getAttribute('data-team');
+    g.addEventListener('pointerenter',function(){hl(id)});g.addEventListener('pointerleave',function(){hl(null)});
+    g.addEventListener('focus',function(){hl(id)});g.addEventListener('blur',function(){hl(null)});
+  });
+  // reactions you can actually click
+  document.querySelectorAll('.re:not(.add)').forEach(function(b){
+    b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')==='true';var n=b.querySelector('b');
+      if(n.textContent!=='99+'){n.textContent=String(parseInt(n.textContent,10)+(on?-1:1))}
+      b.setAttribute('aria-pressed',on?'false':'true')});
+  });
+  document.querySelectorAll('.re.add').forEach(function(b){
+    b.addEventListener('click',function(){var list=['💀','😭','🔥','🗿','🫡','🤡'];var em=list[Math.floor(Math.random()*list.length)];
+      var nb=document.createElement('button');nb.type='button';nb.className='re';nb.setAttribute('aria-pressed','true');
+      var s=document.createElement('span');s.textContent=em;var c=document.createElement('b');c.textContent='1';
+      nb.appendChild(s);nb.appendChild(c);b.parentNode.insertBefore(nb,b)});
+  });
+})();
+</script>
+</body>
+</html>
