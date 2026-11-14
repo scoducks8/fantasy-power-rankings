@@ -5,6 +5,11 @@ name: Fetch theme photos
 
 on:
   workflow_dispatch:
+    inputs:
+      set:
+        description: "Photo set (ducks, ryanday)"
+        required: true
+        default: "ducks"
 
 permissions:
   contents: write
@@ -20,24 +25,21 @@ jobs:
           python-version: "3.12"
 
       - name: Download Commons photos
-        run: python scripts/fetch_photos.py --out docs/assets/day
+        run: python scripts/fetch_photos.py --set "${{ inputs.set }}"
 
       - name: What landed
         run: |
-          mkdir -p docs/assets/day
-          echo "files in docs/assets/day:"
-          ls -la docs/assets/day || true
-          echo "credits:"
-          head -c 600 data/photo-credits.json || echo "(no credits file)"
+          ls -la docs/assets/ducks docs/assets/day 2>/dev/null || true
+          ls data/photo-credits*.json || true
 
       - name: Commit the photos
         run: |
           git config user.name "power-rankings-bot"
           git config user.email "actions@github.com"
-          git add -A docs/assets/day data/photo-credits.json || true
+          git add -A docs/assets data/photo-credits*.json || true
           if git diff --staged --quiet; then
             echo "Nothing new to commit."
           else
-            git commit -m "Theme photos: $(date -u +%Y-%m-%d)"
+            git commit -m "Theme photos: ${{ inputs.set }}"
             git push
           fi

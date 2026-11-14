@@ -569,16 +569,50 @@ h1{{margin-top:10px;font-size:78px;line-height:1.02;font-weight:700;letter-spaci
 <h1>{e(c.get("headline", ""))}</h1><div class="rx">{rx}</div></div></div></div>
 </body></html>"""
 
+
+def build_ducks(week: int, copy_path: str) -> str:
+    """Sleek black-and-chrome card: big italic headline, result card, speed lines."""
+    c = json.loads(Path(copy_path).read_text()) if copy_path else json.loads(
+        (ROOT / "data" / f"copy-week-{week}.json").read_text())
+    fonts = f"{(ROOT / 'docs').as_uri()}/assets/fonts"
+    sb = c.get("scoreboard", {})
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:B;font-weight:900;font-style:italic;src:url({fonts}/barlow-condensed-latin-900-italic.woff2)}}
+@font-face{{font-family:B;font-weight:600;src:url({fonts}/barlow-condensed-latin-600-normal.woff2)}}
+@font-face{{font-family:B;font-weight:800;font-style:italic;src:url({fonts}/barlow-condensed-latin-800-italic.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;position:relative;color:#f4f6f2;font-family:B,sans-serif;display:grid;grid-template-columns:1fr 360px;gap:44px;align-items:center;padding:0 64px;
+  background:radial-gradient(ellipse 60% 90% at 78% 45%,rgba(31,122,79,.55),transparent 65%),repeating-linear-gradient(45deg,rgba(255,255,255,.02) 0 2px,transparent 2px 4px),#060706}}
+.g{{position:absolute;right:-30px;top:-40px;white-space:nowrap;font:900 italic 380px/.8 B;color:transparent;-webkit-text-stroke:2px rgba(254,225,35,.12)}}
+.s{{position:absolute;height:3px;background:linear-gradient(90deg,transparent,rgba(254,225,35,.8),transparent);transform:skewX(-30deg)}}
+.k{{position:relative;font:600 22px/1 B;letter-spacing:.3em;text-transform:uppercase;color:#fee123}}
+h1{{position:relative;margin-top:22px;font:900 italic 118px/.86 B;text-transform:uppercase;background:linear-gradient(180deg,#fff,#e9eee9 42%,#9aa59c 50%,#f3f6f3 58%,#c9d1ca);-webkit-background-clip:text;color:transparent}}
+.b{{position:relative;background:linear-gradient(160deg,#151a16,#0a0c0a);border:1px solid #2f3731;padding:24px 26px;border-left:5px solid #fee123}}
+.t{{font:600 16px/1 B;letter-spacing:.3em;color:#fee123;margin-bottom:12px}}
+.r{{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0}}
+.r span{{font:800 italic 34px/1 B;text-transform:uppercase}} .r b{{font:900 italic 80px/1 B;color:#fee123}}
+.r.l span,.r.l b{{color:#59625b}}
+.bar{{position:absolute;left:0;right:0;bottom:0;height:12px;background:#fee123}}
+</style></head><body>
+<div class="g">{e(c.get("ghost", "DUCKS"))}</div>
+<div class="s" style="top:120px;left:40px;width:420px"></div><div class="s" style="top:520px;left:240px;width:520px"></div>
+<div><div class="k">Week {week} power rankings &middot; Sco Ducks</div><h1>{e(c.get("headline", ""))}</h1></div>
+<div class="b"><div class="t">{e(sb.get("label", "FINAL"))}</div>
+<div class="r"><span>{e(sb.get("home", ""))}</span><b>{e(str(sb.get("home_score", "")))}</b></div>
+<div class="r l"><span>{e(sb.get("away", ""))}</span><b>{e(str(sb.get("away_score", "")))}</b></div></div>
+<div class="bar"></div>
+</body></html>"""
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", type=int, required=True)
     ap.add_argument("--copy", default="")
     ap.add_argument("--out", default="")
-    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy", "wedding", "mlg", "chat"])
+    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy", "wedding", "mlg", "chat", "ducks"])
     a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "docs" / f"og-week-{a.week}.png"
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
-        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy, "wedding": build_wedding, "mlg": build_mlg, "chat": build_chat}.get(a.style, build)
+        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy, "wedding": build_wedding, "mlg": build_mlg, "chat": build_chat, "ducks": build_ducks}.get(a.style, build)
         fh.write(builder(a.week, a.copy))
         src = fh.name
     js = f'''const {{chromium}}=require('playwright');(async()=>{{

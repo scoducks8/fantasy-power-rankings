@@ -112,10 +112,40 @@ def logo_for(t: dict, slug: str) -> str:
     got = cache_image(url, "logos", name)
     if got:
         return got
+    # ESPN refuses some custom uploads. Keep whatever real image the team
+    # used most recently rather than dropping to a lettered tile.
+    prev = previous_logo(t.get("team_id"))
+    if prev:
+        return prev
     tile = IMG_DIR / "logos" / f"{name}.svg"
     if tile.exists():
         return f"assets/logos/{name}.svg"
     return fallback_avatar(t.get("owner") or t.get("name", ""), "logos", name)
+
+
+def _is_tile(path) -> bool:
+    try:
+        txt = path.read_text(errors="ignore")[:400]
+    except OSError:
+        return False
+    return path.suffix == ".svg" and 'rx="18"' in txt and "<text" in txt
+
+
+def previous_logo(team_id) -> str:
+    """Most recent non-tile logo this team used on an earlier week's page."""
+    weeks = sorted(DATA_DIR.glob("week-*.json"),
+                   key=lambda p: int(re.sub(r"\D", "", p.stem) or 0), reverse=True)
+    for wp in weeks:
+        try:
+            teams = json.loads(wp.read_text()).get("teams", [])
+        except (OSError, json.JSONDecodeError):
+            continue
+        for t in teams:
+            if t.get("team_id") == team_id and t.get("logo_local"):
+                f = ROOT / "docs" / t["logo_local"]
+                if f.exists() and not _is_tile(f):
+                    return t["logo_local"]
+    return ""
 
 def save_schedule(base: dict) -> None:
     """Record season length, playoff size and the full schedule (for midseason outlook)."""

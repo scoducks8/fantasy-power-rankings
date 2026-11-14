@@ -5,7 +5,7 @@ Every file keeps its credit line: Commons images are free to reuse but most
 require attribution, so data/photo-credits.json travels with them and the page
 prints the credits.
 
-    python scripts/fetch_photos.py --out docs/assets/day
+    python scripts/fetch_photos.py --set ducks
 """
 
 from __future__ import annotations
@@ -20,22 +20,45 @@ from pathlib import Path
 API = "https://commons.wikimedia.org/w/api.php"
 UA = {"User-Agent": "fantasy-power-rankings/1.0 (github.com/scoducks8)"}
 
-# search term -> how many files to keep
-# term -> how many files to keep. A required word filters look-alikes: there is
-# a snooker player named Ryan Day, and searches otherwise return other coaches.
-REQUIRE = {"Ryan Day football coach": ("ryan day",)}
-BLOCK = ("snooker", "walden", "eckardt", "zook", "withers", "walters", "white house")
-
-TERMS = {
-    "Ryan Day football coach": 8,
-    "Ohio State Buckeyes football head coach": 4,
-    "Ohio Stadium": 5,
-    "Ohio State Buckeyes marching band": 3,
-    "Manchester New Hampshire": 4,
-    "University of New Hampshire campus": 3,
-    "Columbus Ohio skyline": 2,
-    "Buckeye Aesculus glabra tree": 2,
+# Photo sets, one per themed week. term -> how many files to keep. A required
+# word filters look-alikes (there is a snooker player named Ryan Day).
+SETS = {
+    "ryanday": {
+        "out": "docs/assets/day", "credits": "data/photo-credits.json",
+        "require": {"Ryan Day football coach": ("ryan day",)},
+        "block": ("snooker", "walden", "eckardt", "zook", "withers", "walters", "white house"),
+        "terms": {
+            "Ryan Day football coach": 8,
+            "Ohio State Buckeyes football head coach": 4,
+            "Ohio Stadium": 5,
+            "Ohio State Buckeyes marching band": 3,
+            "Manchester New Hampshire": 4,
+            "University of New Hampshire campus": 3,
+            "Columbus Ohio skyline": 2,
+            "Buckeye Aesculus glabra tree": 2,
+        },
+    },
+    "ducks": {
+        "out": "docs/assets/ducks", "credits": "data/photo-credits-ducks.json",
+        "require": {
+            "Marcus Mariota": ("mariota",), "Justin Herbert": ("herbert",),
+            "Joey Harrington": ("harrington",), "LaMichael James": ("lamichael",),
+            "De'Anthony Thomas": ("thomas",), "Penei Sewell": ("sewell",),
+            "Kayvon Thibodeaux": ("thibodeaux",), "Dillon Gabriel": ("gabriel",),
+            "Bo Nix": ("nix",), "Autzen Stadium": ("autzen",), "Hayward Field": ("hayward",),
+            "Oregon Ducks football": ("oregon", "duck"),
+        },
+        "block": ("beaver", "oregon state"),
+        "terms": {
+            "Marcus Mariota": 3, "Justin Herbert": 3, "Joey Harrington": 2, "LaMichael James": 2,
+            "De'Anthony Thomas": 2, "Penei Sewell": 2, "Kayvon Thibodeaux": 2, "Dillon Gabriel": 2,
+            "Bo Nix": 2, "Autzen Stadium": 4, "Hayward Field": 2, "Oregon Ducks football": 5,
+        },
+    },
 }
+REQUIRE: dict = {}
+BLOCK: tuple = ()
+TERMS: dict = {}
 BAD_LICENSE = re.compile(r"fair use|non-free|copyright", re.I)
 
 
@@ -71,9 +94,15 @@ def slug(v: str) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="docs/assets/day")
-    ap.add_argument("--credits", default="data/photo-credits.json")
+    ap.add_argument("--set", default="ryanday", choices=sorted(SETS))
+    ap.add_argument("--out", default="")
+    ap.add_argument("--credits", default="")
     a = ap.parse_args()
+    global REQUIRE, BLOCK, TERMS
+    cfg = SETS[a.set]
+    REQUIRE, BLOCK, TERMS = cfg["require"], cfg["block"], cfg["terms"]
+    a.out = a.out or cfg["out"]
+    a.credits = a.credits or cfg["credits"]
     root = Path(__file__).resolve().parent.parent
     out = root / a.out
     out.mkdir(parents=True, exist_ok=True)

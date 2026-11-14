@@ -1,0 +1,307 @@
+{
+ "_comment": "Week 9 copy, ducks skin. League numbers checked against fact_sheet --week 9, season analysis, odds-week-9. Oregon 41, Ohio State 28 (Nov 7, 2026, Ohio Stadium) per ESPN recap.",
+ "kicker": "Week 9 power rankings · Sco Ducks",
+ "headline": "Oregon owns the Horseshoe.",
+ "standfirst": "Eugene, Oregon. Track Town USA. The town where Bill Bowerman poured rubber into his wife's waffle iron, where Phil Knight ran for him, and where it never rains inside Autzen Stadium. On Saturday, November 7th, the Ducks walked into Ohio Stadium, fell behind 14-0, and scored 38 straight. Dylan Raiola threw for 257 yards and two touchdowns. Dierre Hill Jr. ran for two more, one from 48 yards out. They converted a fake punt on fourth-and-9 in the Horseshoe because they could. Oregon 41, Ohio State 28. Greatest program in the history of organized sport. Here are your fantasy rankings.",
+ "scoreboard": {
+  "label": "FINAL",
+  "home": "Oregon",
+  "home_score": 41,
+  "away": "Ohio State",
+  "away_score": 28,
+  "where": "Ohio Stadium · Columbus · Nov 7, 2026"
+ },
+ "ticker": [
+  "Oregon 41, Ohio State 28",
+  "38 straight points",
+  "Fake punt on fourth-and-9",
+  "It never rains in Autzen Stadium",
+  "Mariota. Herbert. Nix. Gabriel. Raiola.",
+  "Track Town USA",
+  "Sco Ducks"
+ ],
+ "tiers": [
+  [
+   "Heisman Tier",
+   "Mariota would approve"
+  ],
+  [
+   "Rose Bowl Tier",
+   "Herbert-level poise"
+  ],
+  [
+   "Autzen Walk-ons",
+   "earning their wings"
+  ],
+  [
+   "Beavers",
+   "Corvallis is that way"
+  ]
+ ],
+ "lede_scores": "Every result this week, closest first. All of them rank below Oregon 41, Ohio State 28.",
+ "lede_rankings": "Record and momentum count most, then scoring and luck. Each tier is named for someone who earned it.",
+ "lede_odds": "Six teams make the playoffs. In Eugene we just call that January.",
+ "lede_positions": "Points by position this week, sorted by total. Hover for the full breakdown.",
+ "lede_season": "Every team's rank, week by week. The leader in yellow, as it should be.",
+ "footer": "Sco Ducks.",
+ "takes": {
+  "2": "No. 1 at 8-1: a Buckeye fan, at the top of our rankings, the same weekend the Ducks hung 41 on his team in its own building. Some of us were watching on January 1, 2015, when Marcus Mariota put 59 on Florida State in the Rose Bowl, so we know greatness when we see it. Ben E.'s team scored 114.06, its lowest of the season, and still beat Bingo Night. Brock Bowers led the way. Congratulations. Sco Ducks.",
+  "12": "Three straight wins and the top score of the week, 142.24, a perfect 11-0 against the field. Joe Burrow went for 29.5, the best quarterback score in the league and the closest thing we've got to Justin Herbert taking over the Rose Bowl. Kelly runs this team like Chip Kelly ran the blur: snap, score, repeat. Up two to second, and the playoff odds jumped from 59% to 81%.",
+  "9": "A 45-point win over Drake Maye Sucks Ass, the biggest margin of the week, and the man who led it was Bucky Irving, 28.5 points, a former Duck. Of course it was. Eugene builds them to carry teams. Up two spots to third, with a 97% chance at the playoffs. Fast, physical, relentless. Very Oregon.",
+  "3": "CeeDee Lamb (33.5) and Christian Watson (30.1) put up the best receiving week in the league. Then there's the quarterback. Oregon has given the world Marcus Mariota, Justin Herbert, Bo Nix and Dillon Gabriel. Bo Nix was the Pac-12 Offensive Player of the Year. CeeDeez Nutz gave the world Malik Willis and 3.8 points. Up two spots anyway, with a 94% chance at the playoffs.",
+  "10": "Up four spots, the biggest climb of the week, and two straight wins. Matthew Golden went for 32.4, a De'Anthony Thomas in open space kind of day. The Black Mamba would approve. Playoff odds up to 17%.",
+  "8": "Last week's No. 1, down five spots to sixth after a 1.48-point loss to a team that had won once all year. Puka Nacua went for 35.0. The tight end went for 1.9. The No. 1 spot gets taken, not given. DeForest Buckner spent 2015 taking it from every quarterback in the Pac-12 on his way to Defensive Player of the Year. Playoff odds still 90%.",
+  "4": "Mason lost to Team evil by 21.66 and fell four spots. Ja'Marr Chase went for 31.5, a Troy Franklin, Bo-Nix-hit-him-in-stride kind of day, and 120.58 was the highest losing score of the week. Jared Goff scored 5.3. Franklin broke Oregon's single-season receiving record. Goff broke nothing. Playoff odds: 82%.",
+  "1": "Team Galakrond's second win of the season, and it came against last week's No. 1. Kenneth Walker III ran for 36.3, the top individual score of the week, a Royce Freeman kind of game, and Freeman is Oregon's all-time leading rusher, so that's the highest compliment we have. 112.24 to 110.76, the closest game of the week. Up two spots. Playoff odds: 1%. It never rains in Autzen, and for one week it stopped raining on Galakrond.",
+  "6": "Bingo Night's receivers scored 5.0 points. Combined. Ladd McConkey scored zero, and Travis Kelce led the team. Tez Johnson used to clear that on a single slant. Lost to Ben E. by 30.58 and dropped two spots. That was a Beavers performance, and we don't say that lightly. We say it all the time.",
+  "11": "74.46, the lowest score of the week, 0-11 against the field, and a 45-point loss to michael. The defense scored minus five. Down two spots, and the playoff odds fell from 57% to 32% in a week. Penei Sewell won the Outland Trophy keeping Justin Herbert clean. Nobody on this roster is keeping anything clean.",
+  "5": "A fifth straight loss, 1-8, and the kicker led the team again. Arik Armstead never took a snap off in Eugene. This team has taken the whole season off. Playoff odds: 0.1%.",
+  "7": "Brock Purdy scored 25.3 for the team named after him, the most loyalty this franchise has seen all year, and Bijan Robinson added 26.7. They lost by 20.64 anyway, a sixth straight loss, and Cam Skattebo scored zero again. Kenjon Barner never lost faith in a season, and neither does Ben T, a Ducks fan and therefore the most qualified man in this league to run a team, results notwithstanding."
+ },
+ "up_next": {
+  "title": "Up next",
+  "intro": "Week 10. Also, and far more importantly, Michigan comes to Autzen on Saturday.",
+  "games": [
+   {
+    "a": 4,
+    "b": 9,
+    "gotw": true,
+    "text": "Two playoff teams, 82% and 97%. Not as big as Oregon and Michigan at Autzen, but it's the biggest one in this league."
+   },
+   {
+    "a": 10,
+    "b": 2,
+    "text": "The hottest climber in the league against its resident Buckeye. We know who we're rooting for."
+   },
+   {
+    "a": 3,
+    "b": 11,
+    "text": "CeeDeez needs a quarterback who scores more than 3.8. Drake Maye Sucks Ass needs a win, badly."
+   },
+   {
+    "a": 6,
+    "b": 12,
+    "text": "Team evil goes for four straight. Bingo Night's receivers need to show up."
+   },
+   {
+    "a": 1,
+    "b": 7,
+    "text": "Two 2-7 teams. One of them is run by a Ducks fan. Go Ducks."
+   },
+   {
+    "a": 8,
+    "b": 5,
+    "text": "Last week's No. 1 against the 1-8 team. A get-right game."
+   }
+  ]
+ },
+ "og_title": "Week 9: Oregon owns the Horseshoe. Sco Ducks.",
+ "og_description": "Oregon 41, Ohio State 28. Ben E. is No. 1 anyway. Team evil wins three straight. Sco Ducks.",
+ "ghost": "SCO DUCKS",
+ "subhead": "Oregon 41, Ohio State 28. The fantasy rankings are below. They are less important.",
+ "legends": [
+  [
+   8,
+   "Marcus Mariota",
+   "2014 Heisman",
+   "mariota-portrait.jpg"
+  ],
+  [
+   10,
+   "Justin Herbert",
+   "Rose Bowl MVP",
+   "herbert-uniform.jpg"
+  ],
+  [
+   10,
+   "Bo Nix",
+   "Pac-12 Offensive POY",
+   "nix-uniform.jpg"
+  ],
+  [
+   8,
+   "Dillon Gabriel",
+   "Big Ten champion",
+   "gabriel-uniform.jpg"
+  ],
+  [
+   21,
+   "LaMichael James",
+   "Doak Walker Award",
+   "lamichael-james-portrait.jpg"
+  ],
+  [
+   6,
+   "De'Anthony Thomas",
+   "The Black Mamba",
+   "deanthony-thomas-uniform.jpg"
+  ],
+  [
+   21,
+   "Royce Freeman",
+   "All-time leading rusher",
+   "freeman-uniform.jpg"
+  ],
+  [
+   24,
+   "Kenjon Barner",
+   "Rose Bowl champion",
+   "barner-uniform.jpg"
+  ],
+  [
+   11,
+   "Troy Franklin",
+   "Single-season yards record",
+   "franklin-yellow.jpg"
+  ],
+  [
+   15,
+   "Tez Johnson",
+   "Big Ten champion",
+   "tez-johnson.jpg"
+  ],
+  [
+   58,
+   "Penei Sewell",
+   "Outland Trophy",
+   "sewell-uniform.jpg"
+  ],
+  [
+   5,
+   "Kayvon Thibodeaux",
+   "No. 5 overall pick",
+   "thibodeaux-uniform.jpg"
+  ],
+  [
+   "DL",
+   "DeForest Buckner",
+   "Pac-12 Defensive POY",
+   "buckner-portrait.jpg"
+  ],
+  [
+   "DL",
+   "Arik Armstead",
+   "First-round pick",
+   "armstead-uniform.jpg"
+  ]
+ ],
+ "comps": {
+  "2": [
+   "mariota-portrait.jpg",
+   "Marcus Mariota"
+  ],
+  "12": [
+   "herbert-portrait.jpg",
+   "Justin Herbert"
+  ],
+  "9": [
+   "bucky-irving.jpg",
+   "Bucky Irving"
+  ],
+  "3": [
+   "nix-practice.jpg",
+   "Bo Nix"
+  ],
+  "10": [
+   "deanthony-thomas-uniform.jpg",
+   "De'Anthony Thomas"
+  ],
+  "8": [
+   "buckner-portrait.jpg",
+   "DeForest Buckner"
+  ],
+  "4": [
+   "franklin-green.jpg",
+   "Troy Franklin"
+  ],
+  "1": [
+   "freeman-portrait.jpg",
+   "Royce Freeman"
+  ],
+  "6": [
+   "tez-johnson.jpg",
+   "Tez Johnson"
+  ],
+  "11": [
+   "sewell-portrait.jpg",
+   "Penei Sewell"
+  ],
+  "5": [
+   "armstead-uniform.jpg",
+   "Arik Armstead"
+  ],
+  "7": [
+   "barner-uniform.jpg",
+   "Kenjon Barner"
+  ]
+ },
+ "photos": {
+  "hero": "raiola.jpg",
+  "tiers": [
+   [
+    "gabriel-uniform.jpg",
+    "No. 8 Dillon Gabriel",
+    "center 25%"
+   ],
+   [
+    "herbert-uniform.jpg",
+    "No. 10 Justin Herbert",
+    "center 25%"
+   ],
+   [
+    "gonzalez-1.jpg",
+    "Christian Gonzalez",
+    "center 30%"
+   ],
+   [
+    "gonzalez-3.jpg",
+    "Christian Gonzalez",
+    "center 40%"
+   ]
+  ],
+  "breaks": [
+   {
+    "after": "results",
+    "img": "dante-moore.jpg",
+    "line": "It never rains in Autzen Stadium.",
+    "who": "Dante Moore",
+    "pos": "center 30%"
+   },
+   {
+    "after": "rankings",
+    "img": "nix-uniform.jpg",
+    "line": "Mariota. Herbert. Nix. Gabriel. Raiola.",
+    "who": "Bo Nix",
+    "pos": "center 25%"
+   },
+   {
+    "after": "playoff",
+    "img": "bucky-irving.jpg",
+    "line": "Once a Duck, always a Duck.",
+    "who": "Bucky Irving",
+    "pos": "center 35%"
+   },
+   {
+    "after": "depth",
+    "img": "gonzalez-2.jpg",
+    "line": "Fast. Physical. Relentless.",
+    "who": "Christian Gonzalez",
+    "pos": "center 40%"
+   },
+   {
+    "after": "trend",
+    "img": "franklin-yellow.jpg",
+    "line": "Track Town USA.",
+    "who": "Troy Franklin",
+    "pos": "center 25%"
+   },
+   {
+    "after": "next",
+    "img": "thibodeaux-uniform.jpg",
+    "line": "Sco Ducks.",
+    "who": "Kayvon Thibodeaux",
+    "pos": "center 25%"
+   }
+  ]
+ }
+}

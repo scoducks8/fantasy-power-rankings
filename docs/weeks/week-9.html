@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-name" content="ducks" />
+<meta name="color-scheme" content="dark" />
+<title>Week 9 power rankings &middot; Chach Champions League</title>
+<meta name="description" content="Oregon 41, Ohio State 28. Ben E. is No. 1 anyway. Team evil wins three straight. Sco Ducks." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Chach Champions League" />
+<meta property="og:url" content="https://scoducks8.github.io/fantasy-power-rankings/weeks/week-9.html" />
+<meta property="og:title" content="Week 9: Oregon owns the Horseshoe. Sco Ducks." />
+<meta property="og:description" content="Oregon 41, Ohio State 28. Ben E. is No. 1 anyway. Team evil wins three straight. Sco Ducks." />
+<meta property="og:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-week-9.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-week-9.png" />
+<style>@font-face{font-family:Barlow;font-weight:600;src:url(../assets/fonts/barlow-condensed-latin-600-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Barlow;font-weight:600;font-style:italic;src:url(../assets/fonts/barlow-condensed-latin-600-italic.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Barlow;font-weight:800;font-style:italic;src:url(../assets/fonts/barlow-condensed-latin-800-italic.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Barlow;font-weight:900;font-style:italic;src:url(../assets/fonts/barlow-condensed-latin-900-italic.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:400;src:url(../assets/fonts/inter-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:600;src:url(../assets/fonts/inter-latin-600-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Inter;font-weight:700;src:url(../assets/fonts/inter-latin-700-normal.woff2) format("woff2");font-display:swap}
+
+:root{
+  --black:#050605;--carbon:#0c0e0d;--panel:#111412;--panel2:#161a17;--hair:#232925;--hair2:#2f3731;
+  --yel:#fee123;--yel2:#fff27a;--green:#154733;--emerald:#1f7a4f;--apple:#8ad04a;
+  --ink:#f4f6f2;--ink2:#b9c2bb;--muted:#7d887f;--red:#ff5a4e;
+  --qb:#fee123;--rb:#2fbf71;--wr:#f4f6f2;--te:#4fd1c5;--k:#f6a821;--dst:#6b7c70;
+  --disp:Barlow,"Barlow Condensed","Arial Narrow",sans-serif;--body:Inter,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--black)}
+body{margin:0;color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  background:
+    repeating-linear-gradient(45deg,rgba(255,255,255,.018) 0 2px,transparent 2px 4px),
+    repeating-linear-gradient(-45deg,rgba(0,0,0,.25) 0 2px,transparent 2px 4px),
+    var(--black)}
+a{color:var(--yel)}
+img{display:block;max-width:100%}
+
+/* ticker */
+.ticker{position:relative;z-index:2;overflow:hidden;background:var(--yel);color:var(--black);font:800 italic 15px/1 var(--disp);letter-spacing:.12em;text-transform:uppercase;padding:9px 0}
+.tk{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:tk 45s linear infinite}
+.tk span::after{content:"/";margin-left:44px;opacity:.5}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+/* nav */
+.top{position:sticky;top:0;z-index:20;background:rgba(5,6,5,.86);backdrop-filter:blur(10px) saturate(1.4);border-bottom:1px solid var(--hair)}
+.top-in{max-width:1120px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font:900 italic 22px/1 var(--disp);letter-spacing:.02em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+.brand .short{display:none}
+.links{display:flex;gap:22px;font:600 13px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase}
+.links a{color:var(--ink2);text-decoration:none;transition:color .15s}
+.links a:hover{color:var(--yel)}
+
+/* hero */
+.hero{position:relative;z-index:1;overflow:hidden;background:radial-gradient(ellipse 70% 90% at 75% 40%,rgba(31,122,79,.45),transparent 65%),
+  radial-gradient(ellipse 50% 60% at 10% 100%,rgba(254,225,35,.10),transparent 60%),#070907;border-bottom:1px solid var(--hair)}
+.ghost{position:absolute;right:-2vw;top:18px;font:900 italic clamp(160px,28vw,360px)/.8 var(--disp);letter-spacing:-.02em;color:transparent;
+  -webkit-text-stroke:2px rgba(254,225,35,.10);white-space:nowrap;pointer-events:none;user-select:none}
+.speed{position:absolute;inset:0;pointer-events:none}
+.speed i{position:absolute;height:2px;width:46%;left:-10%;background:linear-gradient(90deg,transparent,rgba(254,225,35,.65),transparent);transform:skewX(-30deg);animation:zip 3.6s cubic-bezier(.6,0,.2,1) infinite}
+.speed i:nth-child(1){top:22%;animation-delay:.2s}.speed i:nth-child(2){top:41%;animation-delay:1.1s;width:30%}
+.speed i:nth-child(3){top:63%;animation-delay:2s}.speed i:nth-child(4){top:80%;animation-delay:2.7s;width:36%}
+@keyframes zip{0%{transform:translateX(-30%) skewX(-30deg);opacity:0}20%{opacity:1}70%{opacity:.6}100%{transform:translateX(260%) skewX(-30deg);opacity:0}}
+.hero-in{position:relative;max-width:1120px;margin:0 auto;padding:68px 20px 40px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:44px;align-items:end}
+.kicker{display:inline-flex;align-items:center;gap:10px;margin:0 0 18px;font:600 14px/1 var(--disp);letter-spacing:.28em;text-transform:uppercase;color:var(--yel)}
+.kicker::before{content:"";width:36px;height:3px;background:var(--yel)}
+.hero h1{margin:0;font:900 italic clamp(56px,10vw,128px)/.86 var(--disp);letter-spacing:-.01em;text-transform:uppercase;
+  background:linear-gradient(180deg,#ffffff 0%,#e9eee9 42%,#9aa59c 50%,#f3f6f3 58%,#c9d1ca 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 0 rgba(0,0,0,.6))}
+.sub{margin:18px 0 0;font:800 italic clamp(22px,3vw,30px)/1.1 var(--disp);text-transform:uppercase;letter-spacing:.02em;color:var(--yel)}
+.dek{margin:20px 0 0;max-width:60ch;font-size:18px;line-height:1.7;color:var(--ink2)}
+
+/* result card */
+.board{position:relative;background:linear-gradient(160deg,#151a16,#0a0c0a);border:1px solid var(--hair2);border-radius:4px;padding:22px 24px 18px;
+  box-shadow:0 30px 60px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);clip-path:polygon(0 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%)}
+.board::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--yel)}
+.bt{margin:0 0 14px;font:600 13px/1 var(--disp);letter-spacing:.3em;color:var(--yel)}
+.brow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:6px 0}
+.brow span{font:800 italic 28px/1 var(--disp);text-transform:uppercase;color:var(--ink)}
+.brow b{font:900 italic 64px/1 var(--disp);color:var(--yel);font-variant-numeric:tabular-nums}
+.brow:not(.win) span,.brow:not(.win) b{color:#59625b}
+.bw{margin:12px 0 0;padding-top:12px;border-top:1px solid var(--hair);font:600 12.5px/1.3 var(--disp);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* legends strip */
+.legends{position:relative;max-width:1120px;margin:0 auto;padding:6px 20px 34px}
+.lt{margin:0 0 12px;font:600 13px/1 var(--disp);letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.lgs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.lgd{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1px solid var(--hair);border-radius:3px;overflow:hidden}
+.lgd img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;filter:grayscale(.15) contrast(1.05)}
+.lgt{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;padding:12px 14px}
+.lgd b{grid-row:span 2;font:900 italic 42px/1 var(--disp);color:transparent;-webkit-text-stroke:1.5px var(--yel)}
+.lgd span{font:800 italic 18px/1.1 var(--disp);text-transform:uppercase}
+.lgd small{font-size:12.5px;color:var(--muted)}
+
+main{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:0 20px}
+section{margin-top:96px}
+h2{margin:0;font:900 italic clamp(44px,7vw,80px)/.9 var(--disp);text-transform:uppercase;letter-spacing:-.005em;color:var(--ink)}
+h2::after{content:"";display:block;width:64px;height:4px;margin-top:16px;background:var(--yel)}
+.lede{max-width:66ch;margin:18px 0 28px;color:var(--ink2);font-size:18px}
+
+/* legend */
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 18px;font:600 12.5px/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.lk{display:inline-flex;align-items:center;gap:7px}
+.sw,.key{display:inline-block;width:14px;height:4px}
+.qb{background:var(--qb)}.rb{background:var(--rb)}.wr{background:var(--wr)}.te{background:var(--te)}.k{background:var(--k)}.dst{background:var(--dst)}
+.tip .key{height:10px;width:10px}
+
+/* results */
+.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.game{position:relative;background:var(--panel);border:1px solid var(--hair);border-radius:3px;padding:16px 18px 12px;transition:border-color .15s,transform .15s}
+.game:hover{border-color:var(--hair2);transform:translateY(-2px)}
+.game.close{grid-column:1/-1;background:linear-gradient(110deg,rgba(254,225,35,.10),var(--panel) 45%);border-color:rgba(254,225,35,.45)}
+.gtag{margin:0 0 10px;font:800 italic 15px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--yel)}
+.gtag.blow{color:var(--rb)}
+.gs{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:12px;align-items:center;padding:5px 0;min-width:0}
+.gs img{width:30px;height:30px;border-radius:50%;object-fit:cover;background:var(--panel2)}
+.gs .nm{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gs .sc{font:900 italic 30px/1 var(--disp);font-variant-numeric:tabular-nums}
+.gs:not(.win){color:var(--muted)}
+.gs.win .sc{color:var(--yel)}
+.mg{margin:8px 0 0;padding-top:9px;border-top:1px solid var(--hair);font:600 12px/1 var(--disp);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+/* rankings */
+.tier{margin-top:54px}
+.tierh{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.tierh h3{margin:0;font:900 italic 40px/1 var(--disp);text-transform:uppercase;color:var(--ink)}
+.tr0 .tierh h3{background:linear-gradient(90deg,var(--yel),var(--yel2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tr3 .tierh h3{color:#e08a4a}
+.tierh p{margin:0;font:600 italic 17px/1 var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--hair);border-radius:3px;padding:22px 26px 18px 26px;overflow:hidden;transition:border-color .2s}
+.card:hover{border-color:var(--hair2)}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--hair2)}
+.card.t0::before{background:var(--yel)}
+.card::after{content:"";position:absolute;right:-60px;top:0;bottom:0;width:240px;pointer-events:none;opacity:.07;
+  background:repeating-linear-gradient(115deg,var(--yel) 0 2px,transparent 2px 14px)}
+.th{position:relative;display:grid;grid-template-columns:auto 50px minmax(0,1fr) auto;gap:18px;align-items:center}
+.rk{font:900 italic 68px/.8 var(--disp);min-width:.9em;text-align:center;color:transparent;-webkit-text-stroke:2px var(--ink2)}
+.t0 .rk{-webkit-text-stroke-color:var(--yel)}
+.th .lg{width:50px;height:50px;border-radius:50%;object-fit:cover;background:var(--panel2)}
+.who{min-width:0}
+.who h3{margin:0;font:800 italic 26px/1.05 var(--disp);text-transform:uppercase;letter-spacing:.01em;overflow-wrap:anywhere}
+.who p{margin:4px 0 0;font-size:14.5px;color:var(--muted)}
+.mv{margin-left:8px;font:800 italic 14px/1 var(--disp);letter-spacing:.04em}
+.mv.up{color:var(--yel)}.mv.dn{color:var(--red)}.mv.eq{color:var(--muted)}
+.pts{text-align:right}
+.pts b{display:block;font:900 italic 42px/1 var(--disp);font-variant-numeric:tabular-nums}
+.pts span{font:600 11px/1 var(--disp);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.bar{position:relative;display:flex;gap:3px;height:4px;margin:18px 0 2px;background:transparent;cursor:default}
+.seg{display:block;height:100%}
+.seg.qb{background:var(--qb)}.seg.rb{background:var(--rb)}.seg.wr{background:var(--wr)}.seg.te{background:var(--te)}.seg.k{background:var(--k)}.seg.dst{background:var(--dst)}
+.take{position:relative;margin:18px 0 0;font-size:17.5px;line-height:1.72;color:var(--ink)}
+.pog{position:relative;display:flex;align-items:center;gap:10px;margin:16px 0 0;padding-top:12px;border-top:1px solid var(--hair);font-size:14px;color:var(--ink2)}
+.pog img{width:30px;height:30px;border-radius:50%;object-fit:cover;background:var(--panel2)}
+
+/* road to the playoff */
+.odds{list-style:none;margin:0;padding:6px 22px;background:var(--panel);border:1px solid var(--hair);border-radius:3px}
+.od{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 64px 150px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--hair)}
+.od:last-child{border-bottom:0}
+.on{display:flex;align-items:center;gap:10px;font-weight:600;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.on img{width:26px;height:26px;border-radius:50%;object-fit:cover}
+.on small{color:var(--muted);font-weight:400}
+.om{height:4px;background:var(--hair)}
+.om span{display:block;height:100%;background:linear-gradient(90deg,var(--emerald),var(--yel))}
+.op{font:900 italic 28px/1 var(--disp);text-align:right}
+.ol{font:600 12.5px/1.2 var(--disp);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.note{margin:14px 0 0;font-size:14px;color:var(--muted)}
+
+/* depth chart */
+.pchart{display:grid;gap:10px;background:var(--panel);border:1px solid var(--hair);border-radius:3px;padding:20px}
+.prow{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;align-items:center;outline:none}
+.pn{font:800 italic 15px/1.1 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pt{display:flex;align-items:center;gap:10px;min-width:0}
+.ps{display:flex;gap:2px;height:14px}
+.pv{font:900 italic 20px/1 var(--disp)}
+.prow:hover .ps,.prow:focus .ps{outline:1px solid var(--yel);outline-offset:3px}
+.tview{margin-top:14px}
+.tview summary{cursor:pointer;font:600 13px/1 var(--disp);letter-spacing:.18em;text-transform:uppercase;color:var(--yel)}
+.twrap{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums;background:var(--panel)}
+th,td{padding:9px 10px;border-bottom:1px solid var(--hair);text-align:right}
+th:first-child{text-align:left}
+thead th{font:600 12px/1 var(--disp);letter-spacing:.16em;color:var(--muted)}
+td.tot{font-weight:700;color:var(--yel)}
+
+/* rank by week */
+.bumpwrap{margin:0;background:var(--panel);border:1px solid var(--hair);border-radius:3px;padding:20px}
+.bump{width:100%;height:auto;display:block}
+.bump .grid{stroke:var(--hair)}
+.bump .wkl,.bump .ax{fill:var(--muted);font:600 12px var(--disp);letter-spacing:.12em}
+.ln .hit{stroke:transparent;stroke-width:14;fill:none}
+.ln .stroke{stroke:#3a453d;stroke-width:2;fill:none}
+.ln circle{fill:var(--panel);stroke:#3a453d;stroke-width:2}
+.ln text{fill:var(--muted);font:800 italic 13px var(--disp);letter-spacing:.02em}
+.ln.lead .stroke,.ln.lead circle{stroke:var(--yel)}.ln.lead text{fill:var(--yel)}
+.ln.lead .stroke{stroke-width:3.5}
+.bump.focus .ln{opacity:.15}.bump.focus .ln.on{opacity:1}
+.bump.focus .ln.on .stroke{stroke:var(--yel);stroke-width:3.5}.bump.focus .ln.on text{fill:var(--yel)}
+.ln{outline:none;cursor:pointer;transition:opacity .15s}
+.bumpwrap figcaption{margin-top:12px;font-size:13px;color:var(--muted)}
+
+/* up next */
+.nxs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.nx{background:var(--panel);border:1px solid var(--hair);border-radius:3px;padding:16px 18px}
+.nx.gotw{grid-column:1/-1;border-color:rgba(254,225,35,.45);background:linear-gradient(110deg,rgba(254,225,35,.08),var(--panel) 45%)}
+.nx-tag{display:block;margin-bottom:8px;font:800 italic 15px/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;color:var(--yel)}
+.nx-m{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font:800 italic 19px/1.2 var(--disp);text-transform:uppercase}
+.nx-u{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.nx-m img{width:24px;height:24px;border-radius:50%;object-fit:cover}
+.nx-r{color:var(--muted)}
+.nx-vs{color:var(--yel);font-weight:600}
+.nx-t{margin:8px 0 0;color:var(--ink2)}
+
+/* footer */
+.foot{margin-top:110px;padding:34px 0 64px;border-top:1px solid var(--hair);color:var(--muted);font-size:14px}
+.sco{margin:0 0 12px;font:900 italic clamp(48px,8vw,96px)/.9 var(--disp);text-transform:uppercase;color:transparent;-webkit-text-stroke:2px var(--yel)}
+
+/* tooltip */
+.tip{position:fixed;z-index:50;min-width:170px;padding:11px 13px;background:#0b0d0b;border:1px solid var(--hair2);border-left:3px solid var(--yel);font-size:13px;pointer-events:none;box-shadow:0 18px 40px rgba(0,0,0,.6)}
+.tip p{margin:2px 0;display:flex;justify-content:space-between;flex-direction:row-reverse;gap:16px}
+.tip .tt{display:block;margin-bottom:6px;font:800 italic 15px/1.2 var(--disp);text-transform:uppercase;color:var(--yel)}
+.tip span{display:inline-flex;align-items:center;gap:6px;color:var(--ink2)}
+.tip .tsum{margin-top:6px;padding-top:6px;border-top:1px solid var(--hair)}
+
+@media (max-width:860px){
+  .hero-in{grid-template-columns:minmax(0,1fr);align-items:start;padding-top:48px}
+  .board{max-width:440px}
+  .od{grid-template-columns:minmax(0,1fr) 60px;row-gap:8px}
+  .om{grid-column:1/-1;grid-row:2}
+  .ol{grid-column:1/-1;grid-row:3}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .top-in,.hero-in,.legends,main{padding-left:16px;padding-right:16px}
+  .games,.nxs{grid-template-columns:minmax(0,1fr)}
+  .links a:not(:nth-child(-n+2)){display:none}
+  .brand .full{display:none}.brand .short{display:inline}
+  .dek{font-size:16.5px}
+  .brow b{font-size:52px}
+  .th{grid-template-columns:auto 42px minmax(0,1fr);gap:12px}
+  .th .lg{width:42px;height:42px}
+  .pts{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;text-align:left}
+  .pts b{font-size:36px}
+  .rk{font-size:56px}
+  .card{padding:18px 16px 16px 18px}
+  .who h3{font-size:22px}
+  .prow{grid-template-columns:84px minmax(0,1fr);gap:10px}
+  .tierh h3{font-size:32px}
+  .lgs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lgd b{font-size:34px}
+  .lgd span{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+
+/* photo band */
+.band{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:60px}
+.band figure{margin:0;overflow:hidden;border-radius:2px;aspect-ratio:3/4}
+.band figure:nth-child(odd){transform:translateY(14px)}
+.band img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05)}
+.credits{margin-top:14px;font-size:12px;line-height:1.5;color:#5f6a62}
+.credits a{color:#7d887f}
+@media (max-width:620px){.band{grid-template-columns:repeat(3,minmax(0,1fr))}.band figure:nth-child(n+4){display:none}}
+
+/* ducks comp thumbnail */
+.comp{float:right;width:116px;margin:2px 0 12px 20px;background:var(--black);border:1px solid var(--hair2);border-top:3px solid var(--yel)}
+.comp img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 25%}
+.comp small{display:block;padding:7px 9px 0;font:600 10.5px/1 var(--disp);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.comp b{display:block;padding:3px 9px 8px;font:800 italic 15px/1.1 var(--disp);text-transform:uppercase;color:var(--yel)}
+.pog{clear:both}
+.lgs{grid-template-columns:repeat(7,minmax(0,1fr))}
+@media (max-width:1100px){.lgs{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:620px){.lgs{grid-template-columns:repeat(2,minmax(0,1fr))}.comp{width:104px;margin-left:14px}}
+.lgt{padding:10px 12px}
+.lgd b{font-size:34px}
+.lgd span{font-size:16px}
+.lgd small{font-size:11.5px;line-height:1.3}
+
+/* photos everywhere */
+.herophoto{position:absolute;right:0;top:0;bottom:0;width:58%;background-size:cover;background-position:center 20%;opacity:.55;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%);filter:saturate(1.15) contrast(1.05)}
+.brk{position:relative;margin:96px 0 0;height:min(56vw,460px);overflow:hidden;border-radius:2px;clip-path:polygon(0 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%)}
+.brk img{width:100%;height:100%;object-fit:cover;filter:saturate(1.15) contrast(1.06)}
+.brk::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,6,5,.92) 0%,rgba(5,6,5,.2) 45%,transparent 70%),linear-gradient(90deg,rgba(5,6,5,.6),transparent 55%)}
+.brk figcaption{position:absolute;left:28px;right:28px;bottom:26px;z-index:1}
+.brk b{display:block;max-width:15ch;font:900 italic clamp(38px,6.5vw,84px)/.88 var(--disp);text-transform:uppercase;color:var(--ink)}
+.brk span{display:inline-block;margin-top:14px;padding-top:10px;border-top:3px solid var(--yel);font:600 13px/1 var(--disp);letter-spacing:.24em;text-transform:uppercase;color:var(--yel)}
+.tierban{position:relative;height:200px;margin:0 0 18px;overflow:hidden;border-radius:2px;background:linear-gradient(100deg,#0b0d0b 0%,#101a13 55%,#0b0d0b 100%);border-left:4px solid var(--yel)}
+.tr3 .tierban{border-left-color:#e08a4a}
+.tierban img{position:absolute;right:0;top:0;width:58%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 38%,#000 88%,transparent 100%)}
+.tierban::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 14px,rgba(254,225,35,.035) 14px 15px);pointer-events:none}
+.tbt{position:absolute;left:24px;bottom:20px;z-index:1}
+.tbt h3{margin:0;font:900 italic 46px/1 var(--disp);text-transform:uppercase;color:var(--ink)}
+.tr0 .tbt h3{color:var(--yel)}
+.tr3 .tbt h3{color:#e08a4a}
+.tbt p{margin:6px 0 0;font:600 italic 17px/1 var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.tbt small{display:block;margin-top:10px;font:600 11px/1 var(--disp);letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:620px){
+  .herophoto{width:100%;opacity:.28;-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent);mask-image:linear-gradient(180deg,#000 30%,transparent)}
+  .brk{height:340px;margin-top:70px}
+  .brk figcaption{left:18px;right:18px;bottom:20px}
+  .tierban{height:150px}
+  .tierban img{width:72%;opacity:.7}
+  .tbt h3{font-size:34px}
+}
+</style>
+</head>
+<body>
+<div class="ticker" aria-hidden="true"><div class="tk"><span>Oregon 41, Ohio State 28</span><span>38 straight points</span><span>Fake punt on fourth-and-9</span><span>It never rains in Autzen Stadium</span><span>Mariota. Herbert. Nix. Gabriel. Raiola.</span><span>Track Town USA</span><span>Sco Ducks</span><span>Oregon 41, Ohio State 28</span><span>38 straight points</span><span>Fake punt on fourth-and-9</span><span>It never rains in Autzen Stadium</span><span>Mariota. Herbert. Nix. Gabriel. Raiola.</span><span>Track Town USA</span><span>Sco Ducks</span></div></div>
+<nav class="top"><div class="top-in">
+  <a class="brand" href="../index.html"><span class="full">Chach Champions League</span><span class="short">CCL</span></a>
+  <div class="links"><a href="#results">Results</a><a href="#rankings">Rankings</a><a href="#playoff">Playoff</a><a href="#depth">Depth chart</a><a href="#next">Next</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="herophoto" aria-hidden="true" style="background-image:url(../assets/ducks/raiola.jpg)"></div>
+  <div class="ghost" aria-hidden="true">SCO DUCKS</div>
+  <div class="speed" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="hero-in">
+    <div class="htext">
+      <p class="kicker">Week 9 power rankings · Sco Ducks</p>
+      <h1>Oregon owns the Horseshoe.</h1>
+      <p class="sub">Oregon 41, Ohio State 28. The fantasy rankings are below. They are less important.</p>
+      <p class="dek">Eugene, Oregon. Track Town USA. The town where Bill Bowerman poured rubber into his wife&#x27;s waffle iron, where Phil Knight ran for him, and where it never rains inside Autzen Stadium. On Saturday, November 7th, the Ducks walked into Ohio Stadium, fell behind 14-0, and scored 38 straight. Dylan Raiola threw for 257 yards and two touchdowns. Dierre Hill Jr. ran for two more, one from 48 yards out. They converted a fake punt on fourth-and-9 in the Horseshoe because they could. Oregon 41, Ohio State 28. Greatest program in the history of organized sport. Here are your fantasy rankings.</p>
+    </div>
+    <div class="board" role="img" aria-label="Oregon 41, Ohio State 28">
+  <p class="bt">FINAL</p>
+  <div class="brow win"><span>Oregon</span><b>41</b></div>
+  <div class="brow"><span>Ohio State</span><b>28</b></div>
+  <p class="bw">Ohio Stadium · Columbus · Nov 7, 2026</p>
+</div>
+  </div>
+  <div class="legends" aria-label="Ducks legends"><p class="lt">Legends of Eugene</p><div class="lgs"><div class="lgd hasimg"><img src="../assets/ducks/mariota-portrait.jpg" alt="Marcus Mariota" loading="lazy"><div class="lgt"><b>8</b><span>Marcus Mariota</span><small>2014 Heisman</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/herbert-uniform.jpg" alt="Justin Herbert" loading="lazy"><div class="lgt"><b>10</b><span>Justin Herbert</span><small>Rose Bowl MVP</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/nix-uniform.jpg" alt="Bo Nix" loading="lazy"><div class="lgt"><b>10</b><span>Bo Nix</span><small>Pac-12 Offensive POY</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/gabriel-uniform.jpg" alt="Dillon Gabriel" loading="lazy"><div class="lgt"><b>8</b><span>Dillon Gabriel</span><small>Big Ten champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/lamichael-james-portrait.jpg" alt="LaMichael James" loading="lazy"><div class="lgt"><b>21</b><span>LaMichael James</span><small>Doak Walker Award</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/deanthony-thomas-uniform.jpg" alt="De&#x27;Anthony Thomas" loading="lazy"><div class="lgt"><b>6</b><span>De&#x27;Anthony Thomas</span><small>The Black Mamba</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/freeman-uniform.jpg" alt="Royce Freeman" loading="lazy"><div class="lgt"><b>21</b><span>Royce Freeman</span><small>All-time leading rusher</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/barner-uniform.jpg" alt="Kenjon Barner" loading="lazy"><div class="lgt"><b>24</b><span>Kenjon Barner</span><small>Rose Bowl champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/franklin-yellow.jpg" alt="Troy Franklin" loading="lazy"><div class="lgt"><b>11</b><span>Troy Franklin</span><small>Single-season yards record</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/tez-johnson.jpg" alt="Tez Johnson" loading="lazy"><div class="lgt"><b>15</b><span>Tez Johnson</span><small>Big Ten champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/sewell-uniform.jpg" alt="Penei Sewell" loading="lazy"><div class="lgt"><b>58</b><span>Penei Sewell</span><small>Outland Trophy</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/thibodeaux-uniform.jpg" alt="Kayvon Thibodeaux" loading="lazy"><div class="lgt"><b>5</b><span>Kayvon Thibodeaux</span><small>No. 5 overall pick</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/buckner-portrait.jpg" alt="DeForest Buckner" loading="lazy"><div class="lgt"><b>DL</b><span>DeForest Buckner</span><small>Pac-12 Defensive POY</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/armstead-uniform.jpg" alt="Arik Armstead" loading="lazy"><div class="lgt"><b>DL</b><span>Arik Armstead</span><small>First-round pick</small></div></div></div></div>
+</header>
+
+<main>
+  <section id="results">
+    <h2>The Scoreboard</h2>
+    <p class="lede">Every result this week, closest first. All of them rank below Oregon 41, Ohio State 28.</p>
+    <ul class="games"><li class="game close">
+  <p class="gtag">Instant classic</p>
+  <div class="gs win"><img src="../assets/logos/1-team-galakrond.png" alt="" loading="lazy"><span class="nm">Team Galakrond</span><span class="sc">112.2</span></div>
+  <div class="gs"><img src="../assets/logos/8-dake-bates.png" alt="" loading="lazy"><span class="nm">Dake Bates</span><span class="sc">110.8</span></div>
+  <p class="mg">Decided by 1.48</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/3-ceedeez-nutz-2d8247.svg" alt="" loading="lazy"><span class="nm">CeeDeez Nutz</span><span class="sc">130.0</span></div>
+  <div class="gs"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="" loading="lazy"><span class="nm">Purdy Seconds to Mars</span><span class="sc">109.4</span></div>
+  <p class="mg">Won by 20.6</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/12-team-evil-kelly.png" alt="" loading="lazy"><span class="nm">Team evil </span><span class="sc">142.2</span></div>
+  <div class="gs"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="" loading="lazy"><span class="nm">Cortisol Spyke Weeks</span><span class="sc">120.6</span></div>
+  <p class="mg">Won by 21.7</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/10-roadrunners-913475.svg" alt="" loading="lazy"><span class="nm">roadrunners</span><span class="sc">128.5</span></div>
+  <div class="gs"><img src="../assets/logos/5-adams-and-jefferson-33999f.svg" alt="" loading="lazy"><span class="nm">Adams and Jefferson</span><span class="sc">99.5</span></div>
+  <p class="mg">Won by 29.0</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/2-ben-s-brilliant-team-f4dc7f.svg" alt="" loading="lazy"><span class="nm">Ben&#x27;s Brilliant Team</span><span class="sc">114.1</span></div>
+  <div class="gs"><img src="../assets/logos/6-bingo-night-d7613d.svg" alt="" loading="lazy"><span class="nm">Bingo Night</span><span class="sc">83.5</span></div>
+  <p class="mg">Won by 30.6</p>
+</li><li class="game">
+  <p class="gtag blow">Autzen-level beatdown</p>
+  <div class="gs win"><img src="../assets/logos/9-michael-s-monstrous-team-1ae92f.svg" alt="" loading="lazy"><span class="nm">michael&#x27;s Monstrous Team</span><span class="sc">119.7</span></div>
+  <div class="gs"><img src="../assets/logos/11-drake-maye-sucks-ass-e343f9.svg" alt="" loading="lazy"><span class="nm">Drake Maye Sucks Ass</span><span class="sc">74.5</span></div>
+  <p class="mg">Won by 45.2</p>
+</li></ul>
+  </section>
+
+  
+  <figure class="brk"><img src="../assets/ducks/dante-moore.jpg" alt="Dante Moore" loading="lazy" style="object-position:center 30%"><figcaption><b>It never rains in Autzen Stadium.</b><span>Dante Moore</span></figcaption></figure>
+  <section id="rankings">
+    <h2>Power Rankings</h2>
+    <p class="lede">Record and momentum count most, then scoring and luck. Each tier is named for someone who earned it.</p>
+    <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
+    <div class="tier tr0">
+  <header class="tierban"><img src="../assets/ducks/gabriel-uniform.jpg" alt="No. 8 Dillon Gabriel" loading="lazy" style="object-position:center 25%"><div class="tbt"><h3>Heisman Tier</h3><p>Mariota would approve</p><small>No. 8 Dillon Gabriel</small></div></header>
+  <div class="cards"><article class="card t0" id="t2">
+  <header class="th">
+    <span class="rk">1</span>
+    <img class="lg" src="../assets/logos/2-ben-s-brilliant-team-f4dc7f.svg" alt="" loading="lazy">
+    <div class="who"><h3>Ben&#x27;s Brilliant Team</h3><p>Ben Elton &middot; 8-1 <span class="mv up">&#9650; 1</span></p></div>
+    <div class="pts"><b>114.1</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;14.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;16.7&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;31.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;22.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;114.1&quot;}" aria-label="Points by position"><span class="seg qb" style="width:12.77%"></span><span class="seg rb" style="width:14.64%"></span><span class="seg wr" style="width:27.62%"></span><span class="seg te" style="width:19.55%"></span><span class="seg k" style="width:14.90%"></span><span class="seg dst" style="width:10.52%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/mariota-portrait.jpg" alt="Marcus Mariota" loading="lazy"><small>Ducks comp</small><b>Marcus Mariota</b></span>No. 1 at 8-1: a Buckeye fan, at the top of our rankings, the same weekend the Ducks hung 41 on his team in its own building. Some of us were watching on January 1, 2015, when Marcus Mariota put 59 on Florida State in the Rose Bowl, so we know greatness when we see it. Ben E.&#x27;s team scored 114.06, its lowest of the season, and still beat Bingo Night. Brock Bowers led the way. Congratulations. Sco Ducks.</p>
+  <p class="pog"><img src="../assets/players/4432665.png" alt="" loading="lazy"><span>Player of the game <b>Brock Bowers</b> 22.3</span></p>
+</article><article class="card t0" id="t12">
+  <header class="th">
+    <span class="rk">2</span>
+    <img class="lg" src="../assets/logos/12-team-evil-kelly.png" alt="" loading="lazy">
+    <div class="who"><h3>Team evil </h3><p>kelly brown &middot; 5-4 <span class="mv up">&#9650; 2</span></p></div>
+    <div class="pts"><b>142.2</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;29.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;30.5&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;50.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;4.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;142.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:20.77%"></span><span class="seg rb" style="width:21.44%"></span><span class="seg wr" style="width:35.15%"></span><span class="seg te" style="width:2.95%"></span><span class="seg k" style="width:11.25%"></span><span class="seg dst" style="width:8.44%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/herbert-portrait.jpg" alt="Justin Herbert" loading="lazy"><small>Ducks comp</small><b>Justin Herbert</b></span>Three straight wins and the top score of the week, 142.24, a perfect 11-0 against the field. Joe Burrow went for 29.5, the best quarterback score in the league and the closest thing we&#x27;ve got to Justin Herbert taking over the Rose Bowl. Kelly runs this team like Chip Kelly ran the blur: snap, score, repeat. Up two to second, and the playoff odds jumped from 59% to 81%.</p>
+  <p class="pog"><img src="../assets/players/3915511.png" alt="" loading="lazy"><span>Player of the game <b>Joe Burrow</b> 29.5</span></p>
+</article><article class="card t0" id="t9">
+  <header class="th">
+    <span class="rk">3</span>
+    <img class="lg" src="../assets/logos/9-michael-s-monstrous-team-1ae92f.svg" alt="" loading="lazy">
+    <div class="who"><h3>michael&#x27;s Monstrous Team</h3><p>michael prince &middot; 6-3 <span class="mv up">&#9650; 2</span></p></div>
+    <div class="pts"><b>119.7</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.9&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;50.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;28.8&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;119.7&quot;}" aria-label="Points by position"><span class="seg qb" style="width:10.75%"></span><span class="seg rb" style="width:42.45%"></span><span class="seg wr" style="width:24.07%"></span><span class="seg te" style="width:10.20%"></span><span class="seg k" style="width:7.52%"></span><span class="seg dst" style="width:5.01%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/bucky-irving.jpg" alt="Bucky Irving" loading="lazy"><small>Ducks comp</small><b>Bucky Irving</b></span>A 45-point win over Drake Maye Sucks Ass, the biggest margin of the week, and the man who led it was Bucky Irving, 28.5 points, a former Duck. Of course it was. Eugene builds them to carry teams. Up two spots to third, with a 97% chance at the playoffs. Fast, physical, relentless. Very Oregon.</p>
+  <p class="pog"><img src="../assets/players/4596448.png" alt="" loading="lazy"><span>Player of the game <b>Bucky Irving</b> 28.5</span></p>
+</article></div>
+</div><div class="tier tr1">
+  <header class="tierban"><img src="../assets/ducks/herbert-uniform.jpg" alt="No. 10 Justin Herbert" loading="lazy" style="object-position:center 25%"><div class="tbt"><h3>Rose Bowl Tier</h3><p>Herbert-level poise</p><small>No. 10 Justin Herbert</small></div></header>
+  <div class="cards"><article class="card t1" id="t3">
+  <header class="th">
+    <span class="rk">4</span>
+    <img class="lg" src="../assets/logos/3-ceedeez-nutz-2d8247.svg" alt="" loading="lazy">
+    <div class="who"><h3>CeeDeez Nutz</h3><p>skyler cortez &middot; 6-3 <span class="mv up">&#9650; 2</span></p></div>
+    <div class="pts"><b>130.0</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;3.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;68.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;8.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;130.0&quot;}" aria-label="Points by position"><span class="seg qb" style="width:2.94%"></span><span class="seg rb" style="width:14.15%"></span><span class="seg wr" style="width:52.61%"></span><span class="seg te" style="width:6.46%"></span><span class="seg k" style="width:13.07%"></span><span class="seg dst" style="width:10.77%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/nix-practice.jpg" alt="Bo Nix" loading="lazy"><small>Ducks comp</small><b>Bo Nix</b></span>CeeDee Lamb (33.5) and Christian Watson (30.1) put up the best receiving week in the league. Then there&#x27;s the quarterback. Oregon has given the world Marcus Mariota, Justin Herbert, Bo Nix and Dillon Gabriel. Bo Nix was the Pac-12 Offensive Player of the Year. CeeDeez Nutz gave the world Malik Willis and 3.8 points. Up two spots anyway, with a 94% chance at the playoffs.</p>
+  <p class="pog"><img src="../assets/players/4241389.png" alt="" loading="lazy"><span>Player of the game <b>CeeDee Lamb</b> 33.5</span></p>
+</article><article class="card t1" id="t10">
+  <header class="th">
+    <span class="rk">5</span>
+    <img class="lg" src="../assets/logos/10-roadrunners-913475.svg" alt="" loading="lazy">
+    <div class="who"><h3>roadrunners</h3><p>Ricky Verastegui &middot; 4-5 <span class="mv up">&#9650; 4</span></p></div>
+    <div class="pts"><b>128.5</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;13.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;23.3&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.2&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;6.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;19.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;128.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:10.57%"></span><span class="seg rb" style="width:18.14%"></span><span class="seg wr" style="width:44.52%"></span><span class="seg te" style="width:7.32%"></span><span class="seg k" style="width:4.67%"></span><span class="seg dst" style="width:14.79%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/deanthony-thomas-uniform.jpg" alt="De&#x27;Anthony Thomas" loading="lazy"><small>Ducks comp</small><b>De&#x27;Anthony Thomas</b></span>Up four spots, the biggest climb of the week, and two straight wins. Matthew Golden went for 32.4, a De&#x27;Anthony Thomas in open space kind of day. The Black Mamba would approve. Playoff odds up to 17%.</p>
+  <p class="pog"><img src="../assets/players/4701936.png" alt="" loading="lazy"><span>Player of the game <b>Matthew Golden</b> 32.4</span></p>
+</article><article class="card t1" id="t8">
+  <header class="th">
+    <span class="rk">6</span>
+    <img class="lg" src="../assets/logos/8-dake-bates.png" alt="" loading="lazy">
+    <div class="who"><h3>Dake Bates</h3><p>Jake Danielson &middot; 6-3 <span class="mv dn">&#9660; 5</span></p></div>
+    <div class="pts"><b>110.8</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;29.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;49.7&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;13.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;4.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;110.8&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.52%"></span><span class="seg rb" style="width:26.54%"></span><span class="seg wr" style="width:44.87%"></span><span class="seg te" style="width:1.72%"></span><span class="seg k" style="width:11.74%"></span><span class="seg dst" style="width:3.61%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/buckner-portrait.jpg" alt="DeForest Buckner" loading="lazy"><small>Ducks comp</small><b>DeForest Buckner</b></span>Last week&#x27;s No. 1, down five spots to sixth after a 1.48-point loss to a team that had won once all year. Puka Nacua went for 35.0. The tight end went for 1.9. The No. 1 spot gets taken, not given. DeForest Buckner spent 2015 taking it from every quarterback in the Pac-12 on his way to Defensive Player of the Year. Playoff odds still 90%.</p>
+  <p class="pog"><img src="../assets/players/4426515.png" alt="" loading="lazy"><span>Player of the game <b>Puka Nacua</b> 35.0</span></p>
+</article></div>
+</div><div class="tier tr2">
+  <header class="tierban"><img src="../assets/ducks/gonzalez-1.jpg" alt="Christian Gonzalez" loading="lazy" style="object-position:center 30%"><div class="tbt"><h3>Autzen Walk-ons</h3><p>earning their wings</p><small>Christian Gonzalez</small></div></header>
+  <div class="cards"><article class="card t2" id="t4">
+  <header class="th">
+    <span class="rk">7</span>
+    <img class="lg" src="../assets/logos/4-cortisol-spyke-weeks.png" alt="" loading="lazy">
+    <div class="who"><h3>Cortisol Spyke Weeks</h3><p>Mason Morgan &middot; 5-4 <span class="mv dn">&#9660; 4</span></p></div>
+    <div class="pts"><b>120.6</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;5.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;17.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;16.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;15.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;120.6&quot;}" aria-label="Points by position"><span class="seg qb" style="width:4.40%"></span><span class="seg rb" style="width:14.41%"></span><span class="seg wr" style="width:47.77%"></span><span class="seg te" style="width:13.52%"></span><span class="seg k" style="width:7.46%"></span><span class="seg dst" style="width:12.44%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/franklin-green.jpg" alt="Troy Franklin" loading="lazy"><small>Ducks comp</small><b>Troy Franklin</b></span>Mason lost to Team evil by 21.66 and fell four spots. Ja&#x27;Marr Chase went for 31.5, a Troy Franklin, Bo-Nix-hit-him-in-stride kind of day, and 120.58 was the highest losing score of the week. Jared Goff scored 5.3. Franklin broke Oregon&#x27;s single-season receiving record. Goff broke nothing. Playoff odds: 82%.</p>
+  <p class="pog"><img src="../assets/players/4362628.png" alt="" loading="lazy"><span>Player of the game <b>Ja&#x27;Marr Chase</b> 31.5</span></p>
+</article><article class="card t2" id="t1">
+  <header class="th">
+    <span class="rk">8</span>
+    <img class="lg" src="../assets/logos/1-team-galakrond.png" alt="" loading="lazy">
+    <div class="who"><h3>Team Galakrond</h3><p>Neil Gibeaut &middot; 2-7 <span class="mv up">&#9650; 2</span></p></div>
+    <div class="pts"><b>112.2</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;51.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;22.1&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;112.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.26%"></span><span class="seg rb" style="width:45.62%"></span><span class="seg wr" style="width:19.69%"></span><span class="seg te" style="width:6.50%"></span><span class="seg k" style="width:8.02%"></span><span class="seg dst" style="width:8.91%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/freeman-portrait.jpg" alt="Royce Freeman" loading="lazy"><small>Ducks comp</small><b>Royce Freeman</b></span>Team Galakrond&#x27;s second win of the season, and it came against last week&#x27;s No. 1. Kenneth Walker III ran for 36.3, the top individual score of the week, a Royce Freeman kind of game, and Freeman is Oregon&#x27;s all-time leading rusher, so that&#x27;s the highest compliment we have. 112.24 to 110.76, the closest game of the week. Up two spots. Playoff odds: 1%. It never rains in Autzen, and for one week it stopped raining on Galakrond.</p>
+  <p class="pog"><img src="../assets/players/4567048.png" alt="" loading="lazy"><span>Player of the game <b>Kenneth Walker III</b> 36.3</span></p>
+</article><article class="card t2" id="t6">
+  <header class="th">
+    <span class="rk">9</span>
+    <img class="lg" src="../assets/logos/6-bingo-night-d7613d.svg" alt="" loading="lazy">
+    <div class="who"><h3>Bingo Night</h3><p>Thomas Fowler &middot; 4-5 <span class="mv dn">&#9660; 2</span></p></div>
+    <div class="pts"><b>83.5</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;7.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;28.9&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;5.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;17.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;15.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;83.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:8.72%"></span><span class="seg rb" style="width:34.62%"></span><span class="seg wr" style="width:5.99%"></span><span class="seg te" style="width:20.72%"></span><span class="seg k" style="width:17.97%"></span><span class="seg dst" style="width:11.98%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/tez-johnson.jpg" alt="Tez Johnson" loading="lazy"><small>Ducks comp</small><b>Tez Johnson</b></span>Bingo Night&#x27;s receivers scored 5.0 points. Combined. Ladd McConkey scored zero, and Travis Kelce led the team. Tez Johnson used to clear that on a single slant. Lost to Ben E. by 30.58 and dropped two spots. That was a Beavers performance, and we don&#x27;t say that lightly. We say it all the time.</p>
+  <p class="pog"><img src="../assets/players/15847.png" alt="" loading="lazy"><span>Player of the game <b>Travis Kelce</b> 17.3</span></p>
+</article></div>
+</div><div class="tier tr3">
+  <header class="tierban"><img src="../assets/ducks/gonzalez-3.jpg" alt="Christian Gonzalez" loading="lazy" style="object-position:center 40%"><div class="tbt"><h3>Beavers</h3><p>Corvallis is that way</p><small>Christian Gonzalez</small></div></header>
+  <div class="cards"><article class="card t3" id="t11">
+  <header class="th">
+    <span class="rk">10</span>
+    <img class="lg" src="../assets/logos/11-drake-maye-sucks-ass-e343f9.svg" alt="" loading="lazy">
+    <div class="who"><h3>Drake Maye Sucks Ass</h3><p>Jackson Helling &middot; 5-4 <span class="mv dn">&#9660; 2</span></p></div>
+    <div class="pts"><b>74.5</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.6&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;28.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;7.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;74.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:24.52%"></span><span class="seg rb" style="width:24.98%"></span><span class="seg wr" style="width:38.14%"></span><span class="seg te" style="width:9.67%"></span><span class="seg k" style="width:9.40%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/sewell-portrait.jpg" alt="Penei Sewell" loading="lazy"><small>Ducks comp</small><b>Penei Sewell</b></span>74.46, the lowest score of the week, 0-11 against the field, and a 45-point loss to michael. The defense scored minus five. Down two spots, and the playoff odds fell from 57% to 32% in a week. Penei Sewell won the Outland Trophy keeping Justin Herbert clean. Nobody on this roster is keeping anything clean.</p>
+  <p class="pog"><img src="../assets/players/4431452.png" alt="" loading="lazy"><span>Player of the game <b>Drake Maye</b> 18.3</span></p>
+</article><article class="card t3" id="t5">
+  <header class="th">
+    <span class="rk">11</span>
+    <img class="lg" src="../assets/logos/5-adams-and-jefferson-33999f.svg" alt="" loading="lazy">
+    <div class="who"><h3>Adams and Jefferson</h3><p>Lyudmil Zdravkov &middot; 1-8 <span class="mv eq">&ndash;</span></p></div>
+    <div class="pts"><b>99.5</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;11.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;26.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;24.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;99.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.27%"></span><span class="seg rb" style="width:26.23%"></span><span class="seg wr" style="width:24.52%"></span><span class="seg te" style="width:9.85%"></span><span class="seg k" style="width:17.08%"></span><span class="seg dst" style="width:11.05%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/armstead-uniform.jpg" alt="Arik Armstead" loading="lazy"><small>Ducks comp</small><b>Arik Armstead</b></span>A fifth straight loss, 1-8, and the kicker led the team again. Arik Armstead never took a snap off in Eugene. This team has taken the whole season off. Playoff odds: 0.1%.</p>
+  <p class="pog"><img src="../assets/players/2971573.png" alt="" loading="lazy"><span>Player of the game <b>Ka&#x27;imi Fairbairn</b> 17.0</span></p>
+</article><article class="card t3" id="t7">
+  <header class="th">
+    <span class="rk">12</span>
+    <img class="lg" src="../assets/logos/7-purdy-seconds-to-mars.png" alt="" loading="lazy">
+    <div class="who"><h3>Purdy Seconds to Mars</h3><p>Ben T &middot; 2-7 <span class="mv eq">&ndash;</span></p></div>
+    <div class="pts"><b>109.4</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;25.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;27.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;16.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;109.4&quot;}" aria-label="Points by position"><span class="seg qb" style="width:23.11%"></span><span class="seg rb" style="width:24.87%"></span><span class="seg wr" style="width:15.09%"></span><span class="seg te" style="width:11.34%"></span><span class="seg k" style="width:14.63%"></span><span class="seg dst" style="width:10.97%"></span></div>
+  <p class="take"><span class="comp"><img src="../assets/ducks/barner-uniform.jpg" alt="Kenjon Barner" loading="lazy"><small>Ducks comp</small><b>Kenjon Barner</b></span>Brock Purdy scored 25.3 for the team named after him, the most loyalty this franchise has seen all year, and Bijan Robinson added 26.7. They lost by 20.64 anyway, a sixth straight loss, and Cam Skattebo scored zero again. Kenjon Barner never lost faith in a season, and neither does Ben T, a Ducks fan and therefore the most qualified man in this league to run a team, results notwithstanding.</p>
+  <p class="pog"><img src="../assets/players/4430807.png" alt="" loading="lazy"><span>Player of the game <b>Bijan Robinson</b> 26.7</span></p>
+</article></div>
+</div>
+  </section>
+
+  <figure class="brk"><img src="../assets/ducks/nix-uniform.jpg" alt="Bo Nix" loading="lazy" style="object-position:center 25%"><figcaption><b>Mariota. Herbert. Nix. Gabriel. Raiola.</b><span>Bo Nix</span></figcaption></figure>
+  <section id="playoff">
+    <h2>The Road to the Playoff</h2>
+    <p class="lede">Six teams make the playoffs. In Eugene we just call that January.</p>
+    <ol class="odds"><li class="od"><span class="on"><img src="../assets/logos/2-ben-s-brilliant-team-f4dc7f.svg" alt="">Ben&#x27;s Brilliant Team<small>8-1</small></span><span class="om" aria-hidden="true"><span style="width:100.0%"></span></span><span class="op">>99%</span><span class="ol">Playoff lock</span></li><li class="od"><span class="on"><img src="../assets/logos/9-michael-s-monstrous-team-1ae92f.svg" alt="">michael&#x27;s Monstrous Team<small>6-3</small></span><span class="om" aria-hidden="true"><span style="width:96.7%"></span></span><span class="op">97%</span><span class="ol">Playoff lock</span></li><li class="od"><span class="on"><img src="../assets/logos/3-ceedeez-nutz-2d8247.svg" alt="">CeeDeez Nutz<small>6-3</small></span><span class="om" aria-hidden="true"><span style="width:94.1%"></span></span><span class="op">94%</span><span class="ol">Playoff lock</span></li><li class="od"><span class="on"><img src="../assets/logos/8-dake-bates.png" alt="">Dake Bates<small>6-3</small></span><span class="om" aria-hidden="true"><span style="width:90.1%"></span></span><span class="op">90%</span><span class="ol">Playoff lock</span></li><li class="od"><span class="on"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="">Cortisol Spyke Weeks<small>5-4</small></span><span class="om" aria-hidden="true"><span style="width:82.2%"></span></span><span class="op">82%</span><span class="ol">On the bubble</span></li><li class="od"><span class="on"><img src="../assets/logos/12-team-evil-kelly.png" alt="">Team evil <small>5-4</small></span><span class="om" aria-hidden="true"><span style="width:80.7%"></span></span><span class="op">81%</span><span class="ol">On the bubble</span></li><li class="od"><span class="on"><img src="../assets/logos/11-drake-maye-sucks-ass-e343f9.svg" alt="">Drake Maye Sucks Ass<small>5-4</small></span><span class="om" aria-hidden="true"><span style="width:31.9%"></span></span><span class="op">32%</span><span class="ol">Needs help</span></li><li class="od"><span class="on"><img src="../assets/logos/10-roadrunners-913475.svg" alt="">roadrunners<small>4-5</small></span><span class="om" aria-hidden="true"><span style="width:17.1%"></span></span><span class="op">17%</span><span class="ol">Needs help</span></li><li class="od"><span class="on"><img src="../assets/logos/6-bingo-night-d7613d.svg" alt="">Bingo Night<small>4-5</small></span><span class="om" aria-hidden="true"><span style="width:5.3%"></span></span><span class="op">5%</span><span class="ol">Beaver territory</span></li><li class="od"><span class="on"><img src="../assets/logos/1-team-galakrond.png" alt="">Team Galakrond<small>2-7</small></span><span class="om" aria-hidden="true"><span style="width:1.5%"></span></span><span class="op">1%</span><span class="ol">Beaver territory</span></li><li class="od"><span class="on"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="">Purdy Seconds to Mars<small>2-7</small></span><span class="om" aria-hidden="true"><span style="width:1.5%"></span></span><span class="op"><1%</span><span class="ol">Beaver territory</span></li><li class="od"><span class="on"><img src="../assets/logos/5-adams-and-jefferson-33999f.svg" alt="">Adams and Jefferson<small>1-8</small></span><span class="om" aria-hidden="true"><span style="width:1.5%"></span></span><span class="op"><1%</span><span class="ol">Beaver territory</span></li></ol>
+    <p class="note">Playoff odds from 40,000 simulated seasons on the real remaining schedule. Top 6 make it. Ties go to total points.</p>
+  </section>
+  <figure class="brk"><img src="../assets/ducks/bucky-irving.jpg" alt="Bucky Irving" loading="lazy" style="object-position:center 35%"><figcaption><b>Once a Duck, always a Duck.</b><span>Bucky Irving</span></figcaption></figure>
+
+  <section id="depth">
+    <h2>The Depth Chart</h2>
+    <p class="lede">Points by position this week, sorted by total. Hover for the full breakdown.</p>
+    <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
+    <div class="pchart"><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;29.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;30.5&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;50.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;4.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;142.2&quot;}"><span class="pn">kelly</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 1.0000)"><span class="seg qb" style="width:20.77%"></span><span class="seg rb" style="width:21.44%"></span><span class="seg wr" style="width:35.15%"></span><span class="seg te" style="width:2.95%"></span><span class="seg k" style="width:11.25%"></span><span class="seg dst" style="width:8.44%"></span></span><span class="pv">142.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;3.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;68.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;8.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;130.0&quot;}"><span class="pn">skyler</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.9141)"><span class="seg qb" style="width:2.94%"></span><span class="seg rb" style="width:14.15%"></span><span class="seg wr" style="width:52.61%"></span><span class="seg te" style="width:6.46%"></span><span class="seg k" style="width:13.07%"></span><span class="seg dst" style="width:10.77%"></span></span><span class="pv">130.0</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;13.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;23.3&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.2&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;6.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;19.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;128.5&quot;}"><span class="pn">Ricky</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.9033)"><span class="seg qb" style="width:10.57%"></span><span class="seg rb" style="width:18.14%"></span><span class="seg wr" style="width:44.52%"></span><span class="seg te" style="width:7.32%"></span><span class="seg k" style="width:4.67%"></span><span class="seg dst" style="width:14.79%"></span></span><span class="pv">128.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;5.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;17.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;16.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;15.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;120.6&quot;}"><span class="pn">Mason</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8477)"><span class="seg qb" style="width:4.40%"></span><span class="seg rb" style="width:14.41%"></span><span class="seg wr" style="width:47.77%"></span><span class="seg te" style="width:13.52%"></span><span class="seg k" style="width:7.46%"></span><span class="seg dst" style="width:12.44%"></span></span><span class="pv">120.6</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.9&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;50.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;28.8&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;119.7&quot;}"><span class="pn">michael</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8413)"><span class="seg qb" style="width:10.75%"></span><span class="seg rb" style="width:42.45%"></span><span class="seg wr" style="width:24.07%"></span><span class="seg te" style="width:10.20%"></span><span class="seg k" style="width:7.52%"></span><span class="seg dst" style="width:5.01%"></span></span><span class="pv">119.7</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;14.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;16.7&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;31.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;22.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;114.1&quot;}"><span class="pn">Ben E.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8019)"><span class="seg qb" style="width:12.77%"></span><span class="seg rb" style="width:14.64%"></span><span class="seg wr" style="width:27.62%"></span><span class="seg te" style="width:19.55%"></span><span class="seg k" style="width:14.90%"></span><span class="seg dst" style="width:10.52%"></span></span><span class="pv">114.1</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;51.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;22.1&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;112.2&quot;}"><span class="pn">Neil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7891)"><span class="seg qb" style="width:11.26%"></span><span class="seg rb" style="width:45.62%"></span><span class="seg wr" style="width:19.69%"></span><span class="seg te" style="width:6.50%"></span><span class="seg k" style="width:8.02%"></span><span class="seg dst" style="width:8.91%"></span></span><span class="pv">112.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;29.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;49.7&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;13.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;4.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;110.8&quot;}"><span class="pn">Jake</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7787)"><span class="seg qb" style="width:11.52%"></span><span class="seg rb" style="width:26.54%"></span><span class="seg wr" style="width:44.87%"></span><span class="seg te" style="width:1.72%"></span><span class="seg k" style="width:11.74%"></span><span class="seg dst" style="width:3.61%"></span></span><span class="pv">110.8</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;25.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;27.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;16.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;109.4&quot;}"><span class="pn">Ben T.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7690)"><span class="seg qb" style="width:23.11%"></span><span class="seg rb" style="width:24.87%"></span><span class="seg wr" style="width:15.09%"></span><span class="seg te" style="width:11.34%"></span><span class="seg k" style="width:14.63%"></span><span class="seg dst" style="width:10.97%"></span></span><span class="pv">109.4</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;11.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;26.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;24.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;99.5&quot;}"><span class="pn">Lyudmil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.6997)"><span class="seg qb" style="width:11.27%"></span><span class="seg rb" style="width:26.23%"></span><span class="seg wr" style="width:24.52%"></span><span class="seg te" style="width:9.85%"></span><span class="seg k" style="width:17.08%"></span><span class="seg dst" style="width:11.05%"></span></span><span class="pv">99.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;7.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;28.9&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;5.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;17.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;15.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;83.5&quot;}"><span class="pn">Thomas</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5869)"><span class="seg qb" style="width:8.72%"></span><span class="seg rb" style="width:34.62%"></span><span class="seg wr" style="width:5.99%"></span><span class="seg te" style="width:20.72%"></span><span class="seg k" style="width:17.97%"></span><span class="seg dst" style="width:11.98%"></span></span><span class="pv">83.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.6&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;28.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;7.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;74.5&quot;}"><span class="pn">Jackson</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5235)"><span class="seg qb" style="width:24.52%"></span><span class="seg rb" style="width:24.98%"></span><span class="seg wr" style="width:38.14%"></span><span class="seg te" style="width:9.67%"></span><span class="seg k" style="width:9.40%"></span></span><span class="pv">74.5</span></span></div></div>
+    <details class="tview"><summary>Show as a table</summary>
+      <div class="twrap"><table><thead><tr><th>Team</th><th>QB</th><th>RB</th><th>WR</th><th>TE</th><th>K</th><th>D/ST</th><th>Total</th></tr></thead><tbody><tr><th>Team evil </th><td>29.5</td><td>30.5</td><td>50.0</td><td>4.2</td><td>16.0</td><td>12.0</td><td class="tot">142.2</td></tr><tr><th>CeeDeez Nutz</th><td>3.8</td><td>18.4</td><td>68.4</td><td>8.4</td><td>17.0</td><td>14.0</td><td class="tot">130.0</td></tr><tr><th>roadrunners</th><td>13.6</td><td>23.3</td><td>57.2</td><td>9.4</td><td>6.0</td><td>19.0</td><td class="tot">128.5</td></tr><tr><th>Cortisol Spyke Weeks</th><td>5.3</td><td>17.4</td><td>57.6</td><td>16.3</td><td>9.0</td><td>15.0</td><td class="tot">120.6</td></tr><tr><th>michael&#x27;s Monstrous Team</th><td>12.9</td><td>50.8</td><td>28.8</td><td>12.2</td><td>9.0</td><td>6.0</td><td class="tot">119.7</td></tr><tr><th>Ben&#x27;s Brilliant Team</th><td>14.6</td><td>16.7</td><td>31.5</td><td>22.3</td><td>17.0</td><td>12.0</td><td class="tot">114.1</td></tr><tr><th>Team Galakrond</th><td>12.6</td><td>51.2</td><td>22.1</td><td>7.3</td><td>9.0</td><td>10.0</td><td class="tot">112.2</td></tr><tr><th>Dake Bates</th><td>12.8</td><td>29.4</td><td>49.7</td><td>1.9</td><td>13.0</td><td>4.0</td><td class="tot">110.8</td></tr><tr><th>Purdy Seconds to Mars</th><td>25.3</td><td>27.2</td><td>16.5</td><td>12.4</td><td>16.0</td><td>12.0</td><td class="tot">109.4</td></tr><tr><th>Adams and Jefferson</th><td>11.2</td><td>26.1</td><td>24.4</td><td>9.8</td><td>17.0</td><td>11.0</td><td class="tot">99.5</td></tr><tr><th>Bingo Night</th><td>7.3</td><td>28.9</td><td>5.0</td><td>17.3</td><td>15.0</td><td>10.0</td><td class="tot">83.5</td></tr><tr><th>Drake Maye Sucks Ass</th><td>18.3</td><td>18.6</td><td>28.4</td><td>7.2</td><td>7.0</td><td>-5.0</td><td class="tot">74.5</td></tr></tbody></table></div>
+    </details>
+  </section>
+
+  <figure class="brk"><img src="../assets/ducks/gonzalez-2.jpg" alt="Christian Gonzalez" loading="lazy" style="object-position:center 40%"><figcaption><b>Fast. Physical. Relentless.</b><span>Christian Gonzalez</span></figcaption></figure>
+  <section id="trend">
+    <h2>Rank by Week</h2>
+    <p class="lede">Every team&#x27;s rank, week by week. The leader in yellow, as it should be.</p>
+    <figure class="bumpwrap"><svg class="bump" viewBox="0 0 560 380" role="img" aria-label="Power ranking by week for every team"><line class="grid" x1="34.0" y1="22" x2="34.0" y2="370"/><text class="wkl" x="34.0" y="16" text-anchor="middle">WK 1</text><line class="grid" x1="81.0" y1="22" x2="81.0" y2="370"/><text class="wkl" x="81.0" y="16" text-anchor="middle">WK 2</text><line class="grid" x1="128.0" y1="22" x2="128.0" y2="370"/><text class="wkl" x="128.0" y="16" text-anchor="middle">WK 3</text><line class="grid" x1="175.0" y1="22" x2="175.0" y2="370"/><text class="wkl" x="175.0" y="16" text-anchor="middle">WK 4</text><line class="grid" x1="222.0" y1="22" x2="222.0" y2="370"/><text class="wkl" x="222.0" y="16" text-anchor="middle">WK 5</text><line class="grid" x1="269.0" y1="22" x2="269.0" y2="370"/><text class="wkl" x="269.0" y="16" text-anchor="middle">WK 6</text><line class="grid" x1="316.0" y1="22" x2="316.0" y2="370"/><text class="wkl" x="316.0" y="16" text-anchor="middle">WK 7</text><line class="grid" x1="363.0" y1="22" x2="363.0" y2="370"/><text class="wkl" x="363.0" y="16" text-anchor="middle">WK 8</text><line class="grid" x1="410.0" y1="22" x2="410.0" y2="370"/><text class="wkl" x="410.0" y="16" text-anchor="middle">WK 9</text><g class="ln" data-team="7" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#8&quot;], [&quot;Week 2&quot;, &quot;#6&quot;], [&quot;Week 3&quot;, &quot;#4&quot;], [&quot;Week 4&quot;, &quot;#5&quot;], [&quot;Week 5&quot;, &quot;#9&quot;], [&quot;Week 6&quot;, &quot;#11&quot;], [&quot;Week 7&quot;, &quot;#12&quot;], [&quot;Week 8&quot;, &quot;#12&quot;], [&quot;Week 9&quot;, &quot;#12&quot;]]}"><path class="hit" d="M34.0,242.5 L81.0,181.8 L128.0,121.1 L175.0,151.5 L222.0,272.9 L269.0,333.6 L316.0,364.0 L363.0,364.0 L410.0,364.0"/><path class="stroke" d="M34.0,242.5 L81.0,181.8 L128.0,121.1 L175.0,151.5 L222.0,272.9 L269.0,333.6 L316.0,364.0 L363.0,364.0 L410.0,364.0"/><circle cx="34.0" cy="242.5" r="4"/><circle cx="81.0" cy="181.8" r="4"/><circle cx="128.0" cy="121.1" r="4"/><circle cx="175.0" cy="151.5" r="4"/><circle cx="222.0" cy="272.9" r="4"/><circle cx="269.0" cy="333.6" r="4"/><circle cx="316.0" cy="364.0" r="4"/><circle cx="363.0" cy="364.0" r="4"/><circle cx="410.0" cy="364.0" r="4"/><text x="422.0" y="368.5">12. Ben T.</text></g><g class="ln" data-team="5" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#11&quot;], [&quot;Week 2&quot;, &quot;#7&quot;], [&quot;Week 3&quot;, &quot;#9&quot;], [&quot;Week 4&quot;, &quot;#6&quot;], [&quot;Week 5&quot;, &quot;#8&quot;], [&quot;Week 6&quot;, &quot;#10&quot;], [&quot;Week 7&quot;, &quot;#11&quot;], [&quot;Week 8&quot;, &quot;#11&quot;], [&quot;Week 9&quot;, &quot;#11&quot;]]}"><path class="hit" d="M34.0,333.6 L81.0,212.2 L128.0,272.9 L175.0,181.8 L222.0,242.5 L269.0,303.3 L316.0,333.6 L363.0,333.6 L410.0,333.6"/><path class="stroke" d="M34.0,333.6 L81.0,212.2 L128.0,272.9 L175.0,181.8 L222.0,242.5 L269.0,303.3 L316.0,333.6 L363.0,333.6 L410.0,333.6"/><circle cx="34.0" cy="333.6" r="4"/><circle cx="81.0" cy="212.2" r="4"/><circle cx="128.0" cy="272.9" r="4"/><circle cx="175.0" cy="181.8" r="4"/><circle cx="222.0" cy="242.5" r="4"/><circle cx="269.0" cy="303.3" r="4"/><circle cx="316.0" cy="333.6" r="4"/><circle cx="363.0" cy="333.6" r="4"/><circle cx="410.0" cy="333.6" r="4"/><text x="422.0" y="338.1">11. Lyudmil</text></g><g class="ln" data-team="11" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#5&quot;], [&quot;Week 2&quot;, &quot;#8&quot;], [&quot;Week 3&quot;, &quot;#10&quot;], [&quot;Week 4&quot;, &quot;#8&quot;], [&quot;Week 5&quot;, &quot;#6&quot;], [&quot;Week 6&quot;, &quot;#4&quot;], [&quot;Week 7&quot;, &quot;#3&quot;], [&quot;Week 8&quot;, &quot;#8&quot;], [&quot;Week 9&quot;, &quot;#10&quot;]]}"><path class="hit" d="M34.0,151.5 L81.0,242.5 L128.0,303.3 L175.0,242.5 L222.0,181.8 L269.0,121.1 L316.0,90.7 L363.0,242.5 L410.0,303.3"/><path class="stroke" d="M34.0,151.5 L81.0,242.5 L128.0,303.3 L175.0,242.5 L222.0,181.8 L269.0,121.1 L316.0,90.7 L363.0,242.5 L410.0,303.3"/><circle cx="34.0" cy="151.5" r="4"/><circle cx="81.0" cy="242.5" r="4"/><circle cx="128.0" cy="303.3" r="4"/><circle cx="175.0" cy="242.5" r="4"/><circle cx="222.0" cy="181.8" r="4"/><circle cx="269.0" cy="121.1" r="4"/><circle cx="316.0" cy="90.7" r="4"/><circle cx="363.0" cy="242.5" r="4"/><circle cx="410.0" cy="303.3" r="4"/><text x="422.0" y="307.8">10. Jackson</text></g><g class="ln" data-team="6" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#6&quot;], [&quot;Week 2&quot;, &quot;#4&quot;], [&quot;Week 3&quot;, &quot;#7&quot;], [&quot;Week 4&quot;, &quot;#12&quot;], [&quot;Week 5&quot;, &quot;#11&quot;], [&quot;Week 6&quot;, &quot;#12&quot;], [&quot;Week 7&quot;, &quot;#8&quot;], [&quot;Week 8&quot;, &quot;#7&quot;], [&quot;Week 9&quot;, &quot;#9&quot;]]}"><path class="hit" d="M34.0,181.8 L81.0,121.1 L128.0,212.2 L175.0,364.0 L222.0,333.6 L269.0,364.0 L316.0,242.5 L363.0,212.2 L410.0,272.9"/><path class="stroke" d="M34.0,181.8 L81.0,121.1 L128.0,212.2 L175.0,364.0 L222.0,333.6 L269.0,364.0 L316.0,242.5 L363.0,212.2 L410.0,272.9"/><circle cx="34.0" cy="181.8" r="4"/><circle cx="81.0" cy="121.1" r="4"/><circle cx="128.0" cy="212.2" r="4"/><circle cx="175.0" cy="364.0" r="4"/><circle cx="222.0" cy="333.6" r="4"/><circle cx="269.0" cy="364.0" r="4"/><circle cx="316.0" cy="242.5" r="4"/><circle cx="363.0" cy="212.2" r="4"/><circle cx="410.0" cy="272.9" r="4"/><text x="422.0" y="277.4">9. Thomas</text></g><g class="ln" data-team="1" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#7&quot;], [&quot;Week 2&quot;, &quot;#9&quot;], [&quot;Week 3&quot;, &quot;#11&quot;], [&quot;Week 4&quot;, &quot;#11&quot;], [&quot;Week 5&quot;, &quot;#12&quot;], [&quot;Week 6&quot;, &quot;#8&quot;], [&quot;Week 7&quot;, &quot;#9&quot;], [&quot;Week 8&quot;, &quot;#10&quot;], [&quot;Week 9&quot;, &quot;#8&quot;]]}"><path class="hit" d="M34.0,212.2 L81.0,272.9 L128.0,333.6 L175.0,333.6 L222.0,364.0 L269.0,242.5 L316.0,272.9 L363.0,303.3 L410.0,242.5"/><path class="stroke" d="M34.0,212.2 L81.0,272.9 L128.0,333.6 L175.0,333.6 L222.0,364.0 L269.0,242.5 L316.0,272.9 L363.0,303.3 L410.0,242.5"/><circle cx="34.0" cy="212.2" r="4"/><circle cx="81.0" cy="272.9" r="4"/><circle cx="128.0" cy="333.6" r="4"/><circle cx="175.0" cy="333.6" r="4"/><circle cx="222.0" cy="364.0" r="4"/><circle cx="269.0" cy="242.5" r="4"/><circle cx="316.0" cy="272.9" r="4"/><circle cx="363.0" cy="303.3" r="4"/><circle cx="410.0" cy="242.5" r="4"/><text x="422.0" y="247.0">8. Neil</text></g><g class="ln" data-team="4" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#12&quot;], [&quot;Week 2&quot;, &quot;#10&quot;], [&quot;Week 3&quot;, &quot;#5&quot;], [&quot;Week 4&quot;, &quot;#7&quot;], [&quot;Week 5&quot;, &quot;#4&quot;], [&quot;Week 6&quot;, &quot;#2&quot;], [&quot;Week 7&quot;, &quot;#5&quot;], [&quot;Week 8&quot;, &quot;#3&quot;], [&quot;Week 9&quot;, &quot;#7&quot;]]}"><path class="hit" d="M34.0,364.0 L81.0,303.3 L128.0,151.5 L175.0,212.2 L222.0,121.1 L269.0,60.4 L316.0,151.5 L363.0,90.7 L410.0,212.2"/><path class="stroke" d="M34.0,364.0 L81.0,303.3 L128.0,151.5 L175.0,212.2 L222.0,121.1 L269.0,60.4 L316.0,151.5 L363.0,90.7 L410.0,212.2"/><circle cx="34.0" cy="364.0" r="4"/><circle cx="81.0" cy="303.3" r="4"/><circle cx="128.0" cy="151.5" r="4"/><circle cx="175.0" cy="212.2" r="4"/><circle cx="222.0" cy="121.1" r="4"/><circle cx="269.0" cy="60.4" r="4"/><circle cx="316.0" cy="151.5" r="4"/><circle cx="363.0" cy="90.7" r="4"/><circle cx="410.0" cy="212.2" r="4"/><text x="422.0" y="216.7">7. Mason</text></g><g class="ln" data-team="8" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#1&quot;], [&quot;Week 2&quot;, &quot;#5&quot;], [&quot;Week 3&quot;, &quot;#6&quot;], [&quot;Week 4&quot;, &quot;#4&quot;], [&quot;Week 5&quot;, &quot;#3&quot;], [&quot;Week 6&quot;, &quot;#6&quot;], [&quot;Week 7&quot;, &quot;#4&quot;], [&quot;Week 8&quot;, &quot;#1&quot;], [&quot;Week 9&quot;, &quot;#6&quot;]]}"><path class="hit" d="M34.0,30.0 L81.0,151.5 L128.0,181.8 L175.0,121.1 L222.0,90.7 L269.0,181.8 L316.0,121.1 L363.0,30.0 L410.0,181.8"/><path class="stroke" d="M34.0,30.0 L81.0,151.5 L128.0,181.8 L175.0,121.1 L222.0,90.7 L269.0,181.8 L316.0,121.1 L363.0,30.0 L410.0,181.8"/><circle cx="34.0" cy="30.0" r="4"/><circle cx="81.0" cy="151.5" r="4"/><circle cx="128.0" cy="181.8" r="4"/><circle cx="175.0" cy="121.1" r="4"/><circle cx="222.0" cy="90.7" r="4"/><circle cx="269.0" cy="181.8" r="4"/><circle cx="316.0" cy="121.1" r="4"/><circle cx="363.0" cy="30.0" r="4"/><circle cx="410.0" cy="181.8" r="4"/><text x="422.0" y="186.3">6. Jake</text></g><g class="ln" data-team="10" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#9&quot;], [&quot;Week 2&quot;, &quot;#12&quot;], [&quot;Week 3&quot;, &quot;#12&quot;], [&quot;Week 4&quot;, &quot;#10&quot;], [&quot;Week 5&quot;, &quot;#10&quot;], [&quot;Week 6&quot;, &quot;#7&quot;], [&quot;Week 7&quot;, &quot;#10&quot;], [&quot;Week 8&quot;, &quot;#9&quot;], [&quot;Week 9&quot;, &quot;#5&quot;]]}"><path class="hit" d="M34.0,272.9 L81.0,364.0 L128.0,364.0 L175.0,303.3 L222.0,303.3 L269.0,212.2 L316.0,303.3 L363.0,272.9 L410.0,151.5"/><path class="stroke" d="M34.0,272.9 L81.0,364.0 L128.0,364.0 L175.0,303.3 L222.0,303.3 L269.0,212.2 L316.0,303.3 L363.0,272.9 L410.0,151.5"/><circle cx="34.0" cy="272.9" r="4"/><circle cx="81.0" cy="364.0" r="4"/><circle cx="128.0" cy="364.0" r="4"/><circle cx="175.0" cy="303.3" r="4"/><circle cx="222.0" cy="303.3" r="4"/><circle cx="269.0" cy="212.2" r="4"/><circle cx="316.0" cy="303.3" r="4"/><circle cx="363.0" cy="272.9" r="4"/><circle cx="410.0" cy="151.5" r="4"/><text x="422.0" y="156.0">5. Ricky</text></g><g class="ln" data-team="3" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#4&quot;], [&quot;Week 2&quot;, &quot;#2&quot;], [&quot;Week 3&quot;, &quot;#2&quot;], [&quot;Week 4&quot;, &quot;#3&quot;], [&quot;Week 5&quot;, &quot;#5&quot;], [&quot;Week 6&quot;, &quot;#5&quot;], [&quot;Week 7&quot;, &quot;#2&quot;], [&quot;Week 8&quot;, &quot;#6&quot;], [&quot;Week 9&quot;, &quot;#4&quot;]]}"><path class="hit" d="M34.0,121.1 L81.0,60.4 L128.0,60.4 L175.0,90.7 L222.0,151.5 L269.0,151.5 L316.0,60.4 L363.0,181.8 L410.0,121.1"/><path class="stroke" d="M34.0,121.1 L81.0,60.4 L128.0,60.4 L175.0,90.7 L222.0,151.5 L269.0,151.5 L316.0,60.4 L363.0,181.8 L410.0,121.1"/><circle cx="34.0" cy="121.1" r="4"/><circle cx="81.0" cy="60.4" r="4"/><circle cx="128.0" cy="60.4" r="4"/><circle cx="175.0" cy="90.7" r="4"/><circle cx="222.0" cy="151.5" r="4"/><circle cx="269.0" cy="151.5" r="4"/><circle cx="316.0" cy="60.4" r="4"/><circle cx="363.0" cy="181.8" r="4"/><circle cx="410.0" cy="121.1" r="4"/><text x="422.0" y="125.6">4. skyler</text></g><g class="ln" data-team="9" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#2&quot;], [&quot;Week 2&quot;, &quot;#1&quot;], [&quot;Week 3&quot;, &quot;#3&quot;], [&quot;Week 4&quot;, &quot;#2&quot;], [&quot;Week 5&quot;, &quot;#2&quot;], [&quot;Week 6&quot;, &quot;#3&quot;], [&quot;Week 7&quot;, &quot;#6&quot;], [&quot;Week 8&quot;, &quot;#5&quot;], [&quot;Week 9&quot;, &quot;#3&quot;]]}"><path class="hit" d="M34.0,60.4 L81.0,30.0 L128.0,90.7 L175.0,60.4 L222.0,60.4 L269.0,90.7 L316.0,181.8 L363.0,151.5 L410.0,90.7"/><path class="stroke" d="M34.0,60.4 L81.0,30.0 L128.0,90.7 L175.0,60.4 L222.0,60.4 L269.0,90.7 L316.0,181.8 L363.0,151.5 L410.0,90.7"/><circle cx="34.0" cy="60.4" r="4"/><circle cx="81.0" cy="30.0" r="4"/><circle cx="128.0" cy="90.7" r="4"/><circle cx="175.0" cy="60.4" r="4"/><circle cx="222.0" cy="60.4" r="4"/><circle cx="269.0" cy="90.7" r="4"/><circle cx="316.0" cy="181.8" r="4"/><circle cx="363.0" cy="151.5" r="4"/><circle cx="410.0" cy="90.7" r="4"/><text x="422.0" y="95.2">3. michael</text></g><g class="ln" data-team="12" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#10&quot;], [&quot;Week 2&quot;, &quot;#11&quot;], [&quot;Week 3&quot;, &quot;#8&quot;], [&quot;Week 4&quot;, &quot;#9&quot;], [&quot;Week 5&quot;, &quot;#7&quot;], [&quot;Week 6&quot;, &quot;#9&quot;], [&quot;Week 7&quot;, &quot;#7&quot;], [&quot;Week 8&quot;, &quot;#4&quot;], [&quot;Week 9&quot;, &quot;#2&quot;]]}"><path class="hit" d="M34.0,303.3 L81.0,333.6 L128.0,242.5 L175.0,272.9 L222.0,212.2 L269.0,272.9 L316.0,212.2 L363.0,121.1 L410.0,60.4"/><path class="stroke" d="M34.0,303.3 L81.0,333.6 L128.0,242.5 L175.0,272.9 L222.0,212.2 L269.0,272.9 L316.0,212.2 L363.0,121.1 L410.0,60.4"/><circle cx="34.0" cy="303.3" r="4"/><circle cx="81.0" cy="333.6" r="4"/><circle cx="128.0" cy="242.5" r="4"/><circle cx="175.0" cy="272.9" r="4"/><circle cx="222.0" cy="212.2" r="4"/><circle cx="269.0" cy="272.9" r="4"/><circle cx="316.0" cy="212.2" r="4"/><circle cx="363.0" cy="121.1" r="4"/><circle cx="410.0" cy="60.4" r="4"/><text x="422.0" y="64.9">2. kelly</text></g><g class="ln lead" data-team="2" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#3&quot;], [&quot;Week 2&quot;, &quot;#3&quot;], [&quot;Week 3&quot;, &quot;#1&quot;], [&quot;Week 4&quot;, &quot;#1&quot;], [&quot;Week 5&quot;, &quot;#1&quot;], [&quot;Week 6&quot;, &quot;#1&quot;], [&quot;Week 7&quot;, &quot;#1&quot;], [&quot;Week 8&quot;, &quot;#2&quot;], [&quot;Week 9&quot;, &quot;#1&quot;]]}"><path class="hit" d="M34.0,90.7 L81.0,90.7 L128.0,30.0 L175.0,30.0 L222.0,30.0 L269.0,30.0 L316.0,30.0 L363.0,60.4 L410.0,30.0"/><path class="stroke" d="M34.0,90.7 L81.0,90.7 L128.0,30.0 L175.0,30.0 L222.0,30.0 L269.0,30.0 L316.0,30.0 L363.0,60.4 L410.0,30.0"/><circle cx="34.0" cy="90.7" r="4"/><circle cx="81.0" cy="90.7" r="4"/><circle cx="128.0" cy="30.0" r="4"/><circle cx="175.0" cy="30.0" r="4"/><circle cx="222.0" cy="30.0" r="4"/><circle cx="269.0" cy="30.0" r="4"/><circle cx="316.0" cy="30.0" r="4"/><circle cx="363.0" cy="60.4" r="4"/><circle cx="410.0" cy="30.0" r="4"/><text x="422.0" y="34.5">1. Ben E.</text></g><text class="ax" x="20" y="34.0" text-anchor="end">1</text><text class="ax" x="20" y="368.0" text-anchor="end">12</text></svg>
+      <figcaption>Rank one at the top. Hover or tap a line to follow one team.</figcaption></figure>
+  </section>
+  <figure class="brk"><img src="../assets/ducks/franklin-yellow.jpg" alt="Troy Franklin" loading="lazy" style="object-position:center 25%"><figcaption><b>Track Town USA.</b><span>Troy Franklin</span></figcaption></figure>
+<section id="next"><h2>Up next</h2>
+    <p class="lede">Week 10. Also, and far more importantly, Michigan comes to Autzen on Saturday.</p><ul class="nxs"><li class="nx gotw"><span class=nx-tag>Game of the week</span><p class="nx-m"><span class="nx-u"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="">Cortisol Spyke Weeks <span class="nx-r">5-4</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/9-michael-s-monstrous-team-1ae92f.svg" alt="">michael&#x27;s Monstrous Team <span class="nx-r">6-3</span></span></p><p class="nx-t">Two playoff teams, 82% and 97%. Not as big as Oregon and Michigan at Autzen, but it&#x27;s the biggest one in this league.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/10-roadrunners-913475.svg" alt="">roadrunners <span class="nx-r">4-5</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/2-ben-s-brilliant-team-f4dc7f.svg" alt="">Ben&#x27;s Brilliant Team <span class="nx-r">8-1</span></span></p><p class="nx-t">The hottest climber in the league against its resident Buckeye. We know who we&#x27;re rooting for.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/3-ceedeez-nutz-2d8247.svg" alt="">CeeDeez Nutz <span class="nx-r">6-3</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/11-drake-maye-sucks-ass-e343f9.svg" alt="">Drake Maye Sucks Ass <span class="nx-r">5-4</span></span></p><p class="nx-t">CeeDeez needs a quarterback who scores more than 3.8. Drake Maye Sucks Ass needs a win, badly.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/6-bingo-night-d7613d.svg" alt="">Bingo Night <span class="nx-r">4-5</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/12-team-evil-kelly.png" alt="">Team evil  <span class="nx-r">5-4</span></span></p><p class="nx-t">Team evil goes for four straight. Bingo Night&#x27;s receivers need to show up.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/1-team-galakrond.png" alt="">Team Galakrond <span class="nx-r">2-7</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="">Purdy Seconds to Mars <span class="nx-r">2-7</span></span></p><p class="nx-t">Two 2-7 teams. One of them is run by a Ducks fan. Go Ducks.</p></li><li class="nx"><p class="nx-m"><span class="nx-u"><img src="../assets/logos/8-dake-bates.png" alt="">Dake Bates <span class="nx-r">6-3</span></span><span class="nx-u"><span class="nx-vs">vs</span><img src="../assets/logos/5-adams-and-jefferson-33999f.svg" alt="">Adams and Jefferson <span class="nx-r">1-8</span></span></p><p class="nx-t">Last week&#x27;s No. 1 against the 1-8 team. A get-right game.</p></li></ul></section>
+  <figure class="brk"><img src="../assets/ducks/thibodeaux-uniform.jpg" alt="Kayvon Thibodeaux" loading="lazy" style="object-position:center 25%"><figcaption><b>Sco Ducks.</b><span>Kayvon Thibodeaux</span></figcaption></figure>
+  <footer class="foot">
+    <p class="sco">Sco Ducks.</p>
+    <p>Data from ESPN, pulled Monday night once the last game is final. <a href="../index.html">All weeks</a></p>
+    
+  </footer>
+</main>
+<script>
+(function(){
+  var tip=document.createElement('div');tip.className='tip';tip.setAttribute('role','tooltip');tip.hidden=true;
+  document.body.appendChild(tip);
+  function show(el,x,y){
+    var d;try{d=JSON.parse(el.getAttribute('data-tip'))}catch(_){return}
+    while(tip.firstChild)tip.removeChild(tip.firstChild);
+    var h=document.createElement('p');h.className='tt';h.textContent=d.t;tip.appendChild(h);
+    d.rows.forEach(function(r){var p=document.createElement('p');var k=document.createElement('span');
+      k.textContent=r[0];if(r[2]){var i=document.createElement('i');i.className='key '+r[2];k.insertBefore(i,k.firstChild)}
+      var v=document.createElement('b');v.textContent=r[1];p.appendChild(v);p.appendChild(k);tip.appendChild(p)});
+    if(d.total!==undefined){var t=document.createElement('p');t.className='tsum';var b=document.createElement('b');
+      b.textContent=d.total;var s=document.createElement('span');s.textContent='Total';t.appendChild(b);t.appendChild(s);tip.appendChild(t)}
+    tip.hidden=false;place(x,y);
+  }
+  function place(x,y){var w=tip.offsetWidth,hh=tip.offsetHeight,vw=window.innerWidth;
+    var l=Math.min(Math.max(8,x+14),vw-w-8),t=y-hh-14;if(t<8)t=y+18;
+    tip.style.left=l+'px';tip.style.top=t+'px'}
+  function hide(){tip.hidden=true}
+  document.querySelectorAll('[data-tip]').forEach(function(el){
+    el.addEventListener('pointermove',function(ev){show(el,ev.clientX,ev.clientY)});
+    el.addEventListener('pointerleave',hide);
+    el.addEventListener('focus',function(){var r=el.getBoundingClientRect();show(el,r.left+r.width/2,r.top)});
+    el.addEventListener('blur',hide);
+  });
+  window.addEventListener('scroll',hide,{passive:true});
+  var chart=document.querySelector('.bump');
+  function hl(id){if(!chart)return;chart.classList.toggle('focus',!!id);
+    chart.querySelectorAll('.ln').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-team')===id)})}
+  document.querySelectorAll('.bump .ln').forEach(function(g){
+    var id=g.getAttribute('data-team');
+    g.addEventListener('pointerenter',function(){hl(id)});g.addEventListener('pointerleave',function(){hl(null)});
+    g.addEventListener('focus',function(){hl(id)});g.addEventListener('blur',function(){hl(null)});
+  });
+})();
+</script>
+</body>
+</html>

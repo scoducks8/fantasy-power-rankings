@@ -1,0 +1,92 @@
+{
+ "week": 9,
+ "regular_season_weeks": 14,
+ "playoff_teams": 6,
+ "sims": 40000,
+ "teams": {
+  "2": {
+   "playoffs": 100.0,
+   "top2": 97.6,
+   "first": 90.0,
+   "proj_wins": 11.3,
+   "proj_losses": 2.7
+  },
+  "12": {
+   "playoffs": 80.7,
+   "top2": 6.0,
+   "first": 0.1,
+   "proj_wins": 7.9,
+   "proj_losses": 6.1
+  },
+  "9": {
+   "playoffs": 96.7,
+   "top2": 42.7,
+   "first": 6.1,
+   "proj_wins": 8.7,
+   "proj_losses": 5.3
+  },
+  "3": {
+   "playoffs": 94.1,
+   "top2": 26.7,
+   "first": 1.7,
+   "proj_wins": 8.7,
+   "proj_losses": 5.3
+  },
+  "10": {
+   "playoffs": 17.1,
+   "top2": 0.1,
+   "first": 0.0,
+   "proj_wins": 6.2,
+   "proj_losses": 7.8
+  },
+  "8": {
+   "playoffs": 90.1,
+   "top2": 16.2,
+   "first": 1.8,
+   "proj_wins": 8.6,
+   "proj_losses": 5.4
+  },
+  "4": {
+   "playoffs": 82.2,
+   "top2": 9.8,
+   "first": 0.2,
+   "proj_wins": 7.8,
+   "proj_losses": 6.2
+  },
+  "1": {
+   "playoffs": 1.4,
+   "top2": 0.0,
+   "first": 0.0,
+   "proj_wins": 4.3,
+   "proj_losses": 9.7
+  },
+  "6": {
+   "playoffs": 5.3,
+   "top2": 0.0,
+   "first": 0.0,
+   "proj_wins": 5.7,
+   "proj_losses": 8.3
+  },
+  "11": {
+   "playoffs": 31.9,
+   "top2": 0.9,
+   "first": 0.0,
+   "proj_wins": 7.0,
+   "proj_losses": 7.0
+  },
+  "5": {
+   "playoffs": 0.1,
+   "top2": 0.0,
+   "first": 0.0,
+   "proj_wins": 3.5,
+   "proj_losses": 10.5
+  },
+  "7": {
+   "playoffs": 0.4,
+   "top2": 0.0,
+   "first": 0.0,
+   "proj_wins": 4.2,
+   "proj_losses": 9.8
+  }
+ }
+}
