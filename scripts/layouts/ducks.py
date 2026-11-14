@@ -128,7 +128,7 @@ def render(data, history, theme, copy, h) -> str:
   <p class="pog"><img src="{hs(topp)}" alt="" loading="lazy"><span>Player of the game <b>{e(topp["name"])}</b> {fmt(topp["points"])}</span></p>
 </article>'''
         tiers += f'''<div class="tier tr{ti}">
-  {(f'<header class="tierban"><img src="../assets/ducks/{e(tier_imgs[ti][0])}" alt="{e(tier_imgs[ti][1])}" loading="lazy" style="object-position:{e(tier_imgs[ti][2] if len(tier_imgs[ti]) > 2 else "center 30%")}"><div class="tbt"><h3>{e(tname)}</h3><p>{e(tsub)}</p><small>{e(tier_imgs[ti][1])}</small></div></header>') if ti < len(tier_imgs) else f'<header class="tierh"><h3>{e(tname)}</h3><p>{e(tsub)}</p></header>'}
+  {(f'<header class="tierban{" cut" if tier_imgs[ti][0].endswith(".png") else ""}" data-num="{e(tier_imgs[ti][3] if len(tier_imgs[ti]) > 3 else "")}"><img src="../assets/ducks/{e(tier_imgs[ti][0])}" alt="{e(tier_imgs[ti][1])}" loading="lazy" style="object-position:{e(tier_imgs[ti][2] if len(tier_imgs[ti]) > 2 else "center 30%")}{(";width:" + e(tier_imgs[ti][4])) if len(tier_imgs[ti]) > 4 else ""}"><div class="tbt"><h3>{e(tname)}</h3><p>{e(tsub)}</p><small>{e(tier_imgs[ti][1])}</small></div></header>') if ti < len(tier_imgs) else f'<header class="tierh"><h3>{e(tname)}</h3><p>{e(tsub)}</p></header>'}
   <div class="cards">{cards}</div>
 </div>'''
 

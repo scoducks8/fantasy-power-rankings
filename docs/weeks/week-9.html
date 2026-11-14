@@ -292,7 +292,10 @@ td.tot{font-weight:700;color:var(--yel)}
 .brk span{display:inline-block;margin-top:14px;padding-top:10px;border-top:3px solid var(--yel);font:600 13px/1 var(--disp);letter-spacing:.24em;text-transform:uppercase;color:var(--yel)}
 .tierban{position:relative;height:200px;margin:0 0 18px;overflow:hidden;border-radius:2px;background:linear-gradient(100deg,#0b0d0b 0%,#101a13 55%,#0b0d0b 100%);border-left:4px solid var(--yel)}
 .tr3 .tierban{border-left-color:#e08a4a}
+.tr0 .tierban{height:260px}
 .tierban img{position:absolute;right:0;top:0;width:58%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.05);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 38%,#000 88%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 38%,#000 88%,transparent 100%)}
+.tierban.cut img{width:auto;height:118%;top:auto;bottom:-4px;right:7%;object-fit:contain;-webkit-mask-image:none;mask-image:none;z-index:1;filter:drop-shadow(0 0 30px rgba(254,225,35,.18))}
+.tierban.cut::before{content:attr(data-num);position:absolute;right:4%;top:50%;transform:translateY(-50%);font:900 italic 300px/1 var(--disp);color:transparent;-webkit-text-stroke:2px rgba(254,225,35,.35)}
 .tierban::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 14px,rgba(254,225,35,.035) 14px 15px);pointer-events:none}
 .tbt{position:absolute;left:24px;bottom:20px;z-index:1}
 .tbt h3{margin:0;font:900 italic 46px/1 var(--disp);text-transform:uppercase;color:var(--ink)}
@@ -304,8 +307,10 @@ td.tot{font-weight:700;color:var(--yel)}
   .herophoto{width:100%;opacity:.28;-webkit-mask-image:linear-gradient(180deg,#000 30%,transparent);mask-image:linear-gradient(180deg,#000 30%,transparent)}
   .brk{height:340px;margin-top:70px}
   .brk figcaption{left:18px;right:18px;bottom:20px}
-  .tierban{height:150px}
+  .tierban,.tr0 .tierban{height:150px}
   .tierban img{width:72%;opacity:.7}
+  .tierban.cut img{width:auto;right:-50px;height:108%}
+  .tierban.cut::before{font-size:210px;right:2%}
   .tbt h3{font-size:34px}
 }
 </style>
@@ -335,7 +340,7 @@ td.tot{font-weight:700;color:var(--yel)}
   <p class="bw">Ohio Stadium · Columbus · Nov 7, 2026</p>
 </div>
   </div>
-  <div class="legends" aria-label="Ducks legends"><p class="lt">Legends of Eugene</p><div class="lgs"><div class="lgd hasimg"><img src="../assets/ducks/mariota-portrait.jpg" alt="Marcus Mariota" loading="lazy"><div class="lgt"><b>8</b><span>Marcus Mariota</span><small>2014 Heisman</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/herbert-uniform.jpg" alt="Justin Herbert" loading="lazy"><div class="lgt"><b>10</b><span>Justin Herbert</span><small>Rose Bowl MVP</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/nix-uniform.jpg" alt="Bo Nix" loading="lazy"><div class="lgt"><b>10</b><span>Bo Nix</span><small>Pac-12 Offensive POY</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/gabriel-uniform.jpg" alt="Dillon Gabriel" loading="lazy"><div class="lgt"><b>8</b><span>Dillon Gabriel</span><small>Big Ten champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/lamichael-james-portrait.jpg" alt="LaMichael James" loading="lazy"><div class="lgt"><b>21</b><span>LaMichael James</span><small>Doak Walker Award</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/deanthony-thomas-uniform.jpg" alt="De&#x27;Anthony Thomas" loading="lazy"><div class="lgt"><b>6</b><span>De&#x27;Anthony Thomas</span><small>The Black Mamba</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/freeman-uniform.jpg" alt="Royce Freeman" loading="lazy"><div class="lgt"><b>21</b><span>Royce Freeman</span><small>All-time leading rusher</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/barner-uniform.jpg" alt="Kenjon Barner" loading="lazy"><div class="lgt"><b>24</b><span>Kenjon Barner</span><small>Rose Bowl champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/franklin-yellow.jpg" alt="Troy Franklin" loading="lazy"><div class="lgt"><b>11</b><span>Troy Franklin</span><small>Single-season yards record</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/tez-johnson.jpg" alt="Tez Johnson" loading="lazy"><div class="lgt"><b>15</b><span>Tez Johnson</span><small>Big Ten champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/sewell-uniform.jpg" alt="Penei Sewell" loading="lazy"><div class="lgt"><b>58</b><span>Penei Sewell</span><small>Outland Trophy</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/thibodeaux-uniform.jpg" alt="Kayvon Thibodeaux" loading="lazy"><div class="lgt"><b>5</b><span>Kayvon Thibodeaux</span><small>No. 5 overall pick</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/buckner-portrait.jpg" alt="DeForest Buckner" loading="lazy"><div class="lgt"><b>DL</b><span>DeForest Buckner</span><small>Pac-12 Defensive POY</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/armstead-uniform.jpg" alt="Arik Armstead" loading="lazy"><div class="lgt"><b>DL</b><span>Arik Armstead</span><small>First-round pick</small></div></div></div></div>
+  <div class="legends" aria-label="Ducks legends"><p class="lt">Legends of Eugene</p><div class="lgs"><div class="lgd hasimg"><img src="../assets/ducks/mariota-heisman.jpg" alt="Marcus Mariota" loading="lazy"><div class="lgt"><b>8</b><span>Marcus Mariota</span><small>2014 Heisman</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/herbert-uniform.jpg" alt="Justin Herbert" loading="lazy"><div class="lgt"><b>10</b><span>Justin Herbert</span><small>Rose Bowl MVP</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/nix-uniform.jpg" alt="Bo Nix" loading="lazy"><div class="lgt"><b>10</b><span>Bo Nix</span><small>Pac-12 Offensive POY</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/gabriel-uniform.jpg" alt="Dillon Gabriel" loading="lazy"><div class="lgt"><b>8</b><span>Dillon Gabriel</span><small>Big Ten champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/lamichael-james-portrait.jpg" alt="LaMichael James" loading="lazy"><div class="lgt"><b>21</b><span>LaMichael James</span><small>Doak Walker Award</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/deanthony-thomas-uniform.jpg" alt="De&#x27;Anthony Thomas" loading="lazy"><div class="lgt"><b>6</b><span>De&#x27;Anthony Thomas</span><small>The Black Mamba</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/freeman-uniform.jpg" alt="Royce Freeman" loading="lazy"><div class="lgt"><b>21</b><span>Royce Freeman</span><small>All-time leading rusher</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/barner-uniform.jpg" alt="Kenjon Barner" loading="lazy"><div class="lgt"><b>24</b><span>Kenjon Barner</span><small>Rose Bowl champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/franklin-yellow.jpg" alt="Troy Franklin" loading="lazy"><div class="lgt"><b>11</b><span>Troy Franklin</span><small>Single-season yards record</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/tez-johnson.jpg" alt="Tez Johnson" loading="lazy"><div class="lgt"><b>15</b><span>Tez Johnson</span><small>Big Ten champion</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/sewell-uniform.jpg" alt="Penei Sewell" loading="lazy"><div class="lgt"><b>58</b><span>Penei Sewell</span><small>Outland Trophy</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/thibodeaux-uniform.jpg" alt="Kayvon Thibodeaux" loading="lazy"><div class="lgt"><b>5</b><span>Kayvon Thibodeaux</span><small>No. 5 overall pick</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/buckner-portrait.jpg" alt="DeForest Buckner" loading="lazy"><div class="lgt"><b>DL</b><span>DeForest Buckner</span><small>Pac-12 Defensive POY</small></div></div><div class="lgd hasimg"><img src="../assets/ducks/armstead-uniform.jpg" alt="Arik Armstead" loading="lazy"><div class="lgt"><b>DL</b><span>Arik Armstead</span><small>First-round pick</small></div></div></div></div>
 </header>
 
 <main>
@@ -382,7 +387,7 @@ td.tot{font-weight:700;color:var(--yel)}
     <p class="lede">Record and momentum count most, then scoring and luck. Each tier is named for someone who earned it.</p>
     <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
     <div class="tier tr0">
-  <header class="tierban"><img src="../assets/ducks/gabriel-uniform.jpg" alt="No. 8 Dillon Gabriel" loading="lazy" style="object-position:center 25%"><div class="tbt"><h3>Heisman Tier</h3><p>Mariota would approve</p><small>No. 8 Dillon Gabriel</small></div></header>
+  <header class="tierban" data-num=""><img src="../assets/ducks/mariota-heisman.jpg" alt="No. 8 Marcus Mariota · 2014 Heisman" loading="lazy" style="object-position:center 8%;width:38%"><div class="tbt"><h3>Heisman Tier</h3><p>Mariota would approve</p><small>No. 8 Marcus Mariota · 2014 Heisman</small></div></header>
   <div class="cards"><article class="card t0" id="t2">
   <header class="th">
     <span class="rk">1</span>
@@ -391,7 +396,7 @@ td.tot{font-weight:700;color:var(--yel)}
     <div class="pts"><b>114.1</b><span>points</span></div>
   </header>
   <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;14.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;16.7&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;31.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;22.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;114.1&quot;}" aria-label="Points by position"><span class="seg qb" style="width:12.77%"></span><span class="seg rb" style="width:14.64%"></span><span class="seg wr" style="width:27.62%"></span><span class="seg te" style="width:19.55%"></span><span class="seg k" style="width:14.90%"></span><span class="seg dst" style="width:10.52%"></span></div>
-  <p class="take"><span class="comp"><img src="../assets/ducks/mariota-portrait.jpg" alt="Marcus Mariota" loading="lazy"><small>Ducks comp</small><b>Marcus Mariota</b></span>No. 1 at 8-1: a Buckeye fan, at the top of our rankings, the same weekend the Ducks hung 41 on his team in its own building. Some of us were watching on January 1, 2015, when Marcus Mariota put 59 on Florida State in the Rose Bowl, so we know greatness when we see it. Ben E.&#x27;s team scored 114.06, its lowest of the season, and still beat Bingo Night. Brock Bowers led the way. Congratulations. Sco Ducks.</p>
+  <p class="take"><span class="comp"><img src="../assets/ducks/mariota-heisman.jpg" alt="Marcus Mariota" loading="lazy"><small>Ducks comp</small><b>Marcus Mariota</b></span>No. 1 at 8-1: a Buckeye fan, at the top of our rankings, the same weekend the Ducks hung 41 on his team in its own building. Some of us were watching on January 1, 2015, when Marcus Mariota put 59 on Florida State in the Rose Bowl, so we know greatness when we see it. Ben E.&#x27;s team scored 114.06, its lowest of the season, and still beat Bingo Night. Brock Bowers led the way. Congratulations. Sco Ducks.</p>
   <p class="pog"><img src="../assets/players/4432665.png" alt="" loading="lazy"><span>Player of the game <b>Brock Bowers</b> 22.3</span></p>
 </article><article class="card t0" id="t12">
   <header class="th">
@@ -415,7 +420,7 @@ td.tot{font-weight:700;color:var(--yel)}
   <p class="pog"><img src="../assets/players/4596448.png" alt="" loading="lazy"><span>Player of the game <b>Bucky Irving</b> 28.5</span></p>
 </article></div>
 </div><div class="tier tr1">
-  <header class="tierban"><img src="../assets/ducks/herbert-uniform.jpg" alt="No. 10 Justin Herbert" loading="lazy" style="object-position:center 25%"><div class="tbt"><h3>Rose Bowl Tier</h3><p>Herbert-level poise</p><small>No. 10 Justin Herbert</small></div></header>
+  <header class="tierban" data-num=""><img src="../assets/ducks/herbert-uniform.jpg" alt="No. 10 Justin Herbert" loading="lazy" style="object-position:center 25%"><div class="tbt"><h3>Rose Bowl Tier</h3><p>Herbert-level poise</p><small>No. 10 Justin Herbert</small></div></header>
   <div class="cards"><article class="card t1" id="t3">
   <header class="th">
     <span class="rk">4</span>
@@ -448,7 +453,7 @@ td.tot{font-weight:700;color:var(--yel)}
   <p class="pog"><img src="../assets/players/4426515.png" alt="" loading="lazy"><span>Player of the game <b>Puka Nacua</b> 35.0</span></p>
 </article></div>
 </div><div class="tier tr2">
-  <header class="tierban"><img src="../assets/ducks/gonzalez-1.jpg" alt="Christian Gonzalez" loading="lazy" style="object-position:center 30%"><div class="tbt"><h3>Autzen Walk-ons</h3><p>earning their wings</p><small>Christian Gonzalez</small></div></header>
+  <header class="tierban" data-num=""><img src="../assets/ducks/gonzalez-1.jpg" alt="Christian Gonzalez" loading="lazy" style="object-position:center 30%"><div class="tbt"><h3>Autzen Walk-ons</h3><p>earning their wings</p><small>Christian Gonzalez</small></div></header>
   <div class="cards"><article class="card t2" id="t4">
   <header class="th">
     <span class="rk">7</span>
@@ -481,7 +486,7 @@ td.tot{font-weight:700;color:var(--yel)}
   <p class="pog"><img src="../assets/players/15847.png" alt="" loading="lazy"><span>Player of the game <b>Travis Kelce</b> 17.3</span></p>
 </article></div>
 </div><div class="tier tr3">
-  <header class="tierban"><img src="../assets/ducks/gonzalez-3.jpg" alt="Christian Gonzalez" loading="lazy" style="object-position:center 40%"><div class="tbt"><h3>Beavers</h3><p>Corvallis is that way</p><small>Christian Gonzalez</small></div></header>
+  <header class="tierban" data-num=""><img src="../assets/ducks/gonzalez-3.jpg" alt="Christian Gonzalez" loading="lazy" style="object-position:center 40%"><div class="tbt"><h3>Beavers</h3><p>Corvallis is that way</p><small>Christian Gonzalez</small></div></header>
   <div class="cards"><article class="card t3" id="t11">
   <header class="th">
     <span class="rk">10</span>

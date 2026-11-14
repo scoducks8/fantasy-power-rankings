@@ -104,7 +104,7 @@
    8,
    "Marcus Mariota",
    "2014 Heisman",
-   "mariota-portrait.jpg"
+   "mariota-heisman.jpg"
   ],
   [
    10,
@@ -187,7 +187,7 @@
  ],
  "comps": {
   "2": [
-   "mariota-portrait.jpg",
+   "mariota-heisman.jpg",
    "Marcus Mariota"
   ],
   "12": [
@@ -239,9 +239,11 @@
   "hero": "raiola.jpg",
   "tiers": [
    [
-    "gabriel-uniform.jpg",
-    "No. 8 Dillon Gabriel",
-    "center 25%"
+    "mariota-heisman.jpg",
+    "No. 8 Marcus Mariota · 2014 Heisman",
+    "center 8%",
+    "",
+    "38%"
    ],
    [
     "herbert-uniform.jpg",
