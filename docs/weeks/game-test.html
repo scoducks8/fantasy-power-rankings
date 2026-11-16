@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-name" content="Semiconductor CEO Simulator" />
+<meta name="color-scheme" content="dark" />
+<title>Week 9 power rankings &middot; Chach Champions League</title>
+<meta name="description" content="Week 10 copy goes here once the data is in." />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Chach Champions League" />
+<meta property="og:url" content="https://scoducks8.github.io/fantasy-power-rankings/weeks/week-9.html" />
+<meta property="og:title" content="Week 9: Semiconductor CEO Simulator" />
+<meta property="og:description" content="Week 10 copy goes here once the data is in." />
+<meta property="og:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-week-9.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://scoducks8.github.io/fantasy-power-rankings/og-week-9.png" />
+<style>@font-face{font-family:"Press Start 2P";src:url(../assets/fonts/press-start-2p-latin-400-normal.woff2) format("woff2");font-display:block}
+@font-face{font-family:Silkscreen;src:url(../assets/fonts/silkscreen-latin-400-normal.woff2) format("woff2");font-display:block}
+@font-face{font-family:Silkscreen;font-weight:700;src:url(../assets/fonts/silkscreen-latin-700-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Plex;src:url(../assets/fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Plex;font-weight:700;src:url(../assets/fonts/ibm-plex-mono-latin-700-normal.woff2) format("woff2");font-display:swap}
+
+:root{
+  --bg:#050805;--panel:#0b110c;--panel2:#101a12;--line:#1d2a1f;--line2:#2c3f2e;
+  --g:#76b900;--g2:#a6e22e;--gold:#ffd84a;--red:#ff6b5b;--ink:#e9f2e3;--ink2:#a9b8a6;--muted:#6f806c;
+  --qb:#76b900;--rb:#ffd84a;--wr:#e9f2e3;--te:#4fd1c5;--k:#ff8f3f;--dst:#7a6cff;
+  --px:"Press Start 2P",monospace;--sk:Silkscreen,monospace;--body:Plex,ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;background:var(--bg)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:60;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 1px,transparent 1px 3px)}
+a{color:var(--g)}
+img{display:block;max-width:100%}
+button{font:inherit}
+
+.ticker{overflow:hidden;background:var(--g);color:#061006;font:12px/1 var(--px);padding:9px 0}
+.tk{display:flex;gap:40px;white-space:nowrap;width:max-content;animation:tk 50s linear infinite}
+.tk span::after{content:"\25C6";margin-left:40px;opacity:.6}
+@keyframes tk{to{transform:translateX(-50%)}}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(5,8,5,.92);border-bottom:2px solid var(--line2)}
+.top-in{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font:13px/1 var(--px);color:var(--ink);text-decoration:none}
+.brand .short{display:none}
+.links{display:flex;gap:20px;font:14px/1 var(--sk);text-transform:uppercase}
+.links a{color:var(--ink2);text-decoration:none}
+.links a:hover{color:var(--g)}
+
+.hero{background:radial-gradient(ellipse 80% 70% at 50% 0%,rgba(118,185,0,.16),transparent 70%),var(--bg);border-bottom:2px solid var(--line2);padding-bottom:30px}
+.hero-in{max-width:1080px;margin:0 auto;padding:44px 20px 0}
+.kicker{margin:0 0 18px;font:15px/1.4 var(--sk);text-transform:uppercase;color:var(--g)}
+.kicker::before{content:"> ";}
+.hero h1{margin:0;font:clamp(24px,4.6vw,50px)/1.25 var(--px);color:var(--ink);text-shadow:4px 4px 0 #1f3a00,0 0 24px rgba(118,185,0,.35)}
+.sub{margin:18px 0 0;font:clamp(14px,1.8vw,18px)/1.5 var(--px);color:var(--gold)}
+.dek{margin:6px 0 0;max-width:72ch;color:var(--ink2);font-size:16.5px}
+
+/* arcade cabinet */
+.arcade{max-width:1080px;margin:30px auto 24px;padding:0 20px;scroll-margin-top:62px}
+.jg-wrap{position:relative;border:4px solid #1b1b1b;outline:2px solid var(--g);box-shadow:0 0 0 8px #0a0a0a,0 0 60px rgba(118,185,0,.25);background:#000;aspect-ratio:16/9}
+#jg{display:block;width:100%;height:100%;image-rendering:pixelated;image-rendering:crisp-edges}
+.jg-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(0,0,0,.45);overflow:auto}
+.jg-ov[hidden]{display:none}
+.jbox{width:min(560px,100%);max-height:100%;overflow:auto;background:#060a06;border:3px solid var(--g);box-shadow:6px 6px 0 #1f3a00;padding:20px 22px;text-align:left}
+.jtitle{text-align:center}
+.jlogo{margin:8px 0 12px;font:clamp(16px,3.2vw,28px)/1.3 var(--px);color:var(--g);text-shadow:3px 3px 0 #1f3a00}
+.jlogo.red{color:var(--red);text-shadow:3px 3px 0 #3a0d08}
+.jsmall{margin:0;font:12px/1.4 var(--sk);text-transform:uppercase;color:var(--ink2);letter-spacing:.04em}
+.jsmall.jg{color:var(--g)}
+.jtxt{margin:10px 0 0;font-size:14.5px;line-height:1.6;color:var(--ink)}
+.jkeys{margin:12px 0 0;font:12px/1.4 var(--sk);color:var(--muted)}
+.jrow{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:16px}
+.jtitle .jrow{justify-content:center}
+.jbtn{cursor:pointer;border:0;background:#1a1a1a;color:var(--ink);font:12px/1 var(--px);padding:12px 14px;box-shadow:inset -3px -3px 0 rgba(0,0,0,.5),inset 3px 3px 0 rgba(255,255,255,.12)}
+.jbtn.go{background:var(--g);color:#061006}
+.jbtn.go:focus-visible,.jbtn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.jtitle .jbtn.go{animation:blink 1.1s steps(2) infinite}
+@keyframes blink{50%{opacity:.55}}
+.jskip{font:13px/1 var(--sk);color:var(--ink2)}
+.jhd{display:flex;gap:14px;align-items:center;margin-top:12px}
+.jhd img{width:56px;height:56px;object-fit:cover;image-rendering:pixelated;border:2px solid var(--line2)}
+.jrank{margin:0;font:14px/1 var(--px);color:var(--gold)}
+.jname{margin:8px 0 0;font:15px/1.35 var(--px);color:var(--ink)}
+.jmeta{margin:6px 0 0;font:13px/1.3 var(--sk);color:var(--ink2)}
+.jlist{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;gap:4px 16px;font:13px/1.35 var(--sk)}
+.jlist li{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:6px}
+.jlist b{color:var(--gold);font-weight:400}.jlist span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.jlist i{font-style:normal;color:var(--muted)}
+.jg-pad{display:none;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;user-select:none;-webkit-user-select:none;touch-action:none}
+.jg-pad button{touch-action:none;-webkit-tap-highlight-color:transparent;cursor:pointer;border:0;color:var(--ink);background:#1a1a1a;font:18px/1 var(--px);box-shadow:inset -4px -4px 0 rgba(0,0,0,.55),inset 4px 4px 0 rgba(255,255,255,.12)}
+.dpad{display:flex;gap:10px}
+.dpad button{width:66px;height:62px}
+.abtn{width:76px;height:76px;border-radius:50%;background:#b8221a!important;color:#fff!important}
+.jg-pad button.on{transform:translateY(2px);filter:brightness(1.35)}
+.mute{font:10px/1 var(--px)!important;padding:10px 8px;color:var(--ink2)!important}
+.jg-help{margin:14px 0 0;font:13px/1.4 var(--sk);color:var(--muted);text-align:center}
+@media (hover:none),(pointer:coarse),(max-width:760px){.jg-pad{display:flex}.jg-help{display:none}}
+@media (max-width:620px){
+  .arcade{padding:0 10px;margin-top:22px}
+  .jg-ov{position:fixed;z-index:70;background:rgba(0,0,0,.72)}
+  .jbox{padding:16px}
+  .jlist{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-flow:row}
+}
+
+main{max-width:1080px;margin:0 auto;padding:0 20px}
+section{margin-top:84px}
+h2{margin:0;font:clamp(20px,3.4vw,32px)/1.3 var(--px);color:var(--g);text-shadow:3px 3px 0 #1f3a00}
+h2::before{content:"\25B6  ";color:var(--gold)}
+.lede{max-width:70ch;margin:18px 0 26px;color:var(--ink2)}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:0 0 16px;font:13px/1 var(--sk);text-transform:uppercase;color:var(--ink2)}
+.lk{display:inline-flex;align-items:center;gap:7px}
+.sw,.key{display:inline-block;width:12px;height:12px}
+.qb{background:var(--qb)}.rb{background:var(--rb)}.wr{background:var(--wr)}.te{background:var(--te)}.k{background:var(--k)}.dst{background:var(--dst)}
+
+.pix{border:2px solid var(--line2);box-shadow:4px 4px 0 #000}
+.games{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.game{background:var(--panel);border:2px solid var(--line2);box-shadow:4px 4px 0 #000;padding:14px 16px 10px}
+.game.close{grid-column:1/-1;border-color:var(--gold)}
+.gtag{margin:0 0 10px;font:12px/1 var(--px);color:var(--gold)}
+.gtag.blow{color:var(--red)}
+.gs{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:12px;align-items:center;padding:4px 0;min-width:0}
+.gs img{width:28px;height:28px;object-fit:cover;image-rendering:pixelated}
+.gs .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gs .sc{font:16px/1 var(--px)}
+.gs:not(.win){color:var(--muted)}
+.gs.win .sc{color:var(--g)}
+.mg{margin:8px 0 0;padding-top:8px;border-top:2px dashed var(--line);font:13px/1 var(--sk);text-transform:uppercase;color:var(--muted)}
+
+.tier{margin-top:50px}
+.tierh{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px;padding:12px 14px;background:var(--panel2);border-left:6px solid var(--g)}
+.tr1 .tierh{border-left-color:var(--te)}.tr2 .tierh{border-left-color:var(--gold)}.tr3 .tierh{border-left-color:var(--red)}
+.tierh h3{margin:0;font:17px/1.3 var(--px);color:var(--ink)}
+.tierh p{margin:0;font:14px/1 var(--sk);text-transform:uppercase;color:var(--muted)}
+.cards{display:grid;gap:14px}
+.card{position:relative;background:var(--panel);border:2px solid var(--line2);box-shadow:5px 5px 0 #000;padding:20px 22px 16px;scroll-margin-top:70px}
+.card.t0{border-color:var(--g)}
+.card:target{outline:3px solid var(--gold);outline-offset:3px}
+.th{display:grid;grid-template-columns:auto 48px minmax(0,1fr) auto;gap:16px;align-items:center}
+.rk{font:28px/1 var(--px);min-width:1.4em;text-align:center;color:var(--ink2)}
+.t0 .rk{color:var(--g)}
+.th .lg{width:48px;height:48px;object-fit:cover;border:2px solid var(--line2)}
+.who{min-width:0}
+.who h3{margin:0;font:14px/1.45 var(--px);overflow-wrap:anywhere}
+.who p{margin:4px 0 0;font-size:14px;color:var(--muted)}
+.mv{margin-left:6px;font:13px/1 var(--sk)}
+.mv.up{color:var(--g)}.mv.dn{color:var(--red)}.mv.eq{color:var(--muted)}
+.pts{text-align:right}
+.pts b{display:block;font:20px/1 var(--px);color:var(--gold)}
+.pts span{font:12px/1 var(--sk);text-transform:uppercase;color:var(--muted)}
+.bar{display:flex;gap:2px;height:8px;margin:16px 0 2px}
+.seg{display:block;height:100%}
+.seg.qb{background:var(--qb)}.seg.rb{background:var(--rb)}.seg.wr{background:var(--wr)}.seg.te{background:var(--te)}.seg.k{background:var(--k)}.seg.dst{background:var(--dst)}
+.take{margin:16px 0 0;line-height:1.7}
+.pog{display:flex;align-items:center;gap:10px;margin:14px 0 0;padding-top:12px;border-top:2px dashed var(--line);font-size:14px;color:var(--ink2)}
+.pog img{width:28px;height:28px;object-fit:cover;border-radius:2px}
+
+.odds{list-style:none;margin:0;padding:6px 18px;background:var(--panel);border:2px solid var(--line2);box-shadow:5px 5px 0 #000}
+.od{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) 64px 130px;gap:14px;align-items:center;padding:11px 0;border-bottom:2px dashed var(--line)}
+.od:last-child{border-bottom:0}
+.on{display:flex;align-items:center;gap:10px;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.on img{width:24px;height:24px;object-fit:cover}
+.on small{color:var(--muted)}
+.om{height:10px;background:#000;border:1px solid var(--line2)}
+.om span{display:block;height:100%;background:repeating-linear-gradient(90deg,var(--g) 0 6px,#0000 6px 8px)}
+.op{font:14px/1 var(--px);text-align:right}
+.ol{font:13px/1.2 var(--sk);text-transform:uppercase;color:var(--muted)}
+.note{margin:14px 0 0;font-size:13.5px;color:var(--muted)}
+
+.pchart{display:grid;gap:10px;background:var(--panel);border:2px solid var(--line2);box-shadow:5px 5px 0 #000;padding:18px}
+.prow{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;align-items:center;outline:none}
+.pn{font:13px/1.1 var(--sk);text-transform:uppercase;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pt{display:flex;align-items:center;gap:10px;min-width:0}
+.ps{display:flex;gap:2px;height:14px}
+.pv{font:12px/1 var(--px)}
+.prow:hover .ps,.prow:focus .ps{outline:2px solid var(--gold);outline-offset:2px}
+.tview{margin-top:14px}
+.tview summary{cursor:pointer;font:14px/1 var(--sk);text-transform:uppercase;color:var(--g)}
+.twrap{overflow-x:auto;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--panel)}
+th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child{text-align:left}
+thead th{font:13px/1 var(--sk);color:var(--muted)}
+td.tot{font-weight:700;color:var(--g)}
+
+.bumpwrap{margin:0;background:var(--panel);border:2px solid var(--line2);box-shadow:5px 5px 0 #000;padding:18px}
+.bump{width:100%;height:auto;display:block}
+.bump .grid{stroke:var(--line)}
+.bump .wkl,.bump .ax{fill:var(--muted);font:11px var(--sk)}
+.ln .hit{stroke:transparent;stroke-width:14;fill:none}
+.ln .stroke{stroke:#33463a;stroke-width:2;fill:none}
+.ln circle{fill:var(--panel);stroke:#33463a;stroke-width:2}
+.ln text{fill:var(--muted);font:12px var(--sk)}
+.ln.lead .stroke,.ln.lead circle{stroke:var(--g)}.ln.lead text{fill:var(--g)}
+.ln.lead .stroke{stroke-width:3.5}
+.bump.focus .ln{opacity:.15}.bump.focus .ln.on{opacity:1}
+.bump.focus .ln.on .stroke{stroke:var(--gold);stroke-width:3.5}.bump.focus .ln.on text{fill:var(--gold)}
+.ln{outline:none;cursor:pointer;transition:opacity .15s}
+.bumpwrap figcaption{margin-top:12px;font-size:13px;color:var(--muted)}
+
+.nxs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.nx{background:var(--panel);border:2px solid var(--line2);box-shadow:4px 4px 0 #000;padding:14px 16px}
+.nx.gotw{grid-column:1/-1;border-color:var(--g)}
+.nx-tag{display:block;margin-bottom:10px;font:12px/1 var(--px);color:var(--g)}
+.nx-m{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font:14px/1.3 var(--sk);text-transform:uppercase}
+.nx-u{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.nx-m img{width:22px;height:22px;object-fit:cover}
+.nx-r{color:var(--muted)}
+.nx-vs{color:var(--gold)}
+.nx-t{margin:8px 0 0;color:var(--ink2)}
+
+.foot{margin-top:100px;padding:30px 0 60px;border-top:2px solid var(--line2);color:var(--muted);font-size:14px}
+.sco{margin:0 0 14px;font:clamp(14px,2.4vw,22px)/1.5 var(--px);color:var(--g)}
+
+.tip{position:fixed;z-index:50;min-width:170px;padding:10px 12px;background:#000;border:2px solid var(--g);font-size:13px;pointer-events:none;box-shadow:4px 4px 0 #1f3a00}
+.tip p{margin:2px 0;display:flex;justify-content:space-between;flex-direction:row-reverse;gap:16px}
+.tip .tt{display:block;margin-bottom:6px;font:11px/1.4 var(--px);color:var(--g)}
+.tip span{display:inline-flex;align-items:center;gap:6px;color:var(--ink2)}
+.tip .tsum{margin-top:6px;padding-top:6px;border-top:1px solid var(--line2)}
+
+@media (max-width:860px){
+  .od{grid-template-columns:minmax(0,1fr) 60px;row-gap:8px}
+  .om{grid-column:1/-1;grid-row:2}
+  .ol{grid-column:1/-1;grid-row:3}
+}
+@media (max-width:620px){
+  .top-in,.hero-in,main{padding-left:16px;padding-right:16px}
+  .games,.nxs{grid-template-columns:minmax(0,1fr)}
+  .links a:not(:nth-child(-n+2)){display:none}
+  .brand .full{display:none}.brand .short{display:inline}
+  .th{grid-template-columns:auto 40px minmax(0,1fr);gap:12px}
+  .th .lg{width:40px;height:40px}
+  .pts{grid-column:1/-1;display:flex;align-items:baseline;gap:10px;text-align:left}
+  .rk{font-size:22px}
+  .card{padding:16px 14px 14px}
+  .who h3{font-size:12.5px}
+  .prow{grid-template-columns:84px minmax(0,1fr);gap:10px}
+  .tierh h3{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
+
+/* scoreboard */
+.jtop{margin-top:16px;padding-top:12px;border-top:2px dashed var(--line2)}
+.jboard{list-style:none;margin:8px 0 0;padding:0;font:14px/1.5 var(--sk)}
+.jboard li{display:grid;grid-template-columns:30px minmax(0,1fr) 46px 70px;gap:8px;padding:2px 4px}
+.jboard li.me{background:rgba(118,185,0,.18);color:var(--g)}
+.jboard b{font-weight:400;color:var(--gold)}.jboard span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.jboard i{font-style:normal;color:var(--muted);text-align:right}.jboard em{font-style:normal;text-align:right}
+.jtitle .jtop{text-align:left;max-width:360px;margin-left:auto;margin-right:auto}
+.jstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0 0}
+.jstats div{background:#0d150e;border:1px solid var(--line2);padding:7px 9px}
+.jstats div.tot{border-color:var(--gold)}
+.jstats dt{font:11px/1.2 var(--sk);text-transform:uppercase;color:var(--muted)}
+.jstats dd{margin:4px 0 0;font:13px/1.2 var(--px);color:var(--ink)}
+.jstats .tot dd{color:var(--gold)}
+.jform{display:flex;gap:10px;margin-top:14px}
+.jform input{flex:1;min-width:0;background:#000;border:2px solid var(--g);color:var(--ink);font:14px/1 var(--px);padding:10px;text-transform:uppercase}
+.jform input:focus{outline:2px solid var(--gold);outline-offset:2px}
+@media (max-width:620px){.jstats{grid-template-columns:repeat(2,minmax(0,1fr))}.jform input{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="ticker" aria-hidden="true"><div class="tk"><span>TEST BUILD</span><span>TEST BUILD</span></div></div>
+<nav class="top"><div class="top-in">
+  <a class="brand" href="../index.html"><span class="full">Chach Champions League</span><span class="short">CCL</span></a>
+  <div class="links"><a href="#results">Results</a><a href="#rankings">Rankings</a><a href="#playoff">Playoff</a><a href="#depth">Depth chart</a></div>
+</div></nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <p class="kicker">Test build · not the real week 10 page</p>
+    <h1>Game test</h1>
+    <p class="sub">Teams and records are from week 9 as stand-ins.</p>
+  </div>
+  <div class="arcade">
+    <div class="jg-wrap"><canvas id="jg" aria-label="Playable 8-bit game. Arrow keys to move, space to jump." role="img"></canvas><div class="jg-ov" id="jgov" hidden></div></div>
+    <div class="jg-pad" aria-hidden="true">
+      <div class="dpad"><button type="button" data-jk="l">&#9664;</button><button type="button" data-jk="r">&#9654;</button></div>
+      <button type="button" id="jgmute" class="mute">SOUND ON</button>
+      <button type="button" class="abtn" data-jk="j">A</button>
+    </div>
+    <p class="jg-help">Arrow keys or A/D to move, space to jump. Stomp enemies from above.</p>
+  </div>
+  <div class="hero-in"><p class="dek">Week 10 copy goes here once the data is in.</p></div>
+</header>
+
+<main>
+  <section id="results">
+    <h2>The Scoreboard</h2>
+    <p class="lede"></p>
+    <ul class="games"><li class="game close">
+  <p class="gtag">Photo finish</p>
+  <div class="gs win"><img src="../assets/logos/1-team-galakrond.png" alt="" loading="lazy"><span class="nm">Team Galakrond</span><span class="sc">112.2</span></div>
+  <div class="gs"><img src="../assets/logos/8-dake-bates.png" alt="" loading="lazy"><span class="nm">Dake Bates</span><span class="sc">110.8</span></div>
+  <p class="mg">Decided by 1.48</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/3-ceedeez-nutz-2d8247.svg" alt="" loading="lazy"><span class="nm">CeeDeez Nutz</span><span class="sc">130.0</span></div>
+  <div class="gs"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="" loading="lazy"><span class="nm">Purdy Seconds to Mars</span><span class="sc">109.4</span></div>
+  <p class="mg">Won by 20.6</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/12-team-evil-kelly.png" alt="" loading="lazy"><span class="nm">Team evil </span><span class="sc">142.2</span></div>
+  <div class="gs"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="" loading="lazy"><span class="nm">Cortisol Spyke Weeks</span><span class="sc">120.6</span></div>
+  <p class="mg">Won by 21.7</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/10-roadrunners-913475.svg" alt="" loading="lazy"><span class="nm">roadrunners</span><span class="sc">128.5</span></div>
+  <div class="gs"><img src="../assets/logos/5-adams-and-jefferson-33999f.svg" alt="" loading="lazy"><span class="nm">Adams and Jefferson</span><span class="sc">99.5</span></div>
+  <p class="mg">Won by 29.0</p>
+</li><li class="game">
+  
+  <div class="gs win"><img src="../assets/logos/2-ben-s-brilliant-team-f4dc7f.svg" alt="" loading="lazy"><span class="nm">Ben&#x27;s Brilliant Team</span><span class="sc">114.1</span></div>
+  <div class="gs"><img src="../assets/logos/6-bingo-night-d7613d.svg" alt="" loading="lazy"><span class="nm">Bingo Night</span><span class="sc">83.5</span></div>
+  <p class="mg">Won by 30.6</p>
+</li><li class="game">
+  <p class="gtag blow">Flawless victory</p>
+  <div class="gs win"><img src="../assets/logos/9-michael-s-monstrous-team-1ae92f.svg" alt="" loading="lazy"><span class="nm">michael&#x27;s Monstrous Team</span><span class="sc">119.7</span></div>
+  <div class="gs"><img src="../assets/logos/11-drake-maye-sucks-ass-e343f9.svg" alt="" loading="lazy"><span class="nm">Drake Maye Sucks Ass</span><span class="sc">74.5</span></div>
+  <p class="mg">Won by 45.2</p>
+</li></ul>
+  </section>
+
+  <section id="rankings">
+    <h2>Power Rankings</h2>
+    <p class="lede"></p>
+    <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
+    <div class="tier tr0">
+  <header class="tierh"><h3>Blackwell Tier</h3><p>flagship silicon</p></header>
+  <div class="cards"><article class="card t0" id="t2">
+  <header class="th">
+    <span class="rk">1</span>
+    <img class="lg" src="../assets/logos/2-ben-s-brilliant-team-f4dc7f.svg" alt="" loading="lazy">
+    <div class="who"><h3>Ben&#x27;s Brilliant Team</h3><p>Ben Elton &middot; 8-1 <span class="mv up">&#9650; 1</span></p></div>
+    <div class="pts"><b>114.1</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;14.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;16.7&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;31.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;22.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;114.1&quot;}" aria-label="Points by position"><span class="seg qb" style="width:12.77%"></span><span class="seg rb" style="width:14.64%"></span><span class="seg wr" style="width:27.62%"></span><span class="seg te" style="width:19.55%"></span><span class="seg k" style="width:14.90%"></span><span class="seg dst" style="width:10.52%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4432665.png" alt="" loading="lazy"><span>Player of the game <b>Brock Bowers</b> 22.3</span></p>
+</article><article class="card t0" id="t12">
+  <header class="th">
+    <span class="rk">2</span>
+    <img class="lg" src="../assets/logos/12-team-evil-kelly.png" alt="" loading="lazy">
+    <div class="who"><h3>Team evil </h3><p>kelly brown &middot; 5-4 <span class="mv up">&#9650; 2</span></p></div>
+    <div class="pts"><b>142.2</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;29.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;30.5&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;50.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;4.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;142.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:20.77%"></span><span class="seg rb" style="width:21.44%"></span><span class="seg wr" style="width:35.15%"></span><span class="seg te" style="width:2.95%"></span><span class="seg k" style="width:11.25%"></span><span class="seg dst" style="width:8.44%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/3915511.png" alt="" loading="lazy"><span>Player of the game <b>Joe Burrow</b> 29.5</span></p>
+</article><article class="card t0" id="t9">
+  <header class="th">
+    <span class="rk">3</span>
+    <img class="lg" src="../assets/logos/9-michael-s-monstrous-team-1ae92f.svg" alt="" loading="lazy">
+    <div class="who"><h3>michael&#x27;s Monstrous Team</h3><p>michael prince &middot; 6-3 <span class="mv up">&#9650; 2</span></p></div>
+    <div class="pts"><b>119.7</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.9&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;50.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;28.8&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;119.7&quot;}" aria-label="Points by position"><span class="seg qb" style="width:10.75%"></span><span class="seg rb" style="width:42.45%"></span><span class="seg wr" style="width:24.07%"></span><span class="seg te" style="width:10.20%"></span><span class="seg k" style="width:7.52%"></span><span class="seg dst" style="width:5.01%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4596448.png" alt="" loading="lazy"><span>Player of the game <b>Bucky Irving</b> 28.5</span></p>
+</article></div>
+</div><div class="tier tr1">
+  <header class="tierh"><h3>Hopper Tier</h3><p>still ships</p></header>
+  <div class="cards"><article class="card t1" id="t3">
+  <header class="th">
+    <span class="rk">4</span>
+    <img class="lg" src="../assets/logos/3-ceedeez-nutz-2d8247.svg" alt="" loading="lazy">
+    <div class="who"><h3>CeeDeez Nutz</h3><p>skyler cortez &middot; 6-3 <span class="mv up">&#9650; 2</span></p></div>
+    <div class="pts"><b>130.0</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;3.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;68.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;8.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;130.0&quot;}" aria-label="Points by position"><span class="seg qb" style="width:2.94%"></span><span class="seg rb" style="width:14.15%"></span><span class="seg wr" style="width:52.61%"></span><span class="seg te" style="width:6.46%"></span><span class="seg k" style="width:13.07%"></span><span class="seg dst" style="width:10.77%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4241389.png" alt="" loading="lazy"><span>Player of the game <b>CeeDee Lamb</b> 33.5</span></p>
+</article><article class="card t1" id="t10">
+  <header class="th">
+    <span class="rk">5</span>
+    <img class="lg" src="../assets/logos/10-roadrunners-913475.svg" alt="" loading="lazy">
+    <div class="who"><h3>roadrunners</h3><p>Ricky Verastegui &middot; 4-5 <span class="mv up">&#9650; 4</span></p></div>
+    <div class="pts"><b>128.5</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;13.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;23.3&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.2&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;6.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;19.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;128.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:10.57%"></span><span class="seg rb" style="width:18.14%"></span><span class="seg wr" style="width:44.52%"></span><span class="seg te" style="width:7.32%"></span><span class="seg k" style="width:4.67%"></span><span class="seg dst" style="width:14.79%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4701936.png" alt="" loading="lazy"><span>Player of the game <b>Matthew Golden</b> 32.4</span></p>
+</article><article class="card t1" id="t8">
+  <header class="th">
+    <span class="rk">6</span>
+    <img class="lg" src="../assets/logos/8-dake-bates.png" alt="" loading="lazy">
+    <div class="who"><h3>Dake Bates</h3><p>Jake Danielson &middot; 6-3 <span class="mv dn">&#9660; 5</span></p></div>
+    <div class="pts"><b>110.8</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;29.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;49.7&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;13.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;4.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;110.8&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.52%"></span><span class="seg rb" style="width:26.54%"></span><span class="seg wr" style="width:44.87%"></span><span class="seg te" style="width:1.72%"></span><span class="seg k" style="width:11.74%"></span><span class="seg dst" style="width:3.61%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4426515.png" alt="" loading="lazy"><span>Player of the game <b>Puka Nacua</b> 35.0</span></p>
+</article></div>
+</div><div class="tier tr2">
+  <header class="tierh"><h3>Gaming Tier</h3><p>RTX on, mostly</p></header>
+  <div class="cards"><article class="card t2" id="t4">
+  <header class="th">
+    <span class="rk">7</span>
+    <img class="lg" src="../assets/logos/4-cortisol-spyke-weeks.png" alt="" loading="lazy">
+    <div class="who"><h3>Cortisol Spyke Weeks</h3><p>Mason Morgan &middot; 5-4 <span class="mv dn">&#9660; 4</span></p></div>
+    <div class="pts"><b>120.6</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;5.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;17.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;16.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;15.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;120.6&quot;}" aria-label="Points by position"><span class="seg qb" style="width:4.40%"></span><span class="seg rb" style="width:14.41%"></span><span class="seg wr" style="width:47.77%"></span><span class="seg te" style="width:13.52%"></span><span class="seg k" style="width:7.46%"></span><span class="seg dst" style="width:12.44%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4362628.png" alt="" loading="lazy"><span>Player of the game <b>Ja&#x27;Marr Chase</b> 31.5</span></p>
+</article><article class="card t2" id="t1">
+  <header class="th">
+    <span class="rk">8</span>
+    <img class="lg" src="../assets/logos/1-team-galakrond.png" alt="" loading="lazy">
+    <div class="who"><h3>Team Galakrond</h3><p>Neil Gibeaut &middot; 2-7 <span class="mv up">&#9650; 2</span></p></div>
+    <div class="pts"><b>112.2</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;51.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;22.1&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;112.2&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.26%"></span><span class="seg rb" style="width:45.62%"></span><span class="seg wr" style="width:19.69%"></span><span class="seg te" style="width:6.50%"></span><span class="seg k" style="width:8.02%"></span><span class="seg dst" style="width:8.91%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4567048.png" alt="" loading="lazy"><span>Player of the game <b>Kenneth Walker III</b> 36.3</span></p>
+</article><article class="card t2" id="t6">
+  <header class="th">
+    <span class="rk">9</span>
+    <img class="lg" src="../assets/logos/6-bingo-night-d7613d.svg" alt="" loading="lazy">
+    <div class="who"><h3>Bingo Night</h3><p>Thomas Fowler &middot; 4-5 <span class="mv dn">&#9660; 2</span></p></div>
+    <div class="pts"><b>83.5</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;7.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;28.9&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;5.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;17.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;15.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;83.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:8.72%"></span><span class="seg rb" style="width:34.62%"></span><span class="seg wr" style="width:5.99%"></span><span class="seg te" style="width:20.72%"></span><span class="seg k" style="width:17.97%"></span><span class="seg dst" style="width:11.98%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/15847.png" alt="" loading="lazy"><span>Player of the game <b>Travis Kelce</b> 17.3</span></p>
+</article></div>
+</div><div class="tier tr3">
+  <header class="tierh"><h3>Integrated Graphics</h3><p>shares memory with the toaster</p></header>
+  <div class="cards"><article class="card t3" id="t11">
+  <header class="th">
+    <span class="rk">10</span>
+    <img class="lg" src="../assets/logos/11-drake-maye-sucks-ass-e343f9.svg" alt="" loading="lazy">
+    <div class="who"><h3>Drake Maye Sucks Ass</h3><p>Jackson Helling &middot; 5-4 <span class="mv dn">&#9660; 2</span></p></div>
+    <div class="pts"><b>74.5</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.6&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;28.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;7.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;74.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:24.52%"></span><span class="seg rb" style="width:24.98%"></span><span class="seg wr" style="width:38.14%"></span><span class="seg te" style="width:9.67%"></span><span class="seg k" style="width:9.40%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4431452.png" alt="" loading="lazy"><span>Player of the game <b>Drake Maye</b> 18.3</span></p>
+</article><article class="card t3" id="t5">
+  <header class="th">
+    <span class="rk">11</span>
+    <img class="lg" src="../assets/logos/5-adams-and-jefferson-33999f.svg" alt="" loading="lazy">
+    <div class="who"><h3>Adams and Jefferson</h3><p>Lyudmil Zdravkov &middot; 1-8 <span class="mv eq">&ndash;</span></p></div>
+    <div class="pts"><b>99.5</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;11.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;26.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;24.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;99.5&quot;}" aria-label="Points by position"><span class="seg qb" style="width:11.27%"></span><span class="seg rb" style="width:26.23%"></span><span class="seg wr" style="width:24.52%"></span><span class="seg te" style="width:9.85%"></span><span class="seg k" style="width:17.08%"></span><span class="seg dst" style="width:11.05%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/2971573.png" alt="" loading="lazy"><span>Player of the game <b>Ka&#x27;imi Fairbairn</b> 17.0</span></p>
+</article><article class="card t3" id="t7">
+  <header class="th">
+    <span class="rk">12</span>
+    <img class="lg" src="../assets/logos/7-purdy-seconds-to-mars.png" alt="" loading="lazy">
+    <div class="who"><h3>Purdy Seconds to Mars</h3><p>Ben T &middot; 2-7 <span class="mv eq">&ndash;</span></p></div>
+    <div class="pts"><b>109.4</b><span>points</span></div>
+  </header>
+  <div class="bar" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;25.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;27.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;16.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;109.4&quot;}" aria-label="Points by position"><span class="seg qb" style="width:23.11%"></span><span class="seg rb" style="width:24.87%"></span><span class="seg wr" style="width:15.09%"></span><span class="seg te" style="width:11.34%"></span><span class="seg k" style="width:14.63%"></span><span class="seg dst" style="width:10.97%"></span></div>
+  <p class="take"></p>
+  <p class="pog"><img src="../assets/players/4430807.png" alt="" loading="lazy"><span>Player of the game <b>Bijan Robinson</b> 26.7</span></p>
+</article></div>
+</div>
+  </section>
+
+  <section id="playoff">
+    <h2>Export License Status</h2>
+    <p class="lede"></p>
+    <ol class="odds"><li class="od"><span class="on"><img src="../assets/logos/2-ben-s-brilliant-team-f4dc7f.svg" alt="">Ben&#x27;s Brilliant Team<small>8-1</small></span><span class="om" aria-hidden="true"><span style="width:100.0%"></span></span><span class="op">>99%</span><span class="ol">Shipped</span></li><li class="od"><span class="on"><img src="../assets/logos/9-michael-s-monstrous-team-1ae92f.svg" alt="">michael&#x27;s Monstrous Team<small>6-3</small></span><span class="om" aria-hidden="true"><span style="width:96.7%"></span></span><span class="op">97%</span><span class="ol">Shipped</span></li><li class="od"><span class="on"><img src="../assets/logos/3-ceedeez-nutz-2d8247.svg" alt="">CeeDeez Nutz<small>6-3</small></span><span class="om" aria-hidden="true"><span style="width:94.1%"></span></span><span class="op">94%</span><span class="ol">Shipped</span></li><li class="od"><span class="on"><img src="../assets/logos/8-dake-bates.png" alt="">Dake Bates<small>6-3</small></span><span class="om" aria-hidden="true"><span style="width:90.1%"></span></span><span class="op">90%</span><span class="ol">Shipped</span></li><li class="od"><span class="on"><img src="../assets/logos/4-cortisol-spyke-weeks.png" alt="">Cortisol Spyke Weeks<small>5-4</small></span><span class="om" aria-hidden="true"><span style="width:82.2%"></span></span><span class="op">82%</span><span class="ol">In customs</span></li><li class="od"><span class="on"><img src="../assets/logos/12-team-evil-kelly.png" alt="">Team evil <small>5-4</small></span><span class="om" aria-hidden="true"><span style="width:80.7%"></span></span><span class="op">81%</span><span class="ol">In customs</span></li><li class="od"><span class="on"><img src="../assets/logos/11-drake-maye-sucks-ass-e343f9.svg" alt="">Drake Maye Sucks Ass<small>5-4</small></span><span class="om" aria-hidden="true"><span style="width:31.9%"></span></span><span class="op">32%</span><span class="ol">Under review</span></li><li class="od"><span class="on"><img src="../assets/logos/10-roadrunners-913475.svg" alt="">roadrunners<small>4-5</small></span><span class="om" aria-hidden="true"><span style="width:17.1%"></span></span><span class="op">17%</span><span class="ol">Under review</span></li><li class="od"><span class="on"><img src="../assets/logos/6-bingo-night-d7613d.svg" alt="">Bingo Night<small>4-5</small></span><span class="om" aria-hidden="true"><span style="width:5.3%"></span></span><span class="op">5%</span><span class="ol">Seized</span></li><li class="od"><span class="on"><img src="../assets/logos/1-team-galakrond.png" alt="">Team Galakrond<small>2-7</small></span><span class="om" aria-hidden="true"><span style="width:1.5%"></span></span><span class="op">1%</span><span class="ol">Seized</span></li><li class="od"><span class="on"><img src="../assets/logos/7-purdy-seconds-to-mars.png" alt="">Purdy Seconds to Mars<small>2-7</small></span><span class="om" aria-hidden="true"><span style="width:1.5%"></span></span><span class="op"><1%</span><span class="ol">Seized</span></li><li class="od"><span class="on"><img src="../assets/logos/5-adams-and-jefferson-33999f.svg" alt="">Adams and Jefferson<small>1-8</small></span><span class="om" aria-hidden="true"><span style="width:1.5%"></span></span><span class="op"><1%</span><span class="ol">Seized</span></li></ol>
+    <p class="note">Playoff odds from 40,000 simulated seasons on the real remaining schedule. Top 6 make it. Ties go to total points.</p>
+  </section>
+
+  <section id="depth">
+    <h2>The Depth Chart</h2>
+    <p class="lede"></p>
+    <div class="legend"><span class="lk"><i class="sw qb"></i>Quarterback</span><span class="lk"><i class="sw rb"></i>Running back</span><span class="lk"><i class="sw wr"></i>Receiver</span><span class="lk"><i class="sw te"></i>Tight end</span><span class="lk"><i class="sw k"></i>Kicker</span><span class="lk"><i class="sw dst"></i>Defense</span></div>
+    <div class="pchart"><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;29.5&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;30.5&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;50.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;4.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;142.2&quot;}"><span class="pn">kelly</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 1.0000)"><span class="seg qb" style="width:20.77%"></span><span class="seg rb" style="width:21.44%"></span><span class="seg wr" style="width:35.15%"></span><span class="seg te" style="width:2.95%"></span><span class="seg k" style="width:11.25%"></span><span class="seg dst" style="width:8.44%"></span></span><span class="pv">142.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;3.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;68.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;8.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;14.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;130.0&quot;}"><span class="pn">skyler</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.9141)"><span class="seg qb" style="width:2.94%"></span><span class="seg rb" style="width:14.15%"></span><span class="seg wr" style="width:52.61%"></span><span class="seg te" style="width:6.46%"></span><span class="seg k" style="width:13.07%"></span><span class="seg dst" style="width:10.77%"></span></span><span class="pv">130.0</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;13.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;23.3&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.2&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;6.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;19.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;128.5&quot;}"><span class="pn">Ricky</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.9033)"><span class="seg qb" style="width:10.57%"></span><span class="seg rb" style="width:18.14%"></span><span class="seg wr" style="width:44.52%"></span><span class="seg te" style="width:7.32%"></span><span class="seg k" style="width:4.67%"></span><span class="seg dst" style="width:14.79%"></span></span><span class="pv">128.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;5.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;17.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;57.6&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;16.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;15.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;120.6&quot;}"><span class="pn">Mason</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8477)"><span class="seg qb" style="width:4.40%"></span><span class="seg rb" style="width:14.41%"></span><span class="seg wr" style="width:47.77%"></span><span class="seg te" style="width:13.52%"></span><span class="seg k" style="width:7.46%"></span><span class="seg dst" style="width:12.44%"></span></span><span class="pv">120.6</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.9&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;50.8&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;28.8&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;6.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;119.7&quot;}"><span class="pn">michael</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8413)"><span class="seg qb" style="width:10.75%"></span><span class="seg rb" style="width:42.45%"></span><span class="seg wr" style="width:24.07%"></span><span class="seg te" style="width:10.20%"></span><span class="seg k" style="width:7.52%"></span><span class="seg dst" style="width:5.01%"></span></span><span class="pv">119.7</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;14.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;16.7&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;31.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;22.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;114.1&quot;}"><span class="pn">Ben E.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.8019)"><span class="seg qb" style="width:12.77%"></span><span class="seg rb" style="width:14.64%"></span><span class="seg wr" style="width:27.62%"></span><span class="seg te" style="width:19.55%"></span><span class="seg k" style="width:14.90%"></span><span class="seg dst" style="width:10.52%"></span></span><span class="pv">114.1</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.6&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;51.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;22.1&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;9.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;112.2&quot;}"><span class="pn">Neil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7891)"><span class="seg qb" style="width:11.26%"></span><span class="seg rb" style="width:45.62%"></span><span class="seg wr" style="width:19.69%"></span><span class="seg te" style="width:6.50%"></span><span class="seg k" style="width:8.02%"></span><span class="seg dst" style="width:8.91%"></span></span><span class="pv">112.2</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;12.8&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;29.4&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;49.7&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;1.9&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;13.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;4.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;110.8&quot;}"><span class="pn">Jake</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7787)"><span class="seg qb" style="width:11.52%"></span><span class="seg rb" style="width:26.54%"></span><span class="seg wr" style="width:44.87%"></span><span class="seg te" style="width:1.72%"></span><span class="seg k" style="width:11.74%"></span><span class="seg dst" style="width:3.61%"></span></span><span class="pv">110.8</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;25.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;27.2&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;16.5&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;12.4&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;16.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;12.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;109.4&quot;}"><span class="pn">Ben T.</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.7690)"><span class="seg qb" style="width:23.11%"></span><span class="seg rb" style="width:24.87%"></span><span class="seg wr" style="width:15.09%"></span><span class="seg te" style="width:11.34%"></span><span class="seg k" style="width:14.63%"></span><span class="seg dst" style="width:10.97%"></span></span><span class="pv">109.4</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;11.2&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;26.1&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;24.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;9.8&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;17.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;11.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;99.5&quot;}"><span class="pn">Lyudmil</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.6997)"><span class="seg qb" style="width:11.27%"></span><span class="seg rb" style="width:26.23%"></span><span class="seg wr" style="width:24.52%"></span><span class="seg te" style="width:9.85%"></span><span class="seg k" style="width:17.08%"></span><span class="seg dst" style="width:11.05%"></span></span><span class="pv">99.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;7.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;28.9&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;5.0&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;17.3&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;15.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;10.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;83.5&quot;}"><span class="pn">Thomas</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5869)"><span class="seg qb" style="width:8.72%"></span><span class="seg rb" style="width:34.62%"></span><span class="seg wr" style="width:5.99%"></span><span class="seg te" style="width:20.72%"></span><span class="seg k" style="width:17.97%"></span><span class="seg dst" style="width:11.98%"></span></span><span class="pv">83.5</span></span></div><div class="prow" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Quarterback&quot;, &quot;18.3&quot;, &quot;qb&quot;], [&quot;Running back&quot;, &quot;18.6&quot;, &quot;rb&quot;], [&quot;Receiver&quot;, &quot;28.4&quot;, &quot;wr&quot;], [&quot;Tight end&quot;, &quot;7.2&quot;, &quot;te&quot;], [&quot;Kicker&quot;, &quot;7.0&quot;, &quot;k&quot;], [&quot;Defense&quot;, &quot;-5.0&quot;, &quot;dst&quot;]], &quot;total&quot;: &quot;74.5&quot;}"><span class="pn">Jackson</span><span class="pt"><span class="ps" style="width:calc((100% - 56px) * 0.5235)"><span class="seg qb" style="width:24.52%"></span><span class="seg rb" style="width:24.98%"></span><span class="seg wr" style="width:38.14%"></span><span class="seg te" style="width:9.67%"></span><span class="seg k" style="width:9.40%"></span></span><span class="pv">74.5</span></span></div></div>
+    <details class="tview"><summary>Show as a table</summary>
+      <div class="twrap"><table><thead><tr><th>Team</th><th>QB</th><th>RB</th><th>WR</th><th>TE</th><th>K</th><th>D/ST</th><th>Total</th></tr></thead><tbody><tr><th>Team evil </th><td>29.5</td><td>30.5</td><td>50.0</td><td>4.2</td><td>16.0</td><td>12.0</td><td class="tot">142.2</td></tr><tr><th>CeeDeez Nutz</th><td>3.8</td><td>18.4</td><td>68.4</td><td>8.4</td><td>17.0</td><td>14.0</td><td class="tot">130.0</td></tr><tr><th>roadrunners</th><td>13.6</td><td>23.3</td><td>57.2</td><td>9.4</td><td>6.0</td><td>19.0</td><td class="tot">128.5</td></tr><tr><th>Cortisol Spyke Weeks</th><td>5.3</td><td>17.4</td><td>57.6</td><td>16.3</td><td>9.0</td><td>15.0</td><td class="tot">120.6</td></tr><tr><th>michael&#x27;s Monstrous Team</th><td>12.9</td><td>50.8</td><td>28.8</td><td>12.2</td><td>9.0</td><td>6.0</td><td class="tot">119.7</td></tr><tr><th>Ben&#x27;s Brilliant Team</th><td>14.6</td><td>16.7</td><td>31.5</td><td>22.3</td><td>17.0</td><td>12.0</td><td class="tot">114.1</td></tr><tr><th>Team Galakrond</th><td>12.6</td><td>51.2</td><td>22.1</td><td>7.3</td><td>9.0</td><td>10.0</td><td class="tot">112.2</td></tr><tr><th>Dake Bates</th><td>12.8</td><td>29.4</td><td>49.7</td><td>1.9</td><td>13.0</td><td>4.0</td><td class="tot">110.8</td></tr><tr><th>Purdy Seconds to Mars</th><td>25.3</td><td>27.2</td><td>16.5</td><td>12.4</td><td>16.0</td><td>12.0</td><td class="tot">109.4</td></tr><tr><th>Adams and Jefferson</th><td>11.2</td><td>26.1</td><td>24.4</td><td>9.8</td><td>17.0</td><td>11.0</td><td class="tot">99.5</td></tr><tr><th>Bingo Night</th><td>7.3</td><td>28.9</td><td>5.0</td><td>17.3</td><td>15.0</td><td>10.0</td><td class="tot">83.5</td></tr><tr><th>Drake Maye Sucks Ass</th><td>18.3</td><td>18.6</td><td>28.4</td><td>7.2</td><td>7.0</td><td>-5.0</td><td class="tot">74.5</td></tr></tbody></table></div>
+    </details>
+  </section>
+
+  <section id="trend">
+    <h2>Rank by Week</h2>
+    <p class="lede"></p>
+    <figure class="bumpwrap"><svg class="bump" viewBox="0 0 560 380" role="img" aria-label="Power ranking by week for every team"><line class="grid" x1="34.0" y1="22" x2="34.0" y2="370"/><text class="wkl" x="34.0" y="16" text-anchor="middle">WK 1</text><line class="grid" x1="81.0" y1="22" x2="81.0" y2="370"/><text class="wkl" x="81.0" y="16" text-anchor="middle">WK 2</text><line class="grid" x1="128.0" y1="22" x2="128.0" y2="370"/><text class="wkl" x="128.0" y="16" text-anchor="middle">WK 3</text><line class="grid" x1="175.0" y1="22" x2="175.0" y2="370"/><text class="wkl" x="175.0" y="16" text-anchor="middle">WK 4</text><line class="grid" x1="222.0" y1="22" x2="222.0" y2="370"/><text class="wkl" x="222.0" y="16" text-anchor="middle">WK 5</text><line class="grid" x1="269.0" y1="22" x2="269.0" y2="370"/><text class="wkl" x="269.0" y="16" text-anchor="middle">WK 6</text><line class="grid" x1="316.0" y1="22" x2="316.0" y2="370"/><text class="wkl" x="316.0" y="16" text-anchor="middle">WK 7</text><line class="grid" x1="363.0" y1="22" x2="363.0" y2="370"/><text class="wkl" x="363.0" y="16" text-anchor="middle">WK 8</text><line class="grid" x1="410.0" y1="22" x2="410.0" y2="370"/><text class="wkl" x="410.0" y="16" text-anchor="middle">WK 9</text><g class="ln" data-team="7" tabindex="0" data-tip="{&quot;t&quot;: &quot;Purdy Seconds to Mars&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#8&quot;], [&quot;Week 2&quot;, &quot;#6&quot;], [&quot;Week 3&quot;, &quot;#4&quot;], [&quot;Week 4&quot;, &quot;#5&quot;], [&quot;Week 5&quot;, &quot;#9&quot;], [&quot;Week 6&quot;, &quot;#11&quot;], [&quot;Week 7&quot;, &quot;#12&quot;], [&quot;Week 8&quot;, &quot;#12&quot;], [&quot;Week 9&quot;, &quot;#12&quot;]]}"><path class="hit" d="M34.0,242.5 L81.0,181.8 L128.0,121.1 L175.0,151.5 L222.0,272.9 L269.0,333.6 L316.0,364.0 L363.0,364.0 L410.0,364.0"/><path class="stroke" d="M34.0,242.5 L81.0,181.8 L128.0,121.1 L175.0,151.5 L222.0,272.9 L269.0,333.6 L316.0,364.0 L363.0,364.0 L410.0,364.0"/><circle cx="34.0" cy="242.5" r="4"/><circle cx="81.0" cy="181.8" r="4"/><circle cx="128.0" cy="121.1" r="4"/><circle cx="175.0" cy="151.5" r="4"/><circle cx="222.0" cy="272.9" r="4"/><circle cx="269.0" cy="333.6" r="4"/><circle cx="316.0" cy="364.0" r="4"/><circle cx="363.0" cy="364.0" r="4"/><circle cx="410.0" cy="364.0" r="4"/><text x="422.0" y="368.5">12. Ben T.</text></g><g class="ln" data-team="5" tabindex="0" data-tip="{&quot;t&quot;: &quot;Adams and Jefferson&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#11&quot;], [&quot;Week 2&quot;, &quot;#7&quot;], [&quot;Week 3&quot;, &quot;#9&quot;], [&quot;Week 4&quot;, &quot;#6&quot;], [&quot;Week 5&quot;, &quot;#8&quot;], [&quot;Week 6&quot;, &quot;#10&quot;], [&quot;Week 7&quot;, &quot;#11&quot;], [&quot;Week 8&quot;, &quot;#11&quot;], [&quot;Week 9&quot;, &quot;#11&quot;]]}"><path class="hit" d="M34.0,333.6 L81.0,212.2 L128.0,272.9 L175.0,181.8 L222.0,242.5 L269.0,303.3 L316.0,333.6 L363.0,333.6 L410.0,333.6"/><path class="stroke" d="M34.0,333.6 L81.0,212.2 L128.0,272.9 L175.0,181.8 L222.0,242.5 L269.0,303.3 L316.0,333.6 L363.0,333.6 L410.0,333.6"/><circle cx="34.0" cy="333.6" r="4"/><circle cx="81.0" cy="212.2" r="4"/><circle cx="128.0" cy="272.9" r="4"/><circle cx="175.0" cy="181.8" r="4"/><circle cx="222.0" cy="242.5" r="4"/><circle cx="269.0" cy="303.3" r="4"/><circle cx="316.0" cy="333.6" r="4"/><circle cx="363.0" cy="333.6" r="4"/><circle cx="410.0" cy="333.6" r="4"/><text x="422.0" y="338.1">11. Lyudmil</text></g><g class="ln" data-team="11" tabindex="0" data-tip="{&quot;t&quot;: &quot;Drake Maye Sucks Ass&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#5&quot;], [&quot;Week 2&quot;, &quot;#8&quot;], [&quot;Week 3&quot;, &quot;#10&quot;], [&quot;Week 4&quot;, &quot;#8&quot;], [&quot;Week 5&quot;, &quot;#6&quot;], [&quot;Week 6&quot;, &quot;#4&quot;], [&quot;Week 7&quot;, &quot;#3&quot;], [&quot;Week 8&quot;, &quot;#8&quot;], [&quot;Week 9&quot;, &quot;#10&quot;]]}"><path class="hit" d="M34.0,151.5 L81.0,242.5 L128.0,303.3 L175.0,242.5 L222.0,181.8 L269.0,121.1 L316.0,90.7 L363.0,242.5 L410.0,303.3"/><path class="stroke" d="M34.0,151.5 L81.0,242.5 L128.0,303.3 L175.0,242.5 L222.0,181.8 L269.0,121.1 L316.0,90.7 L363.0,242.5 L410.0,303.3"/><circle cx="34.0" cy="151.5" r="4"/><circle cx="81.0" cy="242.5" r="4"/><circle cx="128.0" cy="303.3" r="4"/><circle cx="175.0" cy="242.5" r="4"/><circle cx="222.0" cy="181.8" r="4"/><circle cx="269.0" cy="121.1" r="4"/><circle cx="316.0" cy="90.7" r="4"/><circle cx="363.0" cy="242.5" r="4"/><circle cx="410.0" cy="303.3" r="4"/><text x="422.0" y="307.8">10. Jackson</text></g><g class="ln" data-team="6" tabindex="0" data-tip="{&quot;t&quot;: &quot;Bingo Night&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#6&quot;], [&quot;Week 2&quot;, &quot;#4&quot;], [&quot;Week 3&quot;, &quot;#7&quot;], [&quot;Week 4&quot;, &quot;#12&quot;], [&quot;Week 5&quot;, &quot;#11&quot;], [&quot;Week 6&quot;, &quot;#12&quot;], [&quot;Week 7&quot;, &quot;#8&quot;], [&quot;Week 8&quot;, &quot;#7&quot;], [&quot;Week 9&quot;, &quot;#9&quot;]]}"><path class="hit" d="M34.0,181.8 L81.0,121.1 L128.0,212.2 L175.0,364.0 L222.0,333.6 L269.0,364.0 L316.0,242.5 L363.0,212.2 L410.0,272.9"/><path class="stroke" d="M34.0,181.8 L81.0,121.1 L128.0,212.2 L175.0,364.0 L222.0,333.6 L269.0,364.0 L316.0,242.5 L363.0,212.2 L410.0,272.9"/><circle cx="34.0" cy="181.8" r="4"/><circle cx="81.0" cy="121.1" r="4"/><circle cx="128.0" cy="212.2" r="4"/><circle cx="175.0" cy="364.0" r="4"/><circle cx="222.0" cy="333.6" r="4"/><circle cx="269.0" cy="364.0" r="4"/><circle cx="316.0" cy="242.5" r="4"/><circle cx="363.0" cy="212.2" r="4"/><circle cx="410.0" cy="272.9" r="4"/><text x="422.0" y="277.4">9. Thomas</text></g><g class="ln" data-team="1" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team Galakrond&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#7&quot;], [&quot;Week 2&quot;, &quot;#9&quot;], [&quot;Week 3&quot;, &quot;#11&quot;], [&quot;Week 4&quot;, &quot;#11&quot;], [&quot;Week 5&quot;, &quot;#12&quot;], [&quot;Week 6&quot;, &quot;#8&quot;], [&quot;Week 7&quot;, &quot;#9&quot;], [&quot;Week 8&quot;, &quot;#10&quot;], [&quot;Week 9&quot;, &quot;#8&quot;]]}"><path class="hit" d="M34.0,212.2 L81.0,272.9 L128.0,333.6 L175.0,333.6 L222.0,364.0 L269.0,242.5 L316.0,272.9 L363.0,303.3 L410.0,242.5"/><path class="stroke" d="M34.0,212.2 L81.0,272.9 L128.0,333.6 L175.0,333.6 L222.0,364.0 L269.0,242.5 L316.0,272.9 L363.0,303.3 L410.0,242.5"/><circle cx="34.0" cy="212.2" r="4"/><circle cx="81.0" cy="272.9" r="4"/><circle cx="128.0" cy="333.6" r="4"/><circle cx="175.0" cy="333.6" r="4"/><circle cx="222.0" cy="364.0" r="4"/><circle cx="269.0" cy="242.5" r="4"/><circle cx="316.0" cy="272.9" r="4"/><circle cx="363.0" cy="303.3" r="4"/><circle cx="410.0" cy="242.5" r="4"/><text x="422.0" y="247.0">8. Neil</text></g><g class="ln" data-team="4" tabindex="0" data-tip="{&quot;t&quot;: &quot;Cortisol Spyke Weeks&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#12&quot;], [&quot;Week 2&quot;, &quot;#10&quot;], [&quot;Week 3&quot;, &quot;#5&quot;], [&quot;Week 4&quot;, &quot;#7&quot;], [&quot;Week 5&quot;, &quot;#4&quot;], [&quot;Week 6&quot;, &quot;#2&quot;], [&quot;Week 7&quot;, &quot;#5&quot;], [&quot;Week 8&quot;, &quot;#3&quot;], [&quot;Week 9&quot;, &quot;#7&quot;]]}"><path class="hit" d="M34.0,364.0 L81.0,303.3 L128.0,151.5 L175.0,212.2 L222.0,121.1 L269.0,60.4 L316.0,151.5 L363.0,90.7 L410.0,212.2"/><path class="stroke" d="M34.0,364.0 L81.0,303.3 L128.0,151.5 L175.0,212.2 L222.0,121.1 L269.0,60.4 L316.0,151.5 L363.0,90.7 L410.0,212.2"/><circle cx="34.0" cy="364.0" r="4"/><circle cx="81.0" cy="303.3" r="4"/><circle cx="128.0" cy="151.5" r="4"/><circle cx="175.0" cy="212.2" r="4"/><circle cx="222.0" cy="121.1" r="4"/><circle cx="269.0" cy="60.4" r="4"/><circle cx="316.0" cy="151.5" r="4"/><circle cx="363.0" cy="90.7" r="4"/><circle cx="410.0" cy="212.2" r="4"/><text x="422.0" y="216.7">7. Mason</text></g><g class="ln" data-team="8" tabindex="0" data-tip="{&quot;t&quot;: &quot;Dake Bates&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#1&quot;], [&quot;Week 2&quot;, &quot;#5&quot;], [&quot;Week 3&quot;, &quot;#6&quot;], [&quot;Week 4&quot;, &quot;#4&quot;], [&quot;Week 5&quot;, &quot;#3&quot;], [&quot;Week 6&quot;, &quot;#6&quot;], [&quot;Week 7&quot;, &quot;#4&quot;], [&quot;Week 8&quot;, &quot;#1&quot;], [&quot;Week 9&quot;, &quot;#6&quot;]]}"><path class="hit" d="M34.0,30.0 L81.0,151.5 L128.0,181.8 L175.0,121.1 L222.0,90.7 L269.0,181.8 L316.0,121.1 L363.0,30.0 L410.0,181.8"/><path class="stroke" d="M34.0,30.0 L81.0,151.5 L128.0,181.8 L175.0,121.1 L222.0,90.7 L269.0,181.8 L316.0,121.1 L363.0,30.0 L410.0,181.8"/><circle cx="34.0" cy="30.0" r="4"/><circle cx="81.0" cy="151.5" r="4"/><circle cx="128.0" cy="181.8" r="4"/><circle cx="175.0" cy="121.1" r="4"/><circle cx="222.0" cy="90.7" r="4"/><circle cx="269.0" cy="181.8" r="4"/><circle cx="316.0" cy="121.1" r="4"/><circle cx="363.0" cy="30.0" r="4"/><circle cx="410.0" cy="181.8" r="4"/><text x="422.0" y="186.3">6. Jake</text></g><g class="ln" data-team="10" tabindex="0" data-tip="{&quot;t&quot;: &quot;roadrunners&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#9&quot;], [&quot;Week 2&quot;, &quot;#12&quot;], [&quot;Week 3&quot;, &quot;#12&quot;], [&quot;Week 4&quot;, &quot;#10&quot;], [&quot;Week 5&quot;, &quot;#10&quot;], [&quot;Week 6&quot;, &quot;#7&quot;], [&quot;Week 7&quot;, &quot;#10&quot;], [&quot;Week 8&quot;, &quot;#9&quot;], [&quot;Week 9&quot;, &quot;#5&quot;]]}"><path class="hit" d="M34.0,272.9 L81.0,364.0 L128.0,364.0 L175.0,303.3 L222.0,303.3 L269.0,212.2 L316.0,303.3 L363.0,272.9 L410.0,151.5"/><path class="stroke" d="M34.0,272.9 L81.0,364.0 L128.0,364.0 L175.0,303.3 L222.0,303.3 L269.0,212.2 L316.0,303.3 L363.0,272.9 L410.0,151.5"/><circle cx="34.0" cy="272.9" r="4"/><circle cx="81.0" cy="364.0" r="4"/><circle cx="128.0" cy="364.0" r="4"/><circle cx="175.0" cy="303.3" r="4"/><circle cx="222.0" cy="303.3" r="4"/><circle cx="269.0" cy="212.2" r="4"/><circle cx="316.0" cy="303.3" r="4"/><circle cx="363.0" cy="272.9" r="4"/><circle cx="410.0" cy="151.5" r="4"/><text x="422.0" y="156.0">5. Ricky</text></g><g class="ln" data-team="3" tabindex="0" data-tip="{&quot;t&quot;: &quot;CeeDeez Nutz&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#4&quot;], [&quot;Week 2&quot;, &quot;#2&quot;], [&quot;Week 3&quot;, &quot;#2&quot;], [&quot;Week 4&quot;, &quot;#3&quot;], [&quot;Week 5&quot;, &quot;#5&quot;], [&quot;Week 6&quot;, &quot;#5&quot;], [&quot;Week 7&quot;, &quot;#2&quot;], [&quot;Week 8&quot;, &quot;#6&quot;], [&quot;Week 9&quot;, &quot;#4&quot;]]}"><path class="hit" d="M34.0,121.1 L81.0,60.4 L128.0,60.4 L175.0,90.7 L222.0,151.5 L269.0,151.5 L316.0,60.4 L363.0,181.8 L410.0,121.1"/><path class="stroke" d="M34.0,121.1 L81.0,60.4 L128.0,60.4 L175.0,90.7 L222.0,151.5 L269.0,151.5 L316.0,60.4 L363.0,181.8 L410.0,121.1"/><circle cx="34.0" cy="121.1" r="4"/><circle cx="81.0" cy="60.4" r="4"/><circle cx="128.0" cy="60.4" r="4"/><circle cx="175.0" cy="90.7" r="4"/><circle cx="222.0" cy="151.5" r="4"/><circle cx="269.0" cy="151.5" r="4"/><circle cx="316.0" cy="60.4" r="4"/><circle cx="363.0" cy="181.8" r="4"/><circle cx="410.0" cy="121.1" r="4"/><text x="422.0" y="125.6">4. skyler</text></g><g class="ln" data-team="9" tabindex="0" data-tip="{&quot;t&quot;: &quot;michael&#x27;s Monstrous Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#2&quot;], [&quot;Week 2&quot;, &quot;#1&quot;], [&quot;Week 3&quot;, &quot;#3&quot;], [&quot;Week 4&quot;, &quot;#2&quot;], [&quot;Week 5&quot;, &quot;#2&quot;], [&quot;Week 6&quot;, &quot;#3&quot;], [&quot;Week 7&quot;, &quot;#6&quot;], [&quot;Week 8&quot;, &quot;#5&quot;], [&quot;Week 9&quot;, &quot;#3&quot;]]}"><path class="hit" d="M34.0,60.4 L81.0,30.0 L128.0,90.7 L175.0,60.4 L222.0,60.4 L269.0,90.7 L316.0,181.8 L363.0,151.5 L410.0,90.7"/><path class="stroke" d="M34.0,60.4 L81.0,30.0 L128.0,90.7 L175.0,60.4 L222.0,60.4 L269.0,90.7 L316.0,181.8 L363.0,151.5 L410.0,90.7"/><circle cx="34.0" cy="60.4" r="4"/><circle cx="81.0" cy="30.0" r="4"/><circle cx="128.0" cy="90.7" r="4"/><circle cx="175.0" cy="60.4" r="4"/><circle cx="222.0" cy="60.4" r="4"/><circle cx="269.0" cy="90.7" r="4"/><circle cx="316.0" cy="181.8" r="4"/><circle cx="363.0" cy="151.5" r="4"/><circle cx="410.0" cy="90.7" r="4"/><text x="422.0" y="95.2">3. michael</text></g><g class="ln" data-team="12" tabindex="0" data-tip="{&quot;t&quot;: &quot;Team evil &quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#10&quot;], [&quot;Week 2&quot;, &quot;#11&quot;], [&quot;Week 3&quot;, &quot;#8&quot;], [&quot;Week 4&quot;, &quot;#9&quot;], [&quot;Week 5&quot;, &quot;#7&quot;], [&quot;Week 6&quot;, &quot;#9&quot;], [&quot;Week 7&quot;, &quot;#7&quot;], [&quot;Week 8&quot;, &quot;#4&quot;], [&quot;Week 9&quot;, &quot;#2&quot;]]}"><path class="hit" d="M34.0,303.3 L81.0,333.6 L128.0,242.5 L175.0,272.9 L222.0,212.2 L269.0,272.9 L316.0,212.2 L363.0,121.1 L410.0,60.4"/><path class="stroke" d="M34.0,303.3 L81.0,333.6 L128.0,242.5 L175.0,272.9 L222.0,212.2 L269.0,272.9 L316.0,212.2 L363.0,121.1 L410.0,60.4"/><circle cx="34.0" cy="303.3" r="4"/><circle cx="81.0" cy="333.6" r="4"/><circle cx="128.0" cy="242.5" r="4"/><circle cx="175.0" cy="272.9" r="4"/><circle cx="222.0" cy="212.2" r="4"/><circle cx="269.0" cy="272.9" r="4"/><circle cx="316.0" cy="212.2" r="4"/><circle cx="363.0" cy="121.1" r="4"/><circle cx="410.0" cy="60.4" r="4"/><text x="422.0" y="64.9">2. kelly</text></g><g class="ln lead" data-team="2" tabindex="0" data-tip="{&quot;t&quot;: &quot;Ben&#x27;s Brilliant Team&quot;, &quot;rows&quot;: [[&quot;Week 1&quot;, &quot;#3&quot;], [&quot;Week 2&quot;, &quot;#3&quot;], [&quot;Week 3&quot;, &quot;#1&quot;], [&quot;Week 4&quot;, &quot;#1&quot;], [&quot;Week 5&quot;, &quot;#1&quot;], [&quot;Week 6&quot;, &quot;#1&quot;], [&quot;Week 7&quot;, &quot;#1&quot;], [&quot;Week 8&quot;, &quot;#2&quot;], [&quot;Week 9&quot;, &quot;#1&quot;]]}"><path class="hit" d="M34.0,90.7 L81.0,90.7 L128.0,30.0 L175.0,30.0 L222.0,30.0 L269.0,30.0 L316.0,30.0 L363.0,60.4 L410.0,30.0"/><path class="stroke" d="M34.0,90.7 L81.0,90.7 L128.0,30.0 L175.0,30.0 L222.0,30.0 L269.0,30.0 L316.0,30.0 L363.0,60.4 L410.0,30.0"/><circle cx="34.0" cy="90.7" r="4"/><circle cx="81.0" cy="90.7" r="4"/><circle cx="128.0" cy="30.0" r="4"/><circle cx="175.0" cy="30.0" r="4"/><circle cx="222.0" cy="30.0" r="4"/><circle cx="269.0" cy="30.0" r="4"/><circle cx="316.0" cy="30.0" r="4"/><circle cx="363.0" cy="60.4" r="4"/><circle cx="410.0" cy="30.0" r="4"/><text x="422.0" y="34.5">1. Ben E.</text></g><text class="ax" x="20" y="34.0" text-anchor="end">1</text><text class="ax" x="20" y="368.0" text-anchor="end">12</text></svg>
+      <figcaption>Rank one at the top. Hover or tap a line to follow one team.</figcaption></figure>
+  </section>
+
+  <footer class="foot">
+    <p class="sco">The more you buy, the more you save.</p>
+    <p>Data from ESPN, pulled Monday night once the last game is final. <a href="../index.html">All weeks</a></p>
+    
+  </footer>
+</main>
+<script>window.JGAME={"week": 9, "scoreboard": "", "teams": [{"rank": 1, "name": "Ben's Brilliant Team", "short": "Ben E.", "owner": "Ben Elton", "rec": "8-1", "pts": "114.1", "mv": 1, "logo": "../assets/logos/2-ben-s-brilliant-team-f4dc7f.svg", "shell": "", "line": "", "anchor": "t2"}, {"rank": 2, "name": "Team evil ", "short": "kelly", "owner": "kelly brown", "rec": "5-4", "pts": "142.2", "mv": 2, "logo": "../assets/logos/12-team-evil-kelly.png", "shell": "", "line": "", "anchor": "t12"}, {"rank": 3, "name": "michael's Monstrous Team", "short": "michael", "owner": "michael prince", "rec": "6-3", "pts": "119.7", "mv": 2, "logo": "../assets/logos/9-michael-s-monstrous-team-1ae92f.svg", "shell": "", "line": "", "anchor": "t9"}, {"rank": 4, "name": "CeeDeez Nutz", "short": "skyler", "owner": "skyler cortez", "rec": "6-3", "pts": "130.0", "mv": 2, "logo": "../assets/logos/3-ceedeez-nutz-2d8247.svg", "shell": "", "line": "", "anchor": "t3"}, {"rank": 5, "name": "roadrunners", "short": "Ricky", "owner": "Ricky Verastegui", "rec": "4-5", "pts": "128.5", "mv": 4, "logo": "../assets/logos/10-roadrunners-913475.svg", "shell": "", "line": "", "anchor": "t10"}, {"rank": 6, "name": "Dake Bates", "short": "Jake", "owner": "Jake Danielson", "rec": "6-3", "pts": "110.8", "mv": -5, "logo": "../assets/logos/8-dake-bates.png", "shell": "", "line": "", "anchor": "t8"}, {"rank": 7, "name": "Cortisol Spyke Weeks", "short": "Mason", "owner": "Mason Morgan", "rec": "5-4", "pts": "120.6", "mv": -4, "logo": "../assets/logos/4-cortisol-spyke-weeks.png", "shell": "", "line": "", "anchor": "t4"}, {"rank": 8, "name": "Team Galakrond", "short": "Neil", "owner": "Neil Gibeaut", "rec": "2-7", "pts": "112.2", "mv": 2, "logo": "../assets/logos/1-team-galakrond.png", "shell": "", "line": "", "anchor": "t1"}, {"rank": 9, "name": "Bingo Night", "short": "Thomas", "owner": "Thomas Fowler", "rec": "4-5", "pts": "83.5", "mv": -2, "logo": "../assets/logos/6-bingo-night-d7613d.svg", "shell": "", "line": "", "anchor": "t6"}, {"rank": 10, "name": "Drake Maye Sucks Ass", "short": "Jackson", "owner": "Jackson Helling", "rec": "5-4", "pts": "74.5", "mv": -2, "logo": "../assets/logos/11-drake-maye-sucks-ass-e343f9.svg", "shell": "", "line": "", "anchor": "t11"}, {"rank": 11, "name": "Adams and Jefferson", "short": "Lyudmil", "owner": "Lyudmil Zdravkov", "rec": "1-8", "pts": "99.5", "mv": 0, "logo": "../assets/logos/5-adams-and-jefferson-33999f.svg", "shell": "", "line": "", "anchor": "t5"}, {"rank": 12, "name": "Purdy Seconds to Mars", "short": "Ben T.", "owner": "Ben T", "rec": "2-7", "pts": "109.4", "mv": 0, "logo": "../assets/logos/7-purdy-seconds-to-mars.png", "shell": "", "line": "", "anchor": "t7"}]};</script>
+<script>/* GPU Express: an 8-bit parody side-scroller. Data comes from window.JGAME. */
+(function(){
+  var D = window.JGAME || {teams: [], week: 0};
+  var cv = document.getElementById('jg');
+  if (!cv) return;
+  var ctx = cv.getContext('2d');
+  var ov = document.getElementById('jgov');
+  var NARROW = (cv.parentElement.clientWidth||800) < 600;
+  var W = NARROW ? 208 : 320, H = 180, S = 3, GROUND = 156, SEG = 400;
+  cv.width = W * S; cv.height = H * S;
+  cv.parentElement.style.aspectRatio = W + '/' + H;
+  ctx.imageSmoothingEnabled = false;
+  var FONT = '"Press Start 2P", monospace', SMALL = 'Silkscreen, monospace';
+  var GREEN = '#76b900';
+
+  // ---------- sprites ----------
+  var PAL = {n:'#4a2412',d:'#d0213f',k:'#121212',K:'#5e5e5e',h:'#5c5c5c',s:'#e3b48c',S:'#bf8a62',w:'#9fd3ff',t:'#202020',j:'#2d3650',b:'#050505',
+    f:'#6b5233',F:'#2e2216',c:'#b38b52',C:'#8a6a3a',H:'#8d8d8d',u:'#3b4352',W:'#f4f4f4',r:'#d63a3a',p:'#c79a5a',
+    G:GREEN,m:'#545454',M:'#a5a5a5',y:'#e2b33c',g:'#2a2a2a'};
+  function mk(rows){
+    var h = rows.length, w = rows[0].length, c = document.createElement('canvas');
+    c.width = w * S; c.height = h * S;
+    var g = c.getContext('2d');
+    for (var y = 0; y < h; y++) for (var x = 0; x < w; x++) {
+      var ch = rows[y].charAt(x);
+      if (ch !== '.' && PAL[ch]) { g.fillStyle = PAL[ch]; g.fillRect(x * S, y * S, S, S); }
+    }
+    var f = document.createElement('canvas'); f.width = c.width; f.height = c.height;
+    var fg = f.getContext('2d'); fg.translate(c.width, 0); fg.scale(-1, 1); fg.drawImage(c, 0, 0);
+    return {c: c, f: f, w: w, h: h};
+  }
+  var JTOP = ['...kkkkkk...','..kkkkkkkk..','..khsssssk..','..sggwsgws..','..sssssssS..','...ssSSss...',
+    '..KkkttkkK..','.KkkkttkkkK.','.KkKkttkKkK.','.sKkkttkkKs.','..kkkkkkkk..','..jjjjjjjj..'];
+  var J1 = mk(JTOP.concat(['..jjj..jjj..','..jjj..jjj..','..jj....jj..','.bbb....bbb.']));
+  var J2 = mk(JTOP.concat(['..jjj.jjj...','...jjjjj....','...jj.jj....','..bbb.bbb...']));
+  var J3 = mk(JTOP.concat(['.jjj....jjj.','jjj......jjj','bb........bb','............']));
+  var SPY1 = mk(['............','...ffffff...','...FFFFFF...','.ffffffffff.','...ssssss...','...kkkkkk...','...ssssss...',
+    '..cCccccCc..','.ccCccccCcc.','.ccCccccCcc.','.sccFFFFccs.','..cccccccc..','..cccccccc..','..jj....jj..','..jj....jj..','.bbb....bbb.']);
+  var SPY2 = mk(['............','...ffffff...','...FFFFFF...','.ffffffffff.','...ssssss...','...kkkkkk...','...ssssss...',
+    '..cCccccCc..','.ccCccccCcc.','.ccCccccCcc.','.sccFFFFccs.','..cccccccc..','..cccccccc..','...jj..jj...','...jjjjj....','..bbb.bbb...']);
+  var TRAPTOP = ['....nnnn....','...nnnnnn...','..nnssssnn..','..nskssksn..','..nssssssn..','..nnsrrsnn..','.nnn.ss.nnn.',
+    '.nn.dddd.nn.','..sddddddS..','..s.dddd.S..','...dddddd...','...dddddd...','..dddddddd..'];
+  var TRAP1 = mk(TRAPTOP.concat(['...ss..ss...','...ss..ss...','...ss..ss...','...ss..ss...','..dd...dd...']));
+  var TRAP2 = mk(TRAPTOP.concat(['....s..ss...','...ss.ss....','...ss.ss....','...s..ss....','..dd.dd.....']));
+  var HEART = mk(['.d.d.','ddddd','ddddd','.ddd.','..d..']);
+  var AUD1 = mk(['............','...HHHHHH...','..HssssssH..','...skkskk...','...ssssss...','....ssss....',
+    '..uuWrWuu...','.uuuWrWuuuW.','.uuuWrWuupW.','.uuuurruupW.','.suuuuuuupp.','..uuuuuuu...','..uuu.uuu...','..uuu.uuu...','..uu...uu...','.bbb...bbb..']);
+  var AUD2 = mk(['............','...HHHHHH...','..HssssssH..','...skkskk...','...ssssss...','....ssss....',
+    '..uuWrWuuWW.','.uuuWrWuuuW.','.uuuWrWuupps','.uuuurruupp.','.suuuuuuu...','..uuuuuuu...','..uuu.uuu...','..uuu.uuu...','..uu...uu...','.bbb...bbb..']);
+  var GPU = mk(['GGGGGGGGGGGG','kmmmkkkkmmmk','kmMmkGGkmMmk','kmmmkkkkmmmk','kkkkkkkkkkkk','.yy.yy.yy...']);
+  var JACKET = mk(['.kk..kk.','kKkkkkKk','kKkttkKk','kkkttkkk','.kkttkk.','.kkkkkk.']);
+
+  // ---------- helpers ----------
+  function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+  function R(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x)*S,Math.round(y)*S,Math.round(w)*S,Math.round(h)*S)}
+  function spr(s,x,y,flip){ctx.drawImage(flip?s.f:s.c,Math.round(x)*S,Math.round(y)*S)}
+  function T(str,x,y,size,col,align,font){
+    ctx.font=(size*S)+'px '+(font||FONT);ctx.textAlign=align||'left';ctx.textBaseline='top';
+    if(col!=='#111'){ctx.fillStyle='#000';ctx.fillText(str,Math.round(x)*S+S,Math.round(y)*S+S);}
+    ctx.fillStyle=col;ctx.fillText(str,Math.round(x)*S,Math.round(y)*S);
+  }
+  function hit(a,b){return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y}
+  function clamp(v,a,b){return v<a?a:v>b?b:v}
+  function wrap(n,len){var w=String(n).toUpperCase().split(/\s+/),out=[''];
+    w.forEach(function(x){var c=out[out.length-1];if(!c)out[out.length-1]=x;else if((c+' '+x).length<=len)out[out.length-1]=c+' '+x;else out.push(x)});
+    if(out.length>2){out=[out[0],out.slice(1).join(' ')]}
+    return out.map(function(l){return l.length>len?l.slice(0,len-1)+'.':l})}
+  function short(n,len){n=String(n).toUpperCase();return n.length>len?n.slice(0,len-1)+'.':n}
+
+  // ---------- sound ----------
+  var AC=null, muted=false;
+  try{muted=localStorage.getItem('jg-muted')==='1'}catch(_){}
+  function snd(t){
+    if(muted)return;
+    try{
+      AC=AC||new (window.AudioContext||window.webkitAudioContext)();
+      var f={jump:[330,660,.11],coin:[988,1480,.07],hit:[220,60,.3],ship:[392,1568,.35],stomp:[180,720,.12],die:[440,55,.6]}[t];
+      var o=AC.createOscillator(),g=AC.createGain(),n=AC.currentTime;
+      o.type='square';o.frequency.setValueAtTime(f[0],n);o.frequency.exponentialRampToValueAtTime(f[1],n+f[2]);
+      g.gain.setValueAtTime(.05,n);g.gain.exponentialRampToValueAtTime(.001,n+f[2]);
+      o.connect(g);g.connect(AC.destination);o.start(n);o.stop(n+f[2]+.02);
+    }catch(_){}
+  }
+
+  // ---------- teams (worst first) ----------
+  var teams = D.teams.slice().sort(function(a,b){return b.rank-a.rank});
+  var N = teams.length;
+  teams.forEach(function(t){ if(t.logo){ t.img=new Image(); t.img.src=t.logo; } });
+  var LEVEL = N*SEG + 140;
+  var SHOPS = ['#e9a3a3','#9fd8c6','#f2d179','#b3c6ee','#e4b7e0','#f0b47e'];
+
+  // ---------- level ----------
+  var L;
+  function build(){
+    var r = rng((D.week||1)*7919+3);
+    L = {solids:[],plats:[],gpus:[],foes:[],shells:[],papers:[],pits:[],fx:[],sky:[],mid:[]};
+    for (var s=0;s<N;s++){
+      var x0 = s*SEG, hard = s/Math.max(1,N-1);
+      var pit = null;
+      if (s>0 && (s%2===1 || s>=7)) {
+        var pw = 30 + Math.min(14, s*2);
+        var px = x0 + 150 + Math.floor(r()*70);
+        pit = {x:px,w:pw};
+        L.pits.push(pit);
+        L.solids.push({x:x0,y:GROUND,w:px-x0,h:60});
+        L.solids.push({x:px+pw,y:GROUND,w:x0+SEG-(px+pw)+(s===N-1?140:0),h:60});
+        for (var a=0;a<3;a++) L.gpus.push({x:px+pw/2-6+(a-1)*14,y:GROUND-34-(a===1?8:0)});
+      } else {
+        L.solids.push({x:x0,y:GROUND,w:SEG+(s===N-1?140:0),h:60});
+      }
+      // racks
+      var p1x = x0 + 44 + Math.floor(r()*40);
+      if (pit && p1x+52 > pit.x-6 && p1x < pit.x+pit.w+6) p1x = pit.x - 64;
+      var p1 = {x:p1x,y:120,w:48,h:8};
+      L.plats.push(p1);
+      for (var g=0;g<3;g++) L.gpus.push({x:p1.x+6+g*14,y:p1.y-10});
+      if (s>=2 && s%2===0) {
+        var p2 = {x:p1.x+68,y:94,w:40,h:8};
+        L.plats.push(p2);
+        for (g=0;g<2;g++) L.gpus.push({x:p2.x+8+g*14,y:p2.y-10});
+      }
+      // ground gpus
+      var gx = x0 + (pit ? (pit.x+pit.w+16) : 210);
+      for (g=0;g<3;g++) L.gpus.push({x:gx+g*16,y:GROUND-10});
+      if (s===0) for (g=0;g<3;g++) L.gpus.push({x:x0+70+g*16,y:GROUND-10});
+      // enemies (better teams are harder)
+      var spies = s===0 ? 1 : 1 + Math.floor(hard*2.5);
+      for (var i=0;i<spies;i++){
+        var sx = x0 + 120 + i*70 + Math.floor(r()*20);
+        if (pit && sx+12 > pit.x-4 && sx < pit.x+pit.w+4) sx = pit.x+pit.w+10;
+        if (sx > x0+SEG-110) sx = x0+SEG-110-i*10;
+        L.foes.push({k:'trap',x:sx,y:GROUND-16,w:10,h:15,vx:(i%2?1:-1)*(.35+hard*.45),min:sx-50,max:sx+50,dead:false,vy:0});
+      }
+      if (s>=2) {
+        var onRack = s%2===0;
+        var ax = onRack ? p1.x+18 : x0+SEG-140;
+        L.foes.push({k:'aud',x:ax,y:(onRack?p1.y:GROUND)-16,w:10,h:15,vx:0,dead:false,vy:0,
+          cd:60+Math.floor(r()*40),every:Math.max(70,130-s*6),face:true});
+      }
+      var last = s===N-1;
+      var sw = last?92:56;
+      L.shells.push({x:x0+SEG-sw-14,w:sw,door:x0+SEG-14-sw/2,team:teams[s],idx:s,done:false,last:last,col:SHOPS[s%SHOPS.length]});
+    }
+    // background
+    var bx = 0, rb = rng(99);
+    while (bx < LEVEL*0.3+W) { var bw=18+Math.floor(rb()*26),bh=30+Math.floor(rb()*70);L.sky.push({x:bx,w:bw,h:bh,seed:Math.floor(rb()*1e6)});bx+=bw+2+Math.floor(rb()*6); }
+    bx = 0;
+    while (bx < LEVEL*0.6+W) { var mw=26+Math.floor(rb()*20);L.mid.push({x:bx,w:mw,h:26+Math.floor(rb()*30)});bx+=mw+30+Math.floor(rb()*60); }
+  }
+
+  // ---------- state ----------
+  var P, K={l:0,r:0,j:0}, state='title', cam=0, frame=0, lives=3, carry=0, shipped=0, score=0, next=0, ck=20, total=0, inView=true, best=0, ticks=0, stomps=0;
+  var SB = D.scoreboard || '';
+  try{best=+localStorage.getItem('jg-best-'+D.week)||0}catch(_){}
+  function reset(full){
+    if(full){build();lives=3;carry=0;shipped=0;score=0;next=0;ck=20;total=L.gpus.length;ticks=0;stomps=0;}
+    P={x:ck,y:GROUND-40,w:10,h:15,vx:0,vy:0,on:false,face:false,inv:60,coy:0,jHeld:true,anim:0};
+    L.papers=[];
+    cam=clamp(P.x-W*.38,0,LEVEL-W);
+  }
+  build(); total=L.gpus.length; reset(false); P.x=40;
+
+  function fx(text,x,y,col){L.fx.push({t:text,x:x,y:y,c:col||'#fff',life:50})}
+
+  function solidAt(x,y){
+    var i,b;
+    for(i=0;i<L.solids.length;i++){b=L.solids[i];if(x>=b.x&&x<b.x+b.w&&y>=b.y&&y<b.y+b.h)return true}
+    for(i=0;i<L.plats.length;i++){b=L.plats[i];if(x>=b.x&&x<b.x+b.w&&y>=b.y&&y<b.y+4)return true}
+    return false;
+  }
+
+  function hurt(from){
+    if(P.inv>0)return;
+    lives--;
+    var lost=Math.ceil(carry/2);carry-=lost;
+    var trap=from&&from.k==='trap';
+    fx(trap?('HONEYTRAP'+(lost?' -'+lost:'')):lost?('SEIZED -'+lost):'OUCH',P.x-14,P.y-10,trap?'#ff8fb1':'#ff6b5b');
+    P.inv=100;P.vy=-3;P.vx=(from&&from.x>P.x)?-2:2;
+    snd('hit');
+    if(lives<=0)over();
+  }
+  function fall(){
+    lives--;carry=0;snd('die');
+    if(lives<=0){over();return}
+    fx('EXPORT CONTROLLED',ck-10,GROUND-50,'#ff6b5b');
+    reset(false);
+  }
+
+  function step(){
+    frame++;ticks++;
+    var ax=(K.r?1:0)-(K.l?1:0);
+    if(ax){P.vx+=ax*.22;P.face=ax<0}else{P.vx*=.75;if(Math.abs(P.vx)<.05)P.vx=0}
+    P.vx=clamp(P.vx,-1.9,1.9);
+    if(K.j&&!P.jHeld&&(P.on||P.coy>0)){P.vy=-5.3;P.on=false;P.coy=0;snd('jump')}
+    if(!K.j&&P.vy<-2)P.vy=-2;
+    P.jHeld=!!K.j;
+    P.vy=Math.min(P.vy+.28,6);
+    P.x+=P.vx;
+    var i,b;
+    for(i=0;i<L.solids.length;i++){b=L.solids[i];if(hit(P,b)){if(P.vx>0)P.x=b.x-P.w;else if(P.vx<0)P.x=b.x+b.w;P.vx=0}}
+    P.x=clamp(P.x,0,LEVEL-P.w);
+    var prevB=P.y+P.h;
+    P.y+=P.vy;P.on=false;
+    for(i=0;i<L.solids.length;i++){b=L.solids[i];if(hit(P,b)){if(P.vy>0){P.y=b.y-P.h;P.on=true}else P.y=b.y+b.h;P.vy=0}}
+    if(P.vy>=0)for(i=0;i<L.plats.length;i++){b=L.plats[i];
+      if(prevB<=b.y+.01&&P.y+P.h>=b.y&&P.x+P.w>b.x&&P.x<b.x+b.w){P.y=b.y-P.h;P.vy=0;P.on=true}}
+    P.coy=P.on?6:P.coy-1;
+    if(P.inv>0)P.inv--;
+    if(Math.abs(P.vx)>.3&&P.on)P.anim++;
+    if(P.y>H+10){fall();return}
+
+    // gpus
+    for(i=0;i<L.gpus.length;i++){var g=L.gpus[i];
+      if(!g.got&&hit(P,{x:g.x,y:g.y,w:12,h:6})){g.got=true;carry++;snd('coin');fx('+1',g.x,g.y-6,GREEN)}}
+    // foes
+    for(i=0;i<L.foes.length;i++){var f=L.foes[i];
+      if(f.dead){f.vy+=.3;f.y+=f.vy;continue}
+      if(Math.abs(f.x-P.x)>260)continue;
+      if(f.k==='trap'){
+        f.x+=f.vx;
+        var front=f.vx>0?f.x+f.w+1:f.x-1;
+        if(!solidAt(front,f.y+f.h+2)||f.x<f.min||f.x>f.max)f.vx=-f.vx;
+      }else{
+        f.face=P.x<f.x;
+        if(--f.cd<=0&&Math.abs(P.x-f.x)<180&&Math.abs(P.y-f.y)<70){
+          L.papers.push({x:f.x+(f.face?-4:10),y:f.y+5,w:5,h:5,vx:f.face?-1.5:1.5,life:220});f.cd=f.every;f.throwT=14;
+        }
+        if(f.throwT)f.throwT--;
+      }
+      if(hit(P,f)){
+        if(f.k==='aud'&&P.vy>.5&&prevB<=f.y+6){
+          f.dead=true;f.vy=-2.5;P.vy=-4;score+=200;stomps++;snd('stomp');
+          fx('AUDIT CLOSED',f.x-14,f.y-10,'#ffd84a');
+        }else hurt(f);
+      }
+    }
+    for(i=L.papers.length-1;i>=0;i--){var p=L.papers[i];p.x+=p.vx;p.life--;
+      if(hit(P,p)){L.papers.splice(i,1);hurt(p);continue}
+      if(p.life<=0)L.papers.splice(i,1)}
+    // shell companies
+    var sh=L.shells[next];
+    if(sh&&P.x+P.w/2>=sh.door){
+      sh.done=true;var got=carry;shipped+=carry;score+=carry*100;carry=0;ck=sh.door+18;next++;
+      snd('ship');card(sh,got);
+    }
+    cam+=(clamp(P.x-W*.38,0,LEVEL-W)-cam)*.15;
+    for(i=L.fx.length-1;i>=0;i--){L.fx[i].y-=.4;if(--L.fx[i].life<=0)L.fx.splice(i,1)}
+  }
+
+  // ---------- drawing ----------
+  function drawBG(){
+    var bands=['#04060a','#060a10','#081010','#0a1510','#0c1a10'];
+    for(var i=0;i<bands.length;i++)R(0,i*30,W,30,bands[i]);
+    R(0,150,W,30,'#0c1a10');
+    for(i=0;i<40;i++){var sx=((i*73)%W - cam*.05%W + W)%W, sy=(i*37)%90;R(sx,sy,1,1,i%5?'#3b4a3b':'#cfe8a8')}
+    // Singapore skyline near the end
+    var sgx = (LEVEL-W)*.3 - cam*.3 + W*.55;
+    if (sgx > -120 && sgx < W+40) {
+      R(sgx,40,14,110,'#0d1712');R(sgx+22,40,14,110,'#0d1712');R(sgx+44,40,14,110,'#0d1712');
+      R(sgx-8,34,74,6,'#11211a');R(sgx-10,36,4,2,'#11211a');
+      for(var w=0;w<12;w++){R(sgx+3,48+w*8,8,2,'#2c4a22');R(sgx+25,48+w*8,8,2,'#2c4a22');R(sgx+47,48+w*8,8,2,'#2c4a22')}
+    }
+    for(i=0;i<L.sky.length;i++){var b=L.sky[i],x=b.x-cam*.3;if(x+b.w<0||x>W)continue;
+      R(x,150-b.h,b.w,b.h,'#0b130e');
+      var sd=b.seed;for(var yy=150-b.h+4;yy<146;yy+=6)for(var xx=x+3;xx<x+b.w-3;xx+=5){sd=(sd*9301+49297)%233280;if(sd%7===0)R(xx,yy,2,2,sd%3?'#2f5a1c':'#6e6a2c')}}
+    for(i=0;i<L.mid.length;i++){var m=L.mid[i],mx=m.x-cam*.6;if(mx+m.w<0||mx>W)continue;
+      R(mx,GROUND-m.h,m.w,m.h,'#141c18');R(mx,GROUND-m.h,m.w,2,'#1f2b24');
+      for(var ly=GROUND-m.h+6;ly<GROUND-4;ly+=6){R(mx+4,ly,2,2,((frame>>4)+ly+i)%5?'#2a3a2f':GREEN);R(mx+m.w-8,ly,4,1,'#2a3a2f')}}
+  }
+  function drawWorld(){
+    var i,b,x;
+    for(i=0;i<L.solids.length;i++){b=L.solids[i];x=b.x-cam;if(x+b.w<0||x>W)continue;
+      R(x,b.y,b.w,b.h,'#161c17');R(x,b.y,b.w,2,GREEN);R(x,b.y+2,b.w,1,'#3d5f05');
+      for(var tx=Math.ceil(b.x/16)*16;tx<b.x+b.w;tx+=16)R(tx-cam,b.y+3,1,21,'#0d110e');
+      R(x,b.y+12,b.w,1,'#0d110e')}
+    for(i=0;i<L.pits.length;i++){var p=L.pits[i];x=p.x-cam;if(x+p.w<-40||x>W+40)continue;
+      R(x-26,GROUND-22,2,22,'#777');R(x-34,GROUND-30,18,10,'#e8c33a');R(x-33,GROUND-29,16,8,'#1b1b1b');
+      T('EXPORT',x-33,GROUND-29,3,'#e8c33a','left',SMALL);T('CTRL',x-31,GROUND-25,3,'#e8c33a','left',SMALL)}
+    for(i=0;i<L.plats.length;i++){b=L.plats[i];x=b.x-cam;if(x+b.w<0||x>W)continue;
+      R(x,b.y,b.w,b.h,'#2b313a');R(x,b.y,b.w,1,'#5a6474');R(x,b.y+b.h-1,b.w,1,'#14181d');
+      for(var lx=x+3;lx<x+b.w-3;lx+=5)R(lx,b.y+3,2,2,((frame>>3)+lx)%4?'#3a4350':GREEN)}
+    if(cam<160){var sx0=6-cam;R(sx0+20,GROUND-34,2,34,'#888');R(sx0,GROUND-46,64,14,'#1f5a2a');R(sx0,GROUND-46,64,1,'#fff6');
+      T('TO SINGAPORE >',sx0+32,GROUND-44,3,'#fff','center',SMALL);T(N+' SHELL COMPANIES',sx0+32,GROUND-39,3,'#ffd84a','center',SMALL)}
+    for(i=0;i<L.shells.length;i++)drawShell(L.shells[i]);
+    var bob=Math.round(Math.sin(frame/10)*1.5);
+    for(i=0;i<L.gpus.length;i++){var g=L.gpus[i];if(g.got)continue;x=g.x-cam;if(x<-14||x>W)continue;spr(GPU,x,g.y+bob)}
+    for(i=0;i<L.foes.length;i++){var f=L.foes[i];x=f.x-cam;if(x<-16||x>W+4||f.y>H)continue;
+      var sp=f.k==='trap'?((frame>>4)%2?TRAP1:TRAP2):(f.throwT?AUD2:AUD1);
+      if(f.dead){ctx.save();ctx.globalAlpha=.6;spr(sp,x-1,f.y-1,f.face);ctx.restore();continue}
+      spr(sp,x-1,f.y-(f.k==='trap'?3:1),f.k==='trap'?f.vx<0:f.face);
+      if(f.k==='trap'&&Math.abs(f.x-P.x)<130)spr(HEART,x+3,f.y-10-((frame>>4)%2));
+    }
+    for(i=0;i<L.papers.length;i++){var pp=L.papers[i];x=pp.x-cam;R(x,pp.y,5,5,'#f4f4f4');R(x+1,pp.y+1,3,1,'#999');R(x+1,pp.y+3,3,1,'#999')}
+    if(!(P.inv>0&&(frame>>2)%2)){
+      var js=!P.on?J3:(Math.abs(P.vx)>.3?((P.anim>>3)%2?J1:J2):J1);
+      spr(js,P.x-1-cam,P.y-1,P.face);
+    }
+    for(i=0;i<L.fx.length;i++){var e=L.fx[i];T(e.t,e.x-cam,e.y,5,e.c,'left',SMALL)}
+  }
+  function drawShell(sh){
+    var x=sh.x-cam;if(x+sh.w<-30||x>W+30)return;
+    var t=sh.team;
+    if(sh.last){
+      var top=GROUND-104;
+      for(var k=0;k<3;k++){R(x+6+k*30,top+10,20,104-10,'#cfd6dc');R(x+6+k*30,top+10,2,94,'#eef2f4');
+        for(var wy=top+16;wy<GROUND-6;wy+=6)R(x+9+k*30,wy,14,2,(wy+k*3+(frame>>4))%5?'#7e8d99':'#ffe27a')}
+      R(x-6,top,sh.w+12,8,'#e9eef1');R(x-8,top+2,4,4,'#e9eef1');R(x+sh.w+4,top+2,6,3,'#76b900');
+      R(x+10,top-18,sh.w-20,16,'#0b0b0b');R(x+10,top-18,sh.w-20,1,GREEN);
+      T('#1 '+short(t.name,12),x+sh.w/2,top-15,4,'#ffd84a','center',SMALL);
+      T('HOLDINGS PTE. LTD. · SG',x+sh.w/2,top-9,3,GREEN,'center',SMALL);
+      R(x+sh.w/2-24,top-29,48,10,'#ffd84a');T('SHELL CO. HQ',x+sh.w/2,top-27,4,'#111','center',SMALL);
+      if(t.img&&t.img.complete&&t.img.naturalWidth)ctx.drawImage(t.img,Math.round(x+sh.w/2-9)*S,(GROUND-62)*S,18*S,18*S);
+      R(x+sh.w/2-9,GROUND-22,18,22,'#111');
+    } else {
+      var y=GROUND-58;
+      R(x,y,sh.w,58,sh.col);R(x,y,sh.w,2,'#fff8');
+      R(x-3,y-3,sh.w+6,5,'#7a4b33');
+      R(x-3,y-15,sh.w+6,11,sh.done?'#8a7a3a':'#ffd84a');R(x-3,y-15,sh.w+6,1,'#fff3');
+      T('#'+t.rank+' SHELL CO.',x+sh.w/2,y-13,4,'#111','center',SMALL);
+      for(var sx=0;sx<3;sx++){if(sx===1)continue;R(x+5+sx*17,y+24,12,10,'#1f2a28');R(x+6+sx*17,y+25,10,8,'#141c1b');T('EMPTY',x+11+sx*17,y+27,2,'#5a6b67','center',SMALL)}
+      for(var mb=0;mb<6;mb++)R(x+sh.w/2+9+(mb%2)*5,GROUND-18+Math.floor(mb/2)*5,4,4,'#b8913a');
+      R(x+2,y+4,sh.w-4,18,'#0b0b0b');
+      var ln=wrap(t.name,15);
+      for(var q=0;q<ln.length;q++)T(ln[q],x+sh.w/2,y+5+q*5,3,'#fff','center',SMALL);
+      T('PTE. LTD. · SINGAPORE',x+sh.w/2,y+16,3,GREEN,'center',SMALL);
+      R(x+sh.w/2-7,GROUND-20,14,20,'#1a1a1a');R(x+sh.w/2-7,GROUND-20,14,1,'#555');
+      if(t.img&&t.img.complete&&t.img.naturalWidth)ctx.drawImage(t.img,Math.round(x+sh.w/2-6)*S,(GROUND-37)*S,12*S,12*S);
+      R(x+sh.w+3,y-26,1,84,'#999');R(x+sh.w+4,y-26,11,4,'#e2232a');R(x+sh.w+4,y-22,11,4,'#fff');R(x+sh.w+5,y-25,2,2,'#fff');
+    }
+    if(!sh.done&&L.shells[next]===sh&&(frame>>4)%2)T('V',x+sh.w/2,GROUND-(sh.last?32:30),5,GREEN,'center',SMALL);
+  }
+  function drawHUD(){
+    var sh=L.shells[next];
+    if(NARROW){
+      R(0,0,W,22,'rgba(0,0,0,.72)');R(0,22,W,1,GREEN);
+      for(var i=0;i<lives;i++)spr(JACKET,3+i*10,3);
+      T('GPU '+carry,38,3,5,GREEN,'left',SMALL);
+      T('SHIP '+shipped,80,3,5,'#fff','left',SMALL);
+      T(clock(),W-3,13,4,'#cfd8cf','right',SMALL);T(String(score),W-3,3,5,'#ffd84a','right',SMALL);
+      if(sh)T('NEXT #'+sh.team.rank+' '+short(sh.team.name,18),3,13,4,'#cfd8cf','left',SMALL);
+      return;
+    }
+    R(0,0,W,14,'rgba(0,0,0,.72)');R(0,14,W,1,GREEN);
+    for(var i=0;i<lives;i++)spr(JACKET,4+i*10,4);
+    T('GPU '+carry,40,4,5,GREEN,'left',SMALL);
+    T('SHIPPED '+shipped,82,4,5,'#fff','left',SMALL);
+    T(String(score),160,4,5,'#ffd84a','left',SMALL);T(clock(),205,4,5,'#cfd8cf','left',SMALL);
+    if(sh)T('NEXT #'+sh.team.rank+' '+short(sh.team.name,11),W-4,4,5,'#cfd8cf','right',SMALL);
+  }
+  function draw(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    drawBG();drawWorld();
+    if(state!=='title')drawHUD();
+    if(state==='title'){R(0,0,W,H,'rgba(0,0,0,.35)')}
+  }
+
+  // ---------- overlays ----------
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+  function btn(label,fn,cls){var b=el('button','jbtn'+(cls?' '+cls:''),label);b.type='button';b.addEventListener('click',function(ev){ev.preventDefault();fn()});return b}
+  var primary=null;
+  function show(nodes,pri){ov.innerHTML='';nodes.forEach(function(n){ov.appendChild(n)});ov.hidden=false;primary=pri||null;
+    var b=ov.querySelector('.jbtn');if(b&&inView)try{b.focus({preventScroll:true})}catch(_){}}
+  function hide(){ov.hidden=true;ov.innerHTML='';primary=null}
+  function clock(){var t=Math.floor(ticks/60);return Math.floor(t/60)+':'+('0'+t%60).slice(-2)}
+  function sbGet(cb){if(!SB||!window.fetch)return cb(null);
+    fetch(SB+(SB.indexOf('?')<0?'?':'&')+'week='+encodeURIComponent(D.week)).then(function(r){return r.json()}).then(function(d){cb(d&&d.top||[])},function(){cb(null)})}
+  function sbPost(o,cb){if(!SB||!window.fetch)return cb(null);
+    fetch(SB,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(o)})
+      .then(function(r){return r.json()}).then(function(d){cb(d&&d.ok?(d.top||[]):null)},function(){cb(null)})}
+  function boardInto(box,list,me,n){
+    box.innerHTML='';
+    if(list===null){box.appendChild(el('p','jsmall',SB?'SCOREBOARD OFFLINE':'SCOREBOARD NOT SET UP YET'));return}
+    if(!list.length){box.appendChild(el('p','jsmall','NO SCORES YET. BE THE FIRST.'));return}
+    var ol=el('ol','jboard');
+    list.slice(0,n||10).forEach(function(r,i){var li=el('li',me&&String(r.name).toLowerCase()===me.toLowerCase()?'me':null);
+      li.appendChild(el('b',null,(i+1)+'.'));li.appendChild(el('span',null,String(r.name)));
+      li.appendChild(el('i',null,r.secs?Math.floor(r.secs/60)+':'+('0'+r.secs%60).slice(-2):''));li.appendChild(el('em',null,String(r.score)));ol.appendChild(li)});
+    box.appendChild(ol);
+  }
+  function title(){
+    state='title';
+    var box=el('div','jbox jtitle');
+    box.appendChild(el('p','jsmall','A PARODY · WEEK '+D.week+' POWER RANKINGS'));
+    box.appendChild(el('h3','jlogo','SEMICONDUCTOR CEO SIMULATOR'));
+    box.appendChild(el('p','jtxt','You run a totally normal chip company. Grab the GPUs and route them through '+N+' Singapore shell companies, one per team, worst to first. Do not get distracted by the beautiful women. Stomp the Commerce Department auditors. Stay out of the export controls.'));
+    var c=el('p','jkeys');c.textContent='← → move · SPACE / ↑ jump · tap the buttons on a phone';box.appendChild(c);
+    var row=el('div','jrow');row.appendChild(btn('PRESS START',start,'go'));
+    var sk=el('a','jskip','Skip to the rankings');sk.href='#rankings';row.appendChild(sk);
+    box.appendChild(row);
+    if(SB){var tb=el('div','jtop');tb.appendChild(el('p','jsmall jg','TOP SCORES · WEEK '+D.week));var bl=el('div');bl.appendChild(el('p','jsmall','LOADING...'));tb.appendChild(bl);box.appendChild(tb);
+      sbGet(function(l){boardInto(bl,l,myName(),5)})}
+    if(best)box.appendChild(el('p','jsmall','YOUR BEST: '+best));
+    show([box],start);
+  }
+  function start(){reset(true);hide();state='play';snd('coin');if(NARROW)try{cv.parentElement.parentElement.scrollIntoView({block:'start',behavior:'smooth'})}catch(_){}}
+  function card(sh,got){
+    state='card';var t=sh.team;
+    var box=el('div','jbox jcard');
+    box.appendChild(el('p','jsmall jg','SINGAPORE SHELL CO. '+(sh.idx+1)+' OF '+N+' · '+(got?got+' GPU'+(got===1?'':'S')+' RECEIVED':'0 GPUS (BOLD)')));
+    var hd=el('div','jhd');
+    if(t.logo){var im=el('img');im.src=t.logo;im.alt='';hd.appendChild(im)}
+    var nm=el('div');nm.appendChild(el('p','jrank','#'+t.rank+(t.mv>0?'  ▲'+t.mv:t.mv<0?'  ▼'+(-t.mv):'')));
+    nm.appendChild(el('h3','jname',t.shell||(t.name+' Pte. Ltd.')));
+    nm.appendChild(el('p','jmeta',t.owner+' · '+t.rec+' · '+t.pts+' pts'));
+    hd.appendChild(nm);box.appendChild(hd);
+    if(t.line)box.appendChild(el('p','jtxt',t.line));
+    var row=el('div','jrow');var go=sh.last?finish:resume;
+    row.appendChild(btn(sh.last?'FINAL STANDINGS ▶':'CONTINUE ▶',go,'go'));
+    if(t.anchor){var a=el('a','jskip','Full write-up');a.href='#'+t.anchor;row.appendChild(a)}
+    box.appendChild(row);
+    show([box],go);
+  }
+  function resume(){hide();state='play';P.jHeld=true;K.j=0}
+  function over(){
+    state='over';
+    var box=el('div','jbox');
+    box.appendChild(el('h3','jlogo red','GPUs SEIZED'));
+    box.appendChild(el('p','jtxt','Out of leather jackets. '+shipped+' GPUs made it out before the feds did.'));
+    var row=el('div','jrow');
+    row.appendChild(btn('CONTINUE ▶',function(){lives=3;carry=0;reset(false);hide();state='play'},'go'));
+    row.appendChild(btn('RESTART',start));
+    box.appendChild(row);
+    show([box],null);
+    primary=function(){lives=3;carry=0;reset(false);hide();state='play'};
+  }
+  function myName(){try{return localStorage.getItem('jg-name')||''}catch(_){return ''}}
+  function finish(){
+    state='done';
+    var secs=Math.floor(ticks/60), tb=Math.max(0,150-secs)*20, lb=lives*500;
+    score+=tb+lb;
+    var nb=score>best;if(nb){best=score;try{localStorage.setItem('jg-best-'+D.week,String(best))}catch(_){}}
+    var box=el('div','jbox jwin');
+    box.appendChild(el('p','jsmall jg','ALL '+N+' SHELL COMPANIES FUNDED'));
+    box.appendChild(el('h3','jlogo','THE MORE YOU SHIP'));
+    var st=el('dl','jstats');
+    [['GPUs diverted',shipped+' / '+total],['Auditors stomped',String(stomps)],['Time',clock()],['Speed bonus','+'+tb],['Jackets left','+'+lb],[nb?'Score · new best':'Score',String(score)]].forEach(function(r,i){
+      var d=el('div',i===5?'tot':null);d.appendChild(el('dt',null,r[0]));d.appendChild(el('dd',null,r[1]));st.appendChild(d)});
+    box.appendChild(st);
+    var bl=el('div','jtop');
+    if(SB){
+      var f=el('form','jform');
+      var inp=el('input');inp.type='text';inp.maxLength=12;inp.placeholder='YOUR NAME';inp.value=myName();inp.autocomplete='nickname';inp.setAttribute('aria-label','Your name');
+      var sub=el('button','jbtn go','SUBMIT');sub.type='submit';
+      f.appendChild(inp);f.appendChild(sub);
+      f.addEventListener('submit',function(ev){ev.preventDefault();
+        var nm=inp.value.replace(/[^\w .'-]/g,'').trim().slice(0,12);if(!nm){inp.focus();return}
+        try{localStorage.setItem('jg-name',nm)}catch(_){}
+        sub.disabled=true;inp.disabled=true;sub.textContent='SENDING...';
+        sbPost({week:D.week,name:nm,score:score,shipped:shipped,secs:secs},function(l){
+          if(l===null){sub.disabled=false;inp.disabled=false;sub.textContent='RETRY';return}
+          f.replaceWith(el('p','jsmall jg','SCORE POSTED'));boardInto(lb2,l,nm,10)})});
+      box.appendChild(f);
+    }
+    bl.appendChild(el('p','jsmall jg','TOP 10 · WEEK '+D.week));
+    var lb2=el('div');lb2.appendChild(el('p','jsmall',SB?'LOADING...':'SCOREBOARD NOT SET UP YET'));bl.appendChild(lb2);box.appendChild(bl);
+    if(SB)sbGet(function(l){boardInto(lb2,l,myName(),10)});
+    var row=el('div','jrow');row.appendChild(btn('PLAY AGAIN',start));
+    var a=el('a','jskip','Read the rankings');a.href='#rankings';row.appendChild(a);
+    box.appendChild(row);
+    show([box],null);
+    var fi=box.querySelector('input');if(fi&&inView&&!NARROW)try{fi.focus({preventScroll:true})}catch(_){}
+    snd('ship');
+  }
+
+  // ---------- input ----------
+  var KEYS={ArrowLeft:'l',KeyA:'l',ArrowRight:'r',KeyD:'r',ArrowUp:'j',KeyW:'j',Space:'j',KeyZ:'j',KeyK:'j'};
+  document.addEventListener('keydown',function(e){
+    if(!inView)return;
+    var tag=(e.target&&e.target.tagName)||'';
+    if(state!=='play'){
+      if((e.code==='Enter'||e.code==='Space')&&primary&&tag!=='A'&&tag!=='BUTTON'&&tag!=='INPUT'){e.preventDefault();primary()}
+      return;
+    }
+    var k=KEYS[e.code];if(k){K[k]=1;e.preventDefault()}
+  });
+  document.addEventListener('keyup',function(e){var k=KEYS[e.code];if(k)K[k]=0});
+  window.addEventListener('blur',function(){K.l=K.r=K.j=0});
+  document.querySelectorAll('[data-jk]').forEach(function(b){
+    var k=b.getAttribute('data-jk');
+    function dn(e){e.preventDefault();if(k==='j'&&state!=='play'&&primary){primary();return}K[k]=1;b.classList.add('on')}
+    function up(e){K[k]=0;b.classList.remove('on')}
+    b.addEventListener('pointerdown',dn);b.addEventListener('pointerup',up);b.addEventListener('pointercancel',up);b.addEventListener('pointerleave',up);
+    b.addEventListener('contextmenu',function(e){e.preventDefault()});
+  });
+  var mb=document.getElementById('jgmute');
+  function mlabel(){if(mb)mb.textContent=muted?'SOUND OFF':'SOUND ON'}
+  if(mb){mlabel();mb.addEventListener('click',function(){muted=!muted;try{localStorage.setItem('jg-muted',muted?'1':'0')}catch(_){}mlabel()})}
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){inView=es[0].isIntersecting;if(!inView){K.l=K.r=K.j=0}},{threshold:.35}).observe(cv);
+  }
+
+  // ---------- loop ----------
+  var acc=0,lastT=0;
+  function loop(ts){
+    var dt=Math.min(100,ts-(lastT||ts));lastT=ts;
+    if(state==='play'&&inView&&!document.hidden){acc+=dt;while(acc>=16.67){step();acc-=16.67;if(state!=='play'){acc=0;break}}}
+    else{acc=0;if(state==='title'){frame++;cam=(cam+.4)%(LEVEL-W)}}
+    draw();
+    requestAnimationFrame(loop);
+  }
+  function boot(){title();requestAnimationFrame(loop)}
+  if(document.fonts&&document.fonts.load){
+    Promise.all([document.fonts.load('24px "Press Start 2P"'),document.fonts.load('15px Silkscreen')]).then(boot,boot);
+  } else boot();
+  window.__jg={get state(){return state},K:K,get P(){return P},get L(){return L},start:start,get next(){return next},get shipped(){return shipped},get score(){return score},get ticks(){return ticks}};
+})();
+</script>
+<script>
+(function(){
+  var tip=document.createElement('div');tip.className='tip';tip.setAttribute('role','tooltip');tip.hidden=true;
+  document.body.appendChild(tip);
+  function show(el,x,y){
+    var d;try{d=JSON.parse(el.getAttribute('data-tip'))}catch(_){return}
+    while(tip.firstChild)tip.removeChild(tip.firstChild);
+    var h=document.createElement('p');h.className='tt';h.textContent=d.t;tip.appendChild(h);
+    d.rows.forEach(function(r){var p=document.createElement('p');var k=document.createElement('span');
+      k.textContent=r[0];if(r[2]){var i=document.createElement('i');i.className='key '+r[2];k.insertBefore(i,k.firstChild)}
+      var v=document.createElement('b');v.textContent=r[1];p.appendChild(v);p.appendChild(k);tip.appendChild(p)});
+    if(d.total!==undefined){var t=document.createElement('p');t.className='tsum';var b=document.createElement('b');
+      b.textContent=d.total;var s=document.createElement('span');s.textContent='Total';t.appendChild(b);t.appendChild(s);tip.appendChild(t)}
+    tip.hidden=false;place(x,y);
+  }
+  function place(x,y){var w=tip.offsetWidth,hh=tip.offsetHeight,vw=window.innerWidth;
+    var l=Math.min(Math.max(8,x+14),vw-w-8),t=y-hh-14;if(t<8)t=y+18;
+    tip.style.left=l+'px';tip.style.top=t+'px'}
+  function hide(){tip.hidden=true}
+  document.querySelectorAll('[data-tip]').forEach(function(el){
+    el.addEventListener('pointermove',function(ev){show(el,ev.clientX,ev.clientY)});
+    el.addEventListener('pointerleave',hide);
+    el.addEventListener('focus',function(){var r=el.getBoundingClientRect();show(el,r.left+r.width/2,r.top)});
+    el.addEventListener('blur',hide);
+  });
+  window.addEventListener('scroll',hide,{passive:true});
+  var chart=document.querySelector('.bump');
+  function hl(id){if(!chart)return;chart.classList.toggle('focus',!!id);
+    chart.querySelectorAll('.ln').forEach(function(g){g.classList.toggle('on',g.getAttribute('data-team')===id)})}
+  document.querySelectorAll('.bump .ln').forEach(function(g){
+    var id=g.getAttribute('data-team');
+    g.addEventListener('pointerenter',function(){hl(id)});g.addEventListener('pointerleave',function(){hl(null)});
+    g.addEventListener('focus',function(){hl(id)});g.addEventListener('blur',function(){hl(null)});
+  });
+})();
+</script>
+</body>
+</html>
