@@ -603,16 +603,71 @@ h1{{position:relative;margin-top:22px;font:900 italic 118px/.86 B;text-transform
 <div class="bar"></div>
 </body></html>"""
 
+def build_ceo(week: int, copy_path: str) -> str:
+    """8-bit arcade card for the Semiconductor CEO Simulator week."""
+    cp = Path(copy_path) if copy_path else ROOT / "data" / f"copy-week-{week}.json"
+    c = json.loads(cp.read_text()) if cp.exists() else {}
+    fonts = f"{(ROOT / 'docs').as_uri()}/assets/fonts"
+    game = (ROOT / "scripts" / "layouts" / "jensen_game.js").read_text()
+    sprites = game[game.index("  var PAL = "):game.index("  // ---------- helpers ----------")]
+    tag = c.get("og_tag") or "Ship the GPUs. Read the rankings."
+    return f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:P;src:url({fonts}/press-start-2p-latin-400-normal.woff2)}}
+@font-face{{font-family:K;src:url({fonts}/silkscreen-latin-400-normal.woff2)}}
+*{{box-sizing:border-box;margin:0;padding:0}}
+body{{width:1200px;height:630px;overflow:hidden;position:relative;background:#04060a;color:#e9f2e3}}
+canvas{{position:absolute;inset:0;image-rendering:pixelated}}
+.t{{position:absolute;left:0;right:0;top:0;padding:46px 0 34px;text-align:center;background:radial-gradient(ellipse 46% 62% at 50% 42%,rgba(4,6,10,.92) 55%,transparent 100%)}}
+.k{{font:26px/1 K;color:#76b900;letter-spacing:.06em}}
+h1{{margin-top:26px;font:58px/1.25 P;color:#76b900;text-shadow:6px 6px 0 #1f3a00,0 0 40px rgba(118,185,0,.35)}}
+.s{{margin-top:22px;font:22px/1.3 P;color:#ffd84a;text-shadow:3px 3px 0 #000}}
+.ps{{display:inline-block;margin-top:26px;padding:14px 20px;background:#76b900;color:#061006;font:20px/1 P;box-shadow:6px 6px 0 #1f3a00}}
+.scan{{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 2px,transparent 2px 4px)}}
+.fr{{position:absolute;inset:10px;border:4px solid #76b900;outline:6px solid #0a0a0a}}
+</style></head><body>
+<canvas id="c" width="1200" height="630"></canvas>
+<div class="t"><p class="k">WEEK {week} POWER RANKINGS</p><h1>SEMICONDUCTOR<br>CEO SIMULATOR</h1>
+<p class="s">{e(tag)}</p><span class="ps">PRESS START</span></div>
+<div class="scan"></div><div class="fr"></div>
+<script>
+var S=4,GREEN='#76b900',cv=document.getElementById('c'),ctx=cv.getContext('2d');ctx.imageSmoothingEnabled=false;
+{sprites}
+document.fonts.load('15px K').then(function(){{
+function R(x,y,w,h,c){{ctx.fillStyle=c;ctx.fillRect(x*S,y*S,w*S,h*S)}}
+function spr(s,x,y,f){{ctx.drawImage(f?s.f:s.c,x*S,y*S)}}
+var W=300,H=158,G=140;
+var bands=['#04060a','#060a10','#081010','#0a1510','#0c1a10'];for(var i=0;i<5;i++)R(0,i*24,W,24,bands[i]);
+for(i=0;i<60;i++)R((i*53)%W,(i*29)%60,1,1,i%5?'#3b4a3b':'#cfe8a8');
+var bx=0,sd=7;while(bx<W){{sd=(sd*9301+49297)%233280;var bw=12+sd%16,bh=20+sd%40;R(bx,G-bh,bw,bh,'#0b130e');
+  for(var yy=G-bh+3;yy<G-3;yy+=5)for(var xx=bx+2;xx<bx+bw-2;xx+=4){{sd=(sd*9301+49297)%233280;if(sd%6===0)R(xx,yy,2,2,sd%3?'#2f5a1c':'#6e6a2c')}}bx+=bw+2}}
+R(0,G,W,H-G,'#161c17');R(0,G,W,2,'#76b900');R(0,G+2,W,1,'#3d5f05');for(var tx=0;tx<W;tx+=16)R(tx,G+3,1,20,'#0d110e');
+// shell company
+var x=242,y=G-58,w=40;R(x,y,w,58,'#e9a3a3');R(x-3,y-3,w+6,5,'#7a4b33');R(x-3,y-15,w+6,11,'#ffd84a');
+ctx.font=(4*S)+'px K';ctx.textAlign='center';ctx.textBaseline='top';ctx.fillStyle='#111';ctx.fillText('SHELL CO.',(x+w/2)*S,(y-13)*S);
+R(x+2,y+4,w-4,14,'#0b0b0b');ctx.font=(3*S)+'px K';ctx.fillStyle='#fff';ctx.fillText('PTE. LTD.',(x+w/2)*S,(y+6)*S);ctx.fillStyle='#76b900';ctx.fillText('SINGAPORE',(x+w/2)*S,(y+11)*S);
+R(x+w/2-6,G-18,12,18,'#1a1a1a');for(var mb=0;mb<6;mb++)R(x+w/2+8+(mb%2)*5,G-16+Math.floor(mb/2)*5,4,4,'#b8913a');
+R(x+4,y+22,10,9,'#1f2a28');R(x+w-14,y+22,10,9,'#1f2a28');
+R(x+w+3,y-24,1,82,'#999');R(x+w+4,y-24,11,4,'#e2232a');R(x+w+4,y-20,11,4,'#fff');
+// sprites
+R(16,G-30,52,7,'#2b313a');R(16,G-30,52,1,'#5a6474');for(var lx=19;lx<66;lx+=5)R(lx,G-27,2,2,lx%3?'#3a4350':'#76b900');
+spr(GPU,20,G-38);spr(GPU,34,G-38);spr(GPU,48,G-38);
+spr(J3,84,G-38,false);
+spr(GPU,108,G-10);spr(GPU,124,G-10);
+spr(HEART,152,G-26);spr(TRAP1,149,G-19,true);
+spr(AUD2,196,G-17,true);R(188,G-12,5,5,'#f4f4f4');
+}});
+</script></body></html>"""
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--week", type=int, required=True)
     ap.add_argument("--copy", default="")
     ap.add_argument("--out", default="")
-    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy", "wedding", "mlg", "chat", "ducks"])
+    ap.add_argument("--style", default="runescape", choices=["runescape", "deepweb", "occult", "ryanday", "sportscenter", "clean", "hyphy", "wedding", "mlg", "chat", "ducks", "ceo"])
     a = ap.parse_args()
     out = Path(a.out) if a.out else ROOT / "docs" / f"og-week-{a.week}.png"
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False) as fh:
-        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy, "wedding": build_wedding, "mlg": build_mlg, "chat": build_chat, "ducks": build_ducks}.get(a.style, build)
+        builder = {"deepweb": build_deepweb, "occult": build_occult, "ryanday": build_ryanday, "sportscenter": build_sportscenter, "clean": build_clean, "hyphy": build_hyphy, "wedding": build_wedding, "mlg": build_mlg, "chat": build_chat, "ducks": build_ducks, "ceo": build_ceo}.get(a.style, build)
         fh.write(builder(a.week, a.copy))
         src = fh.name
     js = f'''const {{chromium}}=require('playwright');(async()=>{{

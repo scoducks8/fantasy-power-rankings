@@ -424,9 +424,9 @@
   function title(){
     state='title';
     var box=el('div','jbox jtitle');
-    box.appendChild(el('p','jsmall','A PARODY · WEEK '+D.week+' POWER RANKINGS'));
+    box.appendChild(el('p','jsmall','WEEK '+D.week+' POWER RANKINGS'));
     box.appendChild(el('h3','jlogo','SEMICONDUCTOR CEO SIMULATOR'));
-    box.appendChild(el('p','jtxt','You run a totally normal chip company. Grab the GPUs and route them through '+N+' Singapore shell companies, one per team, worst to first. Do not get distracted by the beautiful women. Stomp the Commerce Department auditors. Stay out of the export controls. Getting caught costs you GPUs and points, never the game.'));
+    box.appendChild(el('p','jtxt','You run a totally normal chip company. Grab the GPUs and route them through '+N+' Singapore shell companies, one per team, worst to first. Do not get distracted by the beautiful women. Stomp the Commerce Department auditors. Stay out of the export controls.'));
     var c=el('p','jkeys');c.textContent='← → move · SPACE / ↑ jump · tap the buttons on a phone';box.appendChild(c);
     var row=el('div','jrow');row.appendChild(btn('PRESS START',start,'go'));
     var sk=el('a','jskip','Skip to the rankings');sk.href='#rankings';row.appendChild(sk);
