@@ -264,8 +264,8 @@ def render(data, history, theme, copy, h) -> str:
 <header class="hero">
   <div class="hero-in">
     <p class="kicker">{e(copy.get("kicker", f"Week {wk} power rankings"))}</p>
-    <h1>{e(copy.get("headline", ""))}</h1>
-    <p class="sub">{e(copy.get("subhead", ""))}</p>
+    {f'<h1>{e(copy["headline"])}</h1>' if copy.get("headline") else ""}
+    {f'<p class="sub">{e(copy["subhead"])}</p>' if copy.get("subhead") else ""}
   </div>
   <div class="arcade">
     <div class="jg-wrap"><canvas id="jg" aria-label="Playable 8-bit game. Arrow keys to move, space to jump." role="img"></canvas><div class="jg-ov" id="jgov" hidden></div></div>
@@ -276,7 +276,7 @@ def render(data, history, theme, copy, h) -> str:
     </div>
     <p class="jg-help">Arrow keys or A/D to move, space to jump. Stomp auditors from above, jump over everyone else.</p>
   </div>
-  <div class="hero-in"><p class="dek">{e(copy.get("standfirst", ""))}</p></div>
+  {f'<div class="hero-in"><p class="dek">{e(copy["standfirst"])}</p></div>' if copy.get("standfirst") else ""}
 </header>
 
 <main>

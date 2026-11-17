@@ -249,10 +249,3 @@ td.tot{font-weight:700;color:var(--g)}
 @media (max-width:620px){.snd{flex-direction:column;gap:6px}.snd .mute{padding:9px 6px}}
 
 .jg-ov.away{display:none}
-@media (max-width:620px){
-  .jg-ov.tt{position:absolute;z-index:2;background:rgba(0,0,0,.35);padding:10px}
-  .jg-ov.tt .jbox{padding:12px 12px 14px}
-  .jg-ov.tt .jtxt,.jg-ov.tt .jkeys,.jg-ov.tt .jtop,.jg-ov.tt .jsmall{display:none}
-  .jg-ov.tt .jlogo{font-size:14px;margin:2px 0 4px}
-  .jg-ov.tt .jrow{margin-top:10px;gap:8px 14px}
-}
