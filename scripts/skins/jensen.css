@@ -247,3 +247,5 @@ td.tot{font-weight:700;color:var(--g)}
 .jform input:focus{outline:2px solid var(--gold);outline-offset:2px}
 @media (max-width:620px){.jstats{grid-template-columns:repeat(2,minmax(0,1fr))}.jform input{font-size:16px}}
 @media (max-width:620px){.snd{flex-direction:column;gap:6px}.snd .mute{padding:9px 6px}}
+
+.jg-ov.away{display:none}

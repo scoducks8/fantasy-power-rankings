@@ -402,6 +402,7 @@
   function btn(label,fn,cls){var b=el('button','jbtn'+(cls?' '+cls:''),label);b.type='button';b.addEventListener('click',function(ev){ev.preventDefault();fn()});return b}
   var primary=null;
   function show(nodes,pri){ov.innerHTML='';nodes.forEach(function(n){ov.appendChild(n)});ov.hidden=false;primary=pri||null;
+    ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ov.classList.add('away');K.l=K.r=K.j=0})});
     var b=ov.querySelector('.jbtn');if(b&&inView)try{b.focus({preventScroll:true})}catch(_){}}
   function hide(){ov.hidden=true;ov.innerHTML='';primary=null}
   function clock(){var t=Math.floor(ticks/60);return Math.floor(t/60)+':'+('0'+t%60).slice(-2)}
@@ -536,7 +537,7 @@
   if(bM)bM.addEventListener('click',function(){musOn=!musOn;unlock();if(musBus)musBus.gain.value=musOn?.55:0;try{localStorage.setItem('jg-mus',musOn?'1':'0')}catch(_){}lab();
     if(musOn&&state!=='title'&&state!=='done')music(true)});
   if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){inView=es[0].isIntersecting;if(!inView){K.l=K.r=K.j=0;music(false)}else if(state!=='title'&&state!=='done')music(true)},{threshold:.35}).observe(cv);
+    new IntersectionObserver(function(es){inView=es[0].isIntersecting;ov.classList.toggle('away',!inView);if(!inView){K.l=K.r=K.j=0;music(false)}else if(state!=='title'&&state!=='done')music(true)},{threshold:.35}).observe(cv);
   }
 
   // ---------- loop ----------
