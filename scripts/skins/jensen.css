@@ -69,15 +69,21 @@ button{font:inherit}
 .jlist{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;gap:4px 16px;font:13px/1.35 var(--sk)}
 .jlist li{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:6px}
 .jlist b{color:var(--gold);font-weight:400}.jlist span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.jlist i{font-style:normal;color:var(--muted)}
-.jg-pad{display:none;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;user-select:none;-webkit-user-select:none;touch-action:none}
+.jg-pad{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;user-select:none;-webkit-user-select:none;touch-action:none}
 .jg-pad button{touch-action:none;-webkit-tap-highlight-color:transparent;cursor:pointer;border:0;color:var(--ink);background:#1a1a1a;font:18px/1 var(--px);box-shadow:inset -4px -4px 0 rgba(0,0,0,.55),inset 4px 4px 0 rgba(255,255,255,.12)}
 .dpad{display:flex;gap:10px}
-.dpad button{width:66px;height:62px}
+.dpad button{width:70px;height:66px}
 .abtn{width:76px;height:76px;border-radius:50%;background:#b8221a!important;color:#fff!important}
 .jg-pad button.on{transform:translateY(2px);filter:brightness(1.35)}
 .mute{font:10px/1 var(--px)!important;padding:10px 8px;color:var(--ink2)!important}
 .jg-help{margin:14px 0 0;font:13px/1.4 var(--sk);color:var(--muted);text-align:center}
-@media (hover:none),(pointer:coarse),(max-width:760px){.jg-pad{display:flex}.jg-help{display:none}}
+@media (hover:hover) and (pointer:fine) and (min-width:761px){.jg-pad{justify-content:center;margin-top:14px}.dpad,.abtn{display:none!important}}
+@media (hover:none),(pointer:coarse),(max-width:760px){.jg-help{display:none}}
+.snd{display:flex;gap:8px}
+.arcade,.arcade *{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+.arcade input{-webkit-user-select:text;user-select:text}
+body.jplaying{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+#jg{touch-action:none}
 @media (max-width:620px){
   .arcade{padding:0 10px;margin-top:22px}
   .jg-ov{position:fixed;z-index:70;background:rgba(0,0,0,.72)}
@@ -240,3 +246,4 @@ td.tot{font-weight:700;color:var(--g)}
 .jform input{flex:1;min-width:0;background:#000;border:2px solid var(--g);color:var(--ink);font:14px/1 var(--px);padding:10px;text-transform:uppercase}
 .jform input:focus{outline:2px solid var(--gold);outline-offset:2px}
 @media (max-width:620px){.jstats{grid-template-columns:repeat(2,minmax(0,1fr))}.jform input{font-size:16px}}
+@media (max-width:620px){.snd{flex-direction:column;gap:6px}.snd .mute{padding:9px 6px}}

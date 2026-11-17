@@ -271,10 +271,10 @@ def render(data, history, theme, copy, h) -> str:
     <div class="jg-wrap"><canvas id="jg" aria-label="Playable 8-bit game. Arrow keys to move, space to jump." role="img"></canvas><div class="jg-ov" id="jgov" hidden></div></div>
     <div class="jg-pad" aria-hidden="true">
       <div class="dpad"><button type="button" data-jk="l">&#9664;</button><button type="button" data-jk="r">&#9654;</button></div>
-      <button type="button" id="jgmute" class="mute">SOUND ON</button>
+      <div class="snd"><button type="button" id="jgmus" class="mute">MUSIC ON</button><button type="button" id="jgsfx" class="mute">SFX ON</button></div>
       <button type="button" class="abtn" data-jk="j">A</button>
     </div>
-    <p class="jg-help">Arrow keys or A/D to move, space to jump. Stomp enemies from above.</p>
+    <p class="jg-help">Arrow keys or A/D to move, space to jump. Stomp auditors from above, jump over everyone else.</p>
   </div>
   <div class="hero-in"><p class="dek">{e(copy.get("standfirst", ""))}</p></div>
 </header>
