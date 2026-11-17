@@ -1,0 +1,70 @@
+{
+ "_comment": "Week 10 copy, jensen skin (Semiconductor CEO Simulator). Numbers checked against fact_sheet --week 10, odds-week-9 and odds-week-10.",
+ "kicker": "Week 10 power rankings",
+ "headline": "Drake Maye Sucks Ass started Drake Maye. He scored 3.",
+ "subhead": "The team is now last in the power rankings.",
+ "standfirst": "This week the rankings come with a video game. You run a totally normal chip company. There are 12 Singapore shell companies, one per team, worst to first, and every one of them needs GPUs. Beat it, post your score, then scroll down for the rankings.",
+ "ticker": [
+  "Cortisol Spyke Weeks 180.22, top score",
+  "Team evil by 89.28",
+  "Drake Maye: 3.0 points",
+  "Bingo Night running backs: 1.8 combined",
+  "Steelers D/ST: -7.0",
+  "Ben E. is 9-1"
+ ],
+ "tiers": [
+  ["Blackwell Tier", "flagship silicon"],
+  ["Hopper Tier", "still ships"],
+  ["Gaming Tier", "RTX on, mostly"],
+  ["Integrated Graphics", "shares memory with the toaster"]
+ ],
+ "lede_scores": "Six games and none of them close. The tightest was Adams and Jefferson over Dake Bates by 19.60. The widest was Team evil over Bingo Night by 89.28.",
+ "lede_rankings": "The rankings weigh record, the last three weeks, total points and luck, with the last three weeks counting most. That is how a 2-8 team sits above a 6-4 team, and how a 5-5 team on a three-game losing streak ends up last.",
+ "lede_odds": "Four weeks left, six playoff spots. Ben E. is in. Team Galakrond's playoff odds rounded down to zero this week.",
+ "lede_positions": "Cortisol Spyke Weeks got 77.6 from receivers, the most in the league. Bingo Night got 1.8 from running backs, the least.",
+ "lede_season": "Cortisol Spyke Weeks climbed three spots, and so did Purdy Seconds to Mars. Adams and Jefferson climbed four.",
+ "footer": "The more you ship, the more you save.",
+ "takes": {
+  "2": "9-1, and the only thing left to win is the 1 seed, which the simulations give him 97% of the time. He scored 164.36 against roadrunners, the second-best score of the week, with Chuba Hubbard at 34.2 and Jaxon Smith-Njigba at 31.1. Brock Bowers scored 3.8 and it did not matter.",
+  "12": "Four straight wins, and this one was by 89.28. Christian McCaffrey scored 46.3, the best individual score in the league this week, and Joe Burrow's 33.2 led all quarterbacks. Kelly also changed the avatar to José Mourinho shushing the crowd, which is fair. Playoff odds went from 81% to 92%.",
+  "3": "Up one to third. Chase Brown had 28.3, but the real story is the kicker and defense combining for 40.0: Vikings D/ST 21.0, Cam Little 19.0. Jordan Addison started at flex and scored 0.0, and they still won by 36.60. 7-3, and in the playoffs in 99% of simulations.",
+  "4": "180.22, the best score of the week by almost 16 points, against the No. 3 team. George Pickens 43.5, Ja'Marr Chase 34.1, Isaiah Likely 27.7 at tight end. They beat their projection by 53.26. Up three spots, and playoff odds jumped from 82% to 97%.",
+  "9": "145.84 is the highest losing score of the week and would have beaten eight other teams. Jahmyr Gibbs scored 44.2. They ran into Cortisol's 180.22 and dropped two spots, but the playoff odds barely moved: 96%.",
+  "10": "139.78 would have won three of the other five games. They drew Ben E. instead. Emmett Johnson had 35.1 and Trevor Lawrence 26.8. 4-6 now, and the simulations have them making the playoffs 15% of the time.",
+  "5": "The lowest winning score of the week, 97.50, and it still beat a 6-4 team. Justin Jefferson led with 16.4 and the Rams defense added 16.0. Up four spots to seventh at 2-8.",
+  "8": "Lost to a 2-8 team with 77.90, the second-lowest score of the week. The Steelers defense finished at -7.0. Stefon Diggs (20.3) and DJ Moore (19.4) were the only starters above 11. Still 6-4, but playoff odds fell from 90% to 80%.",
+  "7": "Brock Purdy, the namesake, scored 31.7 and Cam Skattebo added 27.2. That beat Team Galakrond by 24.68 and moved them up three spots off the bottom. 3-7, with playoff odds at 0.8%. Still alive, technically.",
+  "1": "Lost 116.96 to 92.28. Xavier Worthy started and scored 0.0. The bench had 3.8 points total, so there was nobody to swap in anyway. Playoff odds hit 0.0% this week. The new avatar matches the mood.",
+  "6": "63.98, last in the league, and it would not have beaten anybody. The running backs combined for 1.8: Rhamondre Stevenson 1.5, Devin Singletary 0.3. Deshaun Watson led the team with 21.4. Lost to Team evil by 89.28.",
+  "11": "The team is called Drake Maye Sucks Ass. It started Drake Maye at quarterback. He scored 3.0. Amon-Ra St. Brown did his part with 25.8, but a third straight loss drops them to last in the power rankings at 5-5. Playoff odds fell from 32% to 17%. The new avatar is Drake Maye as a clown, which is the most accurate thing on this page."
+ },
+ "game_lines": {
+  "2": "9-1. Second-best score of the week, 164.36. Everyone else is a subsidiary.",
+  "12": "Won by 89.28. Christian McCaffrey 46.3, best player score in the league.",
+  "3": "Kicker and defense combined for 40.0 points. Jordan Addison scored 0.0 at flex.",
+  "4": "180.22. Top score of the week by almost 16 points.",
+  "9": "145.84, the highest losing score of the week. Ran into Cortisol.",
+  "10": "139.78 would have won three of the other five games.",
+  "5": "Lowest winning score of the week, 97.50. Still a win.",
+  "8": "Lost to a 2-8 team. Steelers D/ST: -7.0.",
+  "7": "Brock Purdy scored 31.7. The namesake delivered.",
+  "1": "Bench scored 3.8 total. Playoff odds: 0.0%.",
+  "6": "63.98. Running backs combined for 1.8.",
+  "11": "Started Drake Maye. He scored 3.0."
+ },
+ "up_next": {
+  "title": "Week 11",
+  "intro": "Game of the week is michael's Monstrous Team against CeeDeez Nutz, two top-five teams still chasing the 2 seed.",
+  "games": [
+   {"a": 3, "b": 9, "gotw": true, "text": "7-3 against 6-4. The simulations give CeeDeez a 36% shot at a top-two seed and michael 25%. One of those numbers is about to move."},
+   {"a": 4, "b": 6, "text": "Cortisol Spyke Weeks just scored 180.22. Bingo Night just scored 63.98."},
+   {"a": 12, "b": 10, "text": "Team evil has won four straight. roadrunners are 4-6 and running out of weeks."},
+   {"a": 11, "b": 1, "text": "Drake Maye Sucks Ass has lost three in a row. Team Galakrond is 2-8."},
+   {"a": 2, "b": 8, "text": "Ben E. is 9-1. Dake Bates has lost two straight and just scored 77.90."},
+   {"a": 7, "b": 5, "text": "3-7 against 2-8. Both won last week."}
+  ]
+ },
+ "og_title": "Week 10: Drake Maye Sucks Ass started Drake Maye. He scored 3.",
+ "og_description": "Power rankings, plus a game: ship GPUs to 12 Singapore shell companies.",
+ "og_tag": "Ship the GPUs. Read the rankings."
+}

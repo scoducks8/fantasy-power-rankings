@@ -401,7 +401,7 @@
   function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
   function btn(label,fn,cls){var b=el('button','jbtn'+(cls?' '+cls:''),label);b.type='button';b.addEventListener('click',function(ev){ev.preventDefault();fn()});return b}
   var primary=null;
-  function show(nodes,pri){ov.innerHTML='';nodes.forEach(function(n){ov.appendChild(n)});ov.hidden=false;primary=pri||null;
+  function show(nodes,pri){ov.innerHTML='';ov.classList.toggle('tt',!!(nodes[0]&&nodes[0].classList&&nodes[0].classList.contains('jtitle')));nodes.forEach(function(n){ov.appendChild(n)});ov.hidden=false;primary=pri||null;
     ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ov.classList.add('away');K.l=K.r=K.j=0})});
     var b=ov.querySelector('.jbtn');if(b&&inView)try{b.focus({preventScroll:true})}catch(_){}}
   function hide(){ov.hidden=true;ov.innerHTML='';primary=null}
